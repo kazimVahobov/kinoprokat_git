@@ -1,0 +1,249 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5" style="padding: 0">
+        <h3 style="display: inline;">
+          {{mainLabel}}
+        </h3>
+      </div>
+      <div style="cursor: pointer"  class="col-md-4 pull-right text-right">
+        <a (click)="backToList()">
+          <span class="fa fa-long-arrow-left"></span>
+          К списку отчётов (без сохранения)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-success">
+        <div class="box-body table-responsive">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="col-md-12" style="margin-bottom: 10px">
+                  <div class="row">
+                    <div class="col-md-2" style="padding: 0; margin-top: 5px">
+                      <label for="date">Дата отчёта: </label>
+                    </div>
+                    <div class="col-md-3" style="padding: 0;">
+                      <input type="text"
+                             id="date"
+                             [maxDate]="maxDate"
+                             class="form-control"
+                             placeholder="Укажите дату отчёта"
+                             bsDatepicker
+                             [(ngModel)]="selectedDate"
+                             (onHidden)="loadFromDate()"
+                             [disabled]="!disableDate"
+                             [bsConfig]="{dateInputFormat: 'DD.MM.YYYY'}">
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="alertState === 0" class="col-md-12">
+                  <div class="row">
+                    <div *ngIf="model" class="panel-group" id="accordion">
+                      <div *ngFor="let hole of model.holes; let i = index;" class="panel panel-default">
+                        <div class="panel-heading text-center">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}">
+                              {{hole.holeName}}
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapse{{i}}" [ngClass]="{'in': i == 0}" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row">
+                              <div class="col-md-12 text-left">
+                                <a class="my-btn" (click)="addSession(i)">Добавить сеанс</a>
+                              </div>
+                              <div *ngFor="let session of hole.sessions; let j = index" class="col-md-12">
+                                <div class="text-center col-md-12 border-bottom">
+                                  <label>{{j + 1}}-й сеанс</label>
+                                  <span popover="Удаление"
+                                        triggers="mouseenter:mouseleave"
+                                        class="fa fa-trash pull-right"
+                                        (click)="deleteSession(i, j)">
+                                  </span>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                  <label for="time" class="font-weight">Время сеанса:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <input placeholder="Время сеанса"
+                                         id="time"
+                                         [ngxTimepicker]="time"
+                                         [format]="24"
+                                         class="form-control"
+                                         [(ngModel)]="session.time">
+                                  <ngx-material-timepicker #time [minutesGap]="5"></ngx-material-timepicker>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                  <label for="movieId" class="font-weight">Фильм:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <ng-select [items]="movies"
+                                             bindLabel="name"
+                                             id="movieId"
+                                             [searchable]="false"
+                                             bindValue="_id"
+                                             (change)="movieChange(i, j)"
+                                             [(ngModel)]="session.movieId"
+                                             placeholder="Выберите фильм">
+                                  </ng-select>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                  <label for="ticketCount" class="font-weight">Кол-во билетов:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <input id="ticketCount"
+                                         type="number"
+                                         class="form-control"
+                                         min="0"
+                                         max="{{hole.placeCount}}"
+                                         [(ngModel)]="session.ticketCount"
+                                         placeholder="Билеты">
+                                </div>
+                                <div class="col-md-3 form-group">
+                                  <label for="price" class="font-weight">Цена 1-ого билета:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <input id="price"
+                                         type="number"
+                                         class="form-control"
+                                         min="0"
+                                         [(ngModel)]="session.price"
+                                         placeholder="Цена">
+                                </div>
+                                <div class="col-md-12 border-bottom"></div>
+                              </div>
+                              <div *ngIf="hole.sessions.length == 0" class="col-md-12 text-center text-muted">
+                                <p>Пока что ни одного сеанса не добавлено;)</p>
+                              </div>
+                              <div *ngIf="hole.sessions.length != 0" class="col-md-12 text-left">
+                                <label><span style="color: #dd4b39">*</span> - помеченные поля обязательны к
+                                  заполнению</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="alertState !== 0" class="col-md-12">
+                  <div *ngIf="alertState === 3" class="alert alert-info" role="alert">
+                    Отчёт на указанную Вами дату уже составлен, сохранён, но не отправлен в вышестоящее учреждение. Вы
+                    можете вернуться с список всех отчётов, найти там запись с датой
+                    <span style="font-weight: bold;">{{selectedDate|date: 'dd.MM.yyyy'}}</span> и по желанию
+                    <span class="spec-text">отправить</span>/
+                    <span class="spec-text">отредактировать</span>/
+                    <span class="spec-text">удалить</span>
+                    данную запись. Либо попробуйте указать другую дату.
+                  </div>
+                  <div *ngIf="alertState === 2" class="alert alert-warning" role="alert">
+                    Отчёт на указанную Вами дату уже составлен, сохранён и отправлен в вышестоящее учреждение, но ещё не
+                    было подтверждено вышестоящим учреждением.
+                    В случае отказа вышестоящим учреждением данная запись станет доступной для
+                    <span class="spec-text">редактирования</span>/
+                    <span class="spec-text">удаления</span>/
+                    <span class="spec-text">повторной отправки</span>.
+                  </div>
+                  <div *ngIf="alertState === 1" class="alert alert-danger" role="alert">
+                    Отчёт на указанную Вами дату уже составлен, отправлен и подтверждён вышестоящим учреждением.
+                    Данную запись уже невозможно <span class="spec-text">редактировать</span>/ <span class="spec-text">удалить</span>.
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="alertState === 0" class="col-md-4"  style="border-left: 1px solid #eee">
+                <div *ngIf="model" class="row">
+                  <div class="col-md-12">
+                    <div *ngIf="model.withoutCont.length == 0" class="alert alert-success" role="alert">
+                      Здесь Вы можете указать только те фильмы, которые Вы получили непосредственно от Вашего
+                      дистрибьютора. Чтобы указать фильмы от стороннего дистрибьютора, пожалуйста, нажмите на
+                      <span style="font-weight: bold;">Добавить фильм от стороннего дистрибьютора</span>
+                    </div>
+                  </div>
+                  <div class="col-md-12 text-left" style="margin: 10px 0">
+                    <a (click)="addWithoutCont()" class="my-btn">Добавить фильм от стороннего дистрибьютора</a>
+                  </div>
+                  <div *ngFor="let item of model.withoutCont; let i = index" class="col-md-12">
+                    <div class="text-center col-md-12 border-bottom">
+                      <label>{{i + 1}}-й фильм</label>
+                      <span popover="Удаление"
+                            style="margin-right: 15px"
+                            triggers="mouseenter:mouseleave"
+                            class="fa fa-trash pull-right"
+                            (click)="deleteWithoutCont(i)">
+                                  </span>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 my-form-group">
+                        <label for="movie" class="font-weight">Название фильма:
+                          <span style="color: #dd4b39;">*</span>
+                        </label>
+                        <input id="movie"
+                               type="text"
+                               class="form-control"
+                               [(ngModel)]="item.movie"
+                               placeholder="Введите название">
+                      </div>
+                      <div class="col-md-6 my-form-group">
+                        <label for="country" class="font-weight">Страна:
+                          <span style="color: #dd4b39;">*</span>
+                        </label>
+                        <input id="country"
+                               type="text"
+                               class="form-control"
+                               [(ngModel)]="item.country"
+                               placeholder="Введите название">
+                      </div>
+                      <div class="col-md-6 my-form-group">
+                        <label for="distributor" class="font-weight">Дистрибьютор:
+                          <span style="color: #dd4b39;">*</span>
+                        </label>
+                        <input id="distributor"
+                               type="text"
+                               class="form-control"
+                               [(ngModel)]="item.distributor"
+                               placeholder="Введите название">
+                      </div>
+                      <div class="col-md-6 my-form-group">
+                        <label for="sessionCount" class="font-weight">Кол-во сеансов:
+                          <span style="color: #dd4b39;">*</span>
+                        </label>
+                        <input id="sessionCount"
+                               type="number"
+                               class="form-control"
+                               [(ngModel)]="item.sessionCount"
+                               placeholder="Укажите кол-во">
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="model.withoutCont.length != 0" class="col-md-12 text-left">
+                    <label><span style="color: #dd4b39">*</span> - помеченные поля обязательны к
+                      заполнению</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 text-right" style="padding-top: 5px;">
+                <div class="row">
+                  <button class="btn btn-success" type="button" style="margin-right: 5px" [disabled]="validation()"
+                          (click)="submit()">
+                    Сохранить
+                  </button>
+                  <button type="button" class="btn btn-danger" [routerLink]="['/theater-report']">
+                    Отмена
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

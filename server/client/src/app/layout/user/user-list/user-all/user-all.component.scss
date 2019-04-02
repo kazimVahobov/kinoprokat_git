@@ -1,0 +1,22 @@
+.table thead tr th {
+  vertical-align: middle;
+}
+
+ul {
+  float: right;
+  li:hover {
+    cursor: pointer;
+  }
+}
+
+.form-control-invalid {
+  border-color: red;
+}
+
+.pagination {
+  margin: 0;
+}
+
+.box-footer {
+  border: none;
+}

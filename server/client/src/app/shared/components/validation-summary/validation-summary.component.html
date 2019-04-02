@@ -1,0 +1,5 @@
+<div class="alert alert-danger" role="alert" *ngIf="messages && messages.length">
+    <ul>
+        <li *ngFor="let item of messages">{{item}}</li>
+    </ul>
+</div>

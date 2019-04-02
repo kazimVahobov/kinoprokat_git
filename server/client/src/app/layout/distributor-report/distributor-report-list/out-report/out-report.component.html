@@ -1,0 +1,107 @@
+<div class="box">
+  <div class="box-body" style="padding: 0">
+    <div *ngIf="pagedItems.length != 0; else noreport">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Дата</th>
+            <th>Кол-во кинотеатров</th>
+            <th>Кол-во фильмов</th>
+            <th>Кол-во сеансов</th>
+            <th>Кол-во билетов</th>
+            <th>Общая сумма</th>
+            <th>Передвижной</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dist of pagedItems">
+            <td>
+              <span *ngIf="dist.sent && dist.confirm"
+                    class="fa fa-check fa-lg"
+                    popover="Подтверждено"
+                    triggers="mouseenter:mouseleave"></span>
+              <span *ngIf="dist.sent && !dist.confirm"
+                    class="fa fa-clock-o fa-lg"
+                    popover="В ожидании"
+                    triggers="mouseenter:mouseleave"></span>
+              <span *ngIf="!dist.sent && !dist.confirm"
+                    class="fa fa-save fa-lg"
+                    popover="Сохранено"
+                    triggers="mouseenter:mouseleave"></span>
+            </td>
+            <td>{{dist.date|date: 'dd.MM.yyyy'}}</td>
+            <td>{{dist.theaterCount}}</td>
+            <td>{{dist.moviesCount}}</td>
+            <td>{{dist.sessionCount}}</td>
+            <td>{{dist.ticketCount}}</td>
+            <td>{{dist.summ}}</td>
+            <td>
+              <span *ngIf="dist.mobTheater; else noCount">Имеется</span>
+              <ng-template #noCount><span>Не имеется</span></ng-template>
+            </td>
+            <td style="width: 5%">
+              <span popover="Подробнее" (click)="detailRouter(dist._id)" triggers="mouseenter:mouseleave" class="fa fa-eye">
+              </span>
+            </td>
+            <td style="width: 7%" *ngIf="(!dist.sent && !dist.confirm) && (isCreate || isEdit)">
+              <span popover="Отправить" (click)="sendReport(dist._id)" triggers="mouseenter:mouseleave" class="fa fa-angle-double-right fa-send">
+              </span>
+            </td>
+            <td style="width: 7%" *ngIf="!dist.sent && !dist.confirm">
+              <span *ngIf="isEdit"  popover="Редактировать" [routerLink]="['./edit', dist._id ]" triggers="mouseenter:mouseleave" class="fa fa-edit">
+              </span>
+            </td>
+            <td style="width: 7%" *ngIf="!dist.sent && !dist.confirm">
+              <span *ngIf="isDelete"  popover="Удалить" (click)="deleteReport(dist._id)" triggers="mouseenter:mouseleave" class="fa fa-trash">
+              </span>
+            </td>
+            <td colspan="3" *ngIf="dist.sent && !dist.confirm" class="text-center">
+              <span>Отправлено - Не подтверждено</span>
+            </td>
+            <td colspan="3" *ngIf="dist.sent && dist.confirm" class="text-center">
+              <span>Отправлено - Подтверждено</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="box-footer">
+    <!-- pager -->
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">
+          <i class="fa fa-angle-double-left"></i>
+        </a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">
+          <i class="fa fa-angle-left"></i>
+        </a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">
+          <i class="fa fa-angle-double-right"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<ng-template #noreport>
+  <span class="text-center" style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
+    Ни одного отчёта на указанный месяц не отправлено. Попробуйте указать другой месяц;)
+  </span>
+</ng-template>

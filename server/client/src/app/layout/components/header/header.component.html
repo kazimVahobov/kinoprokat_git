@@ -1,0 +1,65 @@
+<header class="main-header">
+  <!-- Logo -->
+  <a class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini"><img src="/assets/img/mini_logo.png" class="logo-image-mini"></span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg"><img src="/assets/img/main_logo.png" class="logo-image"></span>
+  </a>
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+    <!-- Navbar Right Menu -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li style="visibility: hidden" class="dropdown tasks-menu" hidden>
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-sign-out fa-lg"></i>
+          </a>
+        </li>
+        <!-- User Account: style can be found in dropdown.less -->
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img [src]="userService.ImagePreview" class="user-image" alt="User Image">
+            <span class="hidden-xs" *ngIf="userService.user"> {{userService.user.lastName}} {{userService.user.firstName?userService.user.firstName.substring(0, 1):''}}. {{userService.user.middleName?userService.user.middleName.substring(0, 1):''}}. </span>
+          </a>
+          <!--start of dropdown profile page-->
+          <ul class="dropdown-menu">
+            <li class="user-header">
+              <img [src]="userService.ImagePreview" class="img-circle" alt="User Image">
+              <p>
+                <small *ngIf="userService.user">{{userService.user.lastName}} {{userService.user.firstName}}
+                  {{userService.user.middleName}}
+                </small>
+              </p>
+              <hr style="margin: 3px 15px 2px 15px">
+              <p>
+                <small *ngIf="userService.role.typeOfRole === 0">Сотрудник РЦК</small>
+                <small *ngIf="userService.role.typeOfRole === 1">Сотрудник филиала</small>
+                <small *ngIf="userService.role.typeOfRole === 2">Сотрудник кинотеатра</small>
+                <small *ngIf="userService.role.typeOfRole === 3">Гостевой профиль</small>
+                <small *ngIf="userService.role.typeOfRole === 4">Правообладатель фылма</small>
+              </p>
+            </li>
+            <li class="user-footer">
+              <div class="pull-left">
+                <a [routerLink]="['/profile']" class="btn btn-default btn-flat">Профиль</a>
+              </div>
+              <div class="pull-right">
+                <a [routerLink]="['/login']" (click) = "clear()" class="btn btn-default btn-flat">Выход</a>
+              </div>
+            </li>
+          </ul>
+          <!--end of dropdown profile page-->
+        </li>
+        <li>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->

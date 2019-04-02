@@ -1,0 +1,484 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    {{currentUser.userName}} (Гость)
+  </h1>
+</section>
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div *ngIf="currentRole.typeOfRole === 4" class="row" id="secondRowOfMovie">
+      <div class="box box-info" [ngClass]="{'bg-yellow-opacity': singleMovieChMode === 0,
+                           'bg-blue-opacity': singleMovieChMode === 1,
+                           'bg-teal-opacity': singleMovieChMode === 2 }">
+        <div class="box-header">
+          <h3 class="box-title chart-title"
+              data-toggle="collapse" data-target="#singleMovieChBlock1"
+              (click)="singleMovieChIsOpen = !singleMovieChIsOpen">Данные фильма <span style="font-style: italic;">{{currentMovie.name}}</span></h3>
+          <div class="box-tools pull-right">
+            <button type="button" (click)="singleMovieChIsOpen = !singleMovieChIsOpen" class="btn btn-box-tool"
+                    data-toggle="collapse" data-target="#singleMovieChBlock1">
+              <i class="fa fa-lg"
+                 [ngClass]="{'fa-angle-double-up': singleMovieChIsOpen, 'fa-angle-double-down': !singleMovieChIsOpen}"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body collapse in" id="singleMovieChBlock1">
+          <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3 no-pad-left">
+              <label [ngClass]="{'bg-yellow': singleMovieChMode === 0}" class="info-box">
+                <span class="info-box-icon"><i class="fa fa-ticket"></i></span>
+                <span class="info-box-text">Всего продано</span>
+                <span class="info-box-number">{{regionReports?regionReports.totlaTicketCount:'---'}}<small> билетов</small></span>
+                <input type="radio" name="singleMovieRadio" [value]="0" (change)="firstCharts()"
+                       [(ngModel)]="singleMovieChMode">
+              </label>
+            </div>
+            <div class="col-md-3 no-pad-left">
+              <label [ngClass]="{'bg-teal': singleMovieChMode === 2}" class="info-box">
+                <span class="info-box-icon"><i class="fa fa-calculator"></i></span>
+                <span class="info-box-text">Общая сумма</span>
+                <span class="info-box-number">{{regionReports?regionReports.totalAmount:'---'}}<small> сум</small></span>
+                <input type="radio" name="singleMovieRadio" [value]="2" (change)="firstCharts()"
+                       [(ngModel)]="singleMovieChMode">
+              </label>
+            </div>
+            <div class="col-md-12" *ngIf="singleMovieChMovieId; else noSelectedMovie">
+              <div class="row">
+                <div class="col-md-6"><label style="margin-top: 15px;">Общая статистика</label></div>
+                <div class="col-md-6 no-pad-right">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <label style="margin-top: 15px; font-size: 16px">В одном регионе:</label>
+                    </div>
+                    <div class="col-md-6 no-pad-right">
+                      <ng-select [items]="regions" bindLabel="name" bindValue="_id" [(ngModel)]="singleMovieChRegionId"
+                                 (change)="changeRegion()" placeholder="Выберите регион" style="margin-top: 10px"
+                                 [clearable]="false"
+                                 [searchable]="false">
+                      </ng-select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 no-pad-left">
+                  <ngx-charts-bar-vertical [view]="[500, 400]" [scheme]="singleMovieChCommonColors"
+                                           [results]="singleMovieChCommonData"
+                                           [gradient]="true" [xAxis]="true" [yAxis]="true" [showXAxisLabel]="true"
+                                           [showYAxisLabel]="true"
+                                           [xAxisLabel]="'Регионы'" [yAxisLabel]="singleMovieChLabelY">
+                  </ngx-charts-bar-vertical>
+                </div>
+                <div class="col-md-6 no-pad-left">
+                  <ngx-charts-bar-vertical [view]="[500, 400]" [scheme]="singleMovieChTheaterColors"
+                                           [results]="singleMovieChTheaterData"
+                                           [gradient]="true" [xAxis]="true" [yAxis]="true" [showXAxisLabel]="true"
+                                           [showYAxisLabel]="true"
+                                           [xAxisLabel]="'Кинотеатры'" [yAxisLabel]="singleMovieChLabelY">
+                  </ngx-charts-bar-vertical>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- ./box-body -->
+      </div>
+    </div>
+    <div *ngIf="currentRole.typeOfRole === 4" class="row" id="thirdRowOfMovie">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title chart-title"
+              (click)="tableBlockIsOpen = !tableBlockIsOpen"
+              data-toggle="collapse" data-target="#tableBlock">Все отчёты по фильму <span style="font-style: italic;">{{currentMovie.name}}</span></h3>
+          <div class="box-tools pull-right">
+            <button type="button" (click)="tableBlockIsOpen = !tableBlockIsOpen" class="btn btn-box-tool"
+                    data-toggle="collapse" data-target="#tableBlock">
+              <i class="fa fa-lg"
+                 [ngClass]="{'fa-angle-double-up': tableBlockIsOpen, 'fa-angle-double-down': !tableBlockIsOpen}"></i>
+            </button>
+          </div>
+          <!-- filter -->
+        </div>
+        <div id="tableBlock" class="collapse in">
+          <div class="box-body" style="padding: 0">
+            <table class="table table-hover table-bordered table-condensed">
+              <thead>
+              <tr>
+                <th>Дата</th>
+                <th>Кол-во сеансов</th>
+                <th>Кол-во билетов</th>
+                <th>Общая сумма (сум)</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let report of pagedItems">
+                <td>{{report.date|date: 'dd.MM.yyyy'}}</td>
+                <td>{{report.sessionCount}}</td>
+                <td>{{report.ticketCount}}</td>
+                <td>{{report.amount}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="box-footer text-right">
+            <!-- pager -->
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(1)">
+                  <i class="fa fa-angle-double-left"></i>
+                </a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(pager.currentPage - 1)">
+                  <i class="fa fa-angle-left"></i>
+                </a>
+              </li>
+              <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a (click)="setPage(page)">{{page}}</a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.currentPage + 1)">
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.totalPages)">
+                  <i class="fa fa-angle-double-right"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="secondRow" *ngIf="currentRole.typeOfRole === 3">
+      <div class="box box-info" [ngClass]="{'bg-yellow-opacity': singleMovieChMode === 0,
+                           'bg-blue-opacity': singleMovieChMode === 1,
+                           'bg-teal-opacity': singleMovieChMode === 2 }">
+        <div class="box-header">
+          <h3 data-toggle="collapse"
+              data-target="#singleMovieChBlock"
+              class="box-title chart-title"
+              (click)="singleMovieChIsOpen = !singleMovieChIsOpen">Данные одного фильма</h3>
+          <div class="box-tools pull-right">
+            <button type="button"
+                    (click)="singleMovieChIsOpen = !singleMovieChIsOpen"
+                    class="btn btn-box-tool"
+                    data-toggle="collapse"
+                    data-target="#singleMovieChBlock">
+              <i class="fa fa-lg"
+                 [ngClass]="{'fa-angle-double-up': singleMovieChIsOpen, 'fa-angle-double-down': !singleMovieChIsOpen}"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body collapse in" id="singleMovieChBlock">
+          <div class="row">
+            <div class="col-md-1">
+              <label style="margin-top: 15px; font-size: 16px">Фильм:</label>
+            </div>
+            <div class="col-md-2 no-pad-right">
+              <ng-select [items]="movies" bindLabel="name" bindValue="_id" [(ngModel)]="singleMovieChMovieId"
+                         (change)="changeMovieGuest()"
+                         placeholder="Выберите фильм" style="margin-top: 10px" [clearable]="false" [searchable]="false">
+              </ng-select>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3 no-pad-left">
+              <label [ngClass]="{'bg-yellow': singleMovieChMode === 0}" class="info-box">
+                <span class="info-box-icon"><i class="fa fa-ticket"></i></span>
+                <span class="info-box-text">Всего продано</span>
+                <span class="info-box-number">{{regionReports?regionReports.totlaTicketCount:'---'}}<small> билетов</small></span>
+                <input type="radio" name="singleMovieRadio" [value]="0" (change)="firstChartsGuest()"
+                       [(ngModel)]="singleMovieChMode">
+              </label>
+            </div>
+            <div class="col-md-3 no-pad-left">
+              <label [ngClass]="{'bg-teal': singleMovieChMode === 2}" class="info-box">
+                <span class="info-box-icon"><i class="fa fa-calculator"></i></span>
+                <span class="info-box-text">Общая сумма</span>
+                <span class="info-box-number">{{regionReports?regionReports.totalAmount:'---'}}<small> сум</small></span>
+                <input type="radio" name="singleMovieRadio" [value]="2" (change)="firstChartsGuest()"
+                       [(ngModel)]="singleMovieChMode">
+              </label>
+            </div>
+            <div class="col-md-12" *ngIf="singleMovieChMovieId; else noSelectedMovie">
+              <div class="row">
+                <div class="col-md-6"><label style="margin-top: 15px;">Общая статистика</label></div>
+                <div class="col-md-6 no-pad-right">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <label style="margin-top: 15px; font-size: 16px">В одном регионе:</label>
+                    </div>
+                    <div class="col-md-6 no-pad-right">
+                      <ng-select [items]="regions" bindLabel="name" bindValue="_id" [(ngModel)]="singleMovieChRegionId"
+                                 (change)="changeRegionGuest()" placeholder="Выберите регион" style="margin-top: 10px"
+                                 [clearable]="false"
+                                 [searchable]="false">
+                      </ng-select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 no-pad-left">
+                  <ngx-charts-bar-vertical [view]="[500, 400]" [scheme]="singleMovieChCommonColors"
+                                           [results]="singleMovieChCommonData"
+                                           [gradient]="true" [xAxis]="true" [yAxis]="true" [showXAxisLabel]="true"
+                                           [showYAxisLabel]="true"
+                                           [xAxisLabel]="'Регионы'" [yAxisLabel]="singleMovieChLabelY">
+                  </ngx-charts-bar-vertical>
+                </div>
+                <div class="col-md-6 no-pad-left">
+                  <ngx-charts-bar-vertical [view]="[500, 400]" [scheme]="singleMovieChTheaterColors"
+                                           [results]="singleMovieChTheaterData"
+                                           [gradient]="true" [xAxis]="true" [yAxis]="true" [showXAxisLabel]="true"
+                                           [showYAxisLabel]="true"
+                                           [xAxisLabel]="'Кинотеатры'" [yAxisLabel]="singleMovieChLabelY">
+                  </ngx-charts-bar-vertical>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- ./box-body -->
+      </div>
+    </div>
+    <div class="row" id="thirdRow" *ngIf="currentRole.typeOfRole === 3">
+      <div class="box box-info" [ngClass]="{'bg-yellow-opacity': severalTheatersChMode === 0,
+                     'bg-teal-opacity': severalTheatersChMode === 2 }">
+        <div class="box-header">
+          <h3 class="box-title chart-title"
+              (click)="severalTheatersChIsOpen = !severalTheatersChIsOpen"
+              data-toggle="collapse" data-target="#severalTheatersChBlock1">Сравнение кинотеатров</h3>
+          <div class="box-tools pull-right">
+            <button type="button" (click)="severalTheatersChIsOpen = !severalTheatersChIsOpen" class="btn btn-box-tool"
+                    data-toggle="collapse" data-target="#severalTheatersChBlock1">
+              <i class="fa fa-lg"
+                 [ngClass]="{'fa-angle-double-up': severalTheatersChIsOpen, 'fa-angle-double-down': !severalTheatersChIsOpen}"></i>
+            </button>
+          </div>
+        </div>
+        <div class="box-body collapse in" id="severalTheatersChBlock1">
+          <div class="row">
+            <div class="col-md-3 no-pad-right">
+              <ng-select style="margin-top: 10px" [items]="theaters" [multiple]="true" [closeOnSelect]="false"
+                         [clearable]="true" [maxSelectedItems]="5" bindLabel="name" bindValue="_id"
+                         [(ngModel)]="severalTheatersChSelectedTheaters"
+                         (close)="severalTheatersCh()" placeholder="Выберите кинотеатры (макс. 5)">
+                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                  <div class="ng-value" *ngFor="let item of (items ? items.slice(0,1): [])">
+                    <span class="ng-value-label">{{item.name}}</span>
+                    <span class="ng-value-icon right" (click)="clear(item)" aria-hidden="true">×</span>
+                  </div>
+                  <div class="ng-value" *ngIf="items.length > 1">
+                    <span class="ng-value-label">ещё {{items.length - 1}}</span>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+            <div class="col-md-3 no-pad-right">
+              <ng-select style="margin-top: 10px" [items]="yearList" bindLabel="name" bindValue="value"
+                         [(ngModel)]="selectedYearTheater"
+                         [clearable]="false" [searchable]="false" (change)="severalTheatersCh()"
+                         placeholder="Выберите год">
+              </ng-select>
+            </div>
+            <div class="col-md-3">
+              <label [ngClass]="{'bg-yellow': severalTheatersChMode === 0}" class="info-box">
+                <span class="info-box-icon"><i class="fa fa-ticket"></i></span>
+                <span class="info-box-text">Всего продано</span>
+                <span class="info-box-number">{{comparisonTheaterTicketCount?comparisonTheaterTicketCount:'---'}}<small>
+                  билетов</small></span>
+                <input type="radio" name="optionTheaterRadios" [value]="0" (change)="severalTheatersCh()"
+                       [(ngModel)]="severalTheatersChMode">
+              </label>
+            </div>
+            <div class="col-md-3 no-pad-left">
+              <label [ngClass]="{'bg-teal': severalTheatersChMode === 2}" class="info-box bg-teal">
+                <span class="info-box-icon"><i class="fa fa-calculator"></i></span>
+                <span class="info-box-text">Общая сумма</span>
+                <span class="info-box-number">{{comparisonTheaterAmount?comparisonTheaterAmount:'---'}}<small> сум</small></span>
+                <input type="radio" name="optionTheaterRadios" [value]="2" (change)="severalTheatersCh()"
+                       [(ngModel)]="severalTheatersChMode">
+              </label>
+            </div>
+            <div class="col-md-12" *ngIf="severalTheaterChData.length !== 0; else noSelectedTheaters">
+              <ngx-charts-line-chart [view]="[1050, 300]" [scheme]="severalTheatersChColor"
+                                     [results]="severalTheaterChData"
+                                     [xAxis]="true" [yAxis]="true" [legend]="false" [showXAxisLabel]="true"
+                                     [showYAxisLabel]="true"
+                                     [xAxisLabel]="'Месяцы'" [yAxisLabel]="severalTheatersChLabelY"
+                                     (select)="onSelect($event)">
+              </ngx-charts-line-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="fourthRow" *ngIf="currentRole.typeOfRole === 3">
+      <div class="box box-info" [ngClass]="{'bg-yellow-opacity': severalRegionsChMode === 0,
+                       'bg-teal-opacity': severalRegionsChMode === 2 }">
+        <div class="box-header">
+          <h3 class="box-title chart-title"
+              (click)="severalRegionsChIsOpen = !severalRegionsChIsOpen"
+              data-toggle="collapse" data-target="#severalTheatersChBlock">Сравнение региона</h3>
+          <div class="box-tools pull-right">
+            <button type="button" (click)="severalRegionsChIsOpen = !severalRegionsChIsOpen" class="btn btn-box-tool"
+                    data-toggle="collapse" data-target="#severalTheatersChBlock">
+              <i class="fa fa-lg"
+                 [ngClass]="{'fa-angle-double-up': severalRegionsChIsOpen, 'fa-angle-double-down': !severalRegionsChIsOpen}"></i>
+            </button>
+          </div>
+        </div>
+        <div class="box-body collapse in" id="severalTheatersChBlock">
+          <div class="row">
+            <div class="col-md-3 no-pad-right">
+              <ng-select style="margin-top: 10px" [items]="regions" [multiple]="true" [closeOnSelect]="false"
+                         [clearable]="true" [maxSelectedItems]="5" bindLabel="name" bindValue="_id"
+                         [(ngModel)]="severalRegoinsChSelectedRegions"
+                         (close)="severalRegionCh()" placeholder="Выберите регионы (макс. 5)">
+                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                  <div class="ng-value" *ngFor="let item of (items ? items.slice(0,1): [])">
+                    <span class="ng-value-label">{{item.name}}</span>
+                    <span class="ng-value-icon right" (click)="clear(item)" aria-hidden="true">×</span>
+                  </div>
+                  <div class="ng-value" *ngIf="items.length > 1">
+                    <span class="ng-value-label">ещё {{items.length - 1}}</span>
+                  </div>
+                </ng-template>
+              </ng-select>
+            </div>
+            <div class="col-md-3 no-pad-right">
+              <ng-select style="margin-top: 10px" [items]="yearList" bindLabel="name" bindValue="value"
+                         [(ngModel)]="selectedYearRegion"
+                         [clearable]="false" [searchable]="false" (change)="severalRegionCh()"
+                         placeholder="Выберите год">
+              </ng-select>
+            </div>
+            <div class="col-md-3">
+              <label [ngClass]="{'bg-yellow': severalRegionsChMode === 0}" class="info-box">
+                <span class="info-box-icon"><i class="fa fa-ticket"></i></span>
+                <span class="info-box-text">Всего продано</span>
+                <span class="info-box-number">{{comparisonRegionTicketCount?comparisonRegionTicketCount:'---'}}<small>
+                  билетов</small></span>
+                <input type="radio" name="optionRegionRadios" [value]="0" (change)="severalRegionCh()"
+                       [(ngModel)]="severalRegionsChMode">
+              </label>
+            </div>
+            <div class="col-md-3 no-pad-left">
+              <label [ngClass]="{'bg-teal': severalRegionsChMode === 2}" class="info-box bg-teal">
+                <span class="info-box-icon"><i class="fa fa-calculator"></i></span>
+                <span class="info-box-text">Общая сумма</span>
+                <span class="info-box-number">{{comparisonRegionAmount?comparisonRegionAmount:'---'}}<small> сум</small></span>
+                <input type="radio" name="optionRegionRadios" [value]="2" (change)="severalRegionCh()"
+                       [(ngModel)]="severalRegionsChMode">
+              </label>
+            </div>
+            <div class="col-md-12" *ngIf="severalReagionChData.length !== 0; else noSelectedRegion">
+              <ngx-charts-line-chart [view]="[1050, 300]" [scheme]="severalRegionsChColor"
+                                     [results]="severalReagionChData"
+                                     [xAxis]="true" [yAxis]="true" [legend]="false" [showXAxisLabel]="true"
+                                     [showYAxisLabel]="true"
+                                     [xAxisLabel]="'Месяцы'" [yAxisLabel]="severalRegionsChLabelY"
+                                     (select)="onSelect($event)">
+              </ngx-charts-line-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="fifthRow" *ngIf="currentRole.typeOfRole === 3">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title chart-title"
+              (click)="tableMoviesIsOpen = !tableMoviesIsOpen"
+              data-toggle="collapse"
+              data-target="#tableMoviesBlock">Все фильмы</h3>
+          <div class="box-tools pull-right">
+            <button type="button" (click)="tableMoviesIsOpen = !tableMoviesIsOpen" class="btn btn-box-tool"
+                    data-toggle="collapse"
+                    data-target="#tableMoviesBlock">
+              <i class="fa fa-lg"
+                 [ngClass]="{'fa-angle-double-up': !tableMoviesIsOpen,'fa-angle-double-down': tableMoviesIsOpen}"></i>
+            </button>
+          </div>
+        </div>
+        <div id="tableMoviesBlock" class="collapse in">
+          <div class="box-body no-padding">
+            <table class="table table-bordered table-hover">
+              <thead>
+              <tr>
+                <th>Название</th>
+                <th>Кол-во сеансов</th>
+                <th>Продано билетов</th>
+                <th>Средняя цена</th>
+                <th>Общая сумма</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let movie of pagedItems">
+                <td>{{movie.name}}</td>
+                <td>{{movie.sessionCount}}</td>
+                <td>{{movie.ticketCount}}</td>
+                <td>{{movie.price|number: '0.1'}}</td>
+                <td>{{movie.overall}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="box-footer">
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(1)">
+                  <i class="fa fa-angle-double-left"></i>
+                </a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(pager.currentPage - 1)">
+                  <i class="fa fa-angle-left"></i>
+                </a>
+              </li>
+              <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a (click)="setPage(page)">{{page}}</a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.currentPage + 1)">
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </li>
+              <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.totalPages)">
+                  <i class="fa fa-angle-double-right"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #noSelectedMovie>
+  <div class="col-md-12 text-center text-muted" style="height: 400px; padding-top: 50px;">
+    <h2>Выберите фильм из списка, чтобы отобразился график</h2>
+  </div>
+</ng-template>
+
+<ng-template #noSelectedTheaters>
+  <div class="col-md-12 text-center text-muted" style="height: 400px; padding-top: 150px;">
+    <h2>Выберите несколько кинотеатров из списка, чтобы отобразился график</h2>
+  </div>
+</ng-template>
+
+<ng-template #noSelectedRegion>
+  <div class="col-md-12 text-center text-muted" style="height: 400px; padding-top: 150px;">
+    <h2>Выберите несколько регионов из списка, чтобы отобразился график</h2>
+  </div>
+</ng-template>

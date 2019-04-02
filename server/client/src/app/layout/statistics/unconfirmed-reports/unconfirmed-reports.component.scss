@@ -1,0 +1,56 @@
+
+.fa-eye,
+.fa-check-square-o,
+.fa-ban {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 5px 4px 4px 5px;
+}
+
+.fa-eye:hover {
+  border: 1px solid rgb(110, 168, 255);
+  color: rgb(110, 168, 255);;
+  cursor: pointer;
+}
+
+.fa-check-square-o:hover {
+  border: 1px solid #00a65a;
+  color: #00a65a;
+  cursor: pointer;
+}
+
+.fa-ban:hover {
+  border: 1px solid #DC3545;
+  color: #DC3545;
+  cursor: pointer;
+}
+
+.table thead tr th,
+.table tbody tr td {
+  text-align: center;
+}
+
+ul {
+  float: right;
+  li:hover {
+    cursor: pointer;
+  }
+}
+
+.pagination {
+  margin: 0;
+}
+
+.box-footer {
+  border: none;
+}.fa-check {
+  color: #DC3545
+}
+
+.fa-save {
+  color: #00a65a
+}
+
+.fa-clock-o {
+  color: #64ABDE
+}
