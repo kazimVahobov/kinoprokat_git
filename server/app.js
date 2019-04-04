@@ -53,7 +53,6 @@ app.use('/api/contract', contractRoutes)
 app.use('/api/theater-report', theaterReportsRoutes)
 app.use('/api/distributor-report', distributorReportsRoutes)
 
-if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/dist/client'))
   
     app.get('*', (req, res) => {
@@ -63,7 +62,6 @@ if (process.env.NODE_ENV === 'production') {
         )
       )
     })
-  }
 
 app.get('/', (req, res) => {
     res.status(200).json({
