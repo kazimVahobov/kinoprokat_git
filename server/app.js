@@ -22,8 +22,6 @@ const app = express();
 
 //подключение к базу даных
 mongoose.connect(keys.mongoURI)
-    .then(() => console.log('MongoDB connected.'))
-    .catch((err) => console.log(err))
 
 //Добавление статический админа
 staticAdmin.createStaticAdmin();
