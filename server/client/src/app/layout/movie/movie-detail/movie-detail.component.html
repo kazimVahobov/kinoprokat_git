@@ -1,0 +1,146 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4" style="padding: 0">
+        <h3 style="display: inline;">
+          Подробная информация
+        </h3>
+      </div>
+      <div style="cursor: pointer" class="col-md-4 pull-right text-right">
+        <a [routerLink]="['/movie']">
+          <span class="fa fa-long-arrow-left"></span>
+          К списку фильмов
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-success">
+        <div class="box-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-3">
+                <label>Название фильма:</label>
+                <p class="main-label">{{model.name}} </p>
+              </div>
+              <div class="col-md-3">
+                <label>Оригинальное название:</label>
+                <p class="main-label">{{model.originalName}}</p>
+              </div>
+              <div class="col-md-2">
+                <label>Страна:</label>
+                <p class="main-label">{{model.country}}</p>
+              </div>
+              <div class="col-md-1">
+                <label>Год:</label>
+                <p class="main-label">{{model.yearMovie}}</p>
+              </div>
+              <div class="col-md-3">
+                <label>Студия:</label>
+                <p class="main-label">{{model.studio}}</p>
+              </div>
+            </div>
+            <hr style="margin: 5px 15px 15px 15px">
+            <div class="row">
+              <div class="col-md-2">
+                <label>Рег. номер:</label>
+                <p class="main-label">{{model.regNum}}</p>
+              </div>
+              <div class="col-md-3">
+                <label>Режиссёр:</label>
+                <p class="main-label">{{model.director}} </p>
+              </div>
+              <div class="col-md-3">
+                <label>Жанр:</label>
+                <p class="main-label">{{model.genre}}</p>
+              </div>
+              <div class="col-md-1">
+                <label>Язык:</label>
+                <p class="main-label">{{model.language}}</p>
+              </div>
+              <div class="col-md-3">
+                <label>Дата премьеры:</label>
+                <p class="main-label">{{model.premiereDate| date: 'dd.MM.yyyy'}}</p>
+              </div>
+            </div>
+            <hr style="margin: 5px 15px 15px 15px">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Возраст. ограничение:</label>
+                    <p class="second-label">{{model.recomAge}}</p>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Формат видео:</label>
+                    <p *ngIf="model.formatVideo; else noformat" class="second-label">{{model.formatVideo}}</p>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Формат аудио:</label>
+                    <p *ngIf="model.formatAudio; else noformat" class="second-label">{{model.formatAudio}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10" style="border-left: 1px solid #eee; min-height: 220px;">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Актёры:</label>
+                    <p *ngIf="model.actor; else noactor" class="second-label">{{model.actor}}</p>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Краткое описание:</label>
+                    <p *ngIf="model.comment; else nocomment" class="second-label">{{model.comment}}</p>
+                  </div>
+                  <div class="col-md-12">
+                    <div style="cursor: pointer" class="col-md-4 pull-right text-right">
+                      <a (click)="grpuViewModel()">
+                        Открыть ГРПУ
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div bsModal #grpuView="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-sizes-name1" class="modal-title pull-left">ГРПУ</h4>
+        <button type="button" class="close pull-right" (click)="grpuView.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="pdf-container col-md-12">
+            <div>
+              <pdf-viewer [src]="pdfSrc" [show-all]="false" style="display: block;"></pdf-viewer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noformat>
+  <span style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Формат не указан;)</span>
+</ng-template>
+
+<ng-template #nocomment>
+  <span style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Описание фильма не указано;)</span>
+</ng-template>
+
+<ng-template #noactor>
+  <span style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Ни одного актёра не указано;)</span>
+</ng-template>

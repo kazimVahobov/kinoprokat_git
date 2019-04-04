@@ -1,0 +1,180 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4" style="padding: 0">
+        <h3 style="display: inline;">
+          Подробная информация
+        </h3>
+      </div>
+      <div style="cursor: pointer"  class="col-md-4 pull-right text-right">
+        <a (click)="backToList()">
+          <span class="fa fa-long-arrow-left"></span>
+          К списку кинотеатров
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-success">
+        <div class="box-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <h2>{{model.name?model.name:''}} </h2>
+              </div>
+              <div class="col-md-5">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Местоположение:</label>
+                    <p class="main-label">
+                      {{model.regionId| manual:regions}}<span *ngIf="model.address">, {{model.address?model.address:''}}</span>
+                    </p>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Режим работы:</label>
+                    <div class="row">
+                      <div *ngFor="let day of days; let i = index" class="col-md-4" style="margin-bottom: 5px">
+                        <span class="second-label">{{day}}: </span>
+                        <span class="second-label" *ngIf="model.workTime[i]">
+                          <span *ngIf="model.workTime[i].weekDay?model.workTime[i].weekDay:0; else outday">
+                            {{model.workTime[i].start}} - {{model.workTime[i].end}}
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label>Кассовый аппарат:</label>
+                    <p class="second-label">
+                      <span *ngIf="!model.cashRegister">не </span>
+                      имеется
+                    </p>
+                  </div>
+                  <div class="col-md-4">
+                    <label>Терминал:</label>
+                    <p class="second-label">
+                      <span *ngIf="!model.terminal">не </span>
+                      имеется
+                    </p>
+                  </div>
+                  <div class="col-md-4">
+                    <label>Лицензия билетов:</label>
+                    <p class="second-label">
+                      <span *ngIf="!model.ticketLic">не </span>
+                      имеется
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7" style="border-left: 1px solid #eee; min-height: 160px;">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Руководитель:</label>
+                    <p *ngIf="model.directorId; else nodirector" class="main-label">{{model.directorId|manual: staff:
+                      'lastName'}}</p>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Сотрудники:</label>
+                    <table *ngIf="staff.length !== 0; else nostaff" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                        <th>Ф. И. О.</th>
+                        <th>Роль</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let user of staff">
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.roleId|manual: roles}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr style="margin: 10px 15px">
+            <div class="row" style="padding-bottom: 20px;">
+              <div class="col-md-5">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Оборудование:</label>
+                    <p *ngIf="model.equipment; else noequipment" class="second-label">{{model.equipment}}</p>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Безопасность:</label>
+                    <p *ngIf="model.security; else nosecurity" class="second-label">{{model.security}}</p>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Внешняя реклама:</label>
+                    <p *ngIf="model.outAdv; else noOutAdv" class="second-label">{{model.outAdv}}</p>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Внутреняя реклама:</label>
+                    <p *ngIf="model.inAdv; else noInAdv" class="second-label">{{model.inAdv}}</p>
+                  </div>
+                  <div *ngIf="isRKM"  class="col-md-12">
+                      <label>DCP номер:</label>
+                      <p  class="second-label">{{model.dcpCode}}</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-7" style="border-left: 1px solid #eee;">
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                        <th>Наименование зала</th>
+                        <th class="text-center">Кол-во мест</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let hole of model.holes">
+                        <td>{{hole.name}}</td>
+                        <td class="text-center">{{hole.placeCount}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<ng-template #outday>
+  <span>выходной</span>
+</ng-template>
+
+<ng-template #nodirector>
+  <span style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Руководитель не указан;)</span>
+</ng-template>
+
+<ng-template #nostaff>
+  <span class="text-center" style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Ни одного сотрудника не указано;)</span>
+</ng-template>
+
+<ng-template #noequipment>
+  <span style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Информация по оборудованию отсутствует;)</span>
+</ng-template>
+
+<ng-template #nosecurity>
+  <span style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Информация по безопасности отсутствует;)</span>
+</ng-template>
+
+<ng-template #noOutAdv>
+  <span style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Информация по внешней рекламе отсутствует;)</span>
+</ng-template>
+
+<ng-template #noInAdv>
+  <span style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Информация по внутренней рекламе отсутствует;)</span>
+</ng-template>

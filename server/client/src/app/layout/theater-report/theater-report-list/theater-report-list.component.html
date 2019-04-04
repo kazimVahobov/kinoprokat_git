@@ -1,0 +1,199 @@
+<section class="content-header">
+  <div class="row">
+    <div class="col-md-2">
+      <h3 style="display: inline;">
+        Отчёты
+      </h3>
+    </div>
+    <div class="col-md-4 col-md-offset-6">
+      <div class="col-md-5" style="padding-right: 0 !important;">
+        <div class="input-group">
+          <input type="text"
+                 class="form-control"
+                 [bsConfig]="bsConfig"
+                 #dp="bsDatepicker"
+                 [(ngModel)]="currentDate"
+                 placeholder="Укажите месяц"
+                 bsDatepicker (onHidden)="load()">
+          <span class="input-group-addon">
+        <span popover="Сбросить"
+              triggers="mouseenter:mouseleave"
+              *ngIf="currentDate !== null"
+              (click)="clearDatapicker()"
+              class="fa fa-remove">
+        </span>
+      </span>
+        </div>
+      </div>
+      <div class="col-md-7" style="padding: 0 !important;">
+        <div class="btn-group pull-right" role="group" aria-label="...">
+          <button class="btn my-btn" popover="Обновить"
+                  triggers="mouseenter:mouseleave">
+              <span class="fa fa-refresh fa-lg"  (click)="load()"></span>
+          </button>
+          <button *ngIf="isCreate" [routerLink]="['new']" class="btn btn-success">
+            <span class="fa fa-plus" style="margin-right: 5px"></span>
+            Новый отчёт
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box">
+        <div class="box-body" style="padding: 0">
+          <table class="table table-hover table-bordered table-condensed">
+            <thead>
+            <tr>
+              <th></th>
+              <th>Дата</th>
+              <th>Кол-во фильмов</th>
+              <th>Кол-во сеансов</th>
+              <th>Кол-во билетов</th>
+              <th>Общая сумма</th>
+              <th>Передвижной</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let report of pagedItems">
+              <td>
+                <span *ngIf="report.sent && report.confirm"
+                      class="fa fa-check fa-lg"
+                      popover="Подтверждено"
+                      triggers="mouseenter:mouseleave"></span>
+                <span *ngIf="report.sent && !report.confirm"
+                      class="fa fa-clock-o fa-lg"
+                      popover="В ожидании"
+                      triggers="mouseenter:mouseleave"></span>
+                <span *ngIf="!report.sent && !report.confirm"
+                      class="fa fa-save fa-lg"
+                      popover="Сохранено"
+                      triggers="mouseenter:mouseleave"></span>
+              </td>
+              <td>{{report.date|date: 'dd.MM.yyyy'}}</td>
+              <td>{{report.movies.length}}</td>
+              <td>{{report.sessionCount}}</td>
+              <td>{{report.ticketCount}}</td>
+              <td>{{report.summ}}</td>
+              <td>
+                <span *ngIf="report.withoutCont; else noCount">Имеется</span>
+                <ng-template #noCount><span>Не имеется</span></ng-template>
+              </td>
+              <td style="width: 5%">
+                  <span popover="Подробнее" (click)="detailRouter(report._id)" triggers="mouseenter:mouseleave"
+                        class="fa fa-eye">
+                  </span>
+              </td>
+              <td style="width: 7%" *ngIf="!report.sent && !report.confirm">
+                  <span popover="Отправить" (click)="sendReport(report)" triggers="mouseenter:mouseleave"
+                        class="fa fa-angle-double-right fa-send">
+                  </span>
+              </td>
+              <td style="width: 7%" *ngIf="(!report.sent && !report.confirm) && (isCreate || isEdit)">
+                  <span popover="Редактировать" *ngIf="isEdit" [routerLink]="['edit', report._id]"
+                        triggers="mouseenter:mouseleave"
+                        class="fa fa-edit">
+                  </span>
+              </td>
+              <td style="width: 7%" *ngIf="!report.sent && !report.confirm">
+                  <span popover="Удалить" *ngIf="isDelete" (click)="deleteReport(report)"
+                        triggers="mouseenter:mouseleave" class="fa fa-trash">
+                  </span>
+              </td>
+              <td colspan="3" *ngIf="report.sent && !report.confirm" class="text-center">
+                <span>Отправлено - Не подтверждено</span>
+              </td>
+              <td colspan="3" *ngIf="report.sent && report.confirm" class="text-center">
+                <span>Отправлено - Подтверждено</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box-footer text-right">
+          <!-- pager -->
+          <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(1)">
+                <i class="fa fa-angle-double-left"></i>
+              </a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(pager.currentPage - 1)">
+                <i class="fa fa-angle-left"></i>
+              </a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+              <a (click)="setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.currentPage + 1)">
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.totalPages)">
+                <i class="fa fa-angle-double-right"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--<td style="width: 5%">-->
+<!--<span *ngIf="report.sent"-->
+<!--popover="Отправлено"-->
+<!--triggers="mouseenter:mouseleave"-->
+<!--class="fa fa-angle-double-right disabledOption fa-lg">-->
+<!--</span>-->
+<!--<span *ngIf="!report.sent"-->
+<!--[routerLink]="['detail', report._id]"-->
+<!--popover="Отправить"-->
+<!--triggers="mouseenter:mouseleave"-->
+<!--class="fa fa-angle-double-right enabled fa-lg">-->
+<!--</span>-->
+<!--</td>-->
+<!--<td style="width: 5%">-->
+<!--<span popover="Подробнее"-->
+<!--[routerLink]="['detail', report._id]"-->
+<!--triggers="mouseenter:mouseleave"-->
+<!--class="fa fa-eye">-->
+<!--</span>-->
+<!--</td>-->
+<!--<td style="width: 5%">-->
+<!--<span *ngIf="report.sent"-->
+<!--popover="Редактирование"-->
+<!--triggers="mouseenter:mouseleave"-->
+<!--class="fa fa-edit disabledOption">-->
+<!--</span>-->
+<!--<span *ngIf="!report.sent"-->
+<!--popover="Редактирование"-->
+<!--[routerLink]="['edit', report._id]"-->
+<!--triggers="mouseenter:mouseleave"-->
+<!--class="fa fa-edit enabled">-->
+<!--</span>-->
+<!--</td>-->
+<!--<td style="width: 5%">-->
+<!--<span *ngIf="report.sent"-->
+<!--popover="Удаление"-->
+<!--triggers="mouseenter:mouseleave"-->
+<!--class="fa fa-trash disabledOption">-->
+<!--</span>-->
+<!--<span *ngIf="!report.sent"-->
+<!--(click)="deleteReport(report)"-->
+<!--popover="Удаление"-->
+<!--triggers="mouseenter:mouseleave"-->
+<!--class="fa fa-trash enabled">-->
+<!--</span>-->
+<!--</td>-->

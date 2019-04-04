@@ -1,0 +1,220 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4" style="padding: 0">
+        <h3 style="display: inline;">
+          {{mainLabel}}
+        </h3>
+      </div>
+      <div style="cursor: pointer"  class="col-md-4 pull-right text-right">
+        <a href="javascript:;" (click)="backPage()">
+          <span class="fa fa-long-arrow-left"></span>
+          К списку отчётов
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-success">
+        <div class="box-body">
+          <div class="container-fluid">
+            <div *ngIf="id else noreport" class="row">
+              <div class="my-panel col-md-4">
+                <div style="margin-bottom: 15px;" class="col-md-12">
+                  <div class="row">
+                    <label for="theaterId">Кинотеатр:</label>
+                    <ng-select [disabled]="!isDistReport"
+                               [items]="theaters"
+                               id="theaterId"
+                               bindLabel="name"
+                               [searchable]="false"
+                               bindValue="_id"
+                               placeholder="Выберите кинотеатр"
+                               (change)="getTheaterReportsForDistributor()"
+                               [clearable]="false"
+                               [(ngModel)]="theaterId">
+                    </ng-select>
+                  </div>
+                </div>
+                <div *ngIf="theaterId !== '0'" class="col-md-12">
+                  <div class="row">
+                    <ul class="list-group list-group-unbordered">
+                      <li class="list-group-item">
+                        <b>Всего фильмов</b> <a class="pull-right">{{report?report.movies.length:0}}</a>
+                      </li>
+                      <li class="list-group-item">
+                        <b>Всего сеансов</b> <a class="pull-right">{{report?overAll(report.holes, 2):0}}</a>
+                      </li>
+                      <li class="list-group-item">
+                        <b>Всего билетов</b> <a class="pull-right">{{report?overAll(report.holes, 4):0}}</a>
+                      </li>
+                      <li class="list-group-item">
+                        <b>Общая сумма</b><a class="pull-right">{{report?overAll(report.holes, 5):0}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="theaterId !== '0' && report" class="col-md-8">
+                <div class="col-md-12"
+                     style="border-bottom: 1px solid #eeeeee; padding-bottom: 10px; margin-bottom: 10px">
+                  <label>Просмотрт по: </label>
+                  <label class="my-radio" [ngClass]="{'my-radio-select': movieMode}">
+                    <input type="radio" name="optionsRadios" [value]="true" [(ngModel)]="movieMode">
+                    фильмам
+                  </label>
+                  <label class="my-radio" [ngClass]="{'my-radio-select': !movieMode}">
+                    <input type="radio" name="optionsRadios" [value]="false" [(ngModel)]="movieMode">
+                    кинозалам
+                  </label>
+                </div>
+                <div *ngIf="report && !movieMode">
+                  <div *ngFor="let hole of report.holes">
+                    <h3>{{hole.holeId|manual: nameOfHoles}}</h3>
+                    <table class="table table-bordered table-condensed table-hover">
+                      <thead>
+                      <tr>
+                        <th>Сеанс</th>
+                        <th>Время</th>
+                        <th>Фильм</th>
+                        <th>Цена 1-го билета</th>
+                        <th>Кол-во билетов</th>
+                        <th>Общая сумма</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let session of hole.sessions; let j = index">
+                        <td>{{j + 1}} - й сеанс</td>
+                        <td>{{session.time}}</td>
+                        <td>{{session.movieId|manual: movies}}</td>
+                        <td>{{session.price}}</td>
+                        <td>{{session.ticketCount}}</td>
+                        <td>{{session.ticketCount * session.price}}</td>
+                      </tr>
+                      <tr class="over-all-tr" >
+                        <td colspan="4">Всего:</td>
+                        <td>{{overAll(hole.sessions, 0)}}</td>
+                        <td>{{overAll(hole.sessions, 1)}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div *ngIf="report && movieMode">
+                  <div *ngFor="let movie of report.movies">
+                    <h3>{{movie.movieId|manual: movies}}</h3>
+                    <table class="table table-bordered table-condensed table-hover">
+                      <thead>
+                      <tr>
+                        <th>Зал</th>
+                        <th>Время</th>
+                        <th>Цена 1-го билета</th>
+                        <th>Кол-во билетов</th>
+                        <th>Общая сумма</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let session of movie.sessions">
+                        <td>{{session.holeId|manual: nameOfHoles}}</td>
+                        <td>{{session.time}}</td>
+                        <td>{{session.price}}</td>
+                        <td>{{session.ticketCount}}</td>
+                        <td>{{session.ticketCount * session.price}}</td>
+                      </tr>
+                      <tr class="over-all-tr">
+                        <td colspan="3">Всего:</td>
+                        <td>{{overAll(movie.sessions, 0)}}</td>
+                        <td>{{overAll(movie.sessions, 1)}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Перечень фильмов, полученных от стороннего дистрибьютора:</label>
+                    <table *ngIf="report.withoutCont.length !== 0; else noMovie"
+                           class="table table-bordered table-condensed table-hover">
+                      <thead>
+                      <tr>
+                        <th>Название фильма</th>
+                        <th>Кол-во сеансов</th>
+                        <th>Дистрибьютор</th>
+                        <th>Страна</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let movie of report.withoutCont">
+                        <td>{{movie.movie}}</td>
+                        <td>{{movie.sessionCount}}</td>
+                        <td>{{movie.distributor}}</td>
+                        <td>{{movie.country}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <ng-template #noMovie>
+                        <span class="text-center"
+                              style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
+                          Ни одного фильма не указано;)
+                        </span>
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="theaterId === '0'" class="col-md-12" style="margin-top: 15px">
+                <div class="row">
+                  <table *ngIf="distReport.mobileTheaters.length !== 0; else noMobile"
+                         class="table table-bordered table-condensed table-hover">
+                    <thead>
+                    <tr>
+                      <th>Название фильма</th>
+                      <th>Место</th>
+                      <th>Время</th>
+                      <th>Цена 1-го билета</th>
+                      <th>Кол-во сеансов</th>
+                      <th>Кол-во билетов</th>
+                      <th>Общая сумма</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let movie of distReport.mobileTheaters">
+                      <td>{{movie.movieId|manual: movies}}</td>
+                      <td>{{movie.place}}</td>
+                      <td>{{movie.time}}</td>
+                      <td>{{movie.price}}</td>
+                      <td>{{movie.sessionCount}}</td>
+                      <td>{{movie.ticketCount}}</td>
+                      <td>{{movie.ticketCount * movie.price}}</td>
+                    </tr>
+                    <tr class="over-all-tr" >
+                      <td colspan="4">Всего:</td>
+                      <td>{{overAll(distReport.mobileTheaters, 3)}}</td>
+                      <td>{{overAll(distReport.mobileTheaters, 0)}}</td>
+                      <td>{{overAll(distReport.mobileTheaters, 1)}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <ng-template #noMobile>
+                        <span class="text-center"
+                              style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
+                          Ни одного фильма не указано;)
+                        </span>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+            <ng-template #noreport>
+                      <span class="text-center"
+                            style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
+                        Ни одного отчёта не указано;)
+                      </span>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

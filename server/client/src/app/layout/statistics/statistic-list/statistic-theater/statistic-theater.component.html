@@ -1,0 +1,215 @@
+<section class="content-header">
+  <div class="row">
+    <div class="col-md-2">
+      <h3 style="display: inline;">
+        Статистика
+      </h3>
+    </div>
+    <div class="col-md-1 pull-right">
+      <button (click)="print();" class="btn btn-primary pull-right">
+        Печать
+      </button>
+    </div>
+  </div>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-success">
+        <div class="box-header no-padding">
+          <div id="conStatistics" class="col-md-12 no-padding">
+            <div class="panel panel-default">
+              <div class="panel-header">
+                <label class="panel-heading"
+                       data-toggle="collapse"
+                       data-target="#parametersPanel"
+                       [ngClass]="{'underline': parametersPanelIsOpen}"
+                       (click)="parametersPanelIsOpen = !parametersPanelIsOpen">Параметры фильтров</label>
+                <div class="box-tools pull-right">
+                  <button type="button"
+                          class="btn btn-box-tool"
+                          (click)="parametersPanelIsOpen = !parametersPanelIsOpen"
+                          data-toggle="collapse"
+                          data-target="#parametersPanel">
+                    <i class="fa fa-lg"
+                       [ngClass]="{'fa-angle-double-up': parametersPanelIsOpen, 'fa-angle-double-down': !parametersPanelIsOpen}"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="panel-body collapse in" id="parametersPanel">
+                <div class="row">
+                  <div class="col-md-3 form-group no-pad-right">
+                    <label style="margin-bottom:10px;"
+                           [ngClass]="{'disabled': selectedMonth != 12 || byMonth}">Фильм:</label>
+                    <ng-select [items]="movies"
+                               bindLabel="name"
+                               [disabled]="selectedMonth != 12 || byMonth"
+                               bindValue="_id"
+                               [clearable]="false"
+                               [searchable]="false"
+                               (change)="changeMovie()"
+                               placeholder="Выберите фыльма"
+                               [(ngModel)]="selectedMovie">
+                    </ng-select>
+                  </div>
+                  <div class="col-md-2 form-group no-pad-right">
+                    <label style="margin-bottom:10px;"
+                           [ngClass]="{'disabled': !isMovie}">Год:</label>
+                    <ng-select [items]="yearList"
+                               bindLabel="name"
+                               [disabled]="!isMovie"
+                               bindValue="value"
+                               [clearable]="false"
+                               [searchable]="false"
+                               (change)="changeYear()"
+                               placeholder="Выберите год"
+                               [(ngModel)]="selectedYear">
+                    </ng-select>
+                  </div>
+                  <div class="col-md-2 form-group no-pad-right">
+                    <label style="margin-bottom:10px;"
+                           [ngClass]="{'disabled': isMovie && !isMonth || !isMovie && isMonth || !isMovie && !isMonth}">Месяц:</label>
+                    <ng-select [items]="months"
+                               bindLabel="name"
+                               [disabled]="isMovie && !isMonth || !isMovie && isMonth || !isMovie && !isMonth"
+                               bindValue="value"
+                               [clearable]="false"
+                               [searchable]="false"
+                               (change)="changeMonth()"
+                               placeholder="Выберите месяц"
+                               [(ngModel)]="selectedMonth">
+                    </ng-select>
+                  </div>
+                  <div class="col-md-1 col-md-offset-4" style="padding-top: 30px">
+                    <button class="btn btn-default pull-right" (click)="refresh()">
+                      Сбросить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div *ngIf="!isOneMonth && isMovie && selectedYear != 0"
+                       class="col-md-2 form-group pull-right">
+                    <div class="my-checkbox type-panel panel panel-default">
+                      <div class="panel-body text-center" (click)="byMonth = !byMonth; ofMonth()">
+                      <span class="fa fa-lg pull-left" style="margin: 5px 0 0 5px;"
+                            [ngClass]="{'fa-check-square-o': byMonth, 'fa-square-o': !byMonth}"></span>
+                        <label>
+                          <input id="byMonth"
+                                 (change)="ofMonth()"
+                                 [(ngModel)]="byMonth"
+                                 type="checkbox">
+                          По месяцам
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12" #printSection  id="print-section">
+                <div class="row" id="printCond">
+                  <div class="col-md-12 text-center" >
+                    <div class="row">
+                      <span class="print-title">{{setPrintTitle()}}</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <table class="table table-bordered title-table">
+                        <tbody>
+                        <tr>
+                          <td class="title-td">Регион:</td>
+                          <td class="content-td">{{currentRegionName}}</td>
+                        </tr>
+                        <tr>
+                          <td class="title-td">Кинотеатр:</td>
+                          <td class="content-td">{{currentTheaterName}}</td>
+                        </tr>
+                        <tr>
+                          <td class="title-td">Фильм:</td>
+                          <td class="content-td">
+                            <span>{{selectedMovie | manual: movies}}</span>
+                          </td>
+                        </tr>
+                        <tr *ngIf="selectedMovie !== 'all'">
+                          <td class="title-td">Дата премьеры:</td>
+                          <td class="content-td">{{selectedMovie | manual: moviesForPrint:'premiereDate':'_id'|date:'dd.MM.yyyy'}} г.</td>
+                        </tr>
+                        <tr>
+                          <td class="title-td">Период отчётов:</td>
+                          <td class="content-td">с {{startDateOfReports}} г. - до {{endDateOfReports}} г.</td>
+                        </tr>
+                        <tr>
+                          <td class="title-td">Подготовил:</td>
+                          <td class="content-td">{{currentUser.lastName + ' ' +
+                            currentUser.firstName.substring(0, 1) + '. ' + currentUser.middleName.substring(0, 1) + '.'}}</td>
+                        </tr>
+                        <tr>
+                          <td class="title-td">Дата подготовки:</td>
+                          <td class="content-td">{{currentDate|date:'dd.MM.yyyy' + ' г.'}}</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div *ngFor="let item of reportsTotal">
+                  <label class="text-center item-title" style="margin-bottom:20px; margin-top:20px;">{{item.name |manual: movies}}</label>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th *ngIf="!isMovie">Дата</th>
+                        <th>Название фильма</th>
+                        <th>Средняя цена</th>
+                        <th>Всего продано бил.</th>
+                        <th>Общая сумма (сум)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let theaterReport of item.report">
+                        <td *ngIf="!isMovie">{{theaterReport.date|date:'dd.MM.yyyy'}}</td>
+                        <td>{{theaterReport.movieId | manual: movies}}</td>
+                        <td>{{(theaterReport.amount/theaterReport.ticketCount)|number: '0.0'}}</td>
+                        <td>{{theaterReport.ticketCount}}</td>
+                        <td>{{theaterReport.amount}}</td>
+                      </tr>
+                      <tr class="over-all-tr">
+                        <td *ngIf="!isMovie" colspan="3">Всего:</td>
+                        <td *ngIf="isMovie" colspan="2">Всего:</td>
+                        <td>{{item.totalTicketCount}}</td>
+                        <td>{{item.totalAmount}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="alert alert-info"
+                     style="margin-bottom:20px; margin-top:20px;"
+                     role="alert">
+                  <div class="row">
+                    <div class="col-md-3 col-md-offset-6">
+                      <label>
+                        <span style="font-weight: normal;">Всего продано: </span>{{totalTicketCount}} бил.
+                      </label>
+                    </div>
+                    <div class="col-md-3">
+                      <label>
+                        <span style="font-weight: normal;">Общая сумма: </span>{{totalAmount}} сум.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

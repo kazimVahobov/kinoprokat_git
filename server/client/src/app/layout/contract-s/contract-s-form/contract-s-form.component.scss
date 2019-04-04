@@ -1,0 +1,34 @@
+.form-control-invalid {
+  border-color: red;
+}
+
+.alert-danger {
+  margin-top: 20px;
+}
+
+.btn-success {
+  margin-right: 5px;
+}
+
+.disabled-label {
+  color: #a6a6a6;
+}
+
+.my-panel {
+  .panel-header {
+    background-color: #eeeeee;
+    border-bottom: 1px solid #dddddd;
+  }
+  .panel-heading {
+    margin-bottom: 0;
+    padding: 3px 12px;
+  }
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none; // <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

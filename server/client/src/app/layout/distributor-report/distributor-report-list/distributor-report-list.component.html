@@ -1,0 +1,85 @@
+<section class="content-header">
+  <div class="row">
+    <div class="col-md-2">
+      <h3 style="display: inline;">
+        Отчёты
+      </h3>
+    </div>
+    <div class="col-md-7 col-md-offset-3">
+      <div class="col-md-4" style="padding-right: 0 !important;">
+        <div *ngIf="currentMode === 0" class="input-group">
+          <input type="text"
+                 class="form-control"
+                 #dp="bsDatepicker"
+                 [(ngModel)]="currentDate"
+                 placeholder="Укажите дату"
+                 bsDatepicker>
+          <span class="input-group-addon">
+            <span popover="Сбросить"
+                  triggers="mouseenter:mouseleave"
+                  *ngIf="currentDate !== null"
+                  (click)="clearDatapicker()"
+                  class="fa fa-remove">
+            </span>
+          </span>
+        </div>
+        <div *ngIf="currentMode === 1" class="input-group">
+          <input type="text"
+                 class="form-control"
+                 [bsConfig]="bsConfig"
+                 #dp="bsDatepicker"
+                 [(ngModel)]="currentDateforDist"
+                 placeholder="Укажите месяц"
+                 bsDatepicker>
+          <span class="input-group-addon">
+            <span popover="Сбросить"
+                  triggers="mouseenter:mouseleave"
+                  *ngIf="currentDateforDist !== null"
+                  (click)="clearDatapicker()"
+                  class="fa fa-remove">
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <ng-select [items]="modes"
+                   bindLabel="name"
+                   bindValue="value"
+                   [clearable]="false"
+                   [(ngModel)]="currentMode"
+                   [searchable]="false">
+        </ng-select>
+      </div>
+      <div class="col-md-4" style="padding: 0">
+        <div class="btn-group pull-right" role="group" aria-label="...">
+          <button class="btn my-btn"
+                  popover="Обновить"
+                  triggers="mouseenter:mouseleave">
+            <span class="fa fa-refresh fa-lg"  (click)="refresh()"></span>
+          </button>
+          <button *ngIf="isCreate"
+                  [routerLink]="['new']"
+                  class="btn btn-success pull-right">
+            <span class="fa fa-plus" style="margin-right: 5px"></span>
+            Новый отчёт
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="text-center text-muted col-md-12" *ngIf="!state">
+      <h1>Подождите, идёт загрузка</h1>
+    </div>
+    <div class="col-md-12">
+      <app-in-report [(currentDate)]="currentDate"
+                     *ngIf="currentMode === 0 && state">
+      </app-in-report>
+      <app-out-report [(currentDateforDist)]="currentDateforDist"
+                      *ngIf="currentMode === 1 && state">
+      </app-out-report>
+    </div>
+  </div>
+</section>
