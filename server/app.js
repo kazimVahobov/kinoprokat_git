@@ -63,7 +63,7 @@ if (process.env.NODE_ENV === 'production') {
     })
   }
 
-app.get('/', (req, res) => {
+app.get('/', function(req, res) {
     res.status(200).json({
         message: 'Server Working!'
     })
@@ -71,4 +71,4 @@ app.get('/', (req, res) => {
 
 const port = process.env.PORT || keys.PORT;
 
-app.listen(port, () => console.log(`Server has been started on ${port}`))
+app.listen(port, function() {console.log(`Server has been started on ${port}`)})
