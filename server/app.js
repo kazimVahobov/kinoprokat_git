@@ -54,7 +54,7 @@ app.use('/api/distributor-report', distributorReportsRoutes)
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/dist/client'))
   
-    app.get('*', function(req, res) {
+    app.get('*', (req, res) => {
       res.sendFile(
         path.resolve(
           __dirname, 'client', 'dist', 'client', 'index.html'
@@ -63,7 +63,7 @@ if (process.env.NODE_ENV === 'production') {
     })
   }
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
     res.status(200).json({
         message: 'Server Working!'
     })
@@ -71,4 +71,4 @@ app.get('/', function(req, res) {
 
 const port = process.env.PORT || keys.PORT;
 
-app.listen(port, function() {console.log(`Server has been started on ${port}`)})
+app.listen(port, () => console.log(`Server has been started on ${port}`))
