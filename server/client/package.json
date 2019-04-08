@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "server": "npm run start --prefix ../server",
     "dev": "concurrently \"npm run server\" \"npm run start\"",
-    "postinstall":  "ng build --output-path dist"
+    "postinstall": "ng build --output-path dist"
   },
   "private": true,
   "dependencies": {
