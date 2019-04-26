@@ -1,7 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ContractService, MovieService, MovieModel, PagerService, PermissionService, DistributorReportService, TheaterReportService } from 'src/app/core';
-import { ModalDirective } from "ngx-bootstrap";
-import { ContractModel, TheaterReportModel, DistributorReportModel } from "../../../core/models";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {
+  ContractService,
+  MovieService,
+  MovieModel,
+  PagerService,
+  PermissionService,
+  DistributorReportService,
+  TheaterReportService
+} from 'src/app/core';
+import {ModalDirective} from "ngx-bootstrap";
+import {ContractModel, TheaterReportModel, DistributorReportModel} from "../../../core/models";
 
 @Component({
   selector: 'app-cinema-list',
@@ -13,7 +21,7 @@ export class MovieListComponent implements OnInit {
   // pager object
   pager: any = {};
   // paged items
-  pagedItems: any[];
+  pagedItems: any[] = [];
   movies: MovieModel[];
   currentDate = new Date();
   @ViewChild('canDeleteModal') canDeleteModal: ModalDirective;
@@ -29,14 +37,14 @@ export class MovieListComponent implements OnInit {
 
   isEdit = false;
   isDelete = false;
-  isCreate = false
+  isCreate = false;
 
   constructor(private service: MovieService,
-    private contractService: ContractService,
-    private pagerService: PagerService,
-    private permissionService: PermissionService,
-    private distributorReportService: DistributorReportService,
-    private theaterReportService: TheaterReportService) {
+              private contractService: ContractService,
+              private pagerService: PagerService,
+              private permissionService: PermissionService,
+              private distributorReportService: DistributorReportService,
+              private theaterReportService: TheaterReportService) {
   }
 
   ngOnInit() {
@@ -64,7 +72,7 @@ export class MovieListComponent implements OnInit {
       this.contractService.getAll().subscribe(contracts => {
         this.contracts = [];
         this.contracts = contracts.filter(i => i.typeOfCont === 0);
-        if (this.contracts) {
+        if (this.contracts.length != 0) {
           this.contracts.forEach(contract => {
             this.movies.forEach(movie => {
               if (contract.movieId === movie._id) {
@@ -178,11 +186,11 @@ export class MovieListComponent implements OnInit {
             this.model.movieId = this.movieForDelete._id
 
             this.service.deleteAllData(this.model).subscribe(res => {
-              this.errorOnDelete = false;
-              this.closeModal();
-              alert(`Фильм ${this.movieForDelete.name} был успешно удалён`);
-              this.getAllCinema();
-            },
+                this.errorOnDelete = false;
+                this.closeModal();
+                alert(`Фильм ${this.movieForDelete.name} был успешно удалён`);
+                this.getAllCinema();
+              },
               error => {
                 this.errorOnDelete = false;
                 this.closeModal();

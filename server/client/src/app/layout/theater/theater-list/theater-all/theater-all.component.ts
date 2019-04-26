@@ -11,7 +11,7 @@ export class TheaterAllComponent implements OnInit {
   users: UserModel[] = [];
   theaterList: TheaterModel[] = [];
   pager: any = {};
-  pagedItems: any[];
+  pagedItems: any[] = [];
 
 regions: RegionModel[];
 

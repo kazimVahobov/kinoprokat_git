@@ -1,6 +1,6 @@
 <div class="box">
   <div class="box-body" style="padding: 0">
-    <table class="table table-hover table-bordered">
+    <table class="table table-hover table-bordered" *ngIf="pagedItems.length > 1 else noUsers">
       <thead>
       <tr>
         <th sortable-column="FullName">
@@ -15,55 +15,57 @@
       </thead>
       <tbody>
       <tr *ngFor="let user of pagedItems">
-        <td *ngIf="user._id !== currentUserId">{{user.lastName}} {{user.firstName?user.firstName.substring(0,
-          1):''}}.
-          {{user.middleName?user.middleName.substring(0, 1):''}}.
+        <td *ngIf="user._id !== currentUserId">
+          {{user.lastName}} {{user.firstName ? user.firstName.substring(0, 1) : ''}}.
+          {{user.middleName ? user.middleName.substring(0, 1) : ''}}.
         </td>
         <td *ngIf="user._id !== currentUserId">{{user.userName}}</td>
         <td *ngIf="user._id !== currentUserId">
-          <span *ngIf="user.distId">{{user.distId?(user.distId|manual:distributors):''}}</span>
-          <span *ngIf="user.theaterId">{{user.theaterId?(user.theaterId|manual:theaters):''}}</span>
+          <span *ngIf="user.distId">{{user.distId ? (user.distId|manual:distributors) : ''}}</span>
+          <span *ngIf="user.theaterId">{{user.theaterId ? (user.theaterId|manual:theaters) : ''}}</span>
           <span *ngIf="!user.theaterId && !user.distId">Гость</span>
         </td>
-        <td *ngIf="user._id !== currentUserId">{{(user.roleId?user.roleId:'Правообладатель фылма ')|manual:roles}}</td>
-        <td *ngIf="user._id !== currentUserId">{{user.email?user.email:''}}</td>
-        <td *ngIf="user._id !== currentUserId">{{user.phone?user.phone:''}}</td>
+        <td
+          *ngIf="user._id !== currentUserId">{{(user.roleId ? user.roleId : 'Правообладатель фильма')|manual:roles}}</td>
+        <td *ngIf="user._id !== currentUserId">{{user.email ? user.email : 'Не указан'}}</td>
+        <td *ngIf="user._id !== currentUserId">{{user.phone ? user.phone : 'Не указан'}}</td>
       </tr>
       </tbody>
     </table>
-    <div class="box-footer">
-      <!-- pager -->
-      <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-        <li [ngClass]="{disabled:pager.currentPage === 1}">
-          <a (click)="setPage(1)">
-            <i class="fa fa-angle-double-left"></i>
-          </a>
-        </li>
-        <li [ngClass]="{disabled:pager.currentPage === 1}">
-          <a (click)="setPage(pager.currentPage - 1)">
-            <i class="fa fa-angle-left"></i>
-          </a>
-        </li>
-        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-          <a (click)="setPage(page)">{{page}}</a>
-        </li>
-        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-          <a (click)="setPage(pager.currentPage + 1)">
-            <i class="fa fa-angle-right"></i>
-          </a>
-        </li>
-        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-          <a (click)="setPage(pager.totalPages)">
-            <i class="fa fa-angle-double-right"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
+  </div>
+  <div class="box-footer" *ngIf="pagedItems.length > 1">
+    <!-- pager -->
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">
+          <i class="fa fa-angle-double-left"></i>
+        </a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">
+          <i class="fa fa-angle-left"></i>
+        </a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">
+          <i class="fa fa-angle-double-right"></i>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 
 
-<div bsModal #resetPassModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-child-name">
+<div bsModal #resetPassModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="dialog-child-name">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -75,14 +77,16 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label for="password">Пароль:</label>
-                <input type="password" [ngClass]="{'form-control-invalid': passError}" class="form-control" id="password"
+                <input type="password" [ngClass]="{'form-control-invalid': passError}" class="form-control"
+                       id="password"
                        formControlName="password" placeholder="Введите пароль">
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
                 <label for="confirmPassword">Повторите пароль:</label>
-                <input type="password" [ngClass]="{'form-control-invalid': passError}" class="form-control" id="confirmPassword"
+                <input type="password" [ngClass]="{'form-control-invalid': passError}" class="form-control"
+                       id="confirmPassword"
                        formControlName="confirmPassword" placeholder="Введите пароль повторно">
               </div>
             </div>
@@ -105,3 +109,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #noUsers>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одного пользователя не добавлено;) Для того, чтобы добавить нового пользователя нажмите кнопку
+      <span style="font-weight: bold">Новый пользователь</span> в правом верхнем углу</span>
+  </div>
+</ng-template>

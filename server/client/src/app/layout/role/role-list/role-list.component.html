@@ -1,18 +1,18 @@
 <section class="content-header">
-    <h1 style="display: inline;">
-        Роли пользователей
-    </h1>
-    <button *ngIf="isCreate"  [routerLink]="['new']" class="btn btn-success pull-right">
-      <span class="fa fa-plus" style="margin-right: 5px"></span>
-      Новая роль
-    </button>
+  <h1 style="display: inline;">
+    Роли пользователей
+  </h1>
+  <button *ngIf="isCreate" [routerLink]="['new']" class="btn btn-success pull-right">
+    <span class="fa fa-plus" style="margin-right: 5px"></span>
+    Новая роль
+  </button>
 </section>
 <section class="content">
   <div class="row">
     <div class="col-md-12">
       <div class="box">
         <div class="box-body" style="padding: 0;">
-          <table class="table table-hover table-bordered">
+          <table class="table table-hover table-bordered" *ngIf="roles.length != 0 else noRoles">
             <thead>
             <tr>
               <th>Название роли</th>
@@ -23,16 +23,27 @@
             <tr *ngFor="let role of roles">
               <td>{{role._id|manual:roles}}</td>
               <td style="width: 5%" class="text-center" [routerLink]="['detail', role._id]">
-                <span popover="Подробнее" triggers="mouseenter:mouseleave" class="fa fa-eye"></span>
-              </td>
-              <td style="width: 5%" class="text-center" [routerLink]="['edit', role._id]">
-                <span *ngIf="isEdit"
-                      popover="Редактировать"
+                <span popover="Подробнее"
                       triggers="mouseenter:mouseleave"
-                      class="fa fa-edit"></span>
+                      class="fa fa-eye">
+                </span>
               </td>
-              <td style="width: 5%" class="text-center">
-                <span *ngIf="isDelete"  popover="Удалить" triggers="mouseenter:mouseleave" class="fa fa-trash" (click)='openModal(role)'></span>
+              <td *ngIf="isEdit"
+                  style="width: 5%"
+                  class="text-center">
+                <span popover="Редактировать"
+                      triggers="mouseenter:mouseleave"
+                      class="fa fa-edit"
+                      [routerLink]="['edit', role._id]"></span>
+              </td>
+              <td *ngIf="isDelete"
+                  style="width: 5%"
+                  class="text-center">
+                <span popover="Удалить"
+                      triggers="mouseenter:mouseleave"
+                      class="fa fa-trash"
+                      (click)='openModal(role)'>
+                </span>
               </td>
             </tr>
             </tbody>
@@ -42,6 +53,7 @@
     </div>
   </div>
 </section>
+
 <div bsModal #canNotDeleteModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
      aria-labelledby="dialog-child-name">
   <div class="modal-dialog modal-dm">
@@ -57,9 +69,8 @@
           <div class="col-md-12">
             <div class="alert alert-success" role="alert">
               <p>
-                Фильм <span style="font-weight: bold;">{{roleForDelete.name}}</span> в настоящее время
-                находится в прокате и указан в актуальных договорах. По этой причине в данный момент Вы не можете удалить данный фильм.
-                Дождитесь окончания сроков проката фильма
+                Роль <span style="font-weight: bold;">{{roleForDelete.name}}</span> указана в качестве роли некоторых
+                пользователей, поэтому её удалить нельзя. Для того, чтобы удалить эту роль необходимо удалить пользователей, к которым привязана данная роль.
               </p>
             </div>
             <div class="pull-right" style="margin-top: 15px">
@@ -74,3 +85,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #noRoles>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одной роли не добавлено;) Для того, чтобы создать новую роль нажмите кнопку <span
+      style="font-weight: bold">Новая роль</span> в правом верхнем углу</span>
+  </div>
+</ng-template>

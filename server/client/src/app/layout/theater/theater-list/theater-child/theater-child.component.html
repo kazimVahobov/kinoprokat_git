@@ -1,6 +1,6 @@
 <div class="box">
   <div class="box-body" style="padding: 0">
-    <table *ngIf="theaterList.length != 0; else notheater" class="table table-bordered table-hover">
+    <table *ngIf="theaterList.length != 0; else noTheater" class="table table-bordered table-hover">
       <thead>
       <tr>
         <th>Кинотеатр</th>
@@ -25,17 +25,17 @@
         <td style="width: 5%" class="text-center" [routerLink]="['detail', theater._id]">
           <span  popover="Подробнее" triggers="mouseenter:mouseleave" class="fa fa-eye"></span>
         </td>
-        <td style="width: 5%" class="text-center" [routerLink]="['edit', theater._id]">
-          <span *ngIf="isEdit"  popover="Редактировать" triggers="mouseenter:mouseleave" class="fa fa-edit"></span>
+        <td style="width: 5%" class="text-center" *ngIf="isEdit">
+          <span [routerLink]="['edit', theater._id]" popover="Редактировать" triggers="mouseenter:mouseleave" class="fa fa-edit"></span>
         </td>
-        <td style="width: 5%" class="text-center" (click)="openModal(theater)">
-          <span *ngIf="isDelete"  popover="Удалить" triggers="mouseenter:mouseleave" class="fa fa-trash"></span>
+        <td style="width: 5%" class="text-center"  *ngIf="isDelete">
+          <span (click)="openModal(theater)" popover="Удалить" triggers="mouseenter:mouseleave" class="fa fa-trash"></span>
         </td>
       </tr>
       </tbody>
     </table>
   </div>
-  <div class="box-footer">
+  <div class="box-footer" *ngIf="theaterList.length != 0">
     <!-- pager -->
     <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
       <li [ngClass]="{disabled:pager.currentPage === 1}">
@@ -67,10 +67,6 @@
 
 <ng-template #nodirectorId>
   <span style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39;">Руководитель не указан;)</span>
-</ng-template>
-
-<ng-template #notheater>
-  <span class="text-center" style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">Ни одного кинотеатра не указано;)</span>
 </ng-template>
 
 <div bsModal #canDeleteModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
@@ -163,3 +159,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #noTheater>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одного кинотеатра не добавлено;) Для того, чтобы добавить новый кинотеатр нажмите кнопку
+      <span style="font-weight: bold">Новый кинотеатр</span> в правом верхнем углу</span>
+  </div>
+</ng-template>

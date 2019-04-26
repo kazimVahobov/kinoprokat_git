@@ -26,7 +26,7 @@ export class ContractFListComponent implements OnInit {
   // pager object
   pager: any = {};
   // paged items
-  pagedItems: any[];
+  pagedItems: any[] = [];
   movies: MovieModel[];
   distributors: DistributorModel[];
   currentUser = JSON.parse(localStorage.getItem('user'));

@@ -21,7 +21,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class UserAllComponent implements OnInit {
 
   pager: any = {};
-  pagedItems: any[];
+  pagedItems: any[] = [];
   passError = false;
   form = new FormGroup({
     password: new FormControl(null, Validators.required),

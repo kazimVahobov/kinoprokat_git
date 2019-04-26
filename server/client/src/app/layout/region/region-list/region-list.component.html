@@ -12,7 +12,7 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-body" style="padding: 0;">
-          <table class="table table-hover table-bordered">
+          <table class="table table-hover table-bordered" *ngIf="regionList.length != 0 else noRegions">
             <thead>
             <tr>
               <th>Название</th>
@@ -37,7 +37,8 @@
                   <span class="fa fa-trash"
                         (click)="openDeleteModal(region)"
                         popover="Удалить"
-                        triggers="mouseenter:mouseleave"></span>
+                        triggers="mouseenter:mouseleave">
+                  </span>
               </td>
             </tr>
             </tbody>
@@ -114,3 +115,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #noRegions>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одного региона не добавлено;) Для того, чтобы добавить новый регион нажмите кнопку
+      <span style="font-weight: bold">Новый регион</span> в правом верхнем углу</span>
+  </div>
+</ng-template>

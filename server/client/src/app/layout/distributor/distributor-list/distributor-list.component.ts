@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {
   ContractModel,
   ContractService,
@@ -17,7 +17,7 @@ import {
   RegionModel,
   RegionService
 } from 'src/app/core';
-import { ModalDirective } from "ngx-bootstrap";
+import {ModalDirective} from "ngx-bootstrap";
 
 @Component({
   selector: 'app-distributor-list',
@@ -27,7 +27,7 @@ import { ModalDirective } from "ngx-bootstrap";
 export class DistributorListComponent implements OnInit {
   users: UserModel[] = [];
   pager: any = {};
-  pagedItems: any[];
+  pagedItems: any[] = [];
   distributors: DistributorModel[];
   currentUser = JSON.parse(localStorage.getItem('user'));
   currentDate = new Date();
@@ -46,17 +46,17 @@ export class DistributorListComponent implements OnInit {
   isDelete = false;
   isCreate = false;
 
-regions: RegionModel[];
+  regions: RegionModel[];
 
   constructor(private service: DistributorService,
-    private userService: UserService,
-    private contractService: ContractService,
-    private pagerService: PagerService,
-    private permissionService: PermissionService,
-    private distReportService: DistributorReportService,
-    private theaterReportService: TheaterReportService,
-    private theaterService: TheaterService,
-    private regionService: RegionService
+              private userService: UserService,
+              private contractService: ContractService,
+              private pagerService: PagerService,
+              private permissionService: PermissionService,
+              private distReportService: DistributorReportService,
+              private theaterReportService: TheaterReportService,
+              private theaterService: TheaterService,
+              private regionService: RegionService
   ) {
   }
 
@@ -91,27 +91,27 @@ regions: RegionModel[];
         this.contractService.getAll().subscribe(contracts => {
           this.contracts = [];
           this.contracts = contracts.filter(i => i.typeOfCont === 1);
-          if(this.contracts) {
-          this.contracts.forEach(cont => {
-            this.distributors.forEach(dist => {
-              if (cont.secondSide === dist._id) {
-                if (this.currentDate < new Date(cont.toDate)) {
-                  dist.canDelete = false;
-                } else if (this.currentDate > new Date(cont.toDate)) {
-                  if (dist.canDelete !== false) {
-                    dist.canDelete = true;
+          if (this.contracts.length != 0) {
+            this.contracts.forEach(cont => {
+              this.distributors.forEach(dist => {
+                if (cont.secondSide === dist._id) {
+                  if (this.currentDate < new Date(cont.toDate)) {
+                    dist.canDelete = false;
+                  } else if (this.currentDate > new Date(cont.toDate)) {
+                    if (dist.canDelete !== false) {
+                      dist.canDelete = true;
+                    }
                   }
+                } else if (!this.contracts.some(i => i.secondSide === dist._id)) {
+                  dist.canDelete = true;
                 }
-              } else if (!this.contracts.some(i => i.secondSide === dist._id)) {
-                dist.canDelete = true;
-              }
+              });
             });
-          });
-        } else {
-          this.distributors.forEach(dist => {
+          } else {
+            this.distributors.forEach(dist => {
               dist.canDelete = true;
-          });
-        }
+            });
+          }
         });
         this.setPage(1);
       }
@@ -185,11 +185,11 @@ regions: RegionModel[];
 
               this.model.distId = this.distForDelete._id;
               this.service.deleteAllData(this.model).subscribe(res => {
-                this.errorOnDelete = false;
-                this.closeModal();
-                alert(`Дистрибьютор ${this.distForDelete.name} был успешно удалён`);
-                this.getAll();
-              },
+                  this.errorOnDelete = false;
+                  this.closeModal();
+                  alert(`Дистрибьютор ${this.distForDelete.name} был успешно удалён`);
+                  this.getAll();
+                },
                 error => {
                   this.errorOnDelete = false;
                   this.closeModal();
@@ -217,6 +217,7 @@ regions: RegionModel[];
     this.pagedItems = this.distributors.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 }
+
 class reportModel {
   distId: string;
   deleteDistReport: DistributorReportModel[];

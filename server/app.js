@@ -53,10 +53,10 @@ app.use('/api/contract', contractRoutes)
 app.use('/api/theater-report', theaterReportsRoutes)
 app.use('/api/distributor-report', distributorReportsRoutes)
 
-    app.use(express.static('client/dist/client'))
-  
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, 'client', 'dist', 'client', 'index.html'))})
+    // app.use(express.static('client/dist/client'))
+    //
+    // app.get('*', (req, res) => {
+    //   res.sendFile(path.join(__dirname, 'client', 'dist', 'client', 'index.html'))})
 
 app.get('/', (req, res) => {
     res.status(200).json({

@@ -12,7 +12,7 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-body" style="padding: 0">
-          <table class="table table-bordered table-hover">
+          <table class="table table-bordered table-hover" *ngIf="pagedItems.length != 0 else noContracts">
             <thead>
             <tr>
               <th></th>
@@ -64,7 +64,7 @@
             </tbody>
           </table>
         </div>
-        <div class="box-footer text-right">
+        <div class="box-footer text-right" *ngIf="pagedItems.length != 0">
           <!-- pager -->
           <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
             <li [ngClass]="{disabled:pager.currentPage === 1}">
@@ -186,3 +186,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #noContracts>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одного договогора не добавлено;) Для того, чтобы добавить новый договогор нажмите кнопку
+      <span style="font-weight: bold">Новый договогор</span> в правом верхнем углу</span>
+  </div>
+</ng-template>
