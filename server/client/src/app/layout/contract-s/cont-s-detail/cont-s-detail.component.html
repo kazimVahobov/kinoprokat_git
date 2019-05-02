@@ -1,0 +1,118 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4" style="padding: 0">
+        <h3 style="display: inline;">
+          Подробная информация
+        </h3>
+      </div>
+      <div style="cursor: pointer" class="col-md-4 pull-right text-right">
+        <a [routerLink]="['/cont-s']">
+          <span class="fa fa-long-arrow-left"></span>
+          К списку договоров
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-success">
+        <div class="box-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-2">
+                <label>№ договора:</label>
+                <p class="main-label">{{model.contNum}}</p>
+              </div>
+              <div class="col-md-3">
+                <label>Название фильма:</label>
+                <p class="main-label">{{model.movieId| manual: movies}}</p>
+              </div>
+              <div class="col-md-2 col-md-offset-1">
+                <label>Начало проката:</label>
+                <p class="main-label">{{model.fromDate|date: 'dd.MM.yyyy'}}</p>
+              </div>
+              <div class="col-md-2">
+                <label>Окончание проката:</label>
+                <p class="main-label">{{model.toDate|date: 'dd.MM.yyyy'}}</p>
+              </div>
+              <div class="col-md-2">
+                <label>Дата заключения:</label>
+                <p class="main-label">{{model.contDate|date: 'dd.MM.yyyy'}}</p>
+              </div>
+            </div>
+            <hr style="margin: 5px 15px 15px 15px">
+            <div class="row">
+              <div class="col-md-2">
+                <label>1-ая сторона</label>
+                <p class="main-label">{{model.firstSide| manual: distributors}}</p>
+              </div>
+              <div class="col-md-3">
+                <label>2-ая сторона</label>
+                <p class="main-label">{{model.secondSide| manual: distributors}}</p>
+              </div>
+              <div class="col-md-3 col-md-offset-1">
+                <label>Условия договора:</label>
+                <p class="main-label" *ngIf="model.condPercent">
+                  {{model.condition}} / {{100 - model.condition}} (%)
+                </p>
+                <p class="main-label" *ngIf="!model.condPercent">{{model.condition}}</p>
+              </div>
+              <div class="col-md-3">
+                <label>Налог:</label>
+                <p class="main-label" *ngIf="model.tax !== null">{{model.tax}}</p>
+                <p class="main-label" *ngIf="model.tax === null">Не указано</p>
+              </div>
+            </div>
+            <hr style="margin: 5px 15px 15px 15px">
+            <div class="row">
+              <div class="col-md-12">
+                <label>Цены билетов:</label>
+              </div>
+              <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th rowspan="2" class="text-center">Типы показов</th>
+                  <th colspan="2" class="text-center">Дневные сеансы</th>
+                  <th colspan="2" class="text-center">Вечерние сеансы</th>
+                </tr>
+                <tr>
+                  <th class="text-center">Детские</th>
+                  <th class="text-center">Взрослые</th>
+                  <th class="text-center">Детские</th>
+                  <th class="text-center">Взрослые</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Стационарные кинотеатры и кинозалы</td>
+                  <td class="text-center">{{model.dayChildPriceTh}}</td>
+                  <td class="text-center">{{model.dayAdultPriceTh}}</td>
+                  <td class="text-center">{{model.eveningChildPriceTh}}</td>
+                  <td class="text-center">{{model.eveningAdultPriceTh}}</td>
+                </tr>
+                <tr>
+                  <td>Группы органиционного типа</td>
+                  <td class="text-center">{{model.dayChildPriceGr}}</td>
+                  <td class="text-center">{{model.dayAdultPriceGr}}</td>
+                  <td class="text-center">{{model.eveningChildPriceGr}}</td>
+                  <td class="text-center">{{model.eveningAdultPriceGr}}</td>
+                </tr>
+                <tr>
+                  <td>Разъездные кинотеатры</td>
+                  <td class="text-center">{{model.dayChildPriceMobile}}</td>
+                  <td class="text-center">{{model.dayAdultPriceGr}}</td>
+                  <td class="text-center">{{model.eveningChildPriceMobile}}</td>
+                  <td class="text-center">{{model.eveningAdultPriceMobile}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

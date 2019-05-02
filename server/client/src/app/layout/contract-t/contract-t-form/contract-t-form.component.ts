@@ -45,8 +45,14 @@ export class ContractTFormComponent implements OnInit {
   role = JSON.parse(localStorage.getItem('role'));
 
   contractMode: boolean;
-  secondPercet: number;
+  secondPercent: number;
 
+  priceControls: string[] = [
+    'dayChildPriceTh',
+    'dayAdultPriceTh',
+    'eveningChildPriceTh',
+    'eveningAdultPriceTh'
+  ];
 
   constructor(private service: ContractService,
               private router: Router,
@@ -127,10 +133,6 @@ export class ContractTFormComponent implements OnInit {
     });
   }
 
-  modelChanged(event: Event) {
-    this.secondPercet = 100 - parseInt((<HTMLInputElement>event.target).value);
-  }
-
   selectedMovie() {
     if (this.form.controls['movieId'].value) {
       let currentContract: ContractModel = new ContractModel();
@@ -147,6 +149,9 @@ export class ContractTFormComponent implements OnInit {
       this.form.controls['toDate'].setValue(new Date(currentContract.toDate));
       this.form.controls['fromDate'].enable();
       this.form.controls['toDate'].enable();
+      // prices
+      this.priceControls.forEach(i => this.form.controls[i].enable());
+      this.setPrices(currentContract);
       if (this.role.typeOfRole !== 2) {
         this.form.controls['secondSide'].reset();
         this.form.controls['secondSide'].enable();
@@ -175,12 +180,14 @@ export class ContractTFormComponent implements OnInit {
     this.form.controls['contDate'].setValue(new Date(contract.contDate));
     this.form.controls['fromDate'].setValue(new Date(contract.fromDate));
     this.form.controls['toDate'].setValue(new Date(contract.toDate));
-    this.form.controls['minPriceTicket'].setValue(contract.minPriceTicket);
     this.form.controls['tax'].setValue(contract.tax);
-    this.contractMode = contract.condPercent
-    if(this.contractMode) {
-      this.secondPercet = 100 - contract.condition
+    this.contractMode = contract.condPercent;
+    if (this.contractMode) {
+      this.secondPercent = 100 - contract.condition
     }
+    // prices
+    this.priceControls.forEach(i => this.form.controls[i].enable());
+    this.setPrices(contract);
   }
 
   createForm() {
@@ -193,13 +200,19 @@ export class ContractTFormComponent implements OnInit {
       contDate: new FormControl(this.currentDate, Validators.required),
       fromDate: new FormControl(null, Validators.required),
       toDate: new FormControl(null, Validators.required),
-      minPriceTicket: new FormControl(null, Validators.required),
       tax: new FormControl(null),
+      // prices
+      dayChildPriceTh: new FormControl(null, Validators.required),
+      dayAdultPriceTh: new FormControl(null, Validators.required),
+      eveningChildPriceTh: new FormControl(null, Validators.required),
+      eveningAdultPriceTh: new FormControl(null, Validators.required),
     });
     this.form.controls['firstSide'].disable();
     this.form.controls['secondSide'].disable();
     this.form.controls['fromDate'].disable();
     this.form.controls['toDate'].disable();
+    // prices
+    this.priceControls.forEach(i => this.form.controls[i].disable());
   }
 
   onSubmit() {
@@ -215,10 +228,15 @@ export class ContractTFormComponent implements OnInit {
     model.toDate = this.form.controls['toDate'].value;
     model.condition = this.form.controls['condition'].value;
     model.contDate = this.form.controls['contDate'].value;
-    model.minPriceTicket = this.form.controls['minPriceTicket'].value;
-    model.condPercent = this.contractMode
+    model.condPercent = this.contractMode;
     model.tax = this.form.controls['tax'].value;
     model.typeOfCont = 2;
+    // prices
+    model.dayChildPriceTh = this.form.controls["dayChildPriceTh"].value;
+    model.dayAdultPriceTh = this.form.controls["dayAdultPriceTh"].value;
+    model.eveningChildPriceTh = this.form.controls["eveningChildPriceTh"].value;
+    model.eveningAdultPriceTh = this.form.controls["eveningAdultPriceTh"].value;
+
     if (this.role.typeOfRole !== 2) {
       model.parentId = this.findContract(this.role.typeOfRole)._id;
     } else if (this.role.typeOfRole === 2) {
@@ -261,5 +279,23 @@ export class ContractTFormComponent implements OnInit {
     this.form.controls['toDate'].reset();
     this.form.controls['fromDate'].disable();
     this.form.controls['toDate'].disable();
+    // prices
+    this.priceControls.forEach(i => {
+      this.form.controls[i].reset();
+      this.form.controls[i].disable();
+    });
+  }
+
+  modelChanged(event: Event) {
+    this.secondPercent = 100 - parseInt((<HTMLInputElement>event.target).value);
+  }
+
+  setPrices(contract: ContractModel) {
+    // prices
+    this.priceControls.forEach(i => this.form.controls[i].enable());
+    this.form.controls['dayChildPriceTh'].setValue(contract.dayChildPriceTh);
+    this.form.controls['dayAdultPriceTh'].setValue(contract.dayAdultPriceTh);
+    this.form.controls['eveningChildPriceTh'].setValue(contract.eveningChildPriceTh);
+    this.form.controls['eveningAdultPriceTh'].setValue(contract.eveningAdultPriceTh);
   }
 }

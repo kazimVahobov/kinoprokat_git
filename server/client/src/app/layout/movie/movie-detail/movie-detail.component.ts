@@ -15,7 +15,7 @@ export class MovieDetailComponent implements OnInit {
   model: MovieModel;
   pdfSrc: string;
   constructor(private service: MovieService,
-    private route: ActivatedRoute) {
+              private route: ActivatedRoute) {
   }
   ngOnInit() {
     this.model = new MovieModel();

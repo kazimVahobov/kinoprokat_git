@@ -8,7 +8,6 @@
         <th>Фильм</th>
         <th>1-ая сторона</th>
         <th>2-ая сторона</th>
-        <th>Условия</th>
         <th>Дата заключения</th>
         <th>Период проката</th>
         <th  *ngIf="isEdit" ></th>
@@ -36,10 +35,6 @@
         <td>{{contract.firstSide|manual:distributors}}</td>
         <td *ngIf="contract.typeOfCont != 2">{{contract.secondSide|manual:distributors}}</td>
         <td *ngIf="contract.typeOfCont == 2">{{contract.secondSide|manual:theaters}}</td>
-        <td>
-          <span *ngIf="contract.condPercent">{{contract.condition + '/' + 100 - contract.condition}}</span>
-          <span *ngIf="!contract.condPercent">{{contract.condition + ' сум'}}</span>
-        </td>
         <td>{{contract.contDate|date: 'dd.MM.yyyy'}}</td>
         <td>{{contract.fromDate|date: 'dd.MM.yyyy'}} - {{contract.toDate|date: 'dd.MM.yyyy'}}</td>
         <td style="width: 5%" class="text-center" [routerLink]="['edit', contract._id]">

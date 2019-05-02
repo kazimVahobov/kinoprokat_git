@@ -20,12 +20,30 @@ const theaterReports = new Schema({
             sessionTime: {
                 type: String
             },
-            price: {
+            dayChildTicketCount: {
                 type: Number
             },
-            ticketCount: {
+            dayAdultTicketCount: {
                 type: Number
-            }
+            },
+            eveningChildTicketCount: {
+                type: Number
+            },
+            eveningAdultTicketCount: {
+                type: Number
+            },
+            dayChildTicketPrice: {
+                type: Number
+            },
+            dayAdultTicketPrice: {
+                type: Number
+            },
+            eveningChildTicketPrice: {
+                type: Number
+            },
+            eveningAdultTicketPrice: {
+                type: Number
+            },
         }
     ],
     withoutCont: [

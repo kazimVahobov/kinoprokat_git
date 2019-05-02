@@ -23,14 +23,15 @@ export class TheaterReportFormComponent implements OnInit {
   movies: MovieModel[];
   movieOfCont: MovieOfCont[];
   tempContracts: ContractModel[];
-  tempReport: TheaterReportModel
+  tempReport: TheaterReportModel;
   selectedDate: Date = new Date();
   currentUser = JSON.parse(localStorage.getItem('user'));
   alertState: number = 0;
   disableDate = true;
   maxDate = new Date();
-  
-  minPriceTicket:number;
+
+  state = false;
+  minPriceTicket: number;
 
   constructor(private service: TheaterReportService,
               private theaterService: TheaterService,
@@ -42,11 +43,12 @@ export class TheaterReportFormComponent implements OnInit {
 
   ngOnInit() {
     this.minPriceTicket = 0;
+    this.state = false;
     this.route.params.subscribe(params => {
 
       this.id = params['id'];
       if (this.id) {
-        this.mainLabel = "Редактирование данных отчёта"
+        this.mainLabel = "Редактирование данных отчёта";
         this.service.getById(this.id).subscribe(report => {
           if (report.sent && report.confirm) {
             this.alertState = 1;
@@ -101,7 +103,14 @@ export class TheaterReportFormComponent implements OnInit {
                   for (let i = 0; i < movies.length; i++) {
                     if (movies[i]._id === cont.movieId) {
                       this.movies.push(movies[i]);
-                      this.movieOfCont.push({movieId: movies[i]._id, contId: cont._id});
+                      this.movieOfCont.push({
+                        movieId: movies[i]._id,
+                        contId: cont._id,
+                        dayChildPriceTh: cont.dayChildPriceTh,
+                        dayAdultPriceTh: cont.dayAdultPriceTh,
+                        eveningChildPriceTh: cont.eveningChildPriceTh,
+                        eveningAdultPriceTh: cont.eveningAdultPriceTh
+                      });
                     }
                   }
                 });
@@ -149,13 +158,18 @@ export class TheaterReportFormComponent implements OnInit {
 
           report.withCont.forEach(item => {
 
-            this.model.holes.find(i => i.holeId === item.holeId).sessions.push({
-              movieId: item.movieId,
-              contractId: item.contractId,
-              time: item.sessionTime,
-              price: item.price,
-              ticketCount: item.ticketCount
-            });
+            if (item.daySession) {
+              this.model.holes.find(i => i.holeId === item.holeId).sessions.push({
+                movieId: item.movieId,
+                contractId: item.contractId,
+                time: item.sessionTime,
+                daySession: item.daySession,
+                childTicketCount: item.dayChildTicketCount,
+                adultTicketCount: item.dayAdultTicketCount,
+                childTicketPrice: item.dayChildTicketPrice,
+                adultTicketPrice: item.dayAdultTicketPrice
+              });
+            }
           });
         });
       });
@@ -163,26 +177,16 @@ export class TheaterReportFormComponent implements OnInit {
 
   }
 
-  // if return 1 - sent and confirmed
-  // if return 2 - sent and no confirmed
-  // if return 3 - no sent and no confirmed
-  setAlert(report: TheaterReportModel) {
-    if (report.sent && report.confirm) {
-      this.alertState = 1;
-    } else if (report.sent && !report.confirm) {
-      this.alertState = 2;
-    } else if (!report.sent && !report.confirm) {
-      this.alertState = 3;
-    }
-  }
-
   addSession(i: number) {
     this.model.holes[i].sessions.push({
       movieId: null,
       contractId: '',
       time: '',
-      price: null,
-      ticketCount: null
+      daySession: true,
+      childTicketCount: null,
+      adultTicketCount: null,
+      childTicketPrice: null,
+      adultTicketPrice: null
     });
   }
 
@@ -195,12 +199,110 @@ export class TheaterReportFormComponent implements OnInit {
       if (this.model.withoutCont.find(item => !item.movie || !item.country || !item.distributor || !item.sessionCount)) {
         result = true;
       }
-      if (this.model.holes.find(item => item.sessions.some(i => !i.time || !i.movieId || !i.ticketCount || !i.price))) {
+      if (this.model.holes.find(item => item.sessions.some(i => !i.time || !i.movieId || !i.childTicketCount || !i.childTicketPrice || !i.adultTicketCount || !i.adultTicketPrice))) {
         result = true;
       }
       return result;
     } else {
       return false;
+    }
+  }
+
+  movieChange(hole: number, session: number) {
+    if (this.model.holes[hole].sessions[session].movieId) {
+      const contract = this.movieOfCont.find(i => i.movieId === this.model.holes[hole].sessions[session].movieId);
+      this.model.holes[hole].sessions[session].contractId = contract.contId;
+      if (this.model.holes[hole].sessions[session].daySession) {
+        this.model.holes[hole].sessions[session].childTicketPrice = contract.dayChildPriceTh;
+        this.model.holes[hole].sessions[session].adultTicketPrice = contract.dayAdultPriceTh;
+      } else {
+        this.model.holes[hole].sessions[session].childTicketPrice = contract.eveningChildPriceTh;
+        this.model.holes[hole].sessions[session].adultTicketPrice = contract.eveningAdultPriceTh;
+      }
+    }
+  }
+
+  submit() {
+    let report: TheaterReportModel = new TheaterReportModel();
+    if (this.id) {
+      report._id = this.id;
+    }
+    report.withCont = [];
+    report.withoutCont = [];
+    report.theaterId = this.model.theaterId;
+    report.date = this.model.date;
+    report.sent = false;
+    report.confirm = false;
+    this.model.holes.forEach(i => {
+      if (i.sessions) {
+        i.sessions.forEach(session => {
+          if (session) {
+            if (session.daySession) {
+              report.withCont.push({
+                movieId: session.movieId,
+                contractId: session.contractId,
+                holeId: i.holeId,
+                sessionTime: session.time,
+                daySession: session.daySession,
+                dayChildTicketCount: session.childTicketCount,
+                dayAdultTicketCount: session.adultTicketCount,
+                dayChildTicketPrice: session.childTicketPrice,
+                dayAdultTicketPrice: session.adultTicketPrice,
+                eveningChildTicketCount: null,
+                eveningAdultTicketCount: null,
+                eveningChildTicketPrice: null,
+                eveningAdultTicketPrice: null
+              });
+            } else {
+              report.withCont.push({
+                movieId: session.movieId,
+                contractId: session.contractId,
+                holeId: i.holeId,
+                sessionTime: session.time,
+                daySession: session.daySession,
+                dayChildTicketCount: null,
+                dayAdultTicketCount: null,
+                dayChildTicketPrice: null,
+                dayAdultTicketPrice: null,
+                eveningChildTicketCount: session.childTicketCount,
+                eveningAdultTicketCount: session.adultTicketCount,
+                eveningChildTicketPrice: session.childTicketPrice,
+                eveningAdultTicketPrice: session.adultTicketPrice
+              });
+            }
+          }
+        });
+      }
+    });
+    if (this.model.withoutCont) {
+      this.model.withoutCont.forEach(i => {
+        report.withoutCont.push({
+          movie: i.movie,
+          distributor: i.distributor,
+          country: i.country,
+          sessionCount: i.sessionCount
+        });
+      });
+    }
+    this.service.save(report).subscribe(() => {
+        alert('Все данные успешно сохранены!');
+        this.router.navigate(['/theater-report']);
+      },
+      error => {
+        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+      });
+  }
+
+  // if return 1 - sent and confirmed
+  // if return 2 - sent and no confirmed
+  // if return 3 - no sent and no confirmed
+  setAlert(report: TheaterReportModel) {
+    if (report.sent && report.confirm) {
+      this.alertState = 1;
+    } else if (report.sent && !report.confirm) {
+      this.alertState = 2;
+    } else if (!report.sent && !report.confirm) {
+      this.alertState = 3;
     }
   }
 
@@ -225,63 +327,10 @@ export class TheaterReportFormComponent implements OnInit {
     }
   }
 
-  movieChange(hole: number, session: number) {
-    if (this.model.holes[hole].sessions[session].movieId) {
-      const contract = this.movieOfCont.find(i => i.movieId === this.model.holes[hole].sessions[session].movieId).contId;
-      this.model.holes[hole].sessions[session].contractId = contract;
-    }
-  }
-
   backToList() {
     if (confirm('Внимание! Все несохранённые данные будут утеряны! Вы действительно хотите вернуться к списку без сохранения?')) {
       this.router.navigate(['/theater-report']);
     }
-  }
-
-  submit() {
-    let report: TheaterReportModel = new TheaterReportModel();
-    if (this.id) {
-      report._id = this.id;
-    }
-    report.withCont = [];
-    report.withoutCont = [];
-    report.theaterId = this.model.theaterId;
-    report.date = this.model.date;
-    report.sent = false;
-    report.confirm = false;
-    this.model.holes.forEach(i => {
-      if (i.sessions) {
-        i.sessions.forEach(session => {
-          if (session) {
-            report.withCont.push({
-              movieId: session.movieId,
-              contractId: session.contractId,
-              holeId: i.holeId,
-              sessionTime: session.time,
-              price: session.price,
-              ticketCount: session.ticketCount
-            });
-          }
-        });
-      }
-    });
-    if (this.model.withoutCont) {
-      this.model.withoutCont.forEach(i => {
-        report.withoutCont.push({
-          movie: i.movie,
-          distributor: i.distributor,
-          country: i.country,
-          sessionCount: i.sessionCount
-        });
-      });
-    }
-    this.service.save(report).subscribe(() => {
-        alert('Все данные успешно сохранены!');
-        this.router.navigate(['/theater-report']);
-      },
-      error => {
-        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
-      });
   }
 }
 
@@ -303,8 +352,11 @@ class SessionModel {
   movieId: string;
   contractId: string;
   time: string;
-  price: number;
-  ticketCount: number;
+  daySession: boolean;
+  childTicketCount: number;
+  adultTicketCount: number;
+  childTicketPrice: number;
+  adultTicketPrice: number;
 }
 
 class WithoutCont {
@@ -317,4 +369,8 @@ class WithoutCont {
 class MovieOfCont {
   movieId: string;
   contId: string;
+  dayChildPriceTh?: number;
+  dayAdultPriceTh?: number;
+  eveningChildPriceTh?: number;
+  eveningAdultPriceTh?: number;
 }

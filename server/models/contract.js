@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 var contract = new Schema({
     movieId: { type: String, required: true },
@@ -10,10 +10,22 @@ var contract = new Schema({
     condition: { type: Number, required: true },
     tax: { type: Number },
     condPercent: { type: Boolean, required: true },
-    minPriceTicket: { type: String},
     contDate: { type: String, required: true },
     fromDate: { type: String, required: true },
     toDate: { type: String, required: true },
-    parentId: { type: String }
-})
-module.exports = mongoose.model('contract', contract)
+    parentId: { type: String },
+    // prices
+    dayChildPriceTh: {type: String},
+    dayAdultPriceTh: {type: String},
+    eveningChildPriceTh: {type: String},
+    eveningAdultPriceTh: {type: String},
+    dayChildPriceGr: {type: String},
+    dayAdultPriceGr: {type: String},
+    eveningChildPriceGr: {type: String},
+    eveningAdultPriceGr: {type: String},
+    dayChildPriceMobile: {type: String},
+    dayAdultPriceMobile: {type: String},
+    eveningChildPriceMobile: {type: String},
+    eveningAdultPriceMobile: {type: String}
+});
+module.exports = mongoose.model('contract', contract);

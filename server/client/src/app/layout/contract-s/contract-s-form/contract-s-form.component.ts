@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {
   ContractModel,
-  MovieModel,
-  DistributorModel,
   ContractService,
-  MovieService,
+  DistributorModel,
   DistributorService,
+  MovieModel,
+  MovieService,
 } from 'src/app/core';
-import {FormGroup, Validators, FormControl} from '@angular/forms';
-import {Router, ActivatedRoute} from '@angular/router';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-contract-s-form',
@@ -36,7 +36,22 @@ export class ContractSFormComponent implements OnInit {
   id: string;
 
   contractMode: boolean;
-  secondPercet: number;
+  secondPercent: number;
+
+  priceControls: string[] = [
+    'dayChildPriceTh',
+    'dayAdultPriceTh',
+    'eveningChildPriceTh',
+    'eveningAdultPriceTh',
+    'dayChildPriceGr',
+    'dayAdultPriceGr',
+    'eveningChildPriceGr',
+    'eveningAdultPriceGr',
+    'dayChildPriceMobile',
+    'dayAdultPriceMobile',
+    'eveningChildPriceMobile',
+    'eveningAdultPriceMobile'
+  ];
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -106,12 +121,16 @@ export class ContractSFormComponent implements OnInit {
     this.form.controls['contDate'].setValue(new Date(contract.contDate));
     this.form.controls['fromDate'].setValue(new Date(contract.fromDate));
     this.form.controls['toDate'].setValue(new Date(contract.toDate));
-    this.form.controls['condition'].setValue(this.model.condition);
-    this.form.controls['tax'].setValue(this.model.tax);
-    this.contractMode = this.model.condPercent
-    if(this.contractMode) {
-      this.secondPercet = 100 - this.model.condition
+    this.form.controls['condition'].setValue(contract.condition);
+    this.form.controls['tax'].setValue(contract.tax);
+    this.contractMode = contract.condPercent;
+
+    if (this.contractMode) {
+      this.secondPercent = 100 - contract.condition
     }
+    // prices
+    this.priceControls.forEach(i => this.form.controls[i].enable());
+    this.setPrices(contract);
   }
 
   createForm() {
@@ -125,15 +144,30 @@ export class ContractSFormComponent implements OnInit {
       fromDate: new FormControl(null, Validators.required),
       toDate: new FormControl(null, Validators.required),
       tax: new FormControl(null),
+      // prices
+      dayChildPriceTh: new FormControl(null, Validators.required),
+      dayAdultPriceTh: new FormControl(null, Validators.required),
+      eveningChildPriceTh: new FormControl(null, Validators.required),
+      eveningAdultPriceTh: new FormControl(null, Validators.required),
+      dayChildPriceGr: new FormControl(null, Validators.required),
+      dayAdultPriceGr: new FormControl(null, Validators.required),
+      eveningChildPriceGr: new FormControl(null, Validators.required),
+      eveningAdultPriceGr: new FormControl(null, Validators.required),
+      dayChildPriceMobile: new FormControl(null, Validators.required),
+      dayAdultPriceMobile: new FormControl(null, Validators.required),
+      eveningChildPriceMobile: new FormControl(null, Validators.required),
+      eveningAdultPriceMobile: new FormControl(null, Validators.required)
     });
     this.form.controls['firstSide'].disable();
     this.form.controls['secondSide'].disable();
     this.form.controls['fromDate'].disable();
     this.form.controls['toDate'].disable();
+    // prices
+    this.priceControls.forEach(i => this.form.controls[i].disable());
   }
 
   modelChanged(event: Event) {
-    this.secondPercet = 100 - parseInt((<HTMLInputElement>event.target).value);
+    this.secondPercent = 100 - parseInt((<HTMLInputElement>event.target).value);
   }
 
   changeMovie() {
@@ -143,6 +177,10 @@ export class ContractSFormComponent implements OnInit {
       this.form.controls['toDate'].setValue(new Date(currentContract.toDate));
       this.form.controls['fromDate'].enable();
       this.form.controls['toDate'].enable();
+      // prices
+      this.priceControls.forEach(i => this.form.controls[i].enable());
+      this.setPrices(currentContract);
+
       if (this.isRkm) {
         this.form.controls['secondSide'].reset();
         this.form.controls['secondSide'].enable();
@@ -168,10 +206,23 @@ export class ContractSFormComponent implements OnInit {
     this.model.fromDate = this.form.controls['fromDate'].value;
     this.model.toDate = this.form.controls['toDate'].value;
     this.model.tax = this.form.controls['tax'].value;
-    this.model.condPercent = this.contractMode
+    this.model.condPercent = this.contractMode;
     this.model.typeOfCont = 1;
     this.model.parentId = this.contractsAll.find((i => i.typeOfCont === 0 && new Date(i.toDate) > this.currentDate
       && i.movieId === this.form.controls['movieId'].value))._id;
+    // prices
+    this.model.dayChildPriceTh = this.form.controls["dayChildPriceTh"].value;
+    this.model.dayAdultPriceTh = this.form.controls["dayAdultPriceTh"].value;
+    this.model.eveningChildPriceTh = this.form.controls["eveningChildPriceTh"].value;
+    this.model.eveningAdultPriceTh = this.form.controls["eveningAdultPriceTh"].value;
+    this.model.dayChildPriceGr = this.form.controls["dayChildPriceGr"].value;
+    this.model.dayAdultPriceGr = this.form.controls["dayAdultPriceGr"].value;
+    this.model.eveningChildPriceGr = this.form.controls["eveningChildPriceGr"].value;
+    this.model.eveningAdultPriceGr = this.form.controls["eveningAdultPriceGr"].value;
+    this.model.dayChildPriceMobile = this.form.controls["dayChildPriceMobile"].value;
+    this.model.dayAdultPriceMobile = this.form.controls["dayAdultPriceMobile"].value;
+    this.model.eveningChildPriceMobile = this.form.controls["eveningChildPriceMobile"].value;
+    this.model.eveningAdultPriceMobile = this.form.controls["eveningAdultPriceMobile"].value;
     this.service.save(this.model).subscribe(() => {
         alert('Все данные успешно сохранены!');
         this.router.navigate(['/cont-s']);
@@ -198,5 +249,27 @@ export class ContractSFormComponent implements OnInit {
     this.form.controls['toDate'].reset();
     this.form.controls['fromDate'].disable();
     this.form.controls['toDate'].disable();
+    // prices
+    this.priceControls.forEach(i => {
+      this.form.controls[i].reset();
+      this.form.controls[i].disable();
+    });
+  }
+
+  setPrices(contract: ContractModel) {
+    // prices
+    this.priceControls.forEach(i => this.form.controls[i].enable());
+    this.form.controls['dayChildPriceTh'].setValue(contract.dayChildPriceTh);
+    this.form.controls['dayAdultPriceTh'].setValue(contract.dayAdultPriceTh);
+    this.form.controls['eveningChildPriceTh'].setValue(contract.eveningChildPriceTh);
+    this.form.controls['eveningAdultPriceTh'].setValue(contract.eveningAdultPriceTh);
+    this.form.controls['dayChildPriceGr'].setValue(contract.dayChildPriceGr);
+    this.form.controls['dayAdultPriceGr'].setValue(contract.dayAdultPriceGr);
+    this.form.controls['eveningChildPriceGr'].setValue(contract.eveningChildPriceGr);
+    this.form.controls['eveningAdultPriceGr'].setValue(contract.eveningAdultPriceGr);
+    this.form.controls['dayChildPriceMobile'].setValue(contract.dayChildPriceMobile);
+    this.form.controls['dayAdultPriceMobile'].setValue(contract.dayAdultPriceMobile);
+    this.form.controls['eveningChildPriceMobile'].setValue(contract.eveningChildPriceMobile);
+    this.form.controls['eveningAdultPriceMobile'].setValue(contract.eveningAdultPriceMobile);
   }
 }
