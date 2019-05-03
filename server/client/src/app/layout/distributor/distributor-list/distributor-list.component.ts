@@ -148,7 +148,7 @@ export class DistributorListComponent implements OnInit {
               this.contractsTheater = [];
               this.contractsDistTheater = [];
               this.model = new reportModel();
-              this.model.contracts = [];
+              this.model.allContracts = [];
               this.model.deleteDistReport = [];
               this.model.deleteTheaterReports = [];
               this.model.theaters = [];
@@ -157,7 +157,7 @@ export class DistributorListComponent implements OnInit {
               this.model.theaters = theaters.filter(th => th.distId === this.distForDelete._id)
 
               //Get Contract
-              this.model.contracts = contracts.filter(c => c.secondSide === this.distForDelete._id)
+              this.model.allContracts = contracts.filter(c => c.secondSide === this.distForDelete._id)
               for (let j = 0; j < contracts.length; j++) {
                 if (contracts[j].firstSide === this.distForDelete._id) {
                   this.model.contracts.push(contracts[j]);

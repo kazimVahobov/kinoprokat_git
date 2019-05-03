@@ -19,14 +19,10 @@ class ReportWithCont {
   price?: number;
   ticketCount?: number;
   daySession: boolean;
-  dayChildTicketCount: number;
-  dayAdultTicketCount: number;
-  eveningChildTicketCount: number;
-  eveningAdultTicketCount: number;
-  dayChildTicketPrice: number;
-  dayAdultTicketPrice: number;
-  eveningChildTicketPrice: number;
-  eveningAdultTicketPrice: number;
+  childTicketCount: number;
+  adultTicketCount: number;
+  childTicketPrice: number;
+  adultTicketPrice: number;
 }
 
 class ReportWithoutCont {

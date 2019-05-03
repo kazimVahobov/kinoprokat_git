@@ -119,13 +119,13 @@ export class MovieListComponent implements OnInit {
             this.theaterReports = [];
             this.distributorReports = [];
             this.model = new reportModel();
-            this.model.contracts = [];
+            this.model.allContracts = [];
             this.model.deleteDistReport = [];
             this.model.updateDistReport = [];
             this.model.deleteTheaterReports = [];
             this.model.updateTheaterReports = [];
 
-            this.model.contracts = contracts.filter(c => c.movieId === this.movieForDelete._id)
+            this.model.allContracts = contracts.filter(c => c.movieId === this.movieForDelete._id)
             this.distributorReports = distReports;
             this.theaterReports = theaterReports.filter(th => th.withCont.some(w => w.movieId === this.movieForDelete._id));
 

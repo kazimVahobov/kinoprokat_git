@@ -10,10 +10,11 @@ import {
   BsDatepickerModule, ButtonsModule,
   ModalModule,
   PaginationModule,
-  PopoverModule
+  PopoverModule, TabsModule
 } from 'ngx-bootstrap';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +28,8 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     NgxMaterialTimepickerModule.forRoot(),
     AccordionModule.forRoot(),
     NgxChartsModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    TabsModule.forRoot()
   ],
   declarations: [
     ContentWrapperComponent,
@@ -52,7 +54,8 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     NgxMaterialTimepickerModule,
     AccordionModule,
     NgxChartsModule,
-    ButtonsModule
+    ButtonsModule,
+    TabsModule
   ]
 })
 export class SharedModule {

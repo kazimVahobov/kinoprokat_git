@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   MovieService,
   TheaterReportService,
@@ -15,7 +15,7 @@ import {
   DistributorModel,
   DistributorService
 } from 'src/app/core';
-import { DatePipe } from "@angular/common";
+import {DatePipe} from "@angular/common";
 
 declare var $;
 
@@ -138,14 +138,14 @@ export class StatisticRkmComponent implements OnInit {
   currentUser = JSON.parse(localStorage.getItem('user'));
 
   constructor(private movieService: MovieService,
-    private regionService: RegionService,
-    private theaterReportService: TheaterReportService,
-    private contractService: ContractService,
-    private theaterService: TheaterService,
-    private yearListService: YearListService,
-    private distReportService: DistributorReportService,
-    private distService: DistributorService,
-    public datePipe: DatePipe) {
+              private regionService: RegionService,
+              private theaterReportService: TheaterReportService,
+              private contractService: ContractService,
+              private theaterService: TheaterService,
+              private yearListService: YearListService,
+              private distReportService: DistributorReportService,
+              private distService: DistributorService,
+              public datePipe: DatePipe) {
   }
 
   ngOnInit() {
@@ -608,7 +608,7 @@ export class StatisticRkmComponent implements OnInit {
         }
 
         //Distributors one Region
-        if(!this.isOneTheater){
+        if (!this.isOneTheater) {
           this.distributors = this.allDistributors.filter(d => d.regionId === this.filterRegions[i]._id)
         }
 
@@ -663,48 +663,48 @@ export class StatisticRkmComponent implements OnInit {
             }
           }
           //Distributor MobileReports
-          if(!this.isOneTheater){
-          for (let j = 0; j < this.distributors.length; j++) {
-            this.filterDistReport = this.distReports.filter(r => r.distId === this.distributors[j]._id)
-            if (this.filterDistReport) {
-              this.reportTotal = new TotalReport();
-              this.reportTotal.report = [];
-              this.reportTotal.name = this.distributors[j].name;
-              this.reportTotal.totalAmount = 0;
-              this.reportTotal.totalTicketCount = 0;
-              for (let n = 0; n < this.filterDistReport.length; n++) {
-                for (let u = 0; u < this.filterDistReport[n].mobileTheaters.length; u++) {
-                  this.oneReport = new ReportOfTotalReport();
-                  this.oneReport.amount = this.filterDistReport[n].mobileTheaters[u].price * this.filterDistReport[n].mobileTheaters[u].ticketCount
-                  this.oneReport.movieId = this.filterDistReport[n].mobileTheaters[u].movieId;
-                  this.oneReport.theaterId = this.distributors[j]._id;
-                  this.oneReport.date = this.filterDistReport[n].date;
-                  this.oneReport.ticketCount = this.filterDistReport[n].mobileTheaters[u].ticketCount;
-                  if (this.isMovie && !this.isOneTheater || !this.isMovie && !this.isOneTheater
-                    || this.isOneTheater && this.isMovie) {
-                    if (!this.isMovie) {
-                      if (this.oneReport.movieId === this.selectedMovie) {
+          if (!this.isOneTheater) {
+            for (let j = 0; j < this.distributors.length; j++) {
+              this.filterDistReport = this.distReports.filter(r => r.distId === this.distributors[j]._id)
+              if (this.filterDistReport) {
+                this.reportTotal = new TotalReport();
+                this.reportTotal.report = [];
+                this.reportTotal.name = this.distributors[j].name;
+                this.reportTotal.totalAmount = 0;
+                this.reportTotal.totalTicketCount = 0;
+                for (let n = 0; n < this.filterDistReport.length; n++) {
+                  for (let u = 0; u < this.filterDistReport[n].mobileTheaters.length; u++) {
+                    this.oneReport = new ReportOfTotalReport();
+                    this.oneReport.amount = this.filterDistReport[n].mobileTheaters[u].price * this.filterDistReport[n].mobileTheaters[u].ticketCount
+                    this.oneReport.movieId = this.filterDistReport[n].mobileTheaters[u].movieId;
+                    this.oneReport.theaterId = this.distributors[j]._id;
+                    this.oneReport.date = this.filterDistReport[n].date;
+                    this.oneReport.ticketCount = this.filterDistReport[n].mobileTheaters[u].ticketCount;
+                    if (this.isMovie && !this.isOneTheater || !this.isMovie && !this.isOneTheater
+                      || this.isOneTheater && this.isMovie) {
+                      if (!this.isMovie) {
+                        if (this.oneReport.movieId === this.selectedMovie) {
+                          this.reportTotal.totalAmount += this.oneReport.amount;
+                          this.reportTotal.totalTicketCount += this.oneReport.ticketCount;
+                          this.associationMovieReport(this.reportTotal.report, this.oneReport)
+                        }
+                      } else {
                         this.reportTotal.totalAmount += this.oneReport.amount;
                         this.reportTotal.totalTicketCount += this.oneReport.ticketCount;
                         this.associationMovieReport(this.reportTotal.report, this.oneReport)
                       }
-                    } else {
-                      this.reportTotal.totalAmount += this.oneReport.amount;
-                      this.reportTotal.totalTicketCount += this.oneReport.ticketCount;
-                      this.associationMovieReport(this.reportTotal.report, this.oneReport)
+                    }
+                    if (!this.isOneTheater) {
+                      this.reportsForPrint.push(this.oneReport);
                     }
                   }
-                  if (!this.isOneTheater) {
-                    this.reportsForPrint.push(this.oneReport);
-                  }
                 }
-              }
-              if (this.reportTotal.report.length != 0) {
-                this.reportsTotalOne.push(this.reportTotal)
+                if (this.reportTotal.report.length != 0) {
+                  this.reportsTotalOne.push(this.reportTotal)
+                }
               }
             }
           }
-        }
         } else {
           //Reports All region
           this.filterTheaterReports = [];
@@ -890,7 +890,7 @@ export class StatisticRkmComponent implements OnInit {
       if (this.selectedRegion === "all") {
         if (this.selectedMovie !== "all") {
           result = "Детальный отчёт по фильму " +
-          this.movies?this.movies.find(i => i._id === this.selectedMovie).name:'' +
+          this.movies ? this.movies.find(i => i._id === this.selectedMovie).name : '' +
             " по всей Республике в период с " + this.startDateOfReports + " г. до " + this.endDateOfReports + " г.";
         } else {
           result = "Общий отчёт по всей Республике относительно всех фильмов, которые были в прокате в период с "
@@ -906,7 +906,7 @@ export class StatisticRkmComponent implements OnInit {
           } else {
             // E
             result = "Детальный отчёт по фильму " +
-            this.movies?this.movies.find(i => i._id === this.selectedMovie).name:'' +
+            this.movies ? this.movies.find(i => i._id === this.selectedMovie).name : '' +
               " относительно всех кинотеатров региона " +
               this.regions.find(i => i._id === this.selectedRegion).name + " " +
               "в период с " + this.startDateOfReports + " г. до " + this.endDateOfReports + " г.";

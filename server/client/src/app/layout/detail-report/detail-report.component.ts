@@ -10,7 +10,7 @@ import {
   DistributorReportModel
 } from 'src/app/core';
 import {ActivatedRoute} from '@angular/router';
-import { Location } from '@angular/common';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-detail-report',
@@ -39,8 +39,7 @@ export class DetailReportComponent implements OnInit {
               private movieService: MovieService,
               private theaterReportService: TheaterReportService,
               private ditributorReportService: DistributorReportService,
-              private location: Location
-              ) {
+              private location: Location) {
   }
 
   ngOnInit() {

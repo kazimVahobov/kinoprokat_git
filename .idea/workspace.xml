@@ -2,39 +2,27 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.html" line="98" />
-    <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" line="217" />
+    <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" line="237" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/core/models/contract.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/core/models/contract.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-form/contract-s-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-form/contract-s-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-form/contract-s-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-form/contract-s-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-form/contract-t-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-form/contract-t-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-form/contract-t-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-form/contract-t-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-all/cont-t-all.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-all/cont-t-all.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-all/cont-t-all.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-all/cont-t-all.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor/distributor-list/distributor-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor/distributor-list/distributor-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-list/theater-child/theater-child.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-list/theater-child/theater-child.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/shared/shared.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/contract.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/contract.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/contract.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/contract.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/theaterReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/theaterReports.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,17 +35,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-t/cont-t-detail/cont-t-detail.component.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="335">
+              <caret line="120" column="79" selection-start-line="120" selection-start-column="79" selection-end-line="120" selection-end-column="79" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                <element signature="n#section#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                <element signature="n#label#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="246" column="12" selection-start-line="246" selection-start-column="12" selection-end-line="246" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+                <element signature="n#!!block;n#ngOnInit#0;n#TheaterReportFormComponent#0" />
+                <element signature="n#!!block;n#loadFromDate#0;n#TheaterReportFormComponent#0" />
+                <element signature="n#!!block;n#loadOnEdit#0;n#TheaterReportFormComponent#0" />
+                <element signature="n#!!block;n#addSession#0;n#TheaterReportFormComponent#0" />
+                <element signature="n#!!block;n#movieChange#0;n#TheaterReportFormComponent#0" />
+                <element signature="e#8041#8076#0" />
+                <element signature="e#8299#9918#0" />
+                <element signature="e#9953#10193#0" />
+                <element signature="n#!!block;n#setAlert#0;n#TheaterReportFormComponent#0" />
+                <element signature="n#!!block;n#addWithoutCont#0;n#TheaterReportFormComponent#0" />
+                <element signature="n#!!block;n#deleteSession#0;n#TheaterReportFormComponent#0" />
+                <element signature="n#!!block;n#deleteWithoutCont#0;n#TheaterReportFormComponent#0" />
+                <element signature="n#!!block;n#backToList#0;n#TheaterReportFormComponent#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -70,21 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-child/user-child.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/role/role-list/role-list.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/core/models/theater.model.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor/distributor-list/distributor-list.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-list/theater-child/theater-child.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-list/theater-all/theater-all.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-list/theater-all/theater-all.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-list/theater-child/theater-child.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor/distributor-list/distributor-list.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-all/cont-t-all.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.ts" />
         <option value="$PROJECT_DIR$/server/models/contract.js" />
         <option value="$PROJECT_DIR$/server/controllers/contract.js" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.html" />
@@ -96,14 +104,9 @@
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-form/contract-t-form.component.html" />
         <option value="$PROJECT_DIR$/server/models/theaterReports.js" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.scss" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-routing.module.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/environments/environment.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-f/cont-f-detail/cont-f-detail.component.scss" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.scss" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-f/cont-f-detail/cont-f-detail.component.html" />
@@ -121,6 +124,26 @@
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-f/cont-f-detail/cont-f-detail.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-s/cont-s-detail/cont-s-detail.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-t/cont-t-detail/cont-t-detail.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.scss" />
+        <option value="$PROJECT_DIR$/server/client/src/app/shared/shared.module.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie.module.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-routing.module.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-cont-detail/movie-cont-detail.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-cont-detail/movie-cont-detail.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.scss" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/environments/environment.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.scss" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" />
       </list>
     </option>
   </component>
@@ -175,6 +198,25 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -185,7 +227,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-f" type="462c0819:PsiDirectoryNode" />
+              <item name="theater-report" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
@@ -195,102 +237,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-f" type="462c0819:PsiDirectoryNode" />
-              <item name="cont-f-detail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-f" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-f-list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-s" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-s" type="462c0819:PsiDirectoryNode" />
-              <item name="cont-s-detail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-t" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-t" type="462c0819:PsiDirectoryNode" />
-              <item name="cont-t-detail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-t" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-t-list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-t" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-t-list" type="462c0819:PsiDirectoryNode" />
-              <item name="cont-t-all" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="rkm-report" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
+              <item name="theater-report" type="462c0819:PsiDirectoryNode" />
+              <item name="theater-report-form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
@@ -344,7 +292,7 @@
       <workItem from="1556520211473" duration="19637000" />
       <workItem from="1556604763970" duration="28529000" />
       <workItem from="1556777879980" duration="1070000" />
-      <workItem from="1556785181549" duration="2483000" />
+      <workItem from="1556785181549" duration="29862000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -357,7 +305,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77039000" />
+    <option name="totallyTimeSpent" value="104418000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -411,469 +359,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="148" column="4" selection-start-line="148" selection-start-column="4" selection-end-line="160" selection-end-column="93" />
-          <folding>
-            <element signature="n#!!block;n#modelChanged#0;n#ContractFFormComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-form/contract-s-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="206" column="41" lean-forward="true" selection-start-line="206" selection-start-column="41" selection-end-line="206" selection-end-column="41" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-            <element signature="n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-form/contract-t-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="217" column="13" lean-forward="true" selection-start-line="217" selection-start-column="13" selection-end-line="217" selection-end-column="13" />
-          <folding>
-            <element signature="e#1316#1636#0" />
-            <element signature="n#!!block;n#ngOnInit#0;n#ContractTFormComponent#0" />
-            <element signature="n#!!block;n#load#0;n#ContractTFormComponent#0" />
-            <element signature="n#!!block;n#selectedMovie#0;n#ContractTFormComponent#0" />
-            <element signature="n#!!block;n#editMode#0;n#ContractTFormComponent#0" />
-            <element signature="n#!!block;n#createForm#0;n#ContractTFormComponent#0" />
-            <element signature="n#!!block;n#findContract#0;n#ContractTFormComponent#0" />
-            <element signature="n#!!block;n#backToList#0;n#ContractTFormComponent#0" />
-            <element signature="n#!!block;n#onMovieClear#0;n#ContractTFormComponent#0" />
-            <element signature="n#!!block;n#modelChanged#0;n#ContractTFormComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-form/contract-s-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="132" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="n#!!block;n#load#0;n#ContractSFormComponent#0" />
-            <element signature="n#!!block;n#createForm#0;n#ContractSFormComponent#0" />
-            <element signature="n#!!block;n#changeMovie#0;n#ContractSFormComponent#0" />
-            <element signature="n#!!block;n#onSubmit#0;n#ContractSFormComponent#0" />
-            <element signature="n#!!block;n#backToList#0;n#ContractSFormComponent#0" />
-            <element signature="n#!!block;n#onMovieClear#0;n#ContractSFormComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="205" column="26" lean-forward="true" selection-start-line="205" selection-start-column="26" selection-end-line="392" selection-end-column="26" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-form/contract-t-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="315" selection-start-line="17" selection-start-column="25" selection-end-line="315" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/theaterReports.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="43" column="35" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="35" />
-          <folding>
-            <element signature="e#592#636#0" />
-            <element signature="e#671#715#0" />
-            <element signature="e#754#798#0" />
-            <element signature="e#837#881#0" />
-            <element signature="e#916#960#0" />
-            <element signature="e#995#1039#0" />
-            <element signature="e#1078#1122#0" />
-            <element signature="e#1161#1205#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/theaterReports.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/theaterReports.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-414" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="541" column="2" selection-start-line="541" selection-start-column="2" selection-end-line="541" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="119" column="66" selection-start-line="119" selection-start-column="66" selection-end-line="119" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="110" column="46" lean-forward="true" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="78" column="3" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="236" column="23" lean-forward="true" selection-start-line="236" selection-start-column="23" selection-end-line="236" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="n#!!block;n#ngOnInit#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#!!block;n#loadFromDate#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#!!block;n#loadOnEdit#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#!!block;n#addSession#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#!!block;n#validation#0;n#TheaterReportFormComponent#0" />
-            <element signature="e#6107#6139#0" />
-            <element signature="n#!!block;n#movieChange#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#!!block;n#setAlert#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#!!block;n#addWithoutCont#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#!!block;n#deleteSession#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#!!block;n#deleteWithoutCont#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#!!block;n#backToList#0;n#TheaterReportFormComponent#0" />
-            <element signature="n#WithoutCont#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="141" column="57" selection-start-line="141" selection-start-column="57" selection-end-line="141" selection-end-column="57" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#3;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#label#0;n#div#1;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#5;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding>
-            <element signature="n#thead#0;n#table#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#ul#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#!!top" />
-            <element signature="n#div#2;n#!!top" />
-            <element signature="n#ng-template#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/components/sidebar/sidebar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="75" column="79" lean-forward="true" selection-start-line="75" selection-start-column="72" selection-end-line="75" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/components/sidebar/sidebar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-92">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="36" selection-end-column="19" />
-          <folding>
-            <element signature="n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#!!top" />
-            <element signature="n#div#1;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/environments/environment.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/contract.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-s/cont-s-detail/cont-s-detail.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -1025,16 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-t/cont-t-detail/cont-t-detail.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="45" column="91" selection-start-line="45" selection-start-column="91" selection-end-line="45" selection-end-column="91" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-f/cont-f-detail/cont-f-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
@@ -1055,15 +530,418 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="209" column="64" selection-start-line="209" selection-start-column="64" selection-end-line="209" selection-end-column="64" />
+          <folding>
+            <element signature="n#section#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#h4#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/shared/shared.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contratcts/movie-contratcts.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="97" column="65" selection-start-line="97" selection-start-column="65" selection-end-line="97" selection-end-column="65" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="865" column="32" lean-forward="true" selection-start-line="865" selection-start-column="32" selection-end-line="865" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!block;n#loadData#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#refresh#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#changeMovie#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#changeRegion#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#changeTheater#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#ofMonth#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#changeYear#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#changeMonth#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#amountReport#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#getReportOfRegion#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#associationMovieReport#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#associationRegionReport#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#associationTheaterReport#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#associationDateReport#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#setPrintTitle#0;n#StatisticRkmComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-t/cont-t-detail/cont-t-detail.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <caret line="9" column="34" selection-end-line="104" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
             <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#hr#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
             <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-t/cont-t-detail/cont-t-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="51" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#!!block;n#ngOnInit#0;n#ContTDetailComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+            <element signature="n#!!block;n#deleteMovie#0;n#MovieListComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="32" column="62" lean-forward="true" selection-start-line="32" selection-start-column="62" selection-end-line="36" selection-end-column="19" />
+          <folding>
+            <element signature="n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#!!top" />
+            <element signature="n#div#1;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/auth-guard.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-cont-detail/movie-cont-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#ngOnInit#0;n#MovieContDetailComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="40" column="71" selection-start-line="40" selection-start-column="71" selection-end-line="41" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-cont-detail/movie-cont-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="57" selection-end-column="24" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="137" column="44" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
+          <folding>
+            <element signature="n#section#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#hr#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="36" column="42" lean-forward="true" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/distributor-report.model.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-575">
+          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="120" column="79" selection-start-line="120" selection-start-column="79" selection-end-line="120" selection-end-column="79" />
+          <folding>
+            <element signature="n#section#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#label#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="246" column="12" selection-start-line="246" selection-start-column="12" selection-end-line="246" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#!!block;n#ngOnInit#0;n#TheaterReportFormComponent#0" />
+            <element signature="n#!!block;n#loadFromDate#0;n#TheaterReportFormComponent#0" />
+            <element signature="n#!!block;n#loadOnEdit#0;n#TheaterReportFormComponent#0" />
+            <element signature="n#!!block;n#addSession#0;n#TheaterReportFormComponent#0" />
+            <element signature="n#!!block;n#movieChange#0;n#TheaterReportFormComponent#0" />
+            <element signature="e#8041#8076#0" />
+            <element signature="e#8299#9918#0" />
+            <element signature="e#9953#10193#0" />
+            <element signature="n#!!block;n#setAlert#0;n#TheaterReportFormComponent#0" />
+            <element signature="n#!!block;n#addWithoutCont#0;n#TheaterReportFormComponent#0" />
+            <element signature="n#!!block;n#deleteSession#0;n#TheaterReportFormComponent#0" />
+            <element signature="n#!!block;n#deleteWithoutCont#0;n#TheaterReportFormComponent#0" />
+            <element signature="n#!!block;n#backToList#0;n#TheaterReportFormComponent#0" />
           </folding>
         </state>
       </provider>

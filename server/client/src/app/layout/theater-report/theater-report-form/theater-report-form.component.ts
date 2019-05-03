@@ -31,7 +31,6 @@ export class TheaterReportFormComponent implements OnInit {
   maxDate = new Date();
 
   state = false;
-  minPriceTicket: number;
 
   constructor(private service: TheaterReportService,
               private theaterService: TheaterService,
@@ -42,7 +41,6 @@ export class TheaterReportFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.minPriceTicket = 0;
     this.state = false;
     this.route.params.subscribe(params => {
 
@@ -143,7 +141,14 @@ export class TheaterReportFormComponent implements OnInit {
           for (let i = 0; i < movies.length; i++) {
             if (movies[i]._id === cont.movieId) {
               this.movies.push(movies[i]);
-              this.movieOfCont.push({movieId: movies[i]._id, contId: cont._id});
+              this.movieOfCont.push({
+                movieId: movies[i]._id,
+                contId: cont._id,
+                dayChildPriceTh: cont.dayChildPriceTh,
+                dayAdultPriceTh: cont.dayAdultPriceTh,
+                eveningChildPriceTh: cont.eveningChildPriceTh,
+                eveningAdultPriceTh: cont.eveningAdultPriceTh
+              });
             }
           }
         });
@@ -157,19 +162,16 @@ export class TheaterReportFormComponent implements OnInit {
           }));
 
           report.withCont.forEach(item => {
-
-            if (item.daySession) {
               this.model.holes.find(i => i.holeId === item.holeId).sessions.push({
                 movieId: item.movieId,
                 contractId: item.contractId,
                 time: item.sessionTime,
                 daySession: item.daySession,
-                childTicketCount: item.dayChildTicketCount,
-                adultTicketCount: item.dayAdultTicketCount,
-                childTicketPrice: item.dayChildTicketPrice,
-                adultTicketPrice: item.dayAdultTicketPrice
+                childTicketCount: item.childTicketCount,
+                adultTicketCount: item.adultTicketCount,
+                childTicketPrice: item.childTicketPrice,
+                adultTicketPrice: item.adultTicketPrice
               });
-            }
           });
         });
       });
@@ -202,6 +204,22 @@ export class TheaterReportFormComponent implements OnInit {
       if (this.model.holes.find(item => item.sessions.some(i => !i.time || !i.movieId || !i.childTicketCount || !i.childTicketPrice || !i.adultTicketCount || !i.adultTicketPrice))) {
         result = true;
       }
+      if (this.validationByPrice(this.model)) {
+        result = true;
+      }
+      return result;
+    } else {
+      return false;
+    }
+  }
+
+  validationByPrice(model: ReportModel): boolean {
+    if (model) {
+      let result: boolean = true;
+      if (model.holes.find(hole => hole.sessions
+        .some(session => (session.minChildTicketPrice <= session.childTicketPrice || session.minAdultTicketPrice <= session.adultTicketPrice)))) {
+        result = false;
+      }
       return result;
     } else {
       return false;
@@ -215,9 +233,13 @@ export class TheaterReportFormComponent implements OnInit {
       if (this.model.holes[hole].sessions[session].daySession) {
         this.model.holes[hole].sessions[session].childTicketPrice = contract.dayChildPriceTh;
         this.model.holes[hole].sessions[session].adultTicketPrice = contract.dayAdultPriceTh;
+        this.model.holes[hole].sessions[session].minChildTicketPrice = contract.dayChildPriceTh;
+        this.model.holes[hole].sessions[session].minAdultTicketPrice = contract.dayAdultPriceTh;
       } else {
         this.model.holes[hole].sessions[session].childTicketPrice = contract.eveningChildPriceTh;
         this.model.holes[hole].sessions[session].adultTicketPrice = contract.eveningAdultPriceTh;
+        this.model.holes[hole].sessions[session].minChildTicketPrice = contract.eveningChildPriceTh;
+        this.model.holes[hole].sessions[session].minAdultTicketPrice = contract.eveningAdultPriceTh;
       }
     }
   }
@@ -237,39 +259,17 @@ export class TheaterReportFormComponent implements OnInit {
       if (i.sessions) {
         i.sessions.forEach(session => {
           if (session) {
-            if (session.daySession) {
               report.withCont.push({
                 movieId: session.movieId,
                 contractId: session.contractId,
                 holeId: i.holeId,
                 sessionTime: session.time,
                 daySession: session.daySession,
-                dayChildTicketCount: session.childTicketCount,
-                dayAdultTicketCount: session.adultTicketCount,
-                dayChildTicketPrice: session.childTicketPrice,
-                dayAdultTicketPrice: session.adultTicketPrice,
-                eveningChildTicketCount: null,
-                eveningAdultTicketCount: null,
-                eveningChildTicketPrice: null,
-                eveningAdultTicketPrice: null
+                childTicketCount: session.childTicketCount,
+                adultTicketCount: session.adultTicketCount,
+                childTicketPrice: session.childTicketPrice,
+                adultTicketPrice: session.adultTicketPrice
               });
-            } else {
-              report.withCont.push({
-                movieId: session.movieId,
-                contractId: session.contractId,
-                holeId: i.holeId,
-                sessionTime: session.time,
-                daySession: session.daySession,
-                dayChildTicketCount: null,
-                dayAdultTicketCount: null,
-                dayChildTicketPrice: null,
-                dayAdultTicketPrice: null,
-                eveningChildTicketCount: session.childTicketCount,
-                eveningAdultTicketCount: session.adultTicketCount,
-                eveningChildTicketPrice: session.childTicketPrice,
-                eveningAdultTicketPrice: session.adultTicketPrice
-              });
-            }
           }
         });
       }
@@ -357,6 +357,8 @@ class SessionModel {
   adultTicketCount: number;
   childTicketPrice: number;
   adultTicketPrice: number;
+  minChildTicketPrice?: number;
+  minAdultTicketPrice?: number;
 }
 
 class WithoutCont {
@@ -369,8 +371,8 @@ class WithoutCont {
 class MovieOfCont {
   movieId: string;
   contId: string;
-  dayChildPriceTh?: number;
-  dayAdultPriceTh?: number;
-  eveningChildPriceTh?: number;
-  eveningAdultPriceTh?: number;
+  dayChildPriceTh: number;
+  dayAdultPriceTh: number;
+  eveningChildPriceTh: number;
+  eveningAdultPriceTh: number;
 }

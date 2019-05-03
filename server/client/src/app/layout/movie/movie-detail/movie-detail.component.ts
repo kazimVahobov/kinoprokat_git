@@ -10,6 +10,7 @@ import { ModalDirective } from 'ngx-bootstrap';
   styleUrls: ['./movie-detail.component.scss']
 })
 export class MovieDetailComponent implements OnInit {
+
   @ViewChild('grpuView') grpuView: ModalDirective;
   id: string;
   model: MovieModel;

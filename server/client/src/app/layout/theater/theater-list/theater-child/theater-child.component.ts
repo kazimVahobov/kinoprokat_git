@@ -135,12 +135,12 @@ export class TheaterChildComponent implements OnInit {
             this.theaterReports = [];
             this.distributorReports = [];
             this.model = new reportModel();
-            this.model.contracts = [];
+            this.model.allContracts = [];
             this.model.deleteDistReport = [];
             this.model.updateDistReport = [];
             this.model.deleteTheaterReports = [];
 
-            this.model.contracts = contracts.filter(c => c.secondSide === this.theaterForDelete._id);
+            this.model.allContracts = contracts.filter(c => c.secondSide === this.theaterForDelete._id);
             this.distributorReports = distReports;
             this.theaterReports = theaterReports.filter(th => th.theaterId === this.theaterForDelete._id)
 
