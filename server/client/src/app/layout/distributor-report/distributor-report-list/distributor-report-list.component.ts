@@ -27,7 +27,7 @@ export class DistributorReportListComponent implements OnInit, OnDestroy {
   filterReport = JSON.parse(localStorage.getItem('filterReport'));
 
   currentDate: Date;
-  currentDateforDist: Date;
+  currentDateForDist: Date;
   minMode: BsDatepickerViewMode;
   bsConfig: Partial<BsDatepickerConfig>;
 
@@ -37,7 +37,7 @@ export class DistributorReportListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.minMode = 'month'
+    this.minMode = 'month';
     this.bsConfig = Object.assign({}, {
       minMode: this.minMode
     });
@@ -58,13 +58,13 @@ export class DistributorReportListComponent implements OnInit, OnDestroy {
         this.currentDate = new Date(this.filterReport.currentDate);
       }
       if (this.currentMode === 1) {
-        this.currentDateforDist = new Date(this.filterReport.currentDate);
+        this.currentDateForDist = new Date(this.filterReport.currentDate);
       }
     }
     localStorage.removeItem('filterReport'); 
   } else {
-      this.currentDate = null
-      this.currentDateforDist = null
+      this.currentDate = null;
+      this.currentDateForDist = null;
     }
 
     if (this.permissionService.reportDist) {
@@ -76,11 +76,11 @@ export class DistributorReportListComponent implements OnInit, OnDestroy {
     }
   }
 
-  clearDatapicker() {
+  clearDataPicker() {
     if (this.currentMode === 0) {
       this.currentDate = null;
     } else if (this.currentMode === 1) {
-      this.currentDateforDist = null;
+      this.currentDateForDist = null;
     }
   }
 

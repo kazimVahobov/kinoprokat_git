@@ -441,11 +441,11 @@ export class StatisticRkmComponent implements OnInit {
               for (let j = 0; j < this.filterDistReport.length; j++) {
                 for (let u = 0; u < this.filterDistReport[j].mobileTheaters.length; u++) {
                   this.oneReport = new ReportOfTotalReport();
-                  this.oneReport.amount = this.filterDistReport[j].mobileTheaters[u].price * this.filterDistReport[j].mobileTheaters[u].ticketCount
+                  // this.oneReport.amount = this.filterDistReport[j].mobileTheaters[u].price * this.filterDistReport[j].mobileTheaters[u].ticketCount
                   this.oneReport.movieId = this.filterDistReport[j].mobileTheaters[u].movieId;
                   this.oneReport.theaterId = this.filterDistReport[j].distId;
                   this.oneReport.regionId = this.allDistributors.find(d => d._id === this.filterDistReport[j].distId).regionId
-                  this.oneReport.ticketCount = this.filterDistReport[j].mobileTheaters[u].ticketCount;
+                  // this.oneReport.ticketCount = this.filterDistReport[j].mobileTheaters[u].ticketCount;
 
                   this.reportTotal.totalAmount += this.oneReport.amount;
                   this.reportTotal.totalTicketCount += this.oneReport.ticketCount;
@@ -675,11 +675,11 @@ export class StatisticRkmComponent implements OnInit {
                 for (let n = 0; n < this.filterDistReport.length; n++) {
                   for (let u = 0; u < this.filterDistReport[n].mobileTheaters.length; u++) {
                     this.oneReport = new ReportOfTotalReport();
-                    this.oneReport.amount = this.filterDistReport[n].mobileTheaters[u].price * this.filterDistReport[n].mobileTheaters[u].ticketCount
+                    // this.oneReport.amount = this.filterDistReport[n].mobileTheaters[u].price * this.filterDistReport[n].mobileTheaters[u].ticketCount
                     this.oneReport.movieId = this.filterDistReport[n].mobileTheaters[u].movieId;
                     this.oneReport.theaterId = this.distributors[j]._id;
                     this.oneReport.date = this.filterDistReport[n].date;
-                    this.oneReport.ticketCount = this.filterDistReport[n].mobileTheaters[u].ticketCount;
+                    // this.oneReport.ticketCount = this.filterDistReport[n].mobileTheaters[u].ticketCount;
                     if (this.isMovie && !this.isOneTheater || !this.isMovie && !this.isOneTheater
                       || this.isOneTheater && this.isMovie) {
                       if (!this.isMovie) {
@@ -762,11 +762,11 @@ export class StatisticRkmComponent implements OnInit {
             for (let n = 0; n < this.filterDistReport.length; n++) {
               for (let u = 0; u < this.filterDistReport[n].mobileTheaters.length; u++) {
                 this.oneReport = new ReportOfTotalReport();
-                this.oneReport.amount = this.filterDistReport[n].mobileTheaters[u].price * this.filterDistReport[n].mobileTheaters[u].ticketCount
+                // this.oneReport.amount = this.filterDistReport[n].mobileTheaters[u].price * this.filterDistReport[n].mobileTheaters[u].ticketCount
                 this.oneReport.movieId = this.filterDistReport[n].mobileTheaters[u].movieId;
                 this.oneReport.regionId = this.filterRegions[i]._id;
                 this.oneReport.date = this.filterDistReport[n].date;
-                this.oneReport.ticketCount = this.filterDistReport[n].mobileTheaters[u].ticketCount;
+                // this.oneReport.ticketCount = this.filterDistReport[n].mobileTheaters[u].ticketCount;
                 if (this.isMovie) {
                   this.reportTotal.totalAmount += this.oneReport.amount;
                   this.reportTotal.totalTicketCount += this.oneReport.ticketCount;

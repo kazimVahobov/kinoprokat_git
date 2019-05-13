@@ -147,22 +147,22 @@ export class MovieListComponent implements OnInit {
               }
 
               //DISTRIBUTOR REPORTS  
-              if (!this.theaterReports[i].withCont.length) {
-                for (let j = 0; j < this.distributorReports.length; j++) {
-                  for (let m = 0; m < this.distributorReports[j].theaterReports.length; m++) {
-                    if (this.distributorReports[j].theaterReports[m].theaterReportsId === this.theaterReports[i]._id) {
-                      this.distributorReports[j].theaterReports.splice(m, 1)
-                      m--;
-                    }
-                  }
-                  if (this.distributorReports[j].mobileTheaters.length || this.distributorReports[j].theaterReports.length) {
-                    this.model.updateDistReport.push(this.distributorReports[j])
-                  }
-                  if (!this.distributorReports[j].mobileTheaters.length && !this.distributorReports[j].theaterReports.length) {
-                    this.model.deleteDistReport.push(this.distributorReports[j])
-                  }
-                }
-              }
+              // if (!this.theaterReports[i].withCont.length) {
+              //   for (let j = 0; j < this.distributorReports.length; j++) {
+              //     for (let m = 0; m < this.distributorReports[j].theaterReports.length; m++) {
+              //       if (this.distributorReports[j].theaterReports[m].theaterReportsId === this.theaterReports[i]._id) {
+              //         this.distributorReports[j].theaterReports.splice(m, 1)
+              //         m--;
+              //       }
+              //     }
+              //     if (this.distributorReports[j].mobileTheaters.length || this.distributorReports[j].theaterReports.length) {
+              //       this.model.updateDistReport.push(this.distributorReports[j])
+              //     }
+              //     if (!this.distributorReports[j].mobileTheaters.length && !this.distributorReports[j].theaterReports.length) {
+              //       this.model.deleteDistReport.push(this.distributorReports[j])
+              //     }
+              //   }
+              // }
 
             }
 
@@ -176,12 +176,12 @@ export class MovieListComponent implements OnInit {
                   this.distributorReports[a].mobileTheaters.splice(j, 1);
                 }
               }
-              if (this.distributorReports[a].mobileTheaters.length || this.distributorReports[a].theaterReports.length) {
-                this.model.updateDistReport.push(this.distributorReports[a])
-              }
-              if (!this.distributorReports[a].mobileTheaters.length && !this.distributorReports[a].theaterReports.length) {
-                this.model.deleteDistReport.push(this.distributorReports[a])
-              }
+              // if (this.distributorReports[a].mobileTheaters.length || this.distributorReports[a].theaterReports.length) {
+              //   this.model.updateDistReport.push(this.distributorReports[a])
+              // }
+              // if (!this.distributorReports[a].mobileTheaters.length && !this.distributorReports[a].theaterReports.length) {
+              //   this.model.deleteDistReport.push(this.distributorReports[a])
+              // }
             }
             this.model.movieId = this.movieForDelete._id
 
@@ -229,5 +229,5 @@ class reportModel {
   updateDistReport: DistributorReportModel[];
   deleteTheaterReports: TheaterReportModel[];
   updateTheaterReports: TheaterReportModel[];
-  contracts: ContractModel[];
+  allContracts: ContractModel[];
 }

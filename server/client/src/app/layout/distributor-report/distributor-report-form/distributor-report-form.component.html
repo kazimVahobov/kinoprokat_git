@@ -22,68 +22,235 @@
         <div class="box-body">
           <div class="container-fluid">
             <div class="row">
+              <div class="col-md-3 form-group">
+                <label for="date">Дата отправки отчёта: <span style="color: #dd4b39;">*</span></label>
+                <input type="text" id="date"
+                       [(ngModel)]="currentDate"
+                       class="form-control"
+                       placeholder="Укажите дату отправки отчёта"
+                       bsDatepicker
+                       [bsConfig]="{dateInputFormat: 'DD.MM.YYYY'}"
+                       [disabled]="id"
+                       (onHidden)="loadFromDate()"
+                       [maxDate]="maxDate">
+              </div>
+              <div class="col-md-9">
+                <label>В данном окне необходимо заполнять отчёты по разъездным кинопоказам</label>
+              </div>
               <div class="col-md-12">
-                <div class="col-md-3 form-group">
-                  <label for="date">Дата отправки отчёта: <span style="color: #dd4b39;">*</span></label>
-                  <input type="text" id="date" [(ngModel)]="currendDate" (onHidden)="getTheaterReports()"
-                         class="form-control" placeholder="Укажите дату отправки отчёта"
-                         bsDatepicker [bsConfig]="{dateInputFormat: 'DD.MM.YYYY'}" [disabled]="id" [maxDate]="maxDate">
-                </div>
-                <div class="col-md-12">
-                  <div class="col-md-6">
-                    <div *ngIf="sendReport" class="alert alert-warning" role="alert">
-                      Отчёт на указанную Вами дату уже составлен, сохранён и отправлен в вышестоящее учреждение, но ещё
-                      не
-                      было подтверждено вышестоящим учреждением.
-                      В случае отказа вышестоящим учреждением данная запись станет доступной для
-                      <span class="spec-text">редактирования</span>/
-                      <span class="spec-text">удаления</span>/
-                      <span class="spec-text">повторной отправки</span>.
-                    </div>
-                    <div *ngIf="confirmReport" class="alert alert-danger" role="alert">
-                      Отчёт на указанную Вами дату уже составлен, отправлен и подтверждён вышестоящим учреждением.
-                      Данную запись уже невозможно <span class="spec-text">редактировать</span>/ <span
-                      class="spec-text">удалить</span>.
+                <div *ngIf="viewState === 0">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div *ngIf="model.mobileTheaters" class="panel-group" id="accordion">
+                        <div *ngFor="let item of model.mobileTheaters; let i = index" class="panel panel-default">
+                          <div class="panel-heading text-center">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#mobileTheaters{{i}}">{{i + 1}}-й
+                              фильм</a>
+                            <span popover="Удалить"
+                                  style="margin: 0 15px 5px 0"
+                                  triggers="mouseenter:mouseleave"
+                                  class="fa fa-trash pull-right"
+                                  [ngClass]="{'active-trash': model.mobileTheaters.length > 1, 'no-active-trash': model.mobileTheaters.length == 1}"
+                                  (click)="deleteMobileTheater(i)"></span>
+                          </div>
+                          <div id="mobileTheaters{{i}}" [ngClass]="{'in': i == 0}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <label for="place" class="font-weight">Место:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <input id="place"
+                                         type="text"
+                                         class="form-control"
+                                         [(ngModel)]="item.place"
+                                         placeholder="Название местности">
+                                </div>
+                                <div class="col-md-2">
+                                  <label for="movieId" class="font-weight">Фильм:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <ng-select [items]="movies"
+                                             bindLabel="movieName"
+                                             id="movieId"
+                                             [searchable]="false"
+                                             [clearable]="false"
+                                             bindValue="movieId"
+                                             [(ngModel)]="item.movieId"
+                                             (change)="changeMovie(i)"
+                                             placeholder="Выберите фильм">
+                                  </ng-select>
+                                </div>
+                                <div class="col-md-2 text-left">
+                                  <label class="font-weight mar-top">Взрослые билеты:</label>
+                                </div>
+                                <div class="col-md-2">
+                                  <label for="adultTicketCount" class="font-weight">Кол-во:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <input id="adultTicketCount"
+                                         type="number"
+                                         class="form-control"
+                                         min="0"
+                                         [(ngModel)]="item.adultTicketCount"
+                                         placeholder="Взрос. билеты">
+                                </div>
+                                <div class="col-md-2">
+                                  <label for="adultPrice" class="font-weight">Цена:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <input id="adultPrice"
+                                         type="number"
+                                         class="form-control"
+                                         [min]="item.minAdultTicketPrice"
+                                         [(ngModel)]="item.adultTicketPrice"
+                                         placeholder="Цена взрослого бил.">
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="mar-top">
+                                        <span style="color: #dd4b39">Мин. цена: {{item.minAdultTicketPrice}}
+                                      </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <label for="time" class="font-weight">Время показа:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <input placeholder="Время показа"
+                                         id="time"
+                                         [ngxTimepicker]="time"
+                                         [format]="24"
+                                         class="form-control"
+                                         [(ngModel)]="item.time">
+                                  <ngx-material-timepicker #time [minutesGap]="5"></ngx-material-timepicker>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                      <label style="margin-top: 15px;">
+                                        <input type="radio"
+                                               name="state{{i}}"
+                                               [(ngModel)]="item.daySession"
+                                               (ngModelChange)="changeMovie(i)"
+                                               [value]="true">Дневной сеанс</label>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <label>
+                                        <input type="radio"
+                                               name="state{{i}}"
+                                               [(ngModel)]="item.daySession"
+                                               (ngModelChange)="changeMovie(i)"
+                                               [value]="false">Вечерний сеанс</label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-2 text-left">
+                                  <label class="font-weight mar-top">Детские билеты:</label>
+                                </div>
+                                <div class="col-md-2">
+                                  <label for="childTicketCount" class="font-weight">Кол-во:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <input id="childTicketCount"
+                                         type="number"
+                                         class="form-control"
+                                         min="0"
+                                         [(ngModel)]="item.childTicketCount"
+                                         placeholder="Детс. билеты">
+                                </div>
+                                <div class="col-md-2">
+                                  <label for="childPrice" class="font-weight">Цена:
+                                    <span style="color: #dd4b39;">*</span>
+                                  </label>
+                                  <input id="childPrice"
+                                         type="number"
+                                         class="form-control"
+                                         [min]="item.minChildTicketPrice"
+                                         [(ngModel)]="item.childTicketPrice"
+                                         placeholder="Цена детского бил.">
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="mar-top">
+                                        <span style="color: #dd4b39">Мин. цена: {{item.minChildTicketPrice}}
+                                      </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div *ngIf="!sendReport && !confirmReport" class="col-md-12">
-                  <div class="box-body" style="padding: 0">
-                    <table *ngIf="pagedItems.length !== 0; else noreport" class="table table-bordered table-condensed">
-                      <thead>
-                      <tr>
-                        <th>
-                          <label>
-                            <input [(ngModel)]="isChecked"
-                                   [indeterminate]="isIndeterminated()"
-                                   (change)="AllReportsChecked()"
-                                   type="checkbox">
-                          </label>
-                        </th>
-                        <th>Кинотеатр</th>
-                        <th>Кол-во фильмов</th>
-                        <th>Кол-во сеансов</th>
-                        <th>Кол-во билетов</th>
-                        <th>Общая сумма</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr *ngFor="let report of pagedItems">
-                        <td style="width: 5%">
-                          <label><input [(ngModel)]="report.checked" (change)="ReportChecked()" id="cashRegister"
-                                        value="{{report._id}}" type="checkbox"></label>
-                        </td>
-                        <td>{{report.theaterId| manual: currentTheaters}}</td>
-                        <td>{{report.movies.length}}</td>
-                        <td>{{report.sessionCount}}</td>
-                        <td>{{report.ticketCount}}</td>
-                        <td>{{report.summ}}</td>
-                      </tr>
-                      </tbody>
-                    </table>
+                  <div class="col-md-12 text-right">
+                    <a style="cursor: pointer" (click)="addMobileTheater()">Добавить сеанс</a>
                   </div>
+                </div>
+                <!--sent && confirm-->
+                <div *ngIf="viewState === 1" class="alert alert-danger" role="alert">
+                  Отчёт на указанную Вами дату уже составлен, отправлен и подтверждён вышестоящим учреждением.
+                  Данную запись уже невозможно <span class="spec-text">редактировать</span>/ <span
+                  class="spec-text">удалить</span>.
+                </div>
+                <!--sent && !confirm-->
+                <div *ngIf="viewState === 2" class="alert alert-warning" role="alert">
+                  Отчёт на указанную Вами дату уже составлен, сохранён и отправлен в вышестоящее учреждение, но ещё
+                  не был подтвержден вышестоящим учреждением.
+                  В случае отказа вышестоящим учреждением данная запись станет доступной для
+                  <span class="spec-text">редактирования</span>/
+                  <span class="spec-text">удаления</span>/
+                  <span class="spec-text">повторной отправки</span>.
+                </div>
+                <!--!sent && !confirm-->
+                <div *ngIf="viewState === 3" class="alert alert-success" role="alert">
+                  Отчёт на указанную Вами дату уже составлен и сохранёни, но ещё не отправлен в вышестоящее учреждение.
+                  В настоящее время отчёт на указанную дату доступен для
+                  <span class="spec-text">редактирования</span>/
+                  <span class="spec-text">удаления</span>/
+                  <span class="spec-text">повторной отправки</span>. Для внесения изменений, пожалуйста, найдите данный
+                  отчёт в списке всех отчётов и нажмите кнопку Редактировать (в виде карандаша) справа от записи отчёта
                 </div>
               </div>
+              <div class="col-md-12" style="margin-top: 20px;">
+                <div class="pull-left">
+                  <label><span style="color: #dd4b39">*</span> - помеченные поля обязательны к заполнению</label>
+                </div>
+                <div class="pull-right">
+                  <button style="margin-right: 5px;"
+                          *ngIf="viewState === 0"
+                          [disabled]="!validation()"
+                          (click)="onSubmit()"
+                          class="btn btn-success"
+                          type="submit">
+                    Сохранить
+                  </button>
+                  <button class="btn btn-danger" [routerLink]="['/distributor-report']" type="button">
+                    Отмена
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #noreport>
+  <div class="col-md-12">
+    <span class="text-center"
+          style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
+      На указанную дату от кинотеатров не поступило ни одного отчёта;)
+    </span>
+  </div>
+</ng-template>
+
+
+<!--
+
               <div *ngIf="!sendReport && !confirmReport" class="col-md-12" style="margin-top: 20px;">
                 <div class="row">
                   <div class="col-md-12" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #dddddd;">
@@ -169,34 +336,4 @@
                   </a>
                 </div>
               </div>
-              <div class="col-md-12" style="margin-top: 20px;">
-                <div class="pull-left">
-                  <label><span style="color: #dd4b39">*</span> - помеченные поля обязательны к заполнению</label>
-                </div>
-                <div class="pull-right">
-                  <button style="margin-right: 5px;" [disabled]="!validation()" (click)="onSubmit()"
-                          class="btn btn-success"
-                          type="submit">
-                    Сохранить
-                  </button>
-                  <button class="btn btn-danger" [routerLink]="['/distributor-report']" type="button">
-                    Отмена
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<ng-template #noreport>
-  <div class="col-md-12">
-    <span class="text-center"
-          style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
-      На указанную дату от кинотеатров не поступило ни одного отчёта;)
-    </span>
-  </div>
-</ng-template>
+-->

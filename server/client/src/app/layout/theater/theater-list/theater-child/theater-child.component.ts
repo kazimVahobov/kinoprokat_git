@@ -146,18 +146,18 @@ export class TheaterChildComponent implements OnInit {
 
             for (let i = 0; i < this.theaterReports.length; i++) {
               for (let j = 0; j < this.distributorReports.length; j++) {
-                for (let m = 0; m < this.distributorReports[j].theaterReports.length; m++) {
-                  if (this.distributorReports[j].theaterReports[m].theaterReportsId === this.theaterReports[i]._id) {
-                    this.distributorReports[j].theaterReports.splice(m, 1)
-                    m--;
-                  }
-                }
-                if (this.distributorReports[j].mobileTheaters.length || this.distributorReports[j].theaterReports.length) {
-                  this.model.updateDistReport.push(this.distributorReports[j])
-                }
-                if (!this.distributorReports[j].mobileTheaters.length && !this.distributorReports[j].theaterReports.length) {
-                  this.model.deleteDistReport.push(this.distributorReports[j])
-                }
+                // for (let m = 0; m < this.distributorReports[j].theaterReports.length; m++) {
+                //   if (this.distributorReports[j].theaterReports[m].theaterReportsId === this.theaterReports[i]._id) {
+                //     this.distributorReports[j].theaterReports.splice(m, 1)
+                //     m--;
+                //   }
+                // }
+                // if (this.distributorReports[j].mobileTheaters.length || this.distributorReports[j].theaterReports.length) {
+                //   this.model.updateDistReport.push(this.distributorReports[j])
+                // }
+                // if (!this.distributorReports[j].mobileTheaters.length && !this.distributorReports[j].theaterReports.length) {
+                //   this.model.deleteDistReport.push(this.distributorReports[j])
+                // }
               }
             }
             this.model.theaterId = this.theaterForDelete._id;
@@ -209,5 +209,5 @@ class reportModel {
   deleteDistReport: DistributorReportModel[];
   updateDistReport: DistributorReportModel[];
   deleteTheaterReports: TheaterReportModel[];
-  contracts: ContractModel[];
+  allContracts: ContractModel[];
 }

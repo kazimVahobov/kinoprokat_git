@@ -112,9 +112,9 @@ export class OutRepeortComponent implements OnInit {
               this.tempReports = [];
               this.reports = [];
 
-              this.tempReports = theaterReports.filter(item =>
-                this.distributorReports[a].theaterReports.some(th =>
-                  item._id === th.theaterReportsId));
+              // this.tempReports = theaterReports.filter(item =>
+              //   this.distributorReports[a].theaterReports.some(th =>
+              //     item._id === th.theaterReportsId));
 
               for (let i = 0; i < this.tempReports.length; i++) {
 

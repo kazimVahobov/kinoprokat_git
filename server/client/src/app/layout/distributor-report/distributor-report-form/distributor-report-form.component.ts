@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   DistributorReportModel,
   TheaterReportModel,
@@ -12,7 +12,7 @@ import {
   ContractService,
   ContractModel
 } from 'src/app/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-distributor-report-form',
@@ -21,235 +21,148 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class DistributorReportFormComponent implements OnInit {
 
-  model: DistributorReportModel;
-  distributorsReport: DistributorReportModel;
   id: string;
+  model: DistributorReportModel = new DistributorReportModel();
   mainLabel = 'Новый отчёт';
-
-  sendReport = false;
-  confirmReport = false;
-
-  contracts: ContractModel[] = [];
-
-  currentTheaters: TheaterModel[] = [];
-
-  tempReports: TheaterReportModel[];
-  reports: Report[];
-  reportsSendEnabled: Report[];
-  tempReport: Report;
-
-  // pager object
-  pager: any = {};
-  // paged items
-  pagedItems: any[];
-
-  isChecked = false;
-
-  moviesArray: MovieModel[] = [];
-
-  mobileThetersModel: MobileTheters[];
-
-  currendDate = new Date();
-  maxDate = new Date();
-
+  currentDate = new Date();
   currentUser = JSON.parse(localStorage.getItem('user'));
   role = JSON.parse(localStorage.getItem('role'));
+  // if viewState = 0 - new Report
+  // if viewState = 1 - sent && confirm
+  // if viewState = 2 - sent && !confirm
+  // if viewState = 3 - !sent && !confirm
+  viewState = 0;
+  movies: MovieOfCont[];
+  maxDate = new Date();
 
   constructor(private service: DistributorReportService,
-    private theaterReportService: TheaterReportService,
-    private router: Router,
-    private pagerService: PagerService,
-    private theaterService: TheaterService,
-    private movieService: MovieService,
-    private contractService: ContractService,
-    private route: ActivatedRoute
-  ) {
+              private theaterReportService: TheaterReportService,
+              private router: Router,
+              private pagerService: PagerService,
+              private theaterService: TheaterService,
+              private movieService: MovieService,
+              private contractService: ContractService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.model = new DistributorReportModel();
-    this.model.theaterReports = [];
-    this.model.mobileTheaters = [];
-    this.mobileThetersModel = [];
-
-    this.route.params.subscribe(params => {
-      this.id = params['id'];
-      if (this.id) {
-        this.mainLabel = "Редактирование данных отчёта"
-        this.service.getById(this.id).subscribe(distReports => {
-          this.currendDate = new Date(distReports.date);
-          this.mobileThetersModel = distReports.mobileTheaters;
-        })
-      }
-    })
-
-    this.getTheaterReports();
-
-    this.movieService.getAll().subscribe(movie => {
-      this.moviesArray = movie;
+    this.movies = [];
+    this.movieService.getAll().subscribe(movies => {
       this.contractService.getAll().subscribe(contracts => {
-
-        this.contracts = contracts.filter(c => c.typeOfCont === 1 &&
+        let tempContracts = contracts.filter(c => c.typeOfCont === 1 &&
           c.secondSide === this.currentUser.distId);
-
-        this.moviesArray = movie.filter(m => this.contracts.some(c => c.movieId === m._id));
-
-      })
-    })
-  }
-
-  addMobileTheater() {
-    this.mobileThetersModel.push({ movieId: null, place: null, time: null, sessionCount: null, price: null, ticketCount: null });
-    this.validation();
-  }
-
-  validation(): boolean {
-    if (this.currendDate) {
-      if (this.mobileThetersModel.length != 0) {
-        return !this.mobileThetersModel.some(a => a.movieId === null)
-          && !this.mobileThetersModel.some(a => a.place === null)
-          && !this.mobileThetersModel.some(a => a.time === null)
-          && !this.mobileThetersModel.some(a => a.sessionCount === null)
-          && !this.mobileThetersModel.some(a => a.price === null)
-          && !this.mobileThetersModel.some(a => a.ticketCount === null);
-      } else {
-        return true;
-      }
-    } else {
-      return false;
-    }
-  }
-
-  deleteMobileTheater(index: number) {
-    if (confirm(`Вы уверен, что хотите удалить передвижной кинотеатра?`)) {
-      this.mobileThetersModel.splice(index, 1);
-    }
-  }
-
-  getTheaterReports() {
-
-    this.reports = [];
-    this.reportsSendEnabled = [];
-    this.distributorsReport = new DistributorReportModel();
-    this.mobileThetersModel = [];
-    this.tempReports = [];
-    this.theaterService.getAll().subscribe(theaters => {
-      this.currentTheaters = theaters.filter(item => item.distId === this.currentUser.distId);
-      this.theaterReportService.getAll().subscribe(reportsTheater => {
-        this.service.getAll().subscribe(reportsDistributor => {
-
-          this.distributorsReport = reportsDistributor.find(r => 
-            new Date(r.date).toDateString() === new Date(this.currendDate).toDateString() &&
-            this.currentUser.distId === r.distId)
-
-          if (this.distributorsReport) {
-            if (this.distributorsReport.sent === true && this.distributorsReport.confirm === false) {
-              this.sendReport = true;
-              this.confirmReport = false;
-            } else  if (this.distributorsReport.confirm === true && this.distributorsReport.sent === true) {
-              this.sendReport = false;
-              this.confirmReport = true;
-            } else if (this.distributorsReport.confirm === false && this.distributorsReport.sent === false) {
-              this.sendReport = false;
-              this.confirmReport = false;
+        tempContracts.forEach(cont => {
+          movies.forEach(movie => {
+            if (movie._id === cont.movieId) {
+              this.movies.push({
+                movieName: movie.name,
+                movieId: movie._id,
+                contId: cont._id,
+                dayChildPriceTh: cont.dayChildPriceMobile,
+                dayAdultPriceTh: cont.dayAdultPriceMobile,
+                eveningChildPriceTh: cont.eveningChildPriceMobile,
+                eveningAdultPriceTh: cont.eveningAdultPriceMobile
+              });
             }
+          });
+        });
+        this.route.params.subscribe(params => {
+          this.id = params['id'];
+          if (this.id) {
+            this.mainLabel = "Редактирование отчёта";
+            this.service.getById(this.id).subscribe(distReport => {
+              this.currentDate = new Date(distReport.date);
+              this.model = distReport;
+            })
           } else {
-            this.sendReport = false;
-            this.confirmReport = false;
+            this.loadFromDate();
           }
-          
-          this.tempReports = reportsTheater.filter(item =>
-            this.currentTheaters.some(th => item.theaterId === th._id)
-            && item.confirm === true &&
-            new Date(item.date).toDateString() === new Date(this.currendDate).toDateString());
+        });
 
-
-            if (this.distributorsReport && this.distributorsReport.mobileTheaters) {
-              this.mobileThetersModel = this.distributorsReport.mobileTheaters;
-            }
-
-          for (let i = 0; i < this.tempReports.length; i++) {
-
-            this.tempReport = new Report();
-            this.tempReport.movies = [];
-            this.tempReport.ticketCount = 0;
-            this.tempReport.summ = 0;
-            this.tempReport.theaterId = this.tempReports[i].theaterId;
-            this.tempReport._id = this.tempReports[i]._id;
-            this.tempReport.confirm = this.tempReports[i].confirm
-            this.tempReport.checked = false;
-            this.tempReport.sessionCount = this.tempReports[i].withCont.length;
-
-            if (this.distributorsReport) {
-              this.model._id = this.distributorsReport._id;
-
-              if (this.distributorsReport.theaterReports) {
-                if (this.distributorsReport.theaterReports.some(r => r.theaterReportsId === this.tempReports[i]._id)) {
-                  this.tempReport.checked = true;
-                } 
-              }
-            } else {
-              this.model._id = null;
-            }
-
-            for (let j = 0; j < this.tempReports[i].withCont.length; j++) {
-              if (!this.tempReport.movies.some(item => item === this.tempReports[i].withCont[j].movieId)) {
-                this.tempReport.movies.push(this.tempReports[i].withCont[j].movieId);
-              }
-              this.tempReport.ticketCount += this.tempReports[i].withCont[j].ticketCount;
-              this.tempReport.summ += this.tempReports[i].withCont[j].ticketCount * this.tempReports[i].withCont[j].price;
-            }
-
-            this.reports.push(this.tempReport);
-          }
-
-          this.reportsSendEnabled = this.reports.filter(r => r.confirm === true);
-
-          this.ReportChecked();
-          this.reports = this.reports.reverse();
-          this.setPage(1)
-        })
       });
     });
   }
 
-  onSubmit() {
+  loadFromDate() {
+    this.model = new DistributorReportModel();
+    this.model.mobileTheaters = [];
+    let distReports: DistributorReportModel[] = [];
+    let reportFoundByDate = new DistributorReportModel();
+    reportFoundByDate.mobileTheaters = [];
+    this.service.getAll().subscribe(reports => {
+      distReports = reports.filter(item => item.distId === this.currentUser.distId);
+      if (distReports.length != 0) {
+        reportFoundByDate = distReports.find(item => new Date(item.date).toDateString() == new Date(this.currentDate).toDateString());
+        if (reportFoundByDate) {
+          this.setViewState(reportFoundByDate);
+        } else {
+          this.setViewState(null);
+        }
+      } else {
+        this.setViewState(null);
+      }
+    });
+  }
 
-    this.reports = [];
-    this.reports = this.reportsSendEnabled.filter(r => r.checked)
-
-    this.model.sent = false;
-    this.model.confirm = false;
-    this.model.date = this.currendDate;
-    this.model.distId = this.currentUser.distId;
-
-    for (let i = 0; i < this.reports.length; i++) {
-      this.model.theaterReports.push({ theaterReportsId: this.reports[i]._id });
-    }
-
-    if (this.mobileThetersModel.length != 0) {
-      for (let i = 0; i < this.mobileThetersModel.length; i++) {
-        this.model.mobileTheaters.push({
-          movieId: this.mobileThetersModel[i].movieId,
-          place: this.mobileThetersModel[i].place,
-          time: this.mobileThetersModel[i].time,
-          sessionCount: this.mobileThetersModel[i].sessionCount,
-          price: this.mobileThetersModel[i].price,
-          ticketCount: this.mobileThetersModel[i].ticketCount
-        });
+  setViewState(data: any) {
+    if (data == null) {
+      this.viewState = 0;
+      this.model.distId = this.currentUser.distId;
+      this.model.date = this.currentDate;
+      this.model.sent = false;
+      this.model.confirm = false;
+      this.model.mobileTheaters.push({
+        movieId: null,
+        place: null,
+        time: null,
+        daySession: true,
+        childTicketCount: null,
+        adultTicketCount: null,
+        childTicketPrice: null,
+        adultTicketPrice: null
+      });
+    } else {
+      let report: DistributorReportModel = data as DistributorReportModel;
+      if (report.sent && report.confirm) {
+        this.viewState = 1;
+      } else if (report.sent && !report.confirm) {
+        this.viewState = 2;
+      } else if (!report.sent && !report.confirm) {
+        this.viewState = 3;
       }
     }
-    if (this.mobileThetersModel.length != 0 || this.reports.length != 0) {
-      this.service.save(this.model).subscribe(() => {
-        alert('Все данные успешно сохранены!');
-        this.router.navigate(['/distributor-report']);
-      },
-        error => {
-          alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
-          console.log(error.error.message)
-        });
-    } else {
-      alert('Пожалуйста выберите хотя бы одно отчёта');
+  }
+
+  addMobileTheater() {
+    this.model.mobileTheaters.push({
+      movieId: null,
+      place: null,
+      time: null,
+      daySession: true,
+      childTicketCount: null,
+      adultTicketCount: null,
+      childTicketPrice: null,
+      adultTicketPrice: null
+    });
+    this.validation();
+  }
+
+  deleteMobileTheater(index: number) {
+    if (this.model.mobileTheaters.length > 1) {
+      if (confirm(`Вы уверен, что хотите удалить передвижной кинотеатра?`)) {
+        this.model.mobileTheaters.splice(index, 1);
+      }
+    }
+  }
+
+  changeMovie(i: number) {
+    let movie: MovieOfCont = this.movies.find(item => item.movieId === this.model.mobileTheaters[i].movieId);
+    if (this.model.mobileTheaters[i].daySession) {
+      this.model.mobileTheaters[i].minChildTicketPrice = movie.dayChildPriceTh;
+      this.model.mobileTheaters[i].minAdultTicketPrice = movie.dayAdultPriceTh;
+    } else if (!this.model.mobileTheaters[i].daySession) {
+      this.model.mobileTheaters[i].minChildTicketPrice = movie.eveningChildPriceTh;
+      this.model.mobileTheaters[i].minAdultTicketPrice = movie.eveningAdultPriceTh;
     }
   }
 
@@ -259,44 +172,51 @@ export class DistributorReportFormComponent implements OnInit {
     }
   }
 
-  setPage(page: number) {
-    // get pager object from service
-    this.pager = this.pagerService.getPager(this.reports.length, page);
-    // get current page of items
-    this.pagedItems = this.reports.slice(this.pager.startIndex, this.pager.endIndex + 1);
-  }
-
-  ReportChecked() {
-    this.isChecked = this.reportsSendEnabled.some(a => a.checked);
-  }
-
-  AllReportsChecked() {
-    for (let i = 0; i < this.reportsSendEnabled.length; i++) {
-      this.reportsSendEnabled[i].checked = this.isChecked;
+  validation(): boolean {
+    if (this.model.mobileTheaters.some(i =>
+      i.place === null ||
+      i.time === null ||
+      i.movieId === null ||
+      i.adultTicketCount === null ||
+      i.childTicketCount === null ||
+      i.adultTicketPrice === null ||
+      i.childTicketPrice === null)) {
+      return false;
+    } else if (this.model.mobileTheaters.some(i =>
+      i.adultTicketPrice < i.minAdultTicketPrice ||
+      i.childTicketPrice < i.minChildTicketPrice)) {
+      return false;
+    } else {
+      return true;
     }
   }
 
-  isIndeterminated(): boolean {
-    return this.reportsSendEnabled.some(a => a.checked) && this.reportsSendEnabled.some(a => !a.checked);
+  onSubmit() {
+    if (this.id) {
+      this.model._id = this.id;
+    }
+    this.model.distId = this.currentUser.distId;
+    this.model.date = this.currentDate;
+    this.model.sent = false;
+    this.model.confirm = false;
+    this.service.save(this.model).subscribe(() => {
+        alert('Все данные успешно сохранены!');
+        this.router.navigate(['/distributor-report']);
+      },
+      error => {
+        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+        console.log(error.error.message)
+      });
   }
+
 }
 
-class Report {
-  _id?: string;
-  theaterId: string;
-  checked: boolean;
-  movies: string[];
-  sessionCount: number;
-  ticketCount: number;
-  summ: number;
-  confirm: boolean;
-}
-class MobileTheters {
-  _id?: string;
+class MovieOfCont {
+  movieName: string;
   movieId: string;
-  place: string;
-  time: Date;
-  sessionCount: number;
-  price: number;
-  ticketCount: number;
+  contId: string;
+  dayChildPriceTh: number;
+  dayAdultPriceTh: number;
+  eveningChildPriceTh: number;
+  eveningAdultPriceTh: number;
 }

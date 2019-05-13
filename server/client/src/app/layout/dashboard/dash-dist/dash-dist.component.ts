@@ -438,21 +438,21 @@ export class DashDistComponent implements OnInit {
   currentDistData(theaterReports: TheaterReportModel[]) {
     // ------------Current Report Start------------//
 
-    if (this.currentReport) {
-
-      this.theaterReportsWithDist = theaterReports.filter(r => this.currentReport.theaterReports.some(d => d.theaterReportsId === r._id));
-
-      if (this.currentReport.sent) {
-        this.reportStatus = 2;
-        if (this.currentReport.confirm) {
-          this.reportStatus = 3;
-        }
-      } else {
-        this.reportStatus = 1;
-      }
-    } else {
-      this.reportStatus = 0
-    }
+    // if (this.currentReport) {
+    //
+    //   this.theaterReportsWithDist = theaterReports.filter(r => this.currentReport.theaterReports.some(d => d.theaterReportsId === r._id));
+    //
+    //   if (this.currentReport.sent) {
+    //     this.reportStatus = 2;
+    //     if (this.currentReport.confirm) {
+    //       this.reportStatus = 3;
+    //     }
+    //   } else {
+    //     this.reportStatus = 1;
+    //   }
+    // } else {
+    //   this.reportStatus = 0
+    // }
 
     this.theaterReport = new TotalReport();
     this.theaterReport.movies = [];
@@ -474,15 +474,15 @@ export class DashDistComponent implements OnInit {
         this.theaterReport.summTotal += this.theaterReport.summ;
       }
     }
-    //Mobile Reports
-    if (this.currentReport && this.currentReport.mobileTheaters) {
-      for (let i = 0; i < this.currentReport.mobileTheaters.length; i++) {
-        this.theaterReport.summTotal += this.currentReport.mobileTheaters[i].price * this.currentReport.mobileTheaters[i].ticketCount;
-        this.theaterReport.sessionCount += this.currentReport.mobileTheaters[i].sessionCount;
-        this.theaterReport.ticketCount += this.currentReport.mobileTheaters[i].ticketCount;
-        this.theaterReport.movies.push(this.currentReport.mobileTheaters[i].movieId);
-      }
-    }
+    // //Mobile Reports
+    // if (this.currentReport && this.currentReport.mobileTheaters) {
+    //   for (let i = 0; i < this.currentReport.mobileTheaters.length; i++) {
+    //     this.theaterReport.summTotal += this.currentReport.mobileTheaters[i].price * this.currentReport.mobileTheaters[i].ticketCount;
+    //     this.theaterReport.sessionCount += this.currentReport.mobileTheaters[i].sessionCount;
+    //     this.theaterReport.ticketCount += this.currentReport.mobileTheaters[i].ticketCount;
+    //     this.theaterReport.movies.push(this.currentReport.mobileTheaters[i].movieId);
+    //   }
+    // }
     // ------------Current Report End------------//
   }
 

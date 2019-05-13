@@ -3,9 +3,8 @@ export class DistributorReportModel {
   distId: string;
   date: Date;
   sent: boolean;
-  theaterReports: TheaterReports[];
-  mobileTheaters: ReportMobileTheater[];
   confirm: boolean;
+  mobileTheaters: ReportMobileTheater[];
 }
 
 class ReportMobileTheater {
@@ -13,10 +12,11 @@ class ReportMobileTheater {
   movieId: string;
   place: string;
   time: Date;
-  sessionCount: number;
-  price: number;
-  ticketCount: number;
-}
-class TheaterReports {
-  theaterReportsId: string;
+  daySession: boolean;
+  childTicketCount: number;
+  adultTicketCount: number;
+  childTicketPrice: number;
+  adultTicketPrice: number;
+  minChildTicketPrice?: number;
+  minAdultTicketPrice?: number;
 }

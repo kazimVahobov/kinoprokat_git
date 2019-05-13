@@ -10,8 +10,8 @@
         <th>2-ая сторона</th>
         <th>Дата заключения</th>
         <th>Период проката</th>
-        <th  *ngIf="isEdit" ></th>
-        <th  *ngIf="isDelete"></th>
+        <th *ngIf="isEdit"></th>
+        <th *ngIf="isDelete"></th>
       </tr>
       </thead>
       <tbody>
@@ -37,12 +37,13 @@
         <td *ngIf="contract.typeOfCont == 2">{{contract.secondSide|manual:theaters}}</td>
         <td>{{contract.contDate|date: 'dd.MM.yyyy'}}</td>
         <td>{{contract.fromDate|date: 'dd.MM.yyyy'}} - {{contract.toDate|date: 'dd.MM.yyyy'}}</td>
-        <td style="width: 5%" class="text-center" [routerLink]="['edit', contract._id]">
-          <span *ngIf="isEdit"  popover="Редактировать" triggers="mouseenter:mouseleave" class="fa fa-edit"></span>
+        <td *ngIf="isEdit" style="width: 5%" class="text-center">
+          <span popover="Редактировать" triggers="mouseenter:mouseleave" class="fa fa-edit"
+                [routerLink]="['edit', contract._id]"></span>
         </td>
-        <td style="width: 5%" class="text-center">
-          <span *ngIf="isDelete"  popover="Удалить" triggers="mouseenter:mouseleave" class="fa fa-trash"
-          (click)='openModal(contract)'></span>
+        <td *ngIf="isDelete" style="width: 5%" class="text-center">
+          <span popover="Удалить" triggers="mouseenter:mouseleave" class="fa fa-trash"
+                (click)='openModal(contract)'></span>
         </td>
       </tr>
       </tbody>
@@ -93,8 +94,10 @@
           <div class="col-md-12">
             <div class="alert alert-danger" role="alert">
               <p>
-                Внимание!!! У договора № <span style="font-weight: bold;">{{contractForDelete.contNum}}</span> Истёк срок и в настоящее время он не актуален.
-                Но при удалении договра будут удалены <span style="font-weight: bold;">без возможности восстановления</span>
+                Внимание!!! У договора № <span style="font-weight: bold;">{{contractForDelete.contNum}}</span> Истёк
+                срок и в настоящее время он не актуален.
+                Но при удалении договра будут удалены <span
+                style="font-weight: bold;">без возможности восстановления</span>
                 все данные, имеющие какое-либо к
                 данному договору.
               </p>

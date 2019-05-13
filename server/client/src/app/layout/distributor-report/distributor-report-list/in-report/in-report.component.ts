@@ -1,6 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { TheaterReportService, TheaterService, TheaterReportModel, TheaterModel, PagerService, PermissionService } from 'src/app/core';
-import { Router } from '@angular/router';
+import {Component, OnInit, Input} from '@angular/core';
+import {
+  TheaterReportService,
+  TheaterService,
+  TheaterReportModel,
+  TheaterModel,
+  PagerService,
+  PermissionService
+} from 'src/app/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-in-report',
@@ -31,20 +38,18 @@ export class InReportComponent implements OnInit {
   filterReport: any = {};
 
   constructor(private service: TheaterReportService,
-    private theaterService: TheaterService,
-    private pagerService: PagerService,
-    private router: Router,
-    private permissionService: PermissionService
+              private theaterService: TheaterService,
+              private pagerService: PagerService,
+              private router: Router,
+              private permissionService: PermissionService
   ) {
   }
 
   ngOnChanges() {
-    this.ngOnInit();
+    this.loadData();
   }
 
   ngOnInit() {
-
-    this.loadData();
 
     if (this.permissionService.reportDist) {
       for (let i = 0; i < this.permissionService.reportDist.length; i++) {
@@ -61,7 +66,7 @@ export class InReportComponent implements OnInit {
     this.filterReport.currentMode = 0;
     window.localStorage.setItem('filterReport', JSON.stringify(this.filterReport));
     this.router.navigate(['/detail-report'], {
-      queryParams: { id: id }
+      queryParams: {id: id}
     });
   }
 
@@ -89,7 +94,7 @@ export class InReportComponent implements OnInit {
         for (let i = 0; i < this.tempReports.length; i++) {
           this.tempReport = new Report();
           this.tempReport.movies = [];
-          this.tempReport.theaterId = this.tempReports[i].theaterId
+          this.tempReport.theaterId = this.tempReports[i].theaterId;
           this.tempReport.ticketCount = 0;
           this.tempReport.summ = 0;
           this.tempReport._id = this.tempReports[i]._id;
@@ -97,14 +102,15 @@ export class InReportComponent implements OnInit {
           this.tempReport.sent = this.tempReports[i].sent;
           this.tempReport.confirm = this.tempReports[i].confirm;
           this.tempReport.sessionCount = this.tempReports[i].withCont.length;
-          this.tempReport.withoutCont = !this.tempReports[i].withoutCont
+          this.tempReport.withoutCont = !this.tempReports[i].withoutCont;
 
           for (let j = 0; j < this.tempReports[i].withCont.length; j++) {
             if (!this.tempReport.movies.some(item => item === this.tempReports[i].withCont[j].movieId)) {
               this.tempReport.movies.push(this.tempReports[i].withCont[j].movieId);
             }
-            this.tempReport.ticketCount += this.tempReports[i].withCont[j].ticketCount;
-            this.tempReport.summ += this.tempReports[i].withCont[j].ticketCount * this.tempReports[i].withCont[j].price;
+            this.tempReport.ticketCount += this.tempReports[i].withCont[j].childTicketCount + this.tempReports[i].withCont[j].adultTicketCount;
+            this.tempReport.summ += (this.tempReports[i].withCont[j].childTicketCount * this.tempReports[i].withCont[j].childTicketPrice) +
+              (this.tempReports[i].withCont[j].adultTicketCount * this.tempReports[i].withCont[j].adultTicketPrice);
           }
           this.reports.push(this.tempReport);
         }
@@ -130,8 +136,8 @@ export class InReportComponent implements OnInit {
     this.theaterReport.sent = true;
     this.theaterReport.confirm = true;
     this.service.update(this.theaterReport).subscribe(report => {
-      this.loadData();
-    },
+        this.loadData();
+      },
       error => {
         alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
       });
@@ -142,8 +148,8 @@ export class InReportComponent implements OnInit {
     this.theaterReport.sent = false;
     this.theaterReport.confirm = false;
     this.service.update(this.theaterReport).subscribe(report => {
-      this.loadData();
-    },
+        this.loadData();
+      },
       error => {
         alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
       });

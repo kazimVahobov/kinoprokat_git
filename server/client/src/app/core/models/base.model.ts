@@ -1,6 +1,6 @@
 export class BaseModel {
-  createdDate: string;
-  updatedDate: string;
-  createdBy: string;
-  updatedBy: string;
+  createdDate?: string;
+  updatedDate?: string;
+  createdBy?: string;
+  updatedBy?: string;
 }

@@ -342,10 +342,10 @@ export class StatisticDistComponent implements OnInit {
                 for (let u = 0; u < this.filterDistReports[j].mobileTheaters.length; u++) {
 
                   this.oneReport = new ReportOfTotalReport();
-                  this.oneReport.amount = this.filterDistReports[j].mobileTheaters[u].price * this.filterDistReports[j].mobileTheaters[u].ticketCount
+                  // this.oneReport.amount = this.filterDistReports[j].mobileTheaters[u].price * this.filterDistReports[j].mobileTheaters[u].ticketCount
                   this.oneReport.movieId = this.filterDistReports[j].mobileTheaters[u].movieId;
                   this.oneReport.theaterId = this.currentDist._id
-                  this.oneReport.ticketCount = this.filterDistReports[j].mobileTheaters[u].ticketCount;
+                  // this.oneReport.ticketCount = this.filterDistReports[j].mobileTheaters[u].ticketCount;
 
                   if (this.selectedCond === 1) {
                     this.associationMovieReport(this.reportTotal.report, this.oneReport)
@@ -527,11 +527,11 @@ export class StatisticDistComponent implements OnInit {
     for (let n = 0; n < this.distReports.length; n++) {
       for (let u = 0; u < this.distReports[n].mobileTheaters.length; u++) {
         this.oneReport = new ReportOfTotalReport();
-        this.oneReport.amount = this.distReports[n].mobileTheaters[u].price * this.distReports[n].mobileTheaters[u].ticketCount
+        // this.oneReport.amount = this.distReports[n].mobileTheaters[u].price * this.distReports[n].mobileTheaters[u].ticketCount
         this.oneReport.movieId = this.distReports[n].mobileTheaters[u].movieId;
         this.oneReport.theaterId = this.currentDist._id;
         this.oneReport.date = this.distReports[n].date;
-        this.oneReport.ticketCount = this.distReports[n].mobileTheaters[u].ticketCount;
+        // this.oneReport.ticketCount = this.distReports[n].mobileTheaters[u].ticketCount;
         if (!this.isMovie && this.isOneTheater) {
           //one theater and one movie
           if (this.oneReport.movieId === this.selectedMovie) {

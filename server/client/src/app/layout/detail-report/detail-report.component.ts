@@ -53,7 +53,7 @@ export class DetailReportComponent implements OnInit {
               this.theaterReports = [];
               if (distReports) {
 
-                this.theaterReports = theaterReports.filter(thReport => distReports.theaterReports.some(i => i.theaterReportsId === thReport._id));
+                // this.theaterReports = theaterReports.filter(thReport => distReports.theaterReports.some(i => i.theaterReportsId === thReport._id));
                 this.theaters = theaters.filter(theater => this.theaterReports.some(i => i.theaterId === theater._id));
                 this.theaters.push({
                   _id: '0',

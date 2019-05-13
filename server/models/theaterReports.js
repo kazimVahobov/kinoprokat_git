@@ -20,30 +20,21 @@ const theaterReports = new Schema({
             sessionTime: {
                 type: String
             },
-            dayChildTicketCount: {
+            daySession: {
+                type: Boolean
+            },
+            childTicketCount: {
                 type: Number
             },
-            dayAdultTicketCount: {
+            adultTicketCount: {
                 type: Number
             },
-            eveningChildTicketCount: {
+            childTicketPrice: {
                 type: Number
             },
-            eveningAdultTicketCount: {
+            adultTicketPrice: {
                 type: Number
-            },
-            dayChildTicketPrice: {
-                type: Number
-            },
-            dayAdultTicketPrice: {
-                type: Number
-            },
-            eveningChildTicketPrice: {
-                type: Number
-            },
-            eveningAdultTicketPrice: {
-                type: Number
-            },
+            }
         }
     ],
     withoutCont: [
@@ -62,6 +53,6 @@ const theaterReports = new Schema({
             }
         }
     ]
-})
+});
 
 module.exports = mongoose.model('theaterReports', theaterReports)

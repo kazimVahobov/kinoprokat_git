@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   PagerService,
   TheaterReportService,
   TheaterReportModel,
   PermissionService
 } from 'src/app/core';
-import { BsDatepickerConfig } from "ngx-bootstrap";
-import { BsDatepickerViewMode } from "ngx-bootstrap/datepicker/models";
-import { Router } from '@angular/router';
+import {BsDatepickerConfig} from "ngx-bootstrap";
+import {BsDatepickerViewMode} from "ngx-bootstrap/datepicker/models";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-theater-report-list',
@@ -36,12 +36,10 @@ export class TheaterReportListComponent implements OnInit {
   isEdit = false;
   isCreate = false;
 
-  constructor(
-    private service: TheaterReportService,
-    private pagerService: PagerService,
-    private router: Router,
-    private permissionService: PermissionService
-  ) {
+  constructor(private service: TheaterReportService,
+              private pagerService: PagerService,
+              private router: Router,
+              private permissionService: PermissionService) {
   }
 
   ngOnInit() {
@@ -70,7 +68,7 @@ export class TheaterReportListComponent implements OnInit {
   }
 
   detailRouter(id: string) {
-    this.router.navigate(['/detail-report'], { queryParams: { id: id, currentMode: 0 } });
+    this.router.navigate(['/detail-report'], {queryParams: {id: id, currentMode: 0}});
   }
 
   load() {
@@ -105,8 +103,9 @@ export class TheaterReportListComponent implements OnInit {
           if (!this.tempReport.movies.some(item => item === this.tempReports[i].withCont[j].movieId)) {
             this.tempReport.movies.push(this.tempReports[i].withCont[j].movieId);
           }
-          this.tempReport.ticketCount += this.tempReports[i].withCont[j].ticketCount;
-          this.tempReport.summ += this.tempReports[i].withCont[j].ticketCount * this.tempReports[i].withCont[j].price;
+          this.tempReport.ticketCount += this.tempReports[i].withCont[j].childTicketCount + this.tempReports[i].withCont[j].adultTicketCount;
+          this.tempReport.summ += (this.tempReports[i].withCont[j].childTicketCount * this.tempReports[i].withCont[j].childTicketPrice)
+            + (this.tempReports[i].withCont[j].adultTicketCount * this.tempReports[i].withCont[j].adultTicketPrice);
         }
         this.reports.push(this.tempReport);
       }
@@ -142,9 +141,9 @@ export class TheaterReportListComponent implements OnInit {
   deleteReport(report: Report) {
     if (confirm(`Вы действительно хотите удалить отчёт за ${new Date(report.date).getDate()}.${new Date(report.date).getMonth() + 1}.${new Date(report.date).getFullYear()}?`)) {
       this.service.delete(report._id).subscribe(() => {
-        alert('Отчёт успешно удалён');
-        this.load();
-      },
+          alert('Отчёт успешно удалён');
+          this.load();
+        },
         error => {
           alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
         });
@@ -157,9 +156,9 @@ export class TheaterReportListComponent implements OnInit {
       model._id = report._id;
       model.sent = true;
       this.service.update(model).subscribe(() => {
-        alert('Отчёт успешно отправлен');
-        this.load();
-      },
+          alert('Отчёт успешно отправлен');
+          this.load();
+        },
         error => {
           alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
         });
@@ -172,8 +171,8 @@ class Report {
   _id: string;
   date: Date;
   movies: string[];
-  sessionCount: number;
-  ticketCount: number;
+  sessionCount: number = 0;
+  ticketCount: number = 0;
   withoutCont: boolean;
   summ: number;
   sent: boolean;

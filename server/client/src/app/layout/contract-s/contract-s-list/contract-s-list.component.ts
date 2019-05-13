@@ -156,6 +156,6 @@ export class ContractSListComponent implements OnInit {
   }
 }
 class reportModel {
-  contracts: ContractModel[];
+  allContracts: ContractModel[];
   contractId: string;
 }

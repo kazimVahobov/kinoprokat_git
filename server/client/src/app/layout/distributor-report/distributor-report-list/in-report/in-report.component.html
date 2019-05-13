@@ -1,7 +1,7 @@
 <div class="box">
   <div class="box-body" style="padding: 0" *ngIf="pagedItems" >
-    <div *ngIf="pagedItems.length != 0; else noreport">
-      <table class="table table-bordered table-condensed">
+    <div *ngIf="pagedItems.length != 0; else noReport">
+      <table class="table table-bordered table-condensed table-hover">
         <thead>
         <tr>
           <th></th>
@@ -98,7 +98,7 @@
       </li>
     </ul>
   </div>
-  <ng-template #noreport>
+  <ng-template #noReport>
     <span class="text-center"
           style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
       Ни одного отчёта не указаную дату не получено. Попробуйте указать другую дату;)

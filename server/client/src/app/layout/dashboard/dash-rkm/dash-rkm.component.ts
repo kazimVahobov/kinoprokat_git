@@ -225,42 +225,42 @@ export class DashRkmComponent implements OnInit {
                 this.totalReport.theaterReportCount = 0;
                 this.totalReport.mobileReportCount = 0;
 
-                if (this.totalDistReport) {
-                  for (let i = 0; i < this.totalDistReport.length; i++) {
-                    for (let j = 0; j < this.totalDistReport[i].theaterReports.length; j++) {
-                      for (let m = 0; m < theaterReports.length; m++) {
-                        if (this.totalDistReport[i].theaterReports[j].theaterReportsId === theaterReports[m]._id) {
-                          this.totalTheaterReport.push(theaterReports[m])
-                        }
-                      }
-                    }
-                    for (let a = 0; a < this.totalDistReport[i].mobileTheaters.length; a++) {
-                      this.totalReport.mobileReportCount += 1;
-                      this.totalReport.summTotal += this.totalDistReport[i].mobileTheaters[a].price * this.totalDistReport[i].mobileTheaters[a].ticketCount;
-                      this.totalReport.sessionCount += this.totalDistReport[i].mobileTheaters[a].sessionCount;
-                      this.totalReport.ticketCount += this.totalDistReport[i].mobileTheaters[a].ticketCount;
-                      if (!this.totalReport.movies.some(m => m === this.totalDistReport[i].mobileTheaters[a].movieId)) {
-                        this.totalReport.movies.push(this.totalDistReport[i].mobileTheaters[a].movieId);
-                      }
-                    }
-
-                  }
-
-                  for (let i = 0; i < this.totalTheaterReport.length; i++) {
-
-                    this.totalReport.summ = 0;
-                    this.totalReport.theaterReportCount += 1;
-
-                    for (let j = 0; j < this.totalTheaterReport[i].withCont.length; j++) {
-                      this.totalReport.sessionCount += 1;
-                      this.totalReport.ticketCount += this.totalTheaterReport[i].withCont[j].ticketCount;
-                      this.totalReport.summ += this.totalTheaterReport[i].withCont[j].ticketCount * this.totalTheaterReport[i].withCont[j].price;
-                      this.totalReport.movies.push(this.totalTheaterReport[i].withCont[j].movieId);
-                    }
-
-                    this.totalReport.summTotal += this.totalReport.summ;
-                  }
-                }
+                // if (this.totalDistReport) {
+                //   for (let i = 0; i < this.totalDistReport.length; i++) {
+                //     for (let j = 0; j < this.totalDistReport[i].theaterReports.length; j++) {
+                //       for (let m = 0; m < theaterReports.length; m++) {
+                //         if (this.totalDistReport[i].theaterReports[j].theaterReportsId === theaterReports[m]._id) {
+                //           this.totalTheaterReport.push(theaterReports[m])
+                //         }
+                //       }
+                //     }
+                //     for (let a = 0; a < this.totalDistReport[i].mobileTheaters.length; a++) {
+                //       this.totalReport.mobileReportCount += 1;
+                //       this.totalReport.summTotal += this.totalDistReport[i].mobileTheaters[a].price * this.totalDistReport[i].mobileTheaters[a].ticketCount;
+                //       this.totalReport.sessionCount += this.totalDistReport[i].mobileTheaters[a].sessionCount;
+                //       this.totalReport.ticketCount += this.totalDistReport[i].mobileTheaters[a].ticketCount;
+                //       if (!this.totalReport.movies.some(m => m === this.totalDistReport[i].mobileTheaters[a].movieId)) {
+                //         this.totalReport.movies.push(this.totalDistReport[i].mobileTheaters[a].movieId);
+                //       }
+                //     }
+                //
+                //   }
+                //
+                //   for (let i = 0; i < this.totalTheaterReport.length; i++) {
+                //
+                //     this.totalReport.summ = 0;
+                //     this.totalReport.theaterReportCount += 1;
+                //
+                //     for (let j = 0; j < this.totalTheaterReport[i].withCont.length; j++) {
+                //       this.totalReport.sessionCount += 1;
+                //       this.totalReport.ticketCount += this.totalTheaterReport[i].withCont[j].ticketCount;
+                //       this.totalReport.summ += this.totalTheaterReport[i].withCont[j].ticketCount * this.totalTheaterReport[i].withCont[j].price;
+                //       this.totalReport.movies.push(this.totalTheaterReport[i].withCont[j].movieId);
+                //     }
+                //
+                //     this.totalReport.summTotal += this.totalReport.summ;
+                //   }
+                // }
 
                 movies.forEach(movie => {
                   this.movieTable = new MovieTableRow();

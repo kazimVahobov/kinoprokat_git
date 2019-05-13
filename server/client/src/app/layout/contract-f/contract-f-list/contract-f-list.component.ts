@@ -166,10 +166,10 @@ export class ContractFListComponent implements OnInit {
       this.service.getAll().subscribe(contracts => {
 
         this.model = new reportModel();
-        this.model.allContracts = [];
+        this.model.contracts = [];
         this.contracts = [];
 
-        this.model.allContracts = contracts.filter(c => c.parentId === this.contractForDelete._id);
+        this.model.contracts = contracts.filter(c => c.parentId === this.contractForDelete._id);
 
         for (let i = 0; i < this.model.contracts.length; i++) {
           for (let j = 0; j < contracts.length; j++) {

@@ -160,13 +160,13 @@ export class DistributorListComponent implements OnInit {
               this.model.allContracts = contracts.filter(c => c.secondSide === this.distForDelete._id)
               for (let j = 0; j < contracts.length; j++) {
                 if (contracts[j].firstSide === this.distForDelete._id) {
-                  this.model.contracts.push(contracts[j]);
+                  this.model.allContracts.push(contracts[j]);
                 }
               }
               for (let i = 0; i < this.model.theaters.length; i++) {
                 for (let j = 0; j < contracts.length; j++) {
                   if (contracts[j].secondSide === this.model.theaters[i]._id) {
-                    this.model.contracts.push(contracts[j]);
+                    this.model.allContracts.push(contracts[j]);
                   }
                 }
                 //Get TheaterReport
@@ -222,6 +222,6 @@ class reportModel {
   distId: string;
   deleteDistReport: DistributorReportModel[];
   deleteTheaterReports: TheaterReportModel[];
-  contracts: ContractModel[];
+  allContracts: ContractModel[];
   theaters: TheaterModel[];
 }
