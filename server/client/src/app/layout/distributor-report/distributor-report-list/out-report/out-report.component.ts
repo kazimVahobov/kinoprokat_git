@@ -100,21 +100,23 @@ export class OutReportComponent implements OnInit {
   }
 
   deleteReport(id: any) {
-    if (confirm(`Вы уверены, что хотите удалить отчёта?`)) {
+    if (confirm(`Вы уверены, что хотите удалить отчёт?`)) {
       this.service.delete(id).subscribe(res => this.loadData());
     }
   }
 
   sendReport(id: any) {
-    let reportToSend: any = {};
-    reportToSend._id = id;
-    reportToSend.sent = true;
-    this.service.update(reportToSend).subscribe(report => {
-        this.loadData();
-      },
-      error => {
-        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
-      });
+    if (confirm(`Вы уверены, что хотите отправить отчёт?`)) {
+      let reportToSend: any = {};
+      reportToSend._id = id;
+      reportToSend.sent = true;
+      this.service.update(reportToSend).subscribe(report => {
+          this.loadData();
+        },
+        error => {
+          alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+        });
+    }
   }
 
   detailRouter(id: string) {
@@ -123,7 +125,7 @@ export class OutReportComponent implements OnInit {
     filterReport.currentMode = 1;
     window.localStorage.setItem('filterReport', JSON.stringify(filterReport));
     this.router.navigate(['/detail-report'], {
-      queryParams: {id: id}
+      queryParams: {id: id, type: 'dist'}
     });
   }
 

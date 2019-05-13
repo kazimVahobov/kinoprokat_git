@@ -19,7 +19,6 @@ export class InReportComponent implements OnInit {
   @Input() currentDate: string;
 
   tempReports: TheaterReportModel[];
-  theaterReport: TheaterReportModel;
   theaters: TheaterModel[];
   currentTheater: TheaterModel;
 
@@ -34,8 +33,6 @@ export class InReportComponent implements OnInit {
   currentUser = JSON.parse(localStorage.getItem('user'));
 
   isConfirm = false;
-
-  filterReport: any = {};
 
   constructor(private service: TheaterReportService,
               private theaterService: TheaterService,
@@ -62,16 +59,16 @@ export class InReportComponent implements OnInit {
   }
 
   detailRouter(id: string) {
-    this.filterReport.currentDate = this.currentDate;
-    this.filterReport.currentMode = 0;
-    window.localStorage.setItem('filterReport', JSON.stringify(this.filterReport));
+    let filterReport: any = {};
+    filterReport.currentDate = this.currentDate;
+    filterReport.currentMode = 0;
+    window.localStorage.setItem('filterReport', JSON.stringify(filterReport));
     this.router.navigate(['/detail-report'], {
-      queryParams: {id: id}
+      queryParams: {id: id, type: 'theater'}
     });
   }
 
   loadData() {
-    this.theaterReport = new TheaterReportModel();
     this.currentTheater = new TheaterModel();
     this.tempReports = [];
     this.theaters = [];
@@ -132,27 +129,33 @@ export class InReportComponent implements OnInit {
   }
 
   confirmReport(id: any) {
-    this.theaterReport._id = id;
-    this.theaterReport.sent = true;
-    this.theaterReport.confirm = true;
-    this.service.update(this.theaterReport).subscribe(report => {
-        this.loadData();
-      },
-      error => {
-        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
-      });
+    if (confirm(`Вы уверены, что хотите подтвердить отчёт?`)) {
+      let reportToConfirm: any = {};
+      reportToConfirm._id = id;
+      reportToConfirm.sent = true;
+      reportToConfirm.confirm = true;
+      this.service.update(reportToConfirm).subscribe(report => {
+          this.loadData();
+        },
+        error => {
+          alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+        });
+    }
   }
 
   cancelReport(id: any) {
-    this.theaterReport._id = id;
-    this.theaterReport.sent = false;
-    this.theaterReport.confirm = false;
-    this.service.update(this.theaterReport).subscribe(report => {
-        this.loadData();
-      },
-      error => {
-        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
-      });
+    if (confirm(`Вы уверены, что хотите отменить отчёт?`)) {
+      let reportToCancel: any = {};
+      reportToCancel._id = id;
+      reportToCancel.sent = false;
+      reportToCancel.confirm = false;
+      this.service.update(reportToCancel).subscribe(report => {
+          this.loadData();
+        },
+        error => {
+          alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+        });
+    }
   }
 
   setPage(page: number) {

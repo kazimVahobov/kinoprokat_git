@@ -1,3 +1,13 @@
+
+.box-header {
+  border-bottom: solid 1px #dddddd;
+}
+
+.main-label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
 .table thead tr th,
 .table tbody tr td {
   text-align: center;
@@ -12,6 +22,25 @@
   border: 1px solid #cccccc !important;
   border-radius: 4px !important;
   background-color: transparent;
+}
+
+.my-box {
+  padding-top: 5px;
+  border: solid 1px #dddddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.3s ease;;
+  -moz-transition: all 0.3s ease;;
+  -o-transition: all 0.3s ease;;
+  transition: all 0.3s ease;
+}
+
+.my-box:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+  background-color: #b2ebf2;
 }
 
 .my-radio-select {

@@ -5,8 +5,8 @@
         <thead>
         <tr>
           <th></th>
-          <th>Кинотеатр</th>
           <th>Дата</th>
+          <th>Кинотеатр</th>
           <th>Кол-во фильмов</th>
           <th>Кол-во сеансов</th>
           <th>Кол-во билетов</th>
@@ -29,8 +29,8 @@
                   popover="В ожидании"
                   triggers="mouseenter:mouseleave"></span>
           </td>
-          <td>{{report.theaterId| manual: theaters}}</td>
           <td>{{report.date|date: 'dd.MM.yyyy'}}</td>
+          <td>{{report.theaterId| manual: theaters}}</td>
           <td>{{report.movies.length}}</td>
           <td>{{report.sessionCount}}</td>
           <td>{{report.ticketCount}}</td>

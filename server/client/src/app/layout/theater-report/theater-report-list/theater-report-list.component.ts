@@ -68,7 +68,7 @@ export class TheaterReportListComponent implements OnInit {
   }
 
   detailRouter(id: string) {
-    this.router.navigate(['/detail-report'], {queryParams: {id: id, currentMode: 0}});
+    this.router.navigate(['/detail-report'], {queryParams: {id: id, type: 'theater'}});
   }
 
   load() {

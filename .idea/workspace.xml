@@ -7,36 +7,24 @@
   <component name="ChangeListManager">
     <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/core/models/base.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/core/models/base.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/core/models/distributor-report.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/core/models/distributor-report.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/distributor-report-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/distributor-report-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/distributor-report-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/distributor-report-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor/distributor-list/distributor-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor/distributor-list/distributor-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/out-repeort/out-repeort.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/out-repeort/out-repeort.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/in-repeort/in-repeort.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/in-repeort/in-repeort.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/in-repeort/in-repeort.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/out-repeort/out-repeort.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/out-repeort/out-repeort.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/out-repeort/out-repeort.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-list/theater-child/theater-child.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-list/theater-child/theater-child.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-child/user-child.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-child/user-child.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/distributorReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/distributorReports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/distributorReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/distributorReports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/theaterReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/theaterReports.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,21 +36,77 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-              <folding>
-                <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#span#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6306639">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="515">
+                  <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+                  <folding>
+                    <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                    <element signature="n#td#7;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                    <element signature="n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                    <element signature="n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                    <element signature="n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="542">
+                  <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#0#57#0" expanded="true" />
+                    <element signature="n#!!block;n#ngOnChanges#0;n#TheaterInReportComponent#0" />
+                    <element signature="n#!!block;n#ngOnInit#0;n#TheaterInReportComponent#0" />
+                    <element signature="e#2964#3245#0" />
+                    <element signature="n#!!block;n#confirmReport#0;n#TheaterInReportComponent#0" />
+                    <element signature="n#!!block;n#detailRouter#0;n#TheaterInReportComponent#0" />
+                    <element signature="n#!!block;n#cancelReport#0;n#TheaterInReportComponent#0" />
+                    <element signature="n#!!block;n#setPage#0;n#TheaterInReportComponent#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="713">
+                  <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="611">
+                  <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
+                  <folding>
+                    <element signature="n#!!block;n#ngOnChanges#0;n#TheaterInReportComponent#0" />
+                    <element signature="n#!!block;n#ngOnInit#0;n#TheaterInReportComponent#0" />
+                    <element signature="n#!!block;n#confirmReport#0;n#TheaterInReportComponent#0" />
+                    <element signature="n#!!block;n#detailRouter#0;n#TheaterInReportComponent#0" />
+                    <element signature="n#!!block;n#cancelReport#0;n#TheaterInReportComponent#0" />
+                    <element signature="n#!!block;n#setPage#0;n#TheaterInReportComponent#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,18 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-t/cont-t-detail/cont-t-detail.component.scss" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-t/cont-t-detail/cont-t-detail.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-f/cont-f-detail/cont-f-detail.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-s/cont-s-detail/cont-s-detail.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-t/cont-t-detail/cont-t-detail.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.scss" />
-        <option value="$PROJECT_DIR$/server/client/src/app/shared/shared.module.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie.module.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-routing.module.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-cont-detail/movie-cont-detail.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-cont-detail/movie-cont-detail.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.scss" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.html" />
@@ -97,16 +129,13 @@
         <option value="$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-child/user-child.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.html" />
         <option value="$PROJECT_DIR$/server/models/theaterReports.js" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.html" />
         <option value="$PROJECT_DIR$/server/controllers/distributorReports.js" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/environments/environment.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/out-repeort/out-repeort.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-list/theater-child/theater-child.component.ts" />
@@ -116,11 +145,26 @@
         <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/distributor-report-list.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/distributor-report-list.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.ts" />
         <option value="$PROJECT_DIR$/server/models/distributorReports.js" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-routing.module.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report.module.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.scss" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/out-repeort/out-repeort.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report.module.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-routing.module.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.html" />
       </list>
     </option>
   </component>
@@ -174,6 +218,25 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -185,6 +248,17 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
               <item name="distributor-report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="distributor-report" type="462c0819:PsiDirectoryNode" />
+              <item name="distributor-report-form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
@@ -220,6 +294,60 @@
               <item name="distributor-report" type="462c0819:PsiDirectoryNode" />
               <item name="distributor-report-list" type="462c0819:PsiDirectoryNode" />
               <item name="out-report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report-list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report-list" type="462c0819:PsiDirectoryNode" />
+              <item name="theater-in-report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="theater-report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="theater-report" type="462c0819:PsiDirectoryNode" />
+              <item name="theater-report-list" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
@@ -296,7 +424,7 @@
       <workItem from="1557117091247" duration="14146000" />
       <workItem from="1557298894298" duration="16314000" />
       <workItem from="1557520525552" duration="5691000" />
-      <workItem from="1557722202612" duration="17467000" />
+      <workItem from="1557722202612" duration="36557000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -305,17 +433,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556288834896</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="distributor report module full completed">
+      <created>1557744116113</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557744116113</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158107000" />
+    <option name="totallyTimeSpent" value="177197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2065332" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2065332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -360,233 +495,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records" />
+    <MESSAGE value="distributor report module full completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="distributor report module full completed" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="36" column="42" lean-forward="true" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s-list/contract-s-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="158" column="32" lean-forward="true" selection-start-line="158" selection-start-column="32" selection-end-line="158" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor/distributor-list/distributor-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-894">
-          <caret line="168" column="63" lean-forward="true" selection-start-line="168" selection-start-column="63" selection-end-line="168" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater/theater-form/theater-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-            <element signature="e#554#1154#0" />
-            <element signature="e#1166#1225#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="113" column="32" lean-forward="true" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="n#!!block;n#ngOnInit#0;n#ContractFFormComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-form/contract-f-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1265">
-          <caret line="402" column="64" selection-start-line="402" selection-start-column="58" selection-end-line="402" selection-end-column="64" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#h4#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-f/contract-f-list/contract-f-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/base.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-child/user-child.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-all/cont-t-all.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
-          <folding>
-            <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#style#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#!!top" />
-            <element signature="n#ng-template#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="45" column="53" lean-forward="true" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1380" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/base/entity.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="52" column="28" lean-forward="true" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/theaterReports.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-            <element signature="e#3681#3940#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1426">
-          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="88" column="60" selection-start-line="88" selection-start-column="60" selection-end-line="88" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-            <element signature="n#!!block;n#changeRegion#0;n#MovieStatisticComponent#0" />
-            <element signature="e#1600#2057#0" />
-            <element signature="e#1678#1787#0" />
-            <element signature="e#1833#1855#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/contract.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="30" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/distributorReports.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1127">
@@ -642,16 +554,6 @@
           <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -762,21 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
-          <folding>
-            <element signature="n#!!block;n#setViewState#0;n#DistributorReportFormComponent#0" />
-            <element signature="n#!!block;n#addMobileTheater#0;n#DistributorReportFormComponent#0" />
-            <element signature="n#!!block;n#deleteMobileTheater#0;n#DistributorReportFormComponent#0" />
-            <element signature="n#!!block;n#changeMovie#0;n#DistributorReportFormComponent#0" />
-            <element signature="n#!!block;n#backToList#0;n#DistributorReportFormComponent#0" />
-            <element signature="n#!!block;n#validation#0;n#DistributorReportFormComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="497">
@@ -821,16 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/out-repeort/out-repeort.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4991">
-          <caret line="217" column="2" selection-start-line="217" selection-start-column="2" selection-end-line="217" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/distributor-report-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1518">
@@ -848,29 +725,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/distributor-report.model.ts">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="76" column="26" lean-forward="true" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+          <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
-            <element signature="n#!!block;n#ngOnInit#0;n#OutReportComponent#0" />
-            <element signature="n#!!block;n#sendReport#0;n#OutReportComponent#0" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="253">
+          <caret line="11" column="93" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
+          <folding>
+            <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#span#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="37" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/distributor.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/shared/pipes/manual.pipe.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="66" selection-start-line="66" selection-end-line="69" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -881,30 +803,231 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="89" column="57" lean-forward="true" selection-start-line="89" selection-start-column="57" selection-end-line="89" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/movie.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="138" column="32" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1633">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#!!block;n#ngOnInit#0;n#DetailReportComponent#0" />
+            <element signature="n#!!block;n#loaddistReport#0;n#DetailReportComponent#0" />
+            <element signature="n#!!block;n#loadTheaterReport#0;n#DetailReportComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="70" column="82" selection-start-line="70" selection-start-column="82" selection-end-line="70" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1334">
+          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/distributor-report.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-70">
+          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+          <folding>
+            <element signature="n#!!block;n#setViewState#0;n#DistributorReportFormComponent#0" />
+            <element signature="n#!!block;n#addMobileTheater#0;n#DistributorReportFormComponent#0" />
+            <element signature="n#!!block;n#deleteMobileTheater#0;n#DistributorReportFormComponent#0" />
+            <element signature="n#!!block;n#changeMovie#0;n#DistributorReportFormComponent#0" />
+            <element signature="n#!!block;n#backToList#0;n#DistributorReportFormComponent#0" />
+            <element signature="n#!!block;n#validation#0;n#DistributorReportFormComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!block;n#ngOnChanges#0;n#DistInReportComponent#0" />
+            <element signature="n#!!block;n#confirmReport#0;n#DistInReportComponent#0" />
+            <element signature="n#!!block;n#cancelReport#0;n#DistInReportComponent#0" />
+            <element signature="n#!!block;n#setPage#0;n#DistInReportComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="50" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="101" column="25" lean-forward="true" selection-start-line="101" selection-start-column="25" selection-end-line="102" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+            <element signature="n#!!block;n#ngOnInit#0;n#OutReportComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
-          <caret line="112" column="114" selection-start-line="112" selection-start-column="114" selection-end-line="112" selection-end-column="114" />
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding>
-            <element signature="e#0#57#0" expanded="true" />
+            <element signature="n#!!block;n#confirmReport#0;n#InReportComponent#0" />
+            <element signature="n#!!block;n#cancelReport#0;n#InReportComponent#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        <state relative-caret-position="713">
+          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.html">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+        <state relative-caret-position="542">
+          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
           <folding>
-            <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#span#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="e#0#57#0" expanded="true" />
+            <element signature="n#!!block;n#ngOnChanges#0;n#TheaterInReportComponent#0" />
+            <element signature="n#!!block;n#ngOnInit#0;n#TheaterInReportComponent#0" />
+            <element signature="e#2964#3245#0" />
+            <element signature="n#!!block;n#confirmReport#0;n#TheaterInReportComponent#0" />
+            <element signature="n#!!block;n#detailRouter#0;n#TheaterInReportComponent#0" />
+            <element signature="n#!!block;n#cancelReport#0;n#TheaterInReportComponent#0" />
+            <element signature="n#!!block;n#setPage#0;n#TheaterInReportComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding>
+            <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#7;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#9;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
           </folding>
         </state>
       </provider>

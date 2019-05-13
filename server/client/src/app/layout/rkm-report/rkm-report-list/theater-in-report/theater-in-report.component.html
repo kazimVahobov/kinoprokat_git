@@ -1,14 +1,14 @@
 <div class="box">
   <div class="box-body" style="padding: 0">
     <div *ngIf="pagedItems">
-        <div *ngIf="pagedItems.length != 0; else noreport">
+        <div *ngIf="pagedItems.length != 0; else noReport">
             <table class="table table-bordered table-hover table-condensed">
               <thead>
               <tr>
                 <th></th>
-                <th>Кинотеатр</th>
                 <th>Дата</th>
-                <th>Кол-во фильмов</th>
+                <th>Кинотеатр</th>
+                <th>Дистрибьютор</th>
                 <th>Кол-во сеансов</th>
                 <th>Кол-во билетов</th>
                 <th>Общая сумма</th>
@@ -30,15 +30,15 @@
                         popover="В ожидании"
                         triggers="mouseenter:mouseleave"></span>
                 </td>
-                <td>{{report.theaterId| manual: theaters}}</td>
                 <td>{{report.date|date: 'dd.MM.yyyy'}}</td>
-                <td>{{report.movies.length}}</td>
+                <td>{{report.theaterId| manual: theaters}}</td>
+                <td>{{report.distId| manual: distributors}}</td>
                 <td>{{report.sessionCount}}</td>
                 <td>{{report.ticketCount}}</td>
-                <td>{{report.summ}}</td>
+                <td>{{report.sum}}</td>
                 <td>
-                  <span *ngIf="report.withoutCont; else noCount">Имеется</span>
-                  <ng-template #noCount><span>Не имеется</span></ng-template>
+                  <span *ngIf="report.withoutCont; else noCont">Имеется</span>
+                  <ng-template #noCont><span>Не имеется</span></ng-template>
                 </td>
                 <td style="width: 7%">
                     <span popover="Подробнее"
@@ -104,7 +104,7 @@
     </ul>
   </div>
 </div>
-<ng-template #noreport>
+<ng-template #noReport>
   <span class="text-center"
         style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
     Ни одного отчёта на указанную дату не отправлено. Попробуйте указать другую дату;)
