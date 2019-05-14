@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   TheaterReportService,
   DistributorService,
@@ -8,8 +8,9 @@ import {
   TheaterModel,
   PagerService
 } from 'src/app/core';
-import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+import {Router} from '@angular/router';
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-unconfirmed-reports',
   templateUrl: './unconfirmed-reports.component.html',
@@ -28,14 +29,14 @@ export class UnconfirmedReportsComponent implements OnInit {
 
   reports: Report[];
   tempReport: Report;
-  theaterReport: TheaterReportModel;
 
   constructor(private service: TheaterReportService,
-    private distService: DistributorService,
-    private theaterService: TheaterService,
-    private router: Router,
-    private pagerService: PagerService,
-    private location: Location) { }
+              private distService: DistributorService,
+              private theaterService: TheaterService,
+              private router: Router,
+              private pagerService: PagerService,
+              private location: Location) {
+  }
 
   ngOnInit() {
     this.unconfirmedReports = [];
@@ -49,7 +50,6 @@ export class UnconfirmedReportsComponent implements OnInit {
   }
 
   getUnconfirmedReports() {
-    this.theaterReport = new TheaterReportModel();
     this.reports = [];
     this.service.getAll().subscribe(theaterReports => {
       this.distService.getAll().subscribe(distributors => {
@@ -61,11 +61,10 @@ export class UnconfirmedReportsComponent implements OnInit {
 
           for (let i = 0; i < this.unconfirmedReports.length; i++) {
             this.tempReport = new Report();
-            this.tempReport.movies = [];
             this.tempReport.theaterId = this.unconfirmedReports[i].theaterId
             this.tempReport.distId = this.theaters.find(th => th._id === this.unconfirmedReports[i].theaterId).distId
             this.tempReport.ticketCount = 0;
-            this.tempReport.summ = 0;
+            this.tempReport.sum = 0;
             this.tempReport._id = this.unconfirmedReports[i]._id;
             this.tempReport.date = this.unconfirmedReports[i].date;
             this.tempReport.sent = this.unconfirmedReports[i].sent;
@@ -74,11 +73,9 @@ export class UnconfirmedReportsComponent implements OnInit {
             this.tempReport.withoutCont = !this.unconfirmedReports[i].withoutCont
 
             for (let j = 0; j < this.unconfirmedReports[i].withCont.length; j++) {
-              if (!this.tempReport.movies.some(item => item === this.unconfirmedReports[i].withCont[j].movieId)) {
-                this.tempReport.movies.push(this.unconfirmedReports[i].withCont[j].movieId);
-              }
-              this.tempReport.ticketCount += this.unconfirmedReports[i].withCont[j].ticketCount;
-              this.tempReport.summ += this.unconfirmedReports[i].withCont[j].ticketCount * this.unconfirmedReports[i].withCont[j].price;
+              this.tempReport.ticketCount += this.unconfirmedReports[i].withCont[j].childTicketCount + this.unconfirmedReports[i].withCont[j].adultTicketCount;
+              this.tempReport.sum += (this.unconfirmedReports[i].withCont[j].childTicketCount * this.unconfirmedReports[i].withCont[j].childTicketPrice) +
+                (this.unconfirmedReports[i].withCont[j].adultTicketCount * this.unconfirmedReports[i].withCont[j].adultTicketPrice);
             }
             this.reports.push(this.tempReport);
           }
@@ -92,27 +89,33 @@ export class UnconfirmedReportsComponent implements OnInit {
   }
 
   confirmReport(id: any) {
-    this.theaterReport._id = id;
-    this.theaterReport.sent = true;
-    this.theaterReport.confirm = true;
-    this.service.update(this.theaterReport).subscribe(report => {
-      this.getUnconfirmedReports();
-    },
-      error => {
-        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
-      });
+    if (confirm(`Вы уверены, что хотите подтвердить отчёт?`)) {
+      let reportToConfirm: any = {};
+      reportToConfirm._id = id;
+      reportToConfirm.sent = true;
+      reportToConfirm.confirm = true;
+      this.service.update(reportToConfirm).subscribe(report => {
+          this.getUnconfirmedReports();
+        },
+        error => {
+          alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+        });
+    }
   }
 
   cancelReport(id: any) {
-    this.theaterReport._id = id;
-    this.theaterReport.sent = false;
-    this.theaterReport.confirm = false;
-    this.service.update(this.theaterReport).subscribe(report => {
-      this.getUnconfirmedReports();
-    },
-      error => {
-        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
-      });
+    if (confirm(`Вы уверены, что хотите отменить отчёт?`)) {
+      let reportToCancel: any = {};
+      reportToCancel._id = id;
+      reportToCancel.sent = false;
+      reportToCancel.confirm = false;
+      this.service.update(reportToCancel).subscribe(report => {
+          this.getUnconfirmedReports();
+        },
+        error => {
+          alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+        });
+    }
   }
 
   setPage(page: number) {
@@ -125,20 +128,20 @@ export class UnconfirmedReportsComponent implements OnInit {
 
   detailRouter(id: string) {
     this.router.navigate(['/detail-report'], {
-      queryParams: { id: id }
+      queryParams: {id: id, type: 'theater'}
     });
   }
 
 }
+
 class Report {
   _id: string;
   date: Date;
   theaterId: string;
   distId: string;
-  movies: string[];
   sessionCount: number;
   ticketCount: number;
-  summ: number;
+  sum: number;
   sent: boolean;
   confirm: boolean;
   withoutCont: boolean;
