@@ -12,9 +12,15 @@ export class DistributorService extends EntityService<DistributorModel> {
   constructor(http: HttpClient) {
     super('distributor', http);
   }
+
   deleteAllData(model: any): Observable<any> {
     const url = `${this.baseUrl}/delete`;
     return this.http.post<any>(url, model);
+  }
+
+  getByRegionId(id: string): Observable<any[]> {
+    const url = `${this.baseUrl}/by-region/${id}`;
+    return this.http.get<any[]>(url);
   }
 
 }

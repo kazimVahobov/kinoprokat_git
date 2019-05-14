@@ -123,11 +123,12 @@
             <h3 class="panel-title">
               <a data-toggle="collapse"
                  data-parent="#accordion"
+                 (click)="statisticOpened = true"
                  href="#statistic">
                 Статистические данные
               </a></h3>
           </div>
-          <div class="panel-collapse collapse" id="statistic">
+          <div class="panel-collapse collapse" id="statistic" *ngIf="statisticOpened">
             <div class="panel-body" style="padding: 0;">
               <div class="container-fluid">
                 <div>
@@ -136,7 +137,7 @@
                       <app-movie-contracts [movieId]="id"></app-movie-contracts>
                     </tab>
                     <tab heading="Статистика" id="tab1">
-                      <app-movie-statistic [movieId]="id"></app-movie-statistic>
+                      <app-movie-statistic [movieId]="id" [movieName]="model.name"></app-movie-statistic>
                     </tab>
                   </tabset>
                 </div>

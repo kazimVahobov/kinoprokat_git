@@ -15,6 +15,8 @@ export class MovieDetailComponent implements OnInit {
   id: string;
   model: MovieModel;
   pdfSrc: string;
+  statisticOpened: boolean = false;
+
   constructor(private service: MovieService,
               private route: ActivatedRoute) {
   }

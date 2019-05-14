@@ -11,6 +11,8 @@ routes.get('/', passport.authenticate('jwt', { session: false }), controller.get
 
 routes.get('/:id', passport.authenticate('jwt', { session: false }), controller.getDistributorById)
 
+routes.get('/by-region/:id', passport.authenticate('jwt', { session: false }), controller.getDistsByRegionId)
+
 routes.put('/:id', passport.authenticate('jwt', { session: false }), controller.updateDistributorById)
 
 routes.post('/delete', passport.authenticate('jwt', { session: false }), controller.removeDistributorById)

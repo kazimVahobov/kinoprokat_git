@@ -11,6 +11,8 @@ routes.get('/', passport.authenticate('jwt', { session: false }), controller.get
 
 routes.get('/:id', passport.authenticate('jwt', { session: false }), controller.getTheaterById)
 
+routes.get('/by-region/:id', passport.authenticate('jwt', { session: false }), controller.getTheatersByRegionId)
+
 routes.put('/:id', passport.authenticate('jwt', { session: false }), controller.updateTheaterById)
 
 routes.post('/delete', passport.authenticate('jwt', { session: false }), controller.removeTheaterById)

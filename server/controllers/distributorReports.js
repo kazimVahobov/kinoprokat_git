@@ -26,6 +26,17 @@ module.exports.getAllDistributorReports = async function(req, res) {
     }
 }
 
+module.exports.filterDistReports = async function(req, res) {
+    try {
+        var _sent = !!req.body.sent;
+        var _confirm = !!req.body.confirm;
+        const distributorReports = await DistributorReports.find({ sent: _sent, confirm: _confirm });
+        res.status(200).json(distributorReports)
+    } catch (e) {
+        errorHandler(res, e)
+    }
+}
+
 module.exports.getDistributorReportsById = async function(req, res) {
     try {
         const distributorReports = await DistributorReports.findById(req.params.id)

@@ -51,6 +51,15 @@ module.exports.getTheaterById = async function(req, res) {
     }
 }
 
+module.exports.getTheatersByRegionId = async function(req, res) {
+    try {
+        const theaters = await Theater.find({regionId: req.params.id});
+        res.status(200).json(theaters)
+    } catch (e) {
+        errorHandler(res, e)
+    }
+}
+
 
 module.exports.updateTheaterById = async function(req, res) {
     try {

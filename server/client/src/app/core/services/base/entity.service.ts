@@ -17,7 +17,6 @@ export abstract class EntityService<T> {
 
   constructor(protected controller: string, protected http: HttpClient) {
     this.baseUrl = `${environment.apiUrl}/api/${controller}`;
-    this.baseUrl = `${environment.apiUrl}/api/${controller}`;
   }
 
   /** GET all entities from the server */

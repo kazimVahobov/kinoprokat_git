@@ -13,6 +13,8 @@ routes.get('/:id', passport.authenticate('jwt', { session: false }), controller.
 
 routes.get('/by-dist/:id', passport.authenticate('jwt', { session: false }), controller.getDistributorReportsByDistId)
 
+routes.put('/filter', passport.authenticate('jwt', { session: false }), controller.filterDistReports)
+
 routes.put('/:id', passport.authenticate('jwt', { session: false }), controller.updateDistributorReportsById)
 
 routes.delete('/:id', passport.authenticate('jwt', { session: false }), controller.removeDistributorReportsById)
