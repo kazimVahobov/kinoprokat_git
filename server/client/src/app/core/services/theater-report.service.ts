@@ -14,12 +14,17 @@ export class TheaterReportService extends EntityService<TheaterReportModel> {
     super('theater-report', http);
   }
 
-  filter(sent: boolean, confirm: boolean): Observable<TheaterReportModel[]> {
-    const url = `${this.baseUrl}/filter`;
+  getByFilter(sent: boolean, confirm: boolean): Observable<TheaterReportModel[]> {
+    const url = `${this.baseUrl}/getByFilter`;
     return this.http.put<TheaterReportModel[]>(url, {
       sent: sent,
       confirm: confirm
     });
+  }
+
+  getByTheaterId(id: string): Observable<any[]> {
+    const url = `${this.baseUrl}/by-theater/${id}`;
+    return this.http.get<any[]>(url);
   }
 
 }

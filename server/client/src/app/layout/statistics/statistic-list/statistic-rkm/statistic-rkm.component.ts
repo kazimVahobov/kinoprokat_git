@@ -167,7 +167,7 @@ export class StatisticRkmComponent implements OnInit {
     this.allDistReports = [];
     this.distributors = [];
     this.allDistributors = [];
-    //filter:
+    //getByFilter:
     this.filterTheaters = [];
     this.filterTheaterReports = [];
     this.filterMovies = [];

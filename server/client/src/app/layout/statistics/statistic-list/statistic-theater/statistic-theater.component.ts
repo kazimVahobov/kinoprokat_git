@@ -148,7 +148,7 @@ export class StatisticTheaterComponent implements OnInit {
     this.reportsTotal = [];
     this.totalAmount = 0;
     this.totalTicketCount = 0;
-    //filter:
+    //getByFilter:
     this.filterTheaterReports = [];
 
     this.yearList = [];

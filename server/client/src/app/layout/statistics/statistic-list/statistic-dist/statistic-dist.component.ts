@@ -158,7 +158,7 @@ export class StatisticDistComponent implements OnInit {
     this.distReports = [];
     this.allDistReports = [];
     this.currentDist = new DistributorModel();
-    //filter:
+    //getByFilter:
     this.filterTheaters = [];
     this.filterTheaterReports = [];
     this.filterMovies = [];

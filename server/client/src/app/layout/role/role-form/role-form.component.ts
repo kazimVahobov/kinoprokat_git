@@ -70,7 +70,7 @@ export class RoleFormComponent implements OnInit, OnDestroy {
   loadPermissions() {
     this.roleTypes.forEach(item => item.groups.forEach(i => i.permissions.forEach(j => j.checked = false)));
     this.roleTypes.forEach(item => item.groups.forEach(i => i.checked = false));
-    // this.roleTypes.find(i => i.code === 3).groups.forEach(j => j.permissions = j.permissions.filter(k => k.value === 1));
+    // this.roleTypes.find(i => i.code === 3).groups.forEach(j => j.permissions = j.permissions.getByFilter(k => k.value === 1));
   }
 
   checkAllChange(i: number) {

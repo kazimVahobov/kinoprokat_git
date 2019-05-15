@@ -13,7 +13,7 @@ routes.get('/:id', passport.authenticate('jwt', { session: false }), controller.
 
 routes.get('/by-theater/:id', passport.authenticate('jwt', { session: false }), controller.getTheaterReportsByTheaterId)
 
-routes.put('/filter', passport.authenticate('jwt', { session: false }), controller.filterTheaterReports)
+routes.put('/getByFilter', passport.authenticate('jwt', { session: false }), controller.filterTheaterReports)
 
 routes.put('/:id', passport.authenticate('jwt', { session: false }), controller.updateTheaterReportsById)
 

@@ -440,7 +440,7 @@ export class DashDistComponent implements OnInit {
 
     // if (this.currentReport) {
     //
-    //   this.theaterReportsWithDist = theaterReports.filter(r => this.currentReport.theaterReports.some(d => d.theaterReportsId === r._id));
+    //   this.theaterReportsWithDist = theaterReports.getByFilter(r => this.currentReport.theaterReports.some(d => d.theaterReportsId === r._id));
     //
     //   if (this.currentReport.sent) {
     //     this.reportStatus = 2;
