@@ -10,6 +10,7 @@ import {
   YearListService
 } from 'src/app/core';
 import * as moment from 'moment';
+import {daLocale} from "ngx-bootstrap";
 
 @Component({
   selector: 'app-dash-theater',
@@ -148,10 +149,7 @@ export class DashTheaterComponent implements OnInit {
     this.yearList = [];
     this.theatersOneRegion = [];
     this.allTheaterReports = [];
-    this.yearListService.getYearList();
-    this.yearList = JSON.parse(localStorage.getItem('yearList'));
-    this.yearList = this.yearList.reverse();
-    localStorage.removeItem('yearList');
+    this.yearListService.getYearList().subscribe(data => this.yearList = data);
 
     this.service.getAll().subscribe(theater => {
       this.movieService.getAll().subscribe(movies => {

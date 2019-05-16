@@ -43,44 +43,21 @@
   }
 }
 
-.my-radio {
-  :hover {
-    cursor: pointer;
-  }
-  margin-bottom: 0;
-  border: 1px solid transparent !important;
-  border-radius: 4px !important;
-  box-shadow: none;
-  background-color: #eeeeee;
-  .panel-body {
-    vertical-align: middle;
-    padding: 5px;
-    label {
-      font-weight: 500;
-      margin-bottom: 0;
-      input {
-        display: none;
-      }
-    }
-  }
-}
-
 .my-checkbox {
   :hover {
     cursor: pointer;
   }
-  margin-bottom: 0;
-  border: 1px solid #337ab7 !important;
+  border: 1px solid #ddd !important;
   border-radius: 4px !important;
   box-shadow: none;
-  background-color: #337ab7;
-  color: #FFFFFF;
+  background-color: #f4f4f4;
+  color: #444;
+  height: 36px;
   .panel-body {
-    vertical-align: middle;
-    padding: 5px;
+    padding: 8px !important;
+    height: 100%;
     label {
       font-weight: 500;
-      margin-bottom: 0;
       input {
         display: none;
       }
@@ -88,8 +65,9 @@
   }
 }
 
-.my-radio-active {
+.my-checkbox-active {
   background-color: #337ab7;
+  border-color: #337ab7;
   color: #FFFFFF;
 }
 
