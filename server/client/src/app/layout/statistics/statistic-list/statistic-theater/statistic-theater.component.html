@@ -44,14 +44,14 @@
                                bindLabel="name"
                                bindValue="_id"
                                [searchable]="false"
-                               [(ngModel)]="selectedMovie"
+                               [(ngModel)]="selectedMovieId"
                                (ngModelChange)="changeMovie()"
                                [disabled]="selectedYear"
                                placeholder="Выберите фильм">
                     </ng-select>
                   </div>
                   <div class="col-md-2 form-group no-pad-right">
-                    <label style="margin-bottom:10px; width: 100%" [ngClass]="{'disabled': selectedMovie}">
+                    <label style="margin-bottom:10px; width: 100%" [ngClass]="{'disabled': selectedMovieId}">
                       Год:
                     </label>
                     <ng-select [items]="yearList"
@@ -60,7 +60,7 @@
                                [searchable]="false"
                                [(ngModel)]="selectedYear"
                                (ngModelChange)="changeYear()"
-                               [disabled]="selectedMovie"
+                               [disabled]="selectedMovieId"
                                placeholder="Выберите год">
                     </ng-select>
                   </div>
@@ -77,14 +77,14 @@
                     </ng-select>
                   </div>
                   <div class="col-md-1 col-md-offset-2" style="padding-top: 30px">
-                    <button class="btn btn-default pull-right">
+                    <button class="btn btn-default pull-right" (click)="resetFilters()">
                       Сбросить
                     </button>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12 text-center">
-                    <p *ngIf="selectedMovie"><span class="fa fa-lg fa-exclamation-circle"></span> Чтобы указать период
+                    <p *ngIf="selectedMovieId"><span class="fa fa-lg fa-exclamation-circle"></span> Чтобы указать период
                       отчётов (год - месяц) необходимо очистить поле выбора фильма</p>
                     <p *ngIf="selectedYear"><span class="fa fa-lg fa-exclamation-circle"></span> Чтобы указать фильм
                       необходимо очистить поле выбора года</p>
@@ -109,8 +109,8 @@
                     <thead>
                     <tr>
                       <th rowspan="3" class="text-center">
-                        <span *ngIf="!selectedMovie">Название фильма</span>
-                        <span *ngIf="selectedMovie">Дата</span>
+                        <span *ngIf="!selectedMovieId">Название фильма</span>
+                        <span *ngIf="selectedMovieId">Дата</span>
                       </th>
                       <th colspan="4" class="text-center">Дневные сеансы</th>
                       <th colspan="4" class="text-center">Вечерние сеансы</th>

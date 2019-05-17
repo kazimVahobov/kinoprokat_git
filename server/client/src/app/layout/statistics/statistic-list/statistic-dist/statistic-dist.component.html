@@ -43,57 +43,50 @@
                     <ng-select [items]="theaters"
                                bindLabel="name"
                                bindValue="_id"
-                               [clearable]="false"
                                [searchable]="false"
-                               (change)="changeTheater()"
-                               placeholder="Выберите Кинотеатра"
-                               [(ngModel)]="selectedTheater">
+                               [(ngModel)]="selectedTheaterId"
+                               (ngModelChange)="changeTheater()"
+                               placeholder="Выберите Кинотеатра">
                     </ng-select>
                   </div>
                   <div class="col-md-3 form-group no-pad-right">
-                    <label style="margin-bottom:10px;"
-                           [ngClass]="{'disabled': selectedMonth != 12 || byMonth}">Фильм:</label>
+                    <label style="margin-bottom:10px;">Фильм:</label>
                     <ng-select [items]="movies"
                                bindLabel="name"
-                               [disabled]="selectedMonth != 12 || byMonth"
                                bindValue="_id"
-                               [clearable]="false"
+                               [(ngModel)]="selectedMovieId"
                                [searchable]="false"
-                               (change)="changeMovie()"
-                               placeholder="Выберите фыльма"
-                               [(ngModel)]="selectedMovie">
+                               (ngModelChange)="changeMovie()"
+                               [disabled]="selectedYear"
+                               placeholder="Выберите фильм">
                     </ng-select>
                   </div>
                   <div class="col-md-2 form-group no-pad-right">
-                    <label style="margin-bottom:10px;"
-                           [ngClass]="{'disabled': !isMovie}">Год:</label>
+                    <label style="margin-bottom:10px;">Год:</label>
                     <ng-select [items]="yearList"
-                               bindLabel="name"
-                               [disabled]="!isMovie"
+                               bindLabel="value"
                                bindValue="value"
-                               [clearable]="false"
                                [searchable]="false"
-                               (change)="changeYear()"
-                               placeholder="Выберите год"
-                               [(ngModel)]="selectedYear">
+                               [(ngModel)]="selectedYear"
+                               (ngModelChange)="changeYear()"
+                               [disabled]="selectedMovieId"
+                               placeholder="Выберите год">
                     </ng-select>
                   </div>
                   <div class="col-md-2 form-group no-pad-right">
-                    <label style="margin-bottom:10px;"
-                           [ngClass]="{'disabled': isMovie && !isMonth || !isMovie && isMonth || !isMovie && !isMonth}">Месяц:</label>
+                    <label style="margin-bottom:10px;">Месяц:</label>
                     <ng-select [items]="months"
                                bindLabel="name"
-                               [disabled]="isMovie && !isMonth || !isMovie && isMonth || !isMovie && !isMonth"
                                bindValue="value"
-                               [clearable]="false"
+                               [(ngModel)]="selectedMonth"
                                [searchable]="false"
-                               (change)="changeMonth()"
-                               placeholder="Выберите месяц"
-                               [(ngModel)]="selectedMonth">
+                               (ngModelChange)="loadData()"
+                               [disabled]="!selectedYear"
+                               placeholder="Выберите месяц">
                     </ng-select>
                   </div>
                   <div class="col-md-1 col-md-offset-2" style="padding-top: 30px;">
-                    <button class="btn btn-default pull-right" (click)="refresh()">
+                    <button class="btn btn-default pull-right" (click)="resetFilters()">
                       Сбросить
                     </button>
                   </div>
@@ -105,67 +98,11 @@
         <div class="box-body">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="row">
-                      <div *ngIf="!isOneTheater && isMovie"
-                           class="col-md-2 form-group">
-                        <div [ngClass]="{'my-radio-active': selectedCond == 0}"
-                             class="my-radio panel panel-default">
-                          <div class="panel-body text-center">
-                            <label>
-                              <input type="radio"
-                                     (change)="changeSelectedCond()"
-                                     name="optionsRadios"
-                                     [value]="0"
-                                     [(ngModel)]="selectedCond">
-                              По кинотеатрам
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div *ngIf="!isOneTheater && isMovie"
-                           class="col-md-2 form-group">
-                        <div [ngClass]="{'my-radio-active': selectedCond == 1}"
-                             class="my-radio panel panel-default">
-                          <div class="panel-body text-center">
-                            <label>
-                              <input type="radio"
-                                     (change)="changeSelectedCond()"
-                                     name="optionsRadios"
-                                     [value]="1"
-                                     [(ngModel)]="selectedCond">
-                              По фильмам
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div *ngIf="!isOneMonth  && isMovie && this.selectedYear != 0"
-                           class="col-md-2 form-group pull-right">
-                        <div class="my-checkbox panel panel-default">
-                          <div class="panel-body text-center" (click)="byMonth = !byMonth; ofMonth()">
-                            <span class="fa fa-lg pull-left" style="margin: 5px 0 0 5px;"
-                                  [ngClass]="{'fa-check-square-o': byMonth, 'fa-square-o': !byMonth}"></span>
-                            <label>
-                              <input id="byMonth"
-                                     (change)="ofMonth()"
-                                     [(ngModel)]="byMonth"
-                                     type="checkbox">
-                              По месяцам
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div class="col-md-12" #printSection id="print-section">
                 <div class="row" id="printCond">
-                  <div class="col-md-12 text-center" >
+                  <div class="col-md-12 text-center">
                     <div class="row">
-                      <span class="print-title">{{setPrintTitle()}}</span>
+                      <span class="print-title"></span>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -174,105 +111,89 @@
                         <tbody>
                         <tr>
                           <td class="title-td">Регион:</td>
-                          <td class="content-td">{{currentRegionName}}</td>
+                          <td class="content-td"></td>
                         </tr>
                         <tr>
                           <td class="title-td">Кинотеатр:</td>
                           <td class="content-td">
-                            <span *ngIf="selectedTheater === 'all'">Все кинотеатры региона {{currentRegionName}}</span>
-                            <span *ngIf="selectedTheater != 'all'">{{selectedTheater | manual: theaters}}</span>
                           </td>
                         </tr>
                         <tr>
                           <td class="title-td">Фильм:</td>
                           <td class="content-td">
-                            <span>{{selectedMovie | manual: movies}}</span>
                           </td>
                         </tr>
-                        <tr *ngIf="selectedMovie !== 'all'">
+                        <tr>
                           <td class="title-td">Дата премьеры:</td>
-                          <td class="content-td">{{selectedMovie | manual: moviesForPrint:'premiereDate':'_id'|date:'dd.MM.yyyy'}} г.</td>
+                          <td class="content-td"></td>
                         </tr>
                         <tr>
                           <td class="title-td">Период отчётов:</td>
-                          <td class="content-td">с {{startDateOfReports}} г. - до {{endDateOfReports}} г.</td>
+                          <td class="content-td"></td>
                         </tr>
                         <tr>
                           <td class="title-td">Подготовил:</td>
-                          <td class="content-td">{{currentUser.lastName + ' ' +
-                            currentUser.firstName.substring(0, 1) + '. ' + currentUser.middleName.substring(0, 1) + '.'}}</td>
+                          <td class="content-td"></td>
                         </tr>
                         <tr>
                           <td class="title-td">Дата подготовки:</td>
-                          <td class="content-td">{{currentDate|date:'dd.MM.yyyy' + ' г.'}}</td>
+                          <td class="content-td"></td>
                         </tr>
                         </tbody>
                       </table>
                     </div>
                   </div>
                 </div>
-                <div *ngFor="let item of reportsTotalOne">
-                  <label *ngIf="selectedCond === 0" class="text-center item-title" style="margin-bottom:20px; margin-top:20px;">{{item.name|manual: theaters}}</label>
-                  <label *ngIf="selectedCond === 1" class="text-center item-title" style="margin-bottom:20px; margin-top:20px;">{{item.name|manual: movies}}</label>
-                  <table class="table table-bordered table-hover">
+                <div>
+                  <label class="text-center item-title" style="margin-bottom:20px; margin-top:20px;"></label>
+                  <table class="table table-hover table-bordered table-dark-bordered">
                     <thead>
                     <tr>
-                      <th *ngIf="isOneTheater && !isMovie">Дата</th>
-                      <th *ngIf="selectedCond === 0 && !byMonth && isMovie">Название фильма</th>
-                      <th *ngIf="selectedCond === 1 && !byMonth && !isOneTheater">Название кинотеатра</th>
-                      <th *ngIf="selectedCond === 1 && byMonth || isOneTheater && selectedCond === 1 && !byMonth">Название фильма</th>
-                      <th *ngIf="selectedCond === 0 && byMonth || selectedCond === 0 && !byMonth && !isMovie">Название кинотеатра</th>
-                      <th>Средняя цена</th>
-                      <th>Всего продано бил.</th>
-                      <th>Общая сумма (сум)</th>
+                      <th rowspan="3" class="text-center">
+                        <span *ngIf="!selectedMovieId">Название фильма</span>
+                        <span *ngIf="selectedMovieId">Дата</span>
+                      </th>
+                      <th colspan="4" class="text-center">Дневные сеансы</th>
+                      <th colspan="4" class="text-center">Вечерние сеансы</th>
+                      <th colspan="2" rowspan="2" class="text-center bg-accent">Всего</th>
+                    </tr>
+                    <tr>
+                      <th colspan="2" class="text-center">Детские билеты</th>
+                      <th colspan="2" class="text-center">Взрослые билеты</th>
+                      <th colspan="2" class="text-center">Детские билеты</th>
+                      <th colspan="2" class="text-center">Взрослые билеты</th>
+                    </tr>
+                    <tr>
+                      <th class="text-center">Кол-во</th>
+                      <th class="text-center">Сумма</th>
+                      <th class="text-center">Кол-во</th>
+                      <th class="text-center">Сумма</th>
+                      <th class="text-center">Кол-во</th>
+                      <th class="text-center">Сумма</th>
+                      <th class="text-center">Кол-во</th>
+                      <th class="text-center">Сумма</th>
+                      <th class="text-center bg-accent">Кол-во</th>
+                      <th class="text-center bg-accent">Сумма</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let theaterReport of item.report">
-                      <td *ngIf="isOneTheater && !isMovie">{{theaterReport.date|date:
-                        'dd.MM.yyyy'}}
-                      </td>
-                      <td *ngIf="selectedCond === 0 && !byMonth && isMovie">{{theaterReport.movieId |
-                        manual: movies}}
-                      </td>
-                      <td *ngIf="selectedCond === 1 && !byMonth && !isOneTheater">{{theaterReport.theaterId |
-                        manual: theaters | manual: distributors}}
-                      </td>
-                      <td *ngIf="selectedCond === 1 && byMonth || isOneTheater && selectedCond === 1 && !byMonth">
-                        {{theaterReport.movieId | manual:
-                        movies}}
-                      </td>
-                      <td *ngIf="selectedCond === 0 && byMonth || selectedCond === 0 && !byMonth && !isMovie">
-                        {{theaterReport.theaterId |
-                        manual: theaters | manual: distributors}}
-                      </td>
-                      <td>{{(theaterReport.amount/theaterReport.ticketCount)|number: '0.0'}}</td>
-                      <td>{{theaterReport.ticketCount}}</td>
-                      <td>{{theaterReport.amount}}</td>
-                    </tr>
-                    <tr class="over-all-tr">
-                      <td *ngIf="isOneTheater && isMovie === false" colspan="3">Всего:</td>
-                      <td *ngIf="isOneTheater === false || isMovie" colspan="2">Всего:</td>
-                      <td>{{item.totalTicketCount}}</td>
-                      <td>{{item.totalAmount}}</td>
+                    <tr *ngFor="let item of listOfMovies">
+                      <td class="text-center">{{item.label| manual: movies}}</td>
+                      <td class="text-center">{{item.daySession.childCount}}</td>
+                      <td class="text-center">{{item.daySession.childSum}}</td>
+                      <td class="text-center">{{item.daySession.adultCount}}</td>
+                      <td class="text-center">{{item.daySession.adultSum}}</td>
+                      <td class="text-center">{{item.eveningSession.childCount}}</td>
+                      <td class="text-center">{{item.eveningSession.childSum}}</td>
+                      <td class="text-center">{{item.eveningSession.adultCount}}</td>
+                      <td class="text-center">{{item.eveningSession.adultSum}}</td>
+                      <td
+                        class="bg-accent text-center">{{item.daySession.childCount + item.daySession.adultCount + item.eveningSession.childCount + item.eveningSession.adultCount}}</td>
+                      <td
+                        class="bg-accent text-center">{{item.daySession.childSum + item.daySession.adultSum + item.eveningSession.childSum + item.eveningSession.adultSum}}</td>
                     </tr>
                     </tbody>
                   </table>
-                </div>
-                <div class="alert alert-info" style="margin-bottom:20px; margin-top:20px;"
-                     role="alert">
-                  <div class="row">
-                    <div class="col-md-3 col-md-offset-6">
-                      <label>
-                        <span style="font-weight: normal;">Всего продано: </span>{{totalTicketCount}} бил.
-                      </label>
-                    </div>
-                    <div class="col-md-3">
-                      <label>
-                        <span style="font-weight: normal;">Общая сумма: </span>{{totalAmount}} сум.
-                      </label>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

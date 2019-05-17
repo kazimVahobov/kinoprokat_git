@@ -23,4 +23,9 @@ export class TheaterService extends EntityService<TheaterModel> {
     return this.http.get<any[]>(url);
   }
 
+  getByDistId(id: string): Observable<any[]> {
+    const url = `${this.baseUrl}/by-dist/${id}`;
+    return this.http.get<any[]>(url);
+  }
+
 }

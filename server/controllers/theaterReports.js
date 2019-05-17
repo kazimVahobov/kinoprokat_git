@@ -49,13 +49,13 @@ module.exports.filterTheaterReports = async function(req, res) {
     try {
         var _sent = !!req.body.sent;
         var _confirm = !!req.body.confirm;
-        const theaterReports = await TheaterReports.find({ sent: _sent, confirm: _confirm });
+        const theaterReports = await
+        TheaterReports.find({sent: _sent, confirm: _confirm});
         res.status(200).json(theaterReports)
     } catch (e) {
         errorHandler(res, e)
     }
 }
-
 
 module.exports.updateTheaterReportsById = async function(req, res) {
     try {

@@ -20,4 +20,9 @@ export class DistributorReportService extends EntityService<DistributorReportMod
       confirm: confirm
     });
   }
+
+  getByDistId(id: string): Observable<any[]> {
+    const url = `${this.baseUrl}/by-dist/${id}`;
+    return this.http.get<any[]>(url);
+  }
 }

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const theaterReports = new Schema({
     theaterId: { type: String, required: true },
-    date: { type: String, required: true },
+    date: { type: Date, required: true },
     sent: { type: Boolean },
     confirm: { type: Boolean },
     withCont: [

@@ -13,10 +13,9 @@ export class StatisticTheaterComponent implements OnInit {
 
   currentUser = JSON.parse(localStorage.getItem('user'));
   parametersPanelIsOpen: boolean = true;
-  selectedMovie: string = null;
+  selectedMovieId: string = null;
   selectedYear: number = null;
   selectedMonth: number = null;
-  monthMode: boolean = false;
   months: any[] = [];
   yearList: any[] = [];
   movies: any[] = [];
@@ -32,7 +31,7 @@ export class StatisticTheaterComponent implements OnInit {
     this.yearListService.getYearList().subscribe(years => this.yearList = years.reverse());
     this.movies = [];
     this.months = this.statisticService.months;
-    this.statisticService.getMoviesWithName().subscribe(movies => {
+    this.statisticService.getMoviesWithNameByReports(this.currentUser.theaterId).subscribe(movies => {
       this.movies = movies
     }, error1 => {
       console.log(error1.toString());
@@ -59,10 +58,10 @@ export class StatisticTheaterComponent implements OnInit {
   }
 
   changeMovie() {
-    if (this.selectedMovie) {
+    if (this.selectedMovieId) {
       this.selectedYear = null;
       this.selectedMonth = null;
-      this.loadData(this.selectedMovie);
+      this.loadData(this.selectedMovieId);
     } else {
       this.loadData();
     }
@@ -70,7 +69,7 @@ export class StatisticTheaterComponent implements OnInit {
 
   changeYear() {
     if (this.selectedYear) {
-      this.selectedMovie = null;
+      this.selectedMovieId = null;
       this.loadData(null, this.selectedYear);
     } else {
       this.loadData();
@@ -89,6 +88,12 @@ export class StatisticTheaterComponent implements OnInit {
     $("#print-section").print();
   }
 
+  resetFilters() {
+    this.selectedMovieId = null;
+    this.selectedYear = null;
+    this.selectedMonth = null;
+    this.loadData();
+  }
 }
 
 
