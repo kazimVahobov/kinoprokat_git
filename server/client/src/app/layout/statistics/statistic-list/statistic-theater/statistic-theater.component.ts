@@ -24,8 +24,6 @@ export class StatisticTheaterComponent implements OnInit {
   yearList: any[] = [];
   movies: any[] = [];
 
-  listOfMoviesByTheaterId: MainFilter[] = [];
-
   constructor(private yearListService: YearListService,
               private theaterService: TheaterService,
               private pagerService: PagerService,
@@ -96,18 +94,4 @@ export class StatisticTheaterComponent implements OnInit {
     // get current page of items
     this.pagedItems = data.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
-}
-
-
-class MainFilter {
-  label: string;
-  daySession?: SessionOfDetailFilter = new SessionOfDetailFilter();
-  eveningSession?: SessionOfDetailFilter = new SessionOfDetailFilter();
-}
-
-class SessionOfDetailFilter {
-  childCount: number;
-  childSum: number;
-  adultCount: number;
-  adultSum: number;
 }

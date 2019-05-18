@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {
   DistributorService,
-  MovieService,
+  MovieService, PagerService,
   TheaterReportService,
   TheaterService,
   YearListService
@@ -17,6 +17,10 @@ declare var $;
 })
 export class StatisticDistComponent implements OnInit {
 
+  // pager object
+  pager: any = {};
+  // paged items
+  pagedItems: any[] = [];
   currentUser = JSON.parse(localStorage.getItem('user'));
   parametersPanelIsOpen: boolean = true;
   months: any[] = [];
@@ -27,13 +31,13 @@ export class StatisticDistComponent implements OnInit {
   selectedMovieId: string = null;
   selectedYear: number = null;
   selectedMonth: number = null;
-  listOfMovies: MainFilter[] = [];
 
   constructor(private yearListService: YearListService,
               private theaterService: TheaterService,
               private movieService: MovieService,
               private distributorService: DistributorService,
               private thReportService: TheaterReportService,
+              private pagerService: PagerService,
               private statisticService: StatisticService) {
   }
 
@@ -46,37 +50,37 @@ export class StatisticDistComponent implements OnInit {
 
   loadData() {
     if (!this.selectedTheaterId && !this.selectedMovieId && !this.selectedYear && this.selectedMonth == null) {
-      this.statisticService.filterByOneDistId(this.currentUser.distId).subscribe(data => this.listOfMovies = data);
+      this.statisticService.filterByOneDistId(this.currentUser.distId).subscribe(data =>  this.setPage(1, data));
       this.statisticService.getMoviesWithNameByDistId(this.currentUser.distId).subscribe(data => this.movies = data);
     }
 
     if (this.selectedTheaterId && !this.selectedMovieId && !this.selectedYear) {
-      this.statisticService.getMoviesByTheaterId(this.selectedTheaterId).subscribe(data => this.listOfMovies = data);
+      this.statisticService.getMoviesByTheaterId(this.selectedTheaterId).subscribe(data => this.setPage(1, data));
     }
 
     if (this.selectedTheaterId && this.selectedMovieId) {
-      this.statisticService.filterByMovieId(this.selectedMovieId, this.currentUser.distId, this.selectedTheaterId).subscribe(data => this.listOfMovies = data);
+      this.statisticService.filterByMovieId(this.selectedMovieId, this.currentUser.distId, this.selectedTheaterId).subscribe(data => this.setPage(1, data));
     }
 
     if (this.selectedTheaterId && this.selectedYear && this.selectedMonth == null) {
-      this.statisticService.getMoviesByTheaterId(this.selectedTheaterId, this.selectedYear).subscribe(data => this.listOfMovies = data);
+      this.statisticService.getMoviesByTheaterId(this.selectedTheaterId, this.selectedYear).subscribe(data => this.setPage(1, data));
     }
 
     if (this.selectedTheaterId && this.selectedYear && this.selectedMonth != null) {
-      this.statisticService.getMoviesByTheaterId(this.selectedTheaterId, this.selectedYear, this.selectedMonth).subscribe(data => this.listOfMovies = data);
+      this.statisticService.getMoviesByTheaterId(this.selectedTheaterId, this.selectedYear, this.selectedMonth).subscribe(data => this.setPage(1, data));
       console.log('+theater, +year, +month');
     }
 
     if (!this.selectedTheaterId && this.selectedMovieId) {
-      this.statisticService.filterByMovieId(this.selectedMovieId, this.currentUser.distId).subscribe(data => this.listOfMovies = data);
+      this.statisticService.filterByMovieId(this.selectedMovieId, this.currentUser.distId).subscribe(data => this.setPage(1, data));
     }
 
     if (!this.selectedTheaterId && this.selectedYear && this.selectedMonth == null) {
-      this.statisticService.getMoviesByDate(this.selectedYear, this.currentUser.distId).subscribe(data => this.listOfMovies = data);
+      this.statisticService.getMoviesByDate(this.selectedYear, this.currentUser.distId).subscribe(data => this.setPage(1, data));
     }
 
     if (!this.selectedTheaterId && this.selectedYear && this.selectedMonth != null) {
-      this.statisticService.getMoviesByDate(this.selectedYear, this.currentUser.distId, this.selectedMonth).subscribe(data => this.listOfMovies = data);
+      this.statisticService.getMoviesByDate(this.selectedYear, this.currentUser.distId, this.selectedMonth).subscribe(data => this.setPage(1, data));
     }
   }
 
@@ -114,18 +118,12 @@ export class StatisticDistComponent implements OnInit {
   print() {
     $("#print-section").print();
   }
-}
 
+  setPage(page: number, data: any[]) {
+    // get pager object from service
+    this.pager = this.pagerService.getPager(data.length, page);
 
-class MainFilter {
-  label: string;
-  daySession?: SessionOfDetailFilter = new SessionOfDetailFilter();
-  eveningSession?: SessionOfDetailFilter = new SessionOfDetailFilter();
-}
-
-class SessionOfDetailFilter {
-  childCount: number;
-  childSum: number;
-  adultCount: number;
-  adultSum: number;
+    // get current page of items
+    this.pagedItems = data.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
 }

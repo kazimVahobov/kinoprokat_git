@@ -100,11 +100,12 @@
               <div class="col-md-12" id="print-section">
                 <div class="row">
                   <div class="text-center col-md-12">
-                    <label style="margin: 10px 0 20px 0; font-weight: normal;">
-                      <span *ngIf="selectedMovieId">Обобщённые данные всех отчётов кинотеатра по фильму {{selectedMovieId| manual: movies}}</span>
-                      <span *ngIf="!selectedMovieId">Обобщённые данные всех фильмов
+                    <label style="margin: 10px 0 20px 0; font-weight: normal;">Обобщённые данные
+                      <span *ngIf="!selectedMovieId && !selectedYear">всех отчётов кинотеатра</span>
+                      <span *ngIf="selectedMovieId">всех отчётов кинотеатра по фильму {{selectedMovieId| manual: movies}}</span>
+                      <span *ngIf="!selectedMovieId">всех фильмов
                         <span *ngIf="selectedMonth != null">за месяц {{selectedMonth| month}}</span>
-                        в {{selectedYear}} г.
+                        <span *ngIf="selectedYear"> {{selectedYear}} г.</span>
                       </span>
                     </label>
                   </div>
