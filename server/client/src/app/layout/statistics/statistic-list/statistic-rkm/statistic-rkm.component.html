@@ -6,7 +6,7 @@
       </h3>
     </div>
     <div class="col-md-1 pull-right">
-      <button (click)="print();" class="btn btn-primary pull-right">
+      <button (click)="print();" class="btn btn-primary pull-right" [disabled]="pagedItems.length == 0">
         Печать
       </button>
     </div>
@@ -80,7 +80,7 @@
                                [searchable]="false"
                                (ngModelChange)="changeMovie()"
                                [disabled]="selectedYear"
-                               placeholder="Выберите фыльма">
+                               placeholder="Выберите фильм">
                     </ng-select>
                   </div>
                   <div class="col-md-2 form-group no-pad-right">
@@ -113,15 +113,39 @@
                     </button>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <p *ngIf="selectedMovieId" style="color: red;"><span class="fa fa-lg fa-exclamation-circle"></span> Чтобы указать период
+                      отчётов (год - месяц) необходимо очистить поле выбора фильма</p>
+                    <p *ngIf="selectedYear" style="color: red;"><span class="fa fa-lg fa-exclamation-circle"></span> Чтобы указать фильм
+                      необходимо очистить поле выбора года</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="box-body">
           <div class="container-fluid">
-            <div class="row">
+            <div class="row" *ngIf="pagedItems.length != 0 else noData">
               <div class="col-md-12" id="print-section">
-                <label class="text-center item-title" style="margin-bottom:20px; margin-top:20px;"></label>
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <label style="margin-bottom:20px; margin-top:20px; font-weight: normal">Обобщённые данные
+                      <span *ngIf="!selectedDistId && !selectedTheaterId && !selectedMovieId">всех отчётов филиалов и кинотеатров по всем фильмам</span>
+                      <span *ngIf="selectedDistId && !selectedTheaterId"> всех отчётов филиала {{selectedDistId| manual: distributors}} и его дочерних кинотеатров
+                        <span *ngIf="selectedMovieId">по фильму {{selectedMovieId| manual: movies}}</span>
+                      </span>
+                      <span *ngIf="selectedDistId && selectedTheaterId">всех отчётов кинотеатра {{selectedTheaterId| manual: theaters}}
+                        ( {{selectedDistId| manual: distributors}} )
+                        <span *ngIf="selectedMovieId">по фильму {{selectedMovieId| manual: movies}}</span>
+                      </span>
+                      <span *ngIf="!selectedDistId && selectedMovieId">всех отчётов филиалов и кинотеатров по фильму {{selectedMovieId| manual: movies}}</span>
+                      <span *ngIf="selectedMonth != null"> за {{selectedMonth| month}} </span>
+                      <span *ngIf="selectedYear"> {{selectedYear}} г.</span>
+                    </label>
+                  </div>
+                </div>
                 <table class="table table-hover table-bordered table-dark-bordered">
                   <thead>
                   <tr>
@@ -153,7 +177,7 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let item of listOfMovies">
+                  <tr *ngFor="let item of pagedItems">
                     <td class="text-center">{{item.label| manual: movies}}</td>
                     <td class="text-center">{{item.daySession.childCount}}</td>
                     <td class="text-center">{{item.daySession.childSum}}</td>
@@ -171,6 +195,34 @@
                   </tbody>
                 </table>
               </div>
+              <div class="col-md-12">
+                <!-- pager -->
+                <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
+                  <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">
+                      <i class="fa fa-angle-double-left"></i>
+                    </a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">
+                      <i class="fa fa-angle-left"></i>
+                    </a>
+                  </li>
+                  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">
+                      <i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                  <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">
+                      <i class="fa fa-angle-double-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -178,3 +230,12 @@
     </div>
   </div>
 </section>
+
+
+<ng-template #noData>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <label style="margin: 10px 0 20px 0;">По указанным параметрам фильтров ни одного отчёта не найдено. Пожалуйста, попробуйте изменить параметры фильтров.</label>
+    </div>
+  </div>
+</ng-template>

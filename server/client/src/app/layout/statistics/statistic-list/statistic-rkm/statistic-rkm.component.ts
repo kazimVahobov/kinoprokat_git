@@ -1,5 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {DistributorService, MovieService, TheaterService, YearListService} from "../../../../core/services";
+import {
+  DistributorService,
+  MovieService,
+  PagerService,
+  TheaterService,
+  YearListService
+} from "../../../../core/services";
 import {StatisticService} from "../../../../core/services/statistic.service";
 
 declare var $;
@@ -11,6 +17,10 @@ declare var $;
 })
 export class StatisticRkmComponent implements OnInit {
 
+  // pager object
+  pager: any = {};
+  // paged items
+  pagedItems: any[] = [];
   currentUser = JSON.parse(localStorage.getItem('user'));
   parametersPanelIsOpen: boolean = true;
   selectedDistId: string = null;
@@ -24,12 +34,12 @@ export class StatisticRkmComponent implements OnInit {
   movies: any[] = [];
   years: any[] = [];
   months: any[] = [];
-  listOfMovies: MainFilter[] = [];
 
   constructor(private yearListService: YearListService,
               private statisticService: StatisticService,
               private distributorService: DistributorService,
               private moviesService: MovieService,
+              private pagerService: PagerService,
               private theaterService: TheaterService) {
   }
 
@@ -43,54 +53,54 @@ export class StatisticRkmComponent implements OnInit {
     if (!this.selectedDistId && !this.selectedTheaterId && !this.selectedMovieId && !this.selectedYear && this.selectedMonth == null) {
       this.moviesService.getAll().subscribe(data => this.movies = data);
       this.distributorService.getAll().subscribe(data => this.distributors = data);
-      this.statisticService.getMoviesByDate().subscribe(data => this.listOfMovies = data);
+      this.statisticService.getMoviesByDate().subscribe(data => this.setPage(1, data));
     }
 
     if (this.selectedDistId) {
 
       if (!this.selectedTheaterId && !this.selectedMovieId && !this.selectedYear) {
         // only distId
-        this.statisticService.filterByOneDistId(this.selectedDistId).subscribe(data => this.listOfMovies = data);
+        this.statisticService.filterByOneDistId(this.selectedDistId).subscribe(data => this.setPage(1, data));
       }
 
       if (this.selectedTheaterId && !this.selectedMovieId && !this.selectedYear) {
         // only distId and theaterId
-        this.statisticService.getMoviesByTheaterId(this.selectedTheaterId).subscribe(data => this.listOfMovies = data);
+        this.statisticService.getMoviesByTheaterId(this.selectedTheaterId).subscribe(data => this.setPage(1, data));
       }
 
       if (this.selectedTheaterId && this.selectedMovieId && !this.selectedYear) {
         // only distId, theaterId and movieId
         this.statisticService.filterByMovieId(this.selectedMovieId, this.selectedDistId, this.selectedTheaterId)
-          .subscribe(data => this.listOfMovies = data);
+          .subscribe(data => this.setPage(1, data));
       }
 
       if (this.selectedTheaterId && !this.selectedMovieId && this.selectedYear) {
         if (this.selectedMonth != null) {
           // only distId, theaterId, year and month
           this.statisticService.getMoviesByTheaterId(this.selectedTheaterId, this.selectedYear, this.selectedMonth)
-            .subscribe(data => this.listOfMovies = data);
+            .subscribe(data => this.setPage(1, data));
         } else if (this.selectedMonth == null) {
           // only distId, theaterId and year
           this.statisticService.getMoviesByTheaterId(this.selectedTheaterId, this.selectedYear)
-            .subscribe(data => this.listOfMovies = data);
+            .subscribe(data => this.setPage(1, data));
         }
       }
 
       if (!this.selectedTheaterId && this.selectedMovieId && !this.selectedYear) {
         // only distId and movieId
         this.statisticService.filterByMovieId(this.selectedMovieId, this.selectedDistId)
-          .subscribe(data => this.listOfMovies = data);
+          .subscribe(data => this.setPage(1, data));
       }
 
       if (!this.selectedTheaterId && !this.selectedMovieId && this.selectedYear) {
         if (this.selectedMonth != null) {
           // only distId, year and month
           this.statisticService.getMoviesByDate(this.selectedYear, this.selectedDistId, this.selectedMonth)
-            .subscribe(data => this.listOfMovies = data);
+            .subscribe(data => this.setPage(1, data));
         } else if (this.selectedMonth == null) {
           // only distId and year
           this.statisticService.getMoviesByDate(this.selectedYear, this.selectedDistId)
-            .subscribe(data => this.listOfMovies = data);
+            .subscribe(data => this.setPage(1, data));
         }
       }
 
@@ -98,18 +108,18 @@ export class StatisticRkmComponent implements OnInit {
 
     if (!this.selectedDistId && !this.selectedTheaterId && this.selectedMovieId && !this.selectedYear) {
       // only movieId
-      this.statisticService.filterByMovieId(this.selectedMovieId).subscribe(data => this.listOfMovies = data);
+      this.statisticService.filterByMovieId(this.selectedMovieId).subscribe(data => this.setPage(1, data));
     }
 
     if (!this.selectedDistId && !this.selectedTheaterId && !this.selectedMovieId && this.selectedYear) {
       if (this.selectedMonth != null) {
         // only year and month
         this.statisticService.getMoviesByDate(this.selectedYear, null, this.selectedMonth)
-          .subscribe(data => this.listOfMovies = data);
+          .subscribe(data => this.setPage(1, data));
       } else if (this.selectedMonth == null) {
         // only year
         this.statisticService.getMoviesByDate(this.selectedYear)
-          .subscribe(data => this.listOfMovies = data);
+          .subscribe(data => this.setPage(1, data));
       }
     }
   }
@@ -159,19 +169,12 @@ export class StatisticRkmComponent implements OnInit {
   print() {
     $("#print-section").print();
   }
+
+  setPage(page: number, data: any[]) {
+    // get pager object from service
+    this.pager = this.pagerService.getPager(data.length, page);
+
+    // get current page of items
+    this.pagedItems = data.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
 }
-
-
-class MainFilter {
-  label: string;
-  daySession?: SessionOfDetailFilter = new SessionOfDetailFilter();
-  eveningSession?: SessionOfDetailFilter = new SessionOfDetailFilter();
-}
-
-class SessionOfDetailFilter {
-  childCount: number;
-  childSum: number;
-  adultCount: number;
-  adultSum: number;
-}
-

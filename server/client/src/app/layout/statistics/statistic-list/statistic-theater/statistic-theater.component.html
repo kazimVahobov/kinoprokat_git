@@ -6,7 +6,7 @@
       </h3>
     </div>
     <div class="col-md-1 pull-right">
-      <button (click)="print();" class="btn btn-primary pull-right">
+      <button (click)="print();" class="btn btn-primary pull-right" [disabled]="pagedItems.length == 0">
         Печать
       </button>
     </div>
@@ -104,7 +104,7 @@
                       <span *ngIf="!selectedMovieId && !selectedYear">всех отчётов кинотеатра</span>
                       <span *ngIf="selectedMovieId">всех отчётов кинотеатра по фильму {{selectedMovieId| manual: movies}}</span>
                       <span *ngIf="!selectedMovieId">всех фильмов
-                        <span *ngIf="selectedMonth != null">за месяц {{selectedMonth| month}}</span>
+                        <span *ngIf="selectedMonth != null">за {{selectedMonth| month}}</span>
                         <span *ngIf="selectedYear"> {{selectedYear}} г.</span>
                       </span>
                     </label>
