@@ -1,22 +1,8 @@
-.alert-info {
-  color: #000000 !important;
-  background-color: #e1f5fe !important;
-  border: 1px solid #03a9f4;
-}
-
 .disabled {
   opacity: .50;
 }
 
-.over-all-tr {
-  font-weight: bolder;
-  background-color: #e1f5fe;
-  td {
-    border-bottom: 1px solid #03a9f4 !important;
-  }
-}
-
-.box-header {
+#parametersHeader {
   .panel {
     border: none;
     border-bottom: 1px solid #dddddd;
@@ -43,96 +29,6 @@
   }
 }
 
-.my-radio {
-  :hover {
-    cursor: pointer;
-  }
-  margin-bottom: 0;
-  border: 1px solid transparent !important;
-  border-radius: 4px !important;
-  box-shadow: none;
-  background-color: #eeeeee;
-  .panel-body {
-    vertical-align: middle;
-    padding: 5px;
-    label {
-      font-weight: 500;
-      margin-bottom: 0;
-      input {
-        display: none;
-      }
-    }
-  }
-}
-
-.my-checkbox {
-  :hover {
-    cursor: pointer;
-  }
-  margin-bottom: 0;
-  border: 1px solid #337ab7 !important;
-  border-radius: 4px !important;
-  box-shadow: none;
-  background-color: #337ab7;
-  color: #FFFFFF;
-  .panel-body {
-    vertical-align: middle;
-    padding: 5px;
-    label {
-      font-weight: 500;
-      margin-bottom: 0;
-      input {
-        display: none;
-      }
-    }
-  }
-}
-
-.my-radio-active {
-  background-color: #337ab7;
-  color: #FFFFFF;
-}
-
-.to-reports {
-  margin-bottom: 0;
-  border: 1px solid transparent !important;
-  border-radius: 4px !important;
-  box-shadow: none;
-  .panel-body {
-    vertical-align: middle;
-    padding: 3px;
-    label {
-      font-weight: 500;
-      margin-top: 2px;
-      margin-bottom: 0;
-    }
-  }
-}
-
-.to-reports-active {
-  background-color: #ec971f;
-  color: #FFFFFF;
-}
-
-.to-reports-disabled {
-  background-color: #eeeeee;
-}
-
-.to-reports-btn {
-  border: 1px solid transparent;
-  border-radius: 4px !important;
-  padding: 2px 5px !important;
-}
-
-.to-reports-btn-active:hover {
-  border-color: #FFFFFF !important;
-  cursor: pointer;
-}
-
-#printCond {
-  display: none !important;
-}
-
 @media print {
   .box-success {
     border-top: 0;
@@ -156,32 +52,5 @@
 
   .item-title {
     margin-bottom: 10px !important;
-  }
-
-  #conStatistics {
-    display: none !important;
-  }
-
-  #printCond {
-    display: inline !important;
-  }
-
-  .print-title {
-    font-size: 12pt;
-  }
-
-  .title-table {
-    margin-bottom: 0;
-    margin-top: 20px;
-    font-size: 11pt;
-    width: 75%;
-    .title-td {
-      font-weight: bolder;
-      width: 30%;
-    }
-  }
-
-  .alert-info {
-    border-color: transparent;
   }
 }

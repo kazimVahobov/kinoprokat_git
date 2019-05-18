@@ -40,7 +40,7 @@ export class StatisticRkmComponent implements OnInit {
   }
 
   loadData() {
-    if (!this.selectedDistId && !this.selectedTheaterId && !this.selectedMovieId && !this.selectedYear && !this.selectedMonth) {
+    if (!this.selectedDistId && !this.selectedTheaterId && !this.selectedMovieId && !this.selectedYear && this.selectedMonth == null) {
       this.moviesService.getAll().subscribe(data => this.movies = data);
       this.distributorService.getAll().subscribe(data => this.distributors = data);
       this.statisticService.getMoviesByDate().subscribe(data => this.listOfMovies = data);
@@ -65,11 +65,11 @@ export class StatisticRkmComponent implements OnInit {
       }
 
       if (this.selectedTheaterId && !this.selectedMovieId && this.selectedYear) {
-        if (this.selectedMonth) {
+        if (this.selectedMonth != null) {
           // only distId, theaterId, year and month
           this.statisticService.getMoviesByTheaterId(this.selectedTheaterId, this.selectedYear, this.selectedMonth)
             .subscribe(data => this.listOfMovies = data);
-        } else if (!this.selectedMonth) {
+        } else if (this.selectedMonth == null) {
           // only distId, theaterId and year
           this.statisticService.getMoviesByTheaterId(this.selectedTheaterId, this.selectedYear)
             .subscribe(data => this.listOfMovies = data);
@@ -83,11 +83,11 @@ export class StatisticRkmComponent implements OnInit {
       }
 
       if (!this.selectedTheaterId && !this.selectedMovieId && this.selectedYear) {
-        if (this.selectedMonth) {
+        if (this.selectedMonth != null) {
           // only distId, year and month
           this.statisticService.getMoviesByDate(this.selectedYear, this.selectedDistId, this.selectedMonth)
             .subscribe(data => this.listOfMovies = data);
-        } else if (!this.selectedMonth) {
+        } else if (this.selectedMonth == null) {
           // only distId and year
           this.statisticService.getMoviesByDate(this.selectedYear, this.selectedDistId)
             .subscribe(data => this.listOfMovies = data);
@@ -102,11 +102,11 @@ export class StatisticRkmComponent implements OnInit {
     }
 
     if (!this.selectedDistId && !this.selectedTheaterId && !this.selectedMovieId && this.selectedYear) {
-      if (this.selectedMonth) {
+      if (this.selectedMonth != null) {
         // only year and month
         this.statisticService.getMoviesByDate(this.selectedYear, null, this.selectedMonth)
           .subscribe(data => this.listOfMovies = data);
-      } else {
+      } else if (this.selectedMonth == null) {
         // only year
         this.statisticService.getMoviesByDate(this.selectedYear)
           .subscribe(data => this.listOfMovies = data);

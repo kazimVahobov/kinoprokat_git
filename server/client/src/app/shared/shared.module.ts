@@ -14,6 +14,7 @@ import {
 } from 'ngx-bootstrap';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {MonthPipe} from "./pipes/month.pipe";
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     ContentWrapperComponent,
     ValidationSummaryComponent,
     ManualPipe,
+    MonthPipe,
     SumPipe
   ],
   exports: [
@@ -42,6 +44,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     ValidationSummaryComponent,
     FormsModule,
     ManualPipe,
+    MonthPipe,
     SumPipe,
     NgSelectModule,
     ModalModule,

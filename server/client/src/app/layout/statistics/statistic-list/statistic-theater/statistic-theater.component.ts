@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TheaterService, YearListService} from "../../../../core";
+import {PagerService, TheaterService, YearListService} from "../../../../core";
 import {StatisticService} from "../../../../core/services/statistic.service";
 
 declare var $;
@@ -11,6 +11,10 @@ declare var $;
 })
 export class StatisticTheaterComponent implements OnInit {
 
+  // pager object
+  pager: any = {};
+  // paged items
+  pagedItems: any[] = [];
   currentUser = JSON.parse(localStorage.getItem('user'));
   parametersPanelIsOpen: boolean = true;
   selectedMovieId: string = null;
@@ -24,6 +28,7 @@ export class StatisticTheaterComponent implements OnInit {
 
   constructor(private yearListService: YearListService,
               private theaterService: TheaterService,
+              private pagerService: PagerService,
               private statisticService: StatisticService) {
   }
 
@@ -39,49 +44,38 @@ export class StatisticTheaterComponent implements OnInit {
     this.loadData();
   }
 
-  loadData(movieId?: string, year?: number, month?: number) {
-    if (!movieId && !year && !month) {
-      this.statisticService.getMoviesByTheaterId(this.currentUser.theaterId).subscribe(data => this.listOfMoviesByTheaterId = data);
-    } else if (movieId && !year && !month) {
+  loadData() {
+    if (!this.selectedMovieId && !this.selectedYear && this.selectedMonth == null) {
+      console.log('1');
+      this.statisticService.getMoviesByTheaterId(this.currentUser.theaterId).subscribe(data => this.setPage(1, data));
+    }
+
+    if (this.selectedMovieId && !this.selectedYear && this.selectedMonth == null) {
+      console.log('2');
       this.theaterService.getById(this.currentUser.theaterId).subscribe(theater => {
-        this.statisticService.filterByMovieId(movieId, theater.regionId, theater._id).subscribe(data => this.listOfMoviesByTheaterId = data);
+        this.statisticService.filterByMovieId(this.selectedMovieId, theater.regionId, theater._id).subscribe(data => this.setPage(1, data));
       });
-    } else if (!movieId && year && !month) {
-      this.statisticService.getMoviesByTheaterId(this.currentUser.theaterId, year).subscribe(data => {
-        this.listOfMoviesByTheaterId = data;
-      });
-    } else if (!movieId && year && month) {
-      this.statisticService.getMoviesByTheaterId(this.currentUser.theaterId, year, month).subscribe(data => {
-        this.listOfMoviesByTheaterId = data;
-      });
+    }
+
+    if (!this.selectedMovieId && this.selectedYear) {
+      if (this.selectedMonth != null) {
+        this.statisticService.getMoviesByTheaterId(this.currentUser.theaterId, this.selectedYear, this.selectedMonth).subscribe(data => this.setPage(1, data));
+      } else if (this.selectedMonth == null) {
+        this.statisticService.getMoviesByTheaterId(this.currentUser.theaterId, this.selectedYear).subscribe(data => this.setPage(1, data));
+      }
     }
   }
 
   changeMovie() {
-    if (this.selectedMovieId) {
-      this.selectedYear = null;
-      this.selectedMonth = null;
-      this.loadData(this.selectedMovieId);
-    } else {
-      this.loadData();
-    }
+    this.selectedYear = null;
+    this.selectedMonth = null;
+    this.loadData();
   }
 
   changeYear() {
-    if (this.selectedYear) {
-      this.selectedMovieId = null;
-      this.loadData(null, this.selectedYear);
-    } else {
-      this.loadData();
-    }
-  }
-
-  changeMonth() {
-    if (this.selectedMonth) {
-      this.loadData(null, this.selectedYear, this.selectedMonth);
-    } else {
-      this.loadData(null, this.selectedYear);
-    }
+    this.selectedMovieId = null;
+    this.selectedMonth = null;
+    this.loadData();
   }
 
   print() {
@@ -93,6 +87,14 @@ export class StatisticTheaterComponent implements OnInit {
     this.selectedYear = null;
     this.selectedMonth = null;
     this.loadData();
+  }
+
+  setPage(page: number, data: any[]) {
+    // get pager object from service
+    this.pager = this.pagerService.getPager(data.length, page);
+
+    // get current page of items
+    this.pagedItems = data.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 }
 
