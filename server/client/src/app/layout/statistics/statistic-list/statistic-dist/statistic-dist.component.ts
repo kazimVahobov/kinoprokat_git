@@ -47,7 +47,7 @@ export class StatisticDistComponent implements OnInit {
   loadData() {
     if (!this.selectedTheaterId && !this.selectedMovieId && !this.selectedYear && this.selectedMonth == null) {
       this.statisticService.filterByOneDistId(this.currentUser.distId).subscribe(data => this.listOfMovies = data);
-      this.statisticService.getMoviesByDistId(this.currentUser.distId).subscribe(data => this.movies = data);
+      this.statisticService.getMoviesWithNameByDistId(this.currentUser.distId).subscribe(data => this.movies = data);
     }
 
     if (this.selectedTheaterId && !this.selectedMovieId && !this.selectedYear) {
@@ -82,7 +82,7 @@ export class StatisticDistComponent implements OnInit {
 
   changeTheater() {
     if (this.selectedTheaterId != null) {
-      this.statisticService.getMoviesWithNameByReports(this.selectedTheaterId).subscribe(data => this.movies = data);
+      this.statisticService.getMoviesWithNameByThReports(this.selectedTheaterId).subscribe(data => this.movies = data);
     }
     this.selectedMovieId = null;
     this.loadData();

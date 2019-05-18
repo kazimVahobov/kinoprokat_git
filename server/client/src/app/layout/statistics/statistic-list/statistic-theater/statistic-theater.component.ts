@@ -31,7 +31,7 @@ export class StatisticTheaterComponent implements OnInit {
     this.yearListService.getYearList().subscribe(years => this.yearList = years.reverse());
     this.movies = [];
     this.months = this.statisticService.months;
-    this.statisticService.getMoviesWithNameByReports(this.currentUser.theaterId).subscribe(movies => {
+    this.statisticService.getMoviesWithNameByThReports(this.currentUser.theaterId).subscribe(movies => {
       this.movies = movies
     }, error1 => {
       console.log(error1.toString());

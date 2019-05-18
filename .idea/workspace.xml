@@ -5,18 +5,12 @@
     <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" line="237" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
+    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="statistic-rkm component ready to add filters, initial training completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/core/services/distributor-report.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/core/services/distributor-report.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/core/services/theater.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/core/services/theater.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/theater.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/theater.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/theaterReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/theaterReports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/theaterReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/theaterReports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/theater.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/theater.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,48 +22,45 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5584826">
+    <splitter split-orientation="horizontal" split-proportion="0.5426765">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html">
+            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="322">
-                  <caret line="88" column="86" selection-start-line="88" selection-start-column="86" selection-end-line="88" selection-end-column="86" />
+                <state relative-caret-position="-194">
+                  <caret line="132" column="85" lean-forward="true" selection-start-line="132" selection-start-column="85" selection-end-line="132" selection-end-column="85" />
                   <folding>
                     <element signature="n#section#0;n#!!top" />
                     <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                    <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-                    <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                    <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                    <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                    <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                    <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                    <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                    <element signature="n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                    <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                    <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                    <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                    <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                    <element signature="n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+                    <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts">
+            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="596">
-                  <caret line="105" selection-start-line="105" selection-end-line="111" selection-end-column="3" />
+                <state relative-caret-position="267">
+                  <caret line="45" column="90" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
                   <folding>
                     <element signature="e#0#48#0" expanded="true" />
-                    <element signature="e#1685#1699#0" />
-                    <element signature="e#1779#1793#0" />
-                    <element signature="e#1850#1864#0" />
-                    <element signature="e#1941#1955#0" />
-                    <element signature="e#2051#2065#0" />
-                    <element signature="e#2194#2208#0" />
-                    <element signature="e#2289#2303#0" />
-                    <element signature="n#!!block;n#changeTheater#0;n#StatisticDistComponent#0" />
-                    <element signature="n#!!block;n#changeMovie#0;n#StatisticDistComponent#0" />
-                    <element signature="n#!!block;n#changeYear#0;n#StatisticDistComponent#0" />
-                    <element signature="n#!!block;n#print#0;n#StatisticDistComponent#0" />
+                    <element signature="e#1798#1868#0" />
+                    <element signature="e#1951#2047#0" />
+                    <element signature="e#2129#2236#0" />
+                    <element signature="e#2318#2622#0" />
+                    <element signature="e#2705#2793#0" />
+                    <element signature="e#2876#3142#0" />
+                    <element signature="e#3254#3320#0" />
+                    <element signature="e#3457#3541#0" />
+                    <element signature="e#3547#3615#0" />
+                    <element signature="n#!!block;n#changeDist#0;n#StatisticRkmComponent#0" />
                   </folding>
                 </state>
               </provider>
@@ -78,81 +69,27 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="667">
-                  <caret line="79" column="86" selection-start-line="79" selection-start-column="86" selection-end-line="79" selection-end-column="86" />
-                  <folding>
-                    <element signature="n#section#0;n#!!top" />
-                    <element signature="n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                    <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                    <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#label#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-                    <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/statistic.service.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="666">
-                  <caret line="600" column="65" lean-forward="true" selection-start-line="600" selection-start-column="65" selection-end-line="600" selection-end-column="65" />
+                <state relative-caret-position="23">
+                  <caret line="372" column="23" selection-start-line="372" selection-start-column="23" selection-end-line="372" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
-                    <element signature="e#420#1023#0" />
                     <element signature="n#!!block;n#filterByMovieId#0;n#StatisticService#0" />
-                    <element signature="e#2497#3035#0" />
-                    <element signature="e#2883#3127#0" />
-                    <element signature="e#3983#5584#0" />
-                    <element signature="n#!!block;n#getMoviesWithName#0;n#StatisticService#0" />
+                    <element signature="e#1573#1783#0" />
+                    <element signature="e#1814#1924#0" />
+                    <element signature="e#2496#3034#0" />
+                    <element signature="e#3184#3365#0" />
+                    <element signature="e#3261#3400#0" />
                     <element signature="n#!!block;n#getMoviesByTheaterId#0;n#StatisticService#0" />
-                    <element signature="e#6638#9304#0" />
+                    <element signature="n#!!block;n#filterByOneDistId#0;n#StatisticService#0" />
+                    <element signature="n#!!block;n#getMoviesWithNameByThReports#0;n#StatisticService#0" />
+                    <element signature="n#!!block;n#getMoviesWithNameByDistId#0;n#StatisticService#0" />
                     <element signature="n#!!block;n#getTheatersWithName#0;n#StatisticService#0" />
                     <element signature="n#!!block;n#selectingOfReports#0;n#StatisticService#0" />
-                    <element signature="n#!!block;n#filterByOneDistId#0;n#StatisticService#0" />
-                    <element signature="e#12329#14080#0" />
-                    <element signature="e#12721#13461#0" />
-                    <element signature="e#13512#14064#0" />
-                    <element signature="n#!!block;n#getMoviesByDate#0;n#StatisticService#0" />
-                    <element signature="e#14764#14778#0" />
-                    <element signature="e#14790#14804#0" />
-                    <element signature="e#15614#15636#0" />
-                    <element signature="e#15607#15629#0" />
-                    <element signature="e#16851#16873#0" />
-                    <element signature="e#17103#17125#0" />
-                    <element signature="e#17374#19488#0" />
-                    <element signature="e#17493#17566#0" />
-                    <element signature="e#17572#17707#0" />
-                    <element signature="e#18143#18859#0" />
-                    <element signature="e#18906#19430#0" />
-                    <element signature="e#19237#19458#0" />
-                    <element signature="e#19158#19379#0" />
                     <element signature="n#!!block;n#generateKeyByDate#0;n#StatisticService#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/distributor-report.model.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
-                  <caret line="6" column="16" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="90" column="14" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="14" />
-                  <folding>
-                    <element signature="e#0#48#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -168,8 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/out-repeort/out-repeort.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report.module.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-routing.module.ts" />
@@ -214,11 +149,13 @@
         <option value="$PROJECT_DIR$/server/controllers/theaterReports.js" />
         <option value="$PROJECT_DIR$/server/routes/theaterReports.js" />
         <option value="$PROJECT_DIR$/server/client/src/app/core/services/theater-report.service.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/core/services/statistic.service.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/core/services/statistic.service.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" />
       </list>
     </option>
   </component>
@@ -233,7 +170,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,39 +249,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="movie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="movie" type="462c0819:PsiDirectoryNode" />
-              <item name="movie-detail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="movie" type="462c0819:PsiDirectoryNode" />
-              <item name="movie-detail" type="462c0819:PsiDirectoryNode" />
-              <item name="movie-statistic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
               <item name="statistics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -381,7 +284,7 @@
               <item name="layout" type="462c0819:PsiDirectoryNode" />
               <item name="statistics" type="462c0819:PsiDirectoryNode" />
               <item name="statistic-list" type="462c0819:PsiDirectoryNode" />
-              <item name="statistic-theater" type="462c0819:PsiDirectoryNode" />
+              <item name="statistic-rkm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
@@ -421,6 +324,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -481,7 +385,8 @@
       <workItem from="1557722202612" duration="36693000" />
       <workItem from="1557817655415" duration="27118000" />
       <workItem from="1557864384211" duration="10106000" />
-      <workItem from="1557909730860" duration="67752000" />
+      <workItem from="1557909730860" duration="69705000" />
+      <workItem from="1558161101847" duration="11908000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -532,11 +437,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558019172227</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="filters on statistic-dist full completed, be left print option of this component">
+      <created>1558111250871</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1558111250871</updated>
+    </task>
+    <task id="LOCAL-00009" summary="statistic-rkm component ready to add filters, initial training completed">
+      <created>1558113116540</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1558113116540</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282309000" />
+    <option name="totallyTimeSpent" value="296170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -555,7 +474,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5724346" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5392354" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -593,23 +512,11 @@
     <MESSAGE value="created statistic service and one method (filter by movieId and regionId?), added new API's to theater, theater-report, distributor, distributor-reports service on client and backend part. New API's: filterTheaterReport(sent, confirm), filterDistReport(sent, confirm), getTheatersByRegionId(regionId), getDistsByRegionId(regionId)" />
     <MESSAGE value="print option on movie-statistic module and styles of data-table completed" />
     <MESSAGE value="filters on statistic-theater full completed, be left print option of this component" />
-    <option name="LAST_COMMIT_MESSAGE" value="filters on statistic-theater full completed, be left print option of this component" />
+    <MESSAGE value="filters on statistic-dist full completed, be left print option of this component" />
+    <MESSAGE value="statistic-rkm component ready to add filters, initial training completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="statistic-rkm component ready to add filters, initial training completed" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="139" column="81" selection-start-line="139" selection-start-column="81" selection-end-line="139" selection-end-column="81" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/role.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/distributor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -995,85 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/statistic.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="600" column="65" lean-forward="true" selection-start-line="600" selection-start-column="65" selection-end-line="600" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#420#1023#0" />
-            <element signature="n#!!block;n#filterByMovieId#0;n#StatisticService#0" />
-            <element signature="e#2497#3035#0" />
-            <element signature="e#2883#3127#0" />
-            <element signature="e#3983#5584#0" />
-            <element signature="n#!!block;n#getMoviesWithName#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#getMoviesByTheaterId#0;n#StatisticService#0" />
-            <element signature="e#6638#9304#0" />
-            <element signature="n#!!block;n#getTheatersWithName#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#selectingOfReports#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#filterByOneDistId#0;n#StatisticService#0" />
-            <element signature="e#12329#14080#0" />
-            <element signature="e#12721#13461#0" />
-            <element signature="e#13512#14064#0" />
-            <element signature="n#!!block;n#getMoviesByDate#0;n#StatisticService#0" />
-            <element signature="e#14764#14778#0" />
-            <element signature="e#14790#14804#0" />
-            <element signature="e#15614#15636#0" />
-            <element signature="e#15607#15629#0" />
-            <element signature="e#16851#16873#0" />
-            <element signature="e#17103#17125#0" />
-            <element signature="e#17374#19488#0" />
-            <element signature="e#17493#17566#0" />
-            <element signature="e#17572#17707#0" />
-            <element signature="e#18143#18859#0" />
-            <element signature="e#18906#19430#0" />
-            <element signature="e#19237#19458#0" />
-            <element signature="e#19158#19379#0" />
-            <element signature="n#!!block;n#generateKeyByDate#0;n#StatisticService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="88" column="86" selection-start-line="88" selection-start-column="86" selection-end-line="88" selection-end-column="86" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="105" selection-start-line="105" selection-end-line="111" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="e#1685#1699#0" />
-            <element signature="e#1779#1793#0" />
-            <element signature="e#1850#1864#0" />
-            <element signature="e#1941#1955#0" />
-            <element signature="e#2051#2065#0" />
-            <element signature="e#2194#2208#0" />
-            <element signature="e#2289#2303#0" />
-            <element signature="n#!!block;n#changeTheater#0;n#StatisticDistComponent#0" />
-            <element signature="n#!!block;n#changeMovie#0;n#StatisticDistComponent#0" />
-            <element signature="n#!!block;n#changeYear#0;n#StatisticDistComponent#0" />
-            <element signature="n#!!block;n#print#0;n#StatisticDistComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1095,6 +923,97 @@
             <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
             <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-194">
+          <caret line="132" column="85" lean-forward="true" selection-start-line="132" selection-start-column="85" selection-end-line="132" selection-end-column="85" />
+          <folding>
+            <element signature="n#section#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="145" column="22" lean-forward="true" selection-start-line="145" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
+          <folding>
+            <element signature="n#section#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#!!block;n#changeTheater#0;n#StatisticDistComponent#0" />
+            <element signature="n#!!block;n#changeMovie#0;n#StatisticDistComponent#0" />
+            <element signature="n#!!block;n#changeYear#0;n#StatisticDistComponent#0" />
+            <element signature="n#!!block;n#print#0;n#StatisticDistComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/statistic.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="372" column="23" selection-start-line="372" selection-start-column="23" selection-end-line="372" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#filterByMovieId#0;n#StatisticService#0" />
+            <element signature="e#1573#1783#0" />
+            <element signature="e#1814#1924#0" />
+            <element signature="e#2496#3034#0" />
+            <element signature="e#3184#3365#0" />
+            <element signature="e#3261#3400#0" />
+            <element signature="n#!!block;n#getMoviesByTheaterId#0;n#StatisticService#0" />
+            <element signature="n#!!block;n#filterByOneDistId#0;n#StatisticService#0" />
+            <element signature="n#!!block;n#getMoviesWithNameByThReports#0;n#StatisticService#0" />
+            <element signature="n#!!block;n#getMoviesWithNameByDistId#0;n#StatisticService#0" />
+            <element signature="n#!!block;n#getTheatersWithName#0;n#StatisticService#0" />
+            <element signature="n#!!block;n#selectingOfReports#0;n#StatisticService#0" />
+            <element signature="n#!!block;n#generateKeyByDate#0;n#StatisticService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="45" column="90" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#1798#1868#0" />
+            <element signature="e#1951#2047#0" />
+            <element signature="e#2129#2236#0" />
+            <element signature="e#2318#2622#0" />
+            <element signature="e#2705#2793#0" />
+            <element signature="e#2876#3142#0" />
+            <element signature="e#3254#3320#0" />
+            <element signature="e#3457#3541#0" />
+            <element signature="e#3547#3615#0" />
+            <element signature="n#!!block;n#changeDist#0;n#StatisticRkmComponent#0" />
           </folding>
         </state>
       </provider>
