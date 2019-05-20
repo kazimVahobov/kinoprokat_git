@@ -163,25 +163,25 @@
                   <!-- pager -->
                   <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
                     <li [ngClass]="{disabled:pager.currentPage === 1}">
-                      <a (click)="setPage(1)">
+                      <a (click)="setPage(1, pagedItems)">
                         <i class="fa fa-angle-double-left"></i>
                       </a>
                     </li>
                     <li [ngClass]="{disabled:pager.currentPage === 1}">
-                      <a (click)="setPage(pager.currentPage - 1)">
+                      <a (click)="setPage(pager.currentPage - 1, pagedItems)">
                         <i class="fa fa-angle-left"></i>
                       </a>
                     </li>
                     <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-                      <a (click)="setPage(page)">{{page}}</a>
+                      <a (click)="setPage(page, pagedItems)">{{page}}</a>
                     </li>
                     <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                      <a (click)="setPage(pager.currentPage + 1)">
+                      <a (click)="setPage(pager.currentPage + 1, pagedItems)">
                         <i class="fa fa-angle-right"></i>
                       </a>
                     </li>
                     <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                      <a (click)="setPage(pager.totalPages)">
+                      <a (click)="setPage(pager.totalPages, pagedItems)">
                         <i class="fa fa-angle-double-right"></i>
                       </a>
                     </li>

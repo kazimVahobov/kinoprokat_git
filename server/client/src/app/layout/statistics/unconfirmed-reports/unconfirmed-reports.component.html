@@ -9,7 +9,7 @@
       <div style="cursor: pointer" class="col-md-4 pull-right text-right">
         <a href="javascript:;" (click)="backPage()">
           <span class="fa fa-long-arrow-left"></span>
-          К списку статистику
+          Вернуться к статистике
         </a>
       </div>
     </div>
@@ -25,12 +25,10 @@
               <thead>
               <tr>
                 <th>Дата</th>
-                <th>Кинотеатр</th>
-                <th>Дистрибьютор</th>
+                <th>Кинотеатр / Дистрибьютор</th>
                 <th>Кол-во сеансов</th>
                 <th>Кол-во билетов</th>
                 <th>Общая сумма</th>
-                <th>Фильмы без договора</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -39,33 +37,30 @@
               <tbody>
               <tr *ngFor="let report of pagedItems">
                 <td>{{report.date|date: 'dd.MM.yyyy'}}</td>
-                <td>{{report.theaterId| manual: theaters}}</td>
-                <td>{{report.distId| manual: distributors}}</td>
+                <td>
+                  <span *ngIf="report.isTheater">{{report.theaterId| manual: theaters}}</span>
+                  <span *ngIf="!report.isTheater">{{report.distId| manual: distributors}}</span>
+                </td>
                 <td>{{report.sessionCount}}</td>
                 <td>{{report.ticketCount}}</td>
                 <td>{{report.sum}}</td>
-                <td>
-                  <span *ngIf="report.withoutCont; else noCount">Имеется</span>
-                  <ng-template #noCount><span>Не имеется</span></ng-template>
+                <td style="width: 7%">
+                  <span popover="Подробнее"
+                        triggers="mouseenter:mouseleave"
+                        (click)="detailRouter(report._id, report.isTheater)"
+                        class="fa fa-eye"></span>
                 </td>
                 <td style="width: 7%">
-                          <span popover="Подробнее" triggers="mouseenter:mouseleave" (click)="detailRouter(report._id)"
-                                class="fa fa-eye">
-                          </span>
+                  <span (click)="confirmReport(report._id, report.isTheater)"
+                        popover="Подтвердить"
+                        triggers="mouseenter:mouseleave"
+                        class="fa fa-check-square-o"></span>
                 </td>
                 <td style="width: 7%">
-                            <span (click)="confirmReport(report._id)"
-                                  popover="Подтвердить"
-                                  triggers="mouseenter:mouseleave"
-                                  class="fa fa-check-square-o">
-                            </span>
-                </td>
-                <td style="width: 7%">
-                          <span (click)="cancelReport(report._id)"
-                                popover="Отменить"
-                                triggers="mouseenter:mouseleave"
-                                class="fa fa-ban">
-                          </span>
+                  <span (click)="cancelReport(report._id, report.isTheater)"
+                        popover="Отменить"
+                        triggers="mouseenter:mouseleave"
+                        class="fa fa-ban"></span>
                 </td>
               </tr>
               </tbody>
@@ -76,25 +71,25 @@
           <!-- pager -->
           <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
             <li [ngClass]="{disabled:pager.currentPage === 1}">
-              <a (click)="setPage(1)">
+              <a (click)="setPage(1, pagedItems)">
                 <i class="fa fa-angle-double-left"></i>
               </a>
             </li>
             <li [ngClass]="{disabled:pager.currentPage === 1}">
-              <a (click)="setPage(pager.currentPage - 1)">
+              <a (click)="setPage(pager.currentPage - 1, pagedItems)">
                 <i class="fa fa-angle-left"></i>
               </a>
             </li>
             <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-              <a (click)="setPage(page)">{{page}}</a>
+              <a (click)="setPage(page, pagedItems)">{{page}}</a>
             </li>
             <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a (click)="setPage(pager.currentPage + 1)">
+              <a (click)="setPage(pager.currentPage + 1, pagedItems)">
                 <i class="fa fa-angle-right"></i>
               </a>
             </li>
             <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-              <a (click)="setPage(pager.totalPages)">
+              <a (click)="setPage(pager.totalPages, pagedItems)">
                 <i class="fa fa-angle-double-right"></i>
               </a>
             </li>

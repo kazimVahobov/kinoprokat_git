@@ -1,12 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {
+  DistributorReportService,
   DistributorService,
   MovieService,
   PagerService,
+  TheaterReportService,
   TheaterService,
   YearListService
 } from "../../../../core/services";
 import {StatisticService} from "../../../../core/services/statistic.service";
+import {combineLatest} from "rxjs";
+import {map} from "rxjs/operators";
 
 declare var $;
 
@@ -21,6 +25,7 @@ export class StatisticRkmComponent implements OnInit {
   pager: any = {};
   // paged items
   pagedItems: any[] = [];
+  UnconfirmedReports: number = 0;
   currentUser = JSON.parse(localStorage.getItem('user'));
   parametersPanelIsOpen: boolean = true;
   selectedDistId: string = null;
@@ -40,12 +45,15 @@ export class StatisticRkmComponent implements OnInit {
               private distributorService: DistributorService,
               private moviesService: MovieService,
               private pagerService: PagerService,
+              private thReportService: TheaterReportService,
+              private distReportService: DistributorReportService,
               private theaterService: TheaterService) {
   }
 
   ngOnInit() {
     this.months = this.statisticService.months;
     this.yearListService.getYearList().subscribe(data => this.years = data.reverse());
+    this.getUnconfirmedReports();
     this.loadData();
   }
 
@@ -176,5 +184,16 @@ export class StatisticRkmComponent implements OnInit {
 
     // get current page of items
     this.pagedItems = data.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+  
+  getUnconfirmedReports() {
+    combineLatest(
+      this.thReportService.getByFilter(true, false),
+      this.distReportService.getByFilter(true, false)
+    ).pipe(
+      map( ([_thReports, _distReports]) => {
+        return _thReports.length + _distReports.length;
+      })
+    ).subscribe(cont => this.UnconfirmedReports = cont);
   }
 }
