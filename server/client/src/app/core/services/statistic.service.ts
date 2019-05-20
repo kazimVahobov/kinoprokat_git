@@ -105,7 +105,7 @@ export class StatisticService {
         let reportsOfCurrentMovie: Report[] = [];
 
         if (distId && !theaterId) {
-          reportsOfCurrentMovie.push(...this.selectingOfReports(_allThReports, _theaters, movieId, 'theater'));
+          reportsOfCurrentMovie.push(...this.selectingOfReports(_allThReports, _theaters, movieId, true));
           let result: any[] = [];
           _allDistReports.filter(item => item.sent && item.confirm).forEach(item1 => {
             if (item1.distId === distId) {
@@ -126,8 +126,8 @@ export class StatisticService {
           });
           reportsOfCurrentMovie.push(...result);
         } else if (!distId && !theaterId) {
-          reportsOfCurrentMovie.push(...this.selectingOfReports(_allThReports, _theaters, movieId, 'theater'));
-          reportsOfCurrentMovie.push(...this.selectingOfReports(_allDistReports, _distributors, movieId, 'dist'));
+          reportsOfCurrentMovie.push(...this.selectingOfReports(_allThReports, _theaters, movieId, true));
+          reportsOfCurrentMovie.push(...this.selectingOfReports(_allDistReports, _distributors, movieId, false));
         }
 
         reportsOfCurrentMovie
@@ -591,42 +591,24 @@ export class StatisticService {
     );
   }
 
-  selectingOfReports(arr1: any[], arr2: any[], selectId: string, mode: string): any[] {
+  private selectingOfReports(arr1: any[], arr2: any[], selectId: string, isTheater: boolean): any[] {
     let result: any[] = [];
-
-    switch (mode) {
-      case 'theater': {
-        arr1.forEach(item1 => {
-          arr2.forEach(item2 => {
-            if (item1.theaterId === item2._id) {
-              result.push({
-                date: item1.date,
-                sessions: item1.withCont.filter(session => session.movieId === selectId)
-              });
-            }
+    let idType = isTheater ? 'theaterId' : 'dustId';
+    let subItem = isTheater ? 'withCont' : 'mobileTheaters';
+    arr1.forEach(item1 => {
+      arr2.forEach(item2 => {
+        if (item1[idType] === item2._id) {
+          result.push({
+            date: item1.date,
+            sessions: item1[subItem].filter(session => session.movieId === selectId)
           });
-        });
-        break;
-      }
-      case 'dist': {
-        arr1.forEach(item1 => {
-          arr2.forEach(item2 => {
-            if (item1.distId === item2._id) {
-              result.push({
-                date: item1.date,
-                sessions: item1.mobileTheaters.filter(session => session.movieId === selectId)
-              });
-            }
-          });
-        });
-        break;
-      }
-    }
-
+        }
+      });
+    });
     return result;
   }
 
-  static generateKeyByDate(value: any): string {
+  private static generateKeyByDate(value: any): string {
     let result: string;
     let date = new Date(value).getDate().toString();
     if (date.length === 1) {
