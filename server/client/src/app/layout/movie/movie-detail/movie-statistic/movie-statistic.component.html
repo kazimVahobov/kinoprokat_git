@@ -1,0 +1,132 @@
+<div class="container-fluid" style="padding-top: 15px">
+  <div class="row">
+    <div class="col-md-2 form-group">
+      <label style="margin-bottom:10px;">Дистрибьютор:</label>
+      <ng-select [items]="distributors"
+                 bindLabel="name"
+                 bindValue="_id"
+                 [searchable]="false"
+                 [(ngModel)]="selectedDistId"
+                 (ngModelChange)="changeDist()"
+                 placeholder="Выберите дистрибьютора">
+      </ng-select>
+    </div>
+    <div class="col-md-2 form-group">
+      <label style="margin-bottom:10px;" [ngClass]="{'disabled': !isExistsTheater()}">
+        Кинотеатр:
+      </label>
+      <ng-select [items]="theaters"
+                 bindLabel="name"
+                 bindValue="_id"
+                 [searchable]="false"
+                 [(ngModel)]="selectedTheaterId"
+                 (ngModelChange)="changeTheater()"
+                 [disabled]="!isExistsTheater()"
+                 placeholder="Выберите кинотеатр">
+      </ng-select>
+    </div>
+    <div class="col-md-8">
+      <p *ngIf="!selectedDistId && !selectedTheaterId" class="simple-title">Последние данные по отчётам
+        <span class="badge">всех кинотеатров</span> и
+        <span class="badge">всех разъездных кинотеатров</span> (от дистрибьюторов) по
+        фильму <span class="badge" style="font-weight: bold">{{movieName}}</span>
+      </p>
+      <p *ngIf="selectedDistId && !selectedTheaterId" class="simple-title">Последние данные по отчётам
+        <span class="badge">всех кинотеатров</span> региона
+        <span class="badge">{{selectedDistId| manual: distributors}}</span> по
+        фильму <span class="badge" style="font-weight: bold">{{movieName}}</span>
+      </p>
+      <p *ngIf="selectedDistId && selectedTheaterId" class="simple-title">Последние данные по отчётам кинотеатра
+        <span class="badge">{{selectedTheaterId| manual: theaters}}</span> региона
+        <span class="badge">{{selectedDistId| manual: distributors}}</span> по
+        фильму <span class="badge" style="font-weight: bold">{{movieName}}</span>
+      </p>
+    </div>
+  </div>
+  <div class="row" id="statistic-print">
+    <div class="col-md-12" id="print-title">
+      <p *ngIf="!selectedDistId && !selectedTheaterId" class="simple-title">Последние данные по отчётам всех кинотеатров и
+        всех разъездных кинотеатров (от дистрибьюторов) по
+        фильму <span style="font-weight: bold">{{movieName}}</span>
+      </p>
+      <p *ngIf="selectedDistId && !selectedTheaterId" class="simple-title">Последние данные по отчётам всех кинотеатров региона
+        <span style="font-weight: bold">{{selectedDistId| manual: distributors}}</span> по
+        фильму <span style="font-weight: bold">{{movieName}}</span>
+      </p>
+      <p *ngIf="selectedDistId && selectedTheaterId" class="simple-title">Последние данные по отчётам кинотеатра
+        <span style="font-weight: bold">{{selectedTheaterId| manual: theaters}}</span> региона
+        <span style="font-weight: bold">{{selectedDistId| manual: distributors}}</span> по
+        фильму <span style="font-weight: bold">{{movieName}}</span>
+      </p>
+    </div>
+    <div class="col-md-12" style="padding: 0;" >
+      <table class="table table-hover table-bordered table-dark-bordered">
+        <thead>
+        <tr>
+          <th rowspan="3" class="text-center">Дата</th>
+          <th colspan="4" class="text-center">Дневные сеансы</th>
+          <th colspan="4" class="text-center">Вечерние сеансы</th>
+          <th colspan="2" rowspan="2" class="text-center bg-accent">Всего</th>
+        </tr>
+        <tr>
+          <th colspan="2" class="text-center">Детские билеты</th>
+          <th colspan="2" class="text-center">Взрослые билеты</th>
+          <th colspan="2" class="text-center">Детские билеты</th>
+          <th colspan="2" class="text-center">Взрослые билеты</th>
+        </tr>
+        <tr>
+          <th class="text-center">Кол-во</th>
+          <th class="text-center">Сумма</th>
+          <th class="text-center">Кол-во</th>
+          <th class="text-center">Сумма</th>
+          <th class="text-center">Кол-во</th>
+          <th class="text-center">Сумма</th>
+          <th class="text-center">Кол-во</th>
+          <th class="text-center">Сумма</th>
+          <th class="text-center bg-accent">Кол-во</th>
+          <th class="text-center bg-accent">Сумма</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of listOfReports">
+          <td class="text-center">{{item.label}}</td>
+          <td class="text-center">{{item.daySession.childCount}}</td>
+          <td class="text-center">{{item.daySession.childSum}}</td>
+          <td class="text-center">{{item.daySession.adultCount}}</td>
+          <td class="text-center">{{item.daySession.adultSum}}</td>
+          <td class="text-center">{{item.eveningSession.childCount}}</td>
+          <td class="text-center">{{item.eveningSession.childSum}}</td>
+          <td class="text-center">{{item.eveningSession.adultCount}}</td>
+          <td class="text-center">{{item.eveningSession.adultSum}}</td>
+          <td class="text-center bg-accent">
+            {{item.daySession.childCount + item.daySession.adultCount + item.eveningSession.childCount + item.eveningSession.adultCount}}
+          </td>
+          <td class="text-center bg-accent">
+            {{item.daySession.childSum + item.daySession.adultSum + item.eveningSession.childSum + item.eveningSession.adultSum}}
+          </td>
+        </tr>
+        <tr>
+          <th class="text-center bg-accent">Всего</th>
+          <td class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'day-child-count')}}</td>
+          <td class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'day-child-sum')}}</td>
+          <td class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'day-adult-count')}}</td>
+          <td class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'day-adult-sum')}}</td>
+          <td class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'evening-child-count')}}</td>
+          <td class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'evening-child-sum')}}</td>
+          <td class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'evening-adult-count')}}</td>
+          <td class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'evening-adult-sum')}}</td>
+          <th class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'overall-count')}}</th>
+          <th class="text-center bg-accent">{{totalizeOfReports(listOfReports, 'overall-sum')}}</th>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngIf="listOfReports.length != 0" class="col-md-1 col-md-offset-11" style="margin-bottom: 10px">
+      <button (click)="print();" class="btn btn-primary">
+        Печать
+      </button>
+    </div>
+  </div>
+</div>

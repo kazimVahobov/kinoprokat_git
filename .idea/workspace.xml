@@ -6,15 +6,7 @@
     <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" line="189" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -25,37 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-                <element signature="n#!!block;n#backPage#0;n#UnconfirmedReportsComponent#0" />
-                <element signature="n#!!block;n#confirmReport#0;n#UnconfirmedReportsComponent#0" />
-                <element signature="n#!!block;n#cancelReport#0;n#UnconfirmedReportsComponent#0" />
-                <element signature="n#!!block;n#detailRouter#0;n#UnconfirmedReportsComponent#0" />
-                <element signature="n#!!block;n#setPage#0;n#UnconfirmedReportsComponent#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="41" column="87" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="87" />
-              <folding>
-                <element signature="n#section#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -363,7 +325,7 @@
       <workItem from="1557864384211" duration="10106000" />
       <workItem from="1557909730860" duration="69705000" />
       <workItem from="1558161101847" duration="24578000" />
-      <workItem from="1558328390201" duration="5154000" />
+      <workItem from="1558328390201" duration="5492000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -456,15 +418,21 @@
       <option name="project" value="LOCAL" />
       <updated>1558203915468</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="unconfirmed reports part on statistic-rkm full completed (refactoring and adding data of distributor reports)">
+      <created>1558333984155</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1558333984155</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313994000" />
+    <option name="totallyTimeSpent" value="314332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20495258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973656" />
@@ -503,7 +471,8 @@
     <MESSAGE value="created month pipe, fixed some bugs on statistic service (result.length == 0), statistic-theater component full completed" />
     <MESSAGE value="statistic-dist component full completed" />
     <MESSAGE value="statistic-rkm component full completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="statistic-rkm component full completed" />
+    <MESSAGE value="unconfirmed reports part on statistic-rkm full completed (refactoring and adding data of distributor reports)" />
+    <option name="LAST_COMMIT_MESSAGE" value="unconfirmed reports part on statistic-rkm full completed (refactoring and adding data of distributor reports)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.html">
@@ -1018,6 +987,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
+          <folding>
+            <element signature="n#section#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -1029,16 +1008,6 @@
             <element signature="n#!!block;n#cancelReport#0;n#UnconfirmedReportsComponent#0" />
             <element signature="n#!!block;n#detailRouter#0;n#UnconfirmedReportsComponent#0" />
             <element signature="n#!!block;n#setPage#0;n#UnconfirmedReportsComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="41" column="87" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="87" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
           </folding>
         </state>
       </provider>

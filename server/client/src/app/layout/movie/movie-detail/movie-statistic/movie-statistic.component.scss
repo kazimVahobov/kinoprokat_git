@@ -1,0 +1,23 @@
+.disabled {
+  opacity: .50;
+}
+
+.simple-title {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+  .badge {
+    font-weight: normal;
+    background-color: #1660ab;
+  }
+}
+
+#print-title {
+  display: none !important;
+}
+
+@media print {
+  #print-title {
+    display: inline !important;
+  }
+}
