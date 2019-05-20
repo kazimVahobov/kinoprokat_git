@@ -61,7 +61,18 @@ export class UnconfirmedReportsComponent implements OnInit {
 
         result.push(...this.getReportsForView(_thReports, true));
         result.push(...this.getReportsForView(_distReports, false));
-
+        result.sort((a, b) => {
+          const aDate = new Date(a.date);
+          const bDate = new Date(b.date);
+          let result = 0;
+          if (aDate > bDate) {
+            result = -1;
+          }
+          if (aDate < bDate) {
+            result = 1;
+          }
+          return result;
+        });
         return result;
       })
     ).subscribe(data => this.setPage(1, data));
