@@ -63,13 +63,11 @@
           <span class="info-box-icon"><i class="fa fa-info-circle"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Действия</span>
-            <a *ngIf="reportStatus === 0"
-               class="info-box-redirect"><span class="fa fa-plus-square"></span> Создать</a>
-            <a *ngIf="reportStatus !== 0" class="info-box-redirect"><span class="fa fa-eye"></span> Подробнее</a>
+            <a *ngIf="reportStatus !== 0" (click)="detailRouter(todayReport._id, 'theater')" class="info-box-redirect"><span class="fa fa-eye"></span> Подробнее</a>
             <div class="progress">
               <div class="progress-bar" style="width: 100%"></div>
             </div>
-            <a *ngIf="reportStatus === 1" class="info-box-redirect"><span class="fa fa-send-o"></span> Отправить</a>
+            <a class="info-box-redirect" [routerLink]="['/theater-report']"><span class="fa fa-file-o"></span> Перейти к отчётам</a>
           </div>
         </div>
       </div>

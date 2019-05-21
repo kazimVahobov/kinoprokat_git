@@ -639,9 +639,102 @@ export class StatisticService {
     );
   }
 
+  getMovieDividedByDist(movieId: string): Observable<any[]> {
+    return combineLatest(
+      this.thReportService.getByFilter(true, true),
+      this.distReportService.getByFilter(true, true),
+      this.theaterService.getAll(),
+      this.distributorService.getAll()
+    ).pipe(
+      map (([_thReports, _distReports, _theaters, _distributors]) => {
+        let distId: string[] = [];
+        let theatersId: string[] = [];
+        _distributors.forEach(item => {
+          if (!distId.some(id => id == item._id)) {
+            if (item.parentId) {
+              distId.push(item._id);
+            }
+          }
+        });
+        _theaters.forEach(item => {
+          if (!theatersId.some(id => id == item._id)) {
+            theatersId.push(item._id);
+          }
+        });
+
+        let filteredDistReports: any[] = [];
+        distId.forEach(id => {
+          _distReports.forEach(report => {
+            if (report.distId === id) {
+              report.mobileTheaters.forEach(session => {
+                if (session.movieId === movieId) {
+                  filteredDistReports.push({
+                    distId: id,
+                    movieId: movieId,
+                    ticketCount: session.childTicketCount + session.adultTicketCount,
+                    sum: (session.childTicketCount * session.childTicketPrice) + (session.adultTicketCount * session.adultTicketPrice)
+                  });
+                }
+              });
+            }
+          });
+        });
+
+        let filteredThReports: any[] = [];
+        theatersId.forEach(id => {
+          _thReports.forEach(report => {
+            if (report.theaterId === id) {
+              let distId = _theaters.find(theater => theater._id === id).distId;
+              report.withCont.forEach(session => {
+                if (session.movieId === movieId) {
+                  filteredThReports.push({
+                    theaterId: id,
+                    distId: distId,
+                    movieId: movieId,
+                    ticketCount: session.childTicketCount + session.adultTicketCount,
+                    sum: (session.childTicketCount * session.childTicketPrice) + (session.adultTicketCount * session.adultTicketPrice)
+                  });
+                }
+              });
+            }
+          });
+        });
+
+        // if (filteredDistReports.length != 0 && filteredThReports.length != 0) {
+          return distId.map(distId => {
+            let _ticketCount: number = 0;
+            let _sum: number = 0;
+            if (filteredDistReports.length != 0) {
+              filteredDistReports.forEach(distReport => {
+                if (distReport.distId === distId) {
+                  _ticketCount += distReport.ticketCount;
+                  _sum += distReport.sum;
+                }
+              });
+            }
+
+            if (filteredThReports.length != 0) {
+              filteredThReports.forEach(thReport => {
+                if (thReport.distId === distId) {
+                  _ticketCount += thReport.ticketCount;
+                  _sum += thReport.sum;
+                }
+              });
+            }
+            return {
+              label: _distributors.find(item => item._id === distId).name,
+              movieId: movieId,
+              ticketCount: _ticketCount,
+              sum: _sum
+            }
+          });
+
+    }));
+  }
+
   private selectingOfReports(arr1: any[], arr2: any[], selectId: string, isTheater: boolean): any[] {
     let result: any[] = [];
-    let idType = isTheater ? 'theaterId' : 'dustId';
+    let idType = isTheater ? 'theaterId' : 'distId';
     let subItem = isTheater ? 'withCont' : 'mobileTheaters';
     arr1.forEach(item1 => {
       arr2.forEach(item2 => {

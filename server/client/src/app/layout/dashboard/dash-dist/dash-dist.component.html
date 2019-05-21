@@ -63,13 +63,12 @@
           <span class="info-box-icon"><i class="fa fa-info-circle"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Действия</span>
-            <a *ngIf="reportStatus === 0"
-               class="info-box-redirect"><span class="fa fa-plus-square"></span> Создать</a>
-            <a *ngIf="reportStatus !== 0" class="info-box-redirect"><span class="fa fa-eye"></span> Подробнее</a>
+            <a *ngIf="reportStatus !== 0"
+               class="info-box-redirect" (click)="detailRouter(todayReport._id, 'dist')"><span class="fa fa-eye"></span> Подробнее</a>
             <div class="progress">
               <div class="progress-bar" style="width: 100%"></div>
             </div>
-            <a *ngIf="reportStatus === 1" class="info-box-redirect"><span class="fa fa-send-o"></span> Отправить</a>
+            <a class="info-box-redirect" [routerLink]="['/distributor-report']"><span class="fa fa-file-o"></span> Перейти к отчётам</a>
           </div>
         </div>
       </div>
@@ -158,7 +157,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 no-pad-left">
-                  <ngx-charts-bar-vertical *ngIf="singleMovieChMovieId"
+                  <ngx-charts-bar-vertical *ngIf="singleMovieChLoadData"
                                            [view]="[500, 400]"
                                            [scheme]="statisticService.colors"
                                            [results]="singleMovieChData"
@@ -172,7 +171,8 @@
                   </ngx-charts-bar-vertical>
                 </div>
                 <div class="col-md-6 no-pad-left">
-                  <ngx-charts-bar-vertical [view]="[500, 400]"
+                  <ngx-charts-bar-vertical *ngIf="singleMovieChTheaterLoadData"
+                                           [view]="[500, 400]"
                                            [scheme]="statisticService.colors"
                                            [results]="singleMovieChTheaterData"
                                            [gradient]="true"

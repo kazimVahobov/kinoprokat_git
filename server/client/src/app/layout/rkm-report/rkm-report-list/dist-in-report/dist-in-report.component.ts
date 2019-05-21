@@ -80,70 +80,21 @@ export class DistInReportComponent implements OnInit {
         } else {
           tempReports = distributorReports.filter(r => (r.sent === true));
         }
-
-        tempReports.forEach(item => {
-          let _movies: string[] = [];
-          let _ticketCount: number = 0;
-          let _sum: number = 0;
-          item.mobileTheaters.forEach(session => {
-            if (!_movies.some(i => i === session.movieId)) {
-              _movies.push(session.movieId);
-            }
-            _ticketCount += (session.childTicketCount + session.adultTicketCount);
-            _sum += (session.childTicketCount * session.childTicketPrice) + (session.adultTicketCount * session.adultTicketPrice);
-          });
-          this.reports.push({
-            _id: item._id,
-            distId: item.distId,
-            date: item.date,
-            movies: _movies,
-            sessionCount: item.mobileTheaters.length,
-            ticketCount: _ticketCount,
-            sum: _sum,
-            sent: item.sent,
-            confirm: item.confirm
-          });
-        });
-        this.reports.sort((a, b) => {
-          const aDate = new Date(a.date);
-          const bDate = new Date(b.date);
-          let result = 0;
-          if (aDate > bDate) {
-            result = -1;
-          }
-          if (aDate < bDate) {
-            result = 1;
-          }
-          return result;
-        });
+        this.reports = this.service.prepareReportsToView(tempReports);
         this.setPage(1);
       });
     });
   }
 
-  confirmReport(id: any) {
-    if (confirm(`Вы уверены, что хотите подтвердить отчёт?`)) {
+  actionReport(id: any, state: boolean) {
+    let message = state ? 'Вы уверены, что хотите подтвердить отчёт?' : 'Вы уверены, что хотите отменить отчёт?';
+    if (confirm(message)) {
       let reportToConfirm: any = {};
       reportToConfirm._id = id;
-      reportToConfirm.sent = true;
-      reportToConfirm.confirm = true;
+      reportToConfirm.sent = state;
+      reportToConfirm.confirm = state;
       this.service.update(reportToConfirm).subscribe(report => {
-          this.loadData();
-        },
-        error => {
-          alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
-        });
-    }
-  }
-
-  cancelReport(id: any) {
-    if (confirm(`Вы уверены, что хотите отменить отчёт?`)) {
-      let reportToCancel: any = {};
-      reportToCancel._id = id;
-      reportToCancel.sent = false;
-      reportToCancel.confirm = false;
-      this.service.update(reportToCancel).subscribe(report => {
-          this.loadData();
+          // this.loadData();
         },
         error => {
           alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');

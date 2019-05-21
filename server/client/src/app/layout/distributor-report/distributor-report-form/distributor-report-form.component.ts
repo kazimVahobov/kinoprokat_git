@@ -160,9 +160,13 @@ export class DistributorReportFormComponent implements OnInit {
     if (this.model.mobileTheaters[i].daySession) {
       this.model.mobileTheaters[i].minChildTicketPrice = movie.dayChildPriceTh;
       this.model.mobileTheaters[i].minAdultTicketPrice = movie.dayAdultPriceTh;
+      this.model.mobileTheaters[i].childTicketPrice = movie.dayChildPriceTh;
+      this.model.mobileTheaters[i].adultTicketPrice = movie.dayAdultPriceTh;
     } else if (!this.model.mobileTheaters[i].daySession) {
       this.model.mobileTheaters[i].minChildTicketPrice = movie.eveningChildPriceTh;
       this.model.mobileTheaters[i].minAdultTicketPrice = movie.eveningAdultPriceTh;
+      this.model.mobileTheaters[i].childTicketPrice = movie.eveningChildPriceTh;
+      this.model.mobileTheaters[i].adultTicketPrice = movie.eveningAdultPriceTh;
     }
   }
 
@@ -173,21 +177,21 @@ export class DistributorReportFormComponent implements OnInit {
   }
 
   validation(): boolean {
-    if (this.model.mobileTheaters.some(i =>
-      i.place === null ||
-      i.time === null ||
-      i.movieId === null ||
-      i.adultTicketCount === null ||
-      i.childTicketCount === null ||
-      i.adultTicketPrice === null ||
-      i.childTicketPrice === null)) {
-      return false;
-    } else if (this.model.mobileTheaters.some(i =>
-      i.adultTicketPrice < i.minAdultTicketPrice ||
-      i.childTicketPrice < i.minChildTicketPrice)) {
-      return false;
+    if (this.model.mobileTheaters) {
+      if (this.model.mobileTheaters.some(i =>
+        i.place === null ||
+        i.time === null ||
+        i.movieId === null ||
+        i.adultTicketCount === null ||
+        i.childTicketCount === null ||
+        i.adultTicketPrice === null ||
+        i.childTicketPrice === null)) {
+        return false;
+      } else return !this.model.mobileTheaters.some(i =>
+        i.adultTicketPrice < i.minAdultTicketPrice ||
+        i.childTicketPrice < i.minChildTicketPrice);
     } else {
-      return true;
+      return false;
     }
   }
 

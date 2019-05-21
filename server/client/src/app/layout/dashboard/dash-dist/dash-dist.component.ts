@@ -7,6 +7,7 @@ import {
   TheaterReportModel
 } from 'src/app/core';
 import {StatisticService} from "../../../core/services/statistic.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dash-dist',
@@ -36,13 +37,16 @@ export class DashDistComponent implements OnInit {
   singleMovieChLabelY: string;
   singleMovieChTheaterId: string = null;
   singleMovieChTheaterData: any[];
+  singleMovieChLoadData: boolean = false;
+  singleMovieChTheaterLoadData: boolean = false;
   // table of theaters
   tableMoviesIsOpen = true;
 
   constructor(private pagerService: PagerService,
               private distReportService: DistributorReportService,
               private statisticService: StatisticService,
-              private distributorService: DistributorService) {
+              private distributorService: DistributorService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -51,7 +55,7 @@ export class DashDistComponent implements OnInit {
       this.theaters = data;
       this.singleMovieChTheaterId = this.theaters[0]._id;
     });
-    this.distReportService.getReportByDate(this.currentUser.distId, this.currentDate).subscribe(report => {
+    this.distReportService.getOneReportByDate(this.currentUser.distId, this.currentDate).subscribe(report => {
       if (report == null) {
         this.reportStatus = 0;
       } else {
@@ -71,6 +75,7 @@ export class DashDistComponent implements OnInit {
   }
 
   changeMovie() {
+    this.singleMovieChLoadData = false;
     let type = this.singleMovieChIsTicket ? 'ticketCount' : 'sum';
     this.singleMovieChLabelY = this.singleMovieChIsTicket ? 'Всего продано' : 'Общая сумма';
     this.statisticService.getOverallDataOfMovie(this.singleMovieChMovieId, this.currentUser.distId, null).subscribe(data => {
@@ -84,11 +89,13 @@ export class DashDistComponent implements OnInit {
         ticketCount: data.totalTicketCount,
         sum: data.totalSum
       };
+      this.singleMovieChLoadData = true;
       this.changeTheater();
     });
   }
 
   changeTheater() {
+    this.singleMovieChTheaterLoadData = false;
     let type = this.singleMovieChIsTicket ? 'ticketCount' : 'sum';
     this.statisticService.getOverallDataOfMovie(this.singleMovieChMovieId, this.currentUser.distId, this.singleMovieChTheaterId).subscribe(data => {
       this.singleMovieChTheaterData = data.moviesData.map(item => {
@@ -97,6 +104,13 @@ export class DashDistComponent implements OnInit {
           value: item[type]
         }
       });
+      this.singleMovieChTheaterLoadData = true;
+    });
+  }
+
+  detailRouter(id: string, type: string) {
+    this.router.navigate(['/detail-report'], {
+      queryParams: {id: id, type: type}
     });
   }
 
@@ -115,6 +129,7 @@ export class DashDistComponent implements OnInit {
       _sum += (session.childTicketCount * session.childTicketPrice) + (session.adultTicketCount * session.adultTicketPrice);
     });
     this.todayReport = {
+      _id: report._id,
       ticketCount: _ticketCount,
       sum: _sum
     };

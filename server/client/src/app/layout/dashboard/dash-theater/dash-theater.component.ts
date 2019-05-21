@@ -1,6 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {PagerService, TheaterModel, TheaterReportModel, TheaterReportService, TheaterService} from "../../../core";
+import {
+  DistributorService,
+  PagerService,
+  TheaterModel,
+  TheaterReportModel,
+  TheaterReportService,
+  TheaterService
+} from "../../../core";
 import {StatisticService} from "../../../core/services/statistic.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dash-theater',
@@ -33,12 +41,13 @@ export class DashTheaterComponent implements OnInit {
   constructor(private pagerService: PagerService,
               private theaterService: TheaterService,
               private thReportService: TheaterReportService,
-              private statisticService: StatisticService) {
+              private statisticService: StatisticService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.theaterService.getById(this.currentUser.theaterId).subscribe(theater => this.currentTheater = theater);
-    this.thReportService.getReportByDate(this.currentUser.theaterId, this.currentDate).subscribe(report => {
+    this.thReportService.getOneReportByDate(this.currentUser.theaterId, this.currentDate).subscribe(report => {
       if (report == null) {
         this.reportStatus = 0;
       } else {
@@ -91,9 +100,16 @@ export class DashTheaterComponent implements OnInit {
       _sum += (session.childTicketCount * session.childTicketPrice) + (session.adultTicketCount * session.adultTicketPrice);
     });
     this.todayReport = {
+      _id: report._id,
       ticketCount: _ticketCount,
       sum: _sum
     };
+  }
+
+  detailRouter(id: string, type: string) {
+    this.router.navigate(['/detail-report'], {
+      queryParams: {id: id, type: type}
+    });
   }
 
   setPage(page: number, data: any[]) {

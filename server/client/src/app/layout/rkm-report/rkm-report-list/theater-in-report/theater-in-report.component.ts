@@ -71,41 +71,10 @@ export class TheaterInReportComponent implements OnInit {
           } else {
             tempReports = reports.filter(item => item.sent === true);
           }
-          tempReports.forEach(tempReport => {
-            let _ticketCount: number = 0;
-            let _sum: number = 0;
-            tempReport.withCont.forEach(session => {
-              _ticketCount += session.childTicketCount + session.adultTicketCount;
-              _sum += (session.childTicketCount * session.childTicketPrice) + (session.adultTicketCount * session.adultTicketPrice);
-            });
-            let _withoutCont: boolean = tempReport.withoutCont.length == 0;
-            let _distId = this.theaters.find(th => th._id === tempReport.theaterId).distId;
-            this.reports.push({
-              _id: tempReport._id,
-              date: tempReport.date,
-              theaterId: tempReport.theaterId,
-              distId: _distId,
-              sessionCount: tempReport.withCont.length,
-              ticketCount: _ticketCount,
-              sum: _sum,
-              sent: tempReport.sent,
-              confirm: tempReport.confirm,
-              withoutCont: _withoutCont
-            });
+          this.service.prepareReportsToView(tempReports).subscribe(data => {
+            this.reports = data;
+            this.setPage(1);
           });
-          this.reports.sort((a, b) => {
-            const aDate = new Date(a.date);
-            const bDate = new Date(b.date);
-            let result = 0;
-            if (aDate > bDate) {
-              result = -1;
-            }
-            if (aDate < bDate) {
-              result = 1;
-            }
-            return result;
-          });
-          this.setPage(1);
         });
       });
     });
