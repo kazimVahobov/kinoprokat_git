@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {EntityService} from './base';
 import {HttpClient} from '@angular/common/http';
 import {TheaterReportModel} from '../models';
-import {Observable} from "rxjs";
+import {combineLatest, Observable} from "rxjs";
+import {map} from "rxjs/operators";
 
 
 @Injectable({
@@ -25,6 +26,17 @@ export class TheaterReportService extends EntityService<TheaterReportModel> {
   getByTheaterId(id: string): Observable<any[]> {
     const url = `${this.baseUrl}/by-theater/${id}`;
     return this.http.get<any[]>(url);
+  }
+
+  getReportByDate(theaterId: string, date: Date): Observable<TheaterReportModel> {
+    return combineLatest(
+      this.getByTheaterId(theaterId)
+    ).pipe(
+      map(([_thReports]) => {
+        let report = _thReports.find(item => new Date(item.date).toDateString() === date.toDateString());
+        return report ? report : null;
+      })
+    );
   }
 
 }

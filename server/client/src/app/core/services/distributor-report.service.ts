@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {EntityService} from './base';
 import {DistributorReportModel} from '../models';
-import {Observable} from "rxjs";
+import {combineLatest, Observable} from "rxjs";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,16 @@ export class DistributorReportService extends EntityService<DistributorReportMod
   getByDistId(id: string): Observable<any[]> {
     const url = `${this.baseUrl}/by-dist/${id}`;
     return this.http.get<any[]>(url);
+  }
+
+  getReportByDate(distId: string, date: Date): Observable<DistributorReportModel> {
+    return combineLatest(
+      this.getByDistId(distId)
+    ).pipe(
+      map(([_distReports]) => {
+        let report = _distReports.find(item => new Date(item.date).toDateString() === date.toDateString());
+        return report ? report : null;
+      })
+    );
   }
 }

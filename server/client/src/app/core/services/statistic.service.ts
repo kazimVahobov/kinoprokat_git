@@ -68,6 +68,25 @@ export class StatisticService {
     },
   ];
 
+  colors: any = {
+    domain: [
+      '#3f51b5',
+      '#e91e63',
+      '#03a9f4',
+      '#9c27b0',
+      '#2196f3',
+      '#ffc107',
+      '#ff5722',
+      '#9c27b0',
+      '#f44336',
+      '#00bcd4',
+      '#009688',
+      '#4caf50',
+      '#673ab7',
+      '#8bc34a',
+      '#ff9800']
+  };
+
   constructor(private regionService: RegionService,
               private theaterService: TheaterService,
               private movieService: MovieService,
@@ -145,7 +164,7 @@ export class StatisticService {
             return result;
           })
           .forEach(report => {
-            let keyByDate = StatisticService.generateKeyByDate(report.date);
+            let keyByDate = this.generateKeyByDate(report.date);
 
             if (mapOfReports.has(keyByDate)) {
               mapOfReports.get(keyByDate).push(...report.sessions);
@@ -591,6 +610,35 @@ export class StatisticService {
     );
   }
 
+  getOverallDataOfMovie(movieId: string, distId?: string, theaterId?: string): Observable<any> {
+    return this.filterByMovieId(movieId, distId, theaterId).pipe(
+      map( reports => {
+        let _totalTicketCount: number = 0;
+        let _totalSum: number = 0;
+        let temp: any[] = [];
+
+        temp.push(...reports.map(item => {
+          let _ticketCount: number = 0;
+          let _sum: number = 0;
+          _ticketCount += item.daySession.childCount + item.daySession.adultCount + item.eveningSession.childCount + item.eveningSession.adultCount;
+          _sum += item.daySession.childSum + item.daySession.adultSum + item.eveningSession.childSum + item.eveningSession.adultSum;
+          _totalTicketCount += _ticketCount;
+          _totalSum += _sum;
+          return {
+            label: item.label,
+            ticketCount: _ticketCount,
+            sum: _sum
+          }
+        }));
+        return {
+          moviesData: temp,
+          totalTicketCount: _totalTicketCount,
+          totalSum: _totalSum
+        }
+      })
+    );
+  }
+
   private selectingOfReports(arr1: any[], arr2: any[], selectId: string, isTheater: boolean): any[] {
     let result: any[] = [];
     let idType = isTheater ? 'theaterId' : 'dustId';
@@ -608,7 +656,7 @@ export class StatisticService {
     return result;
   }
 
-  private static generateKeyByDate(value: any): string {
+  generateKeyByDate(value: any): string {
     let result: string;
     let date = new Date(value).getDate().toString();
     if (date.length === 1) {

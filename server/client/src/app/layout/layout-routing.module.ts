@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {LayoutComponent} from './layout.component';
 import {DetailReportComponent} from './detail-report/detail-report.component';
 
@@ -22,8 +22,14 @@ const routes: Routes = [{
     {path: 'cont-t', loadChildren: './contract-t/contract-t.module#ContractTModule'},
     {path: 'rkm-report', loadChildren: './rkm-report/rkm-report.module#RkmReportModule'},
     {path: 'theater-report', loadChildren: './theater-report/theater-report.module#TheaterReportModule'},
-    {path: 'distributor-report', loadChildren: './distributor-report/distributor-report.module#DistributorReportModule'},
-    {path: 'profile-institution', loadChildren: './profile-institution/profile-institution.module#ProfileInstitutionModule'},
+    {
+      path: 'distributor-report',
+      loadChildren: './distributor-report/distributor-report.module#DistributorReportModule'
+    },
+    {
+      path: 'profile-institution',
+      loadChildren: './profile-institution/profile-institution.module#ProfileInstitutionModule'
+    },
     {path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule'}
   ]
 }];
