@@ -44,7 +44,7 @@ export class DashDistComponent implements OnInit {
 
   constructor(private pagerService: PagerService,
               private distReportService: DistributorReportService,
-              private statisticService: StatisticService,
+              public statisticService: StatisticService,
               private distributorService: DistributorService,
               private router: Router) {
   }

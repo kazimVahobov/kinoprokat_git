@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { PermissionService } from 'src/app/core';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {PermissionService} from 'src/app/core';
 
 declare var $;
 
@@ -10,9 +10,7 @@ declare var $;
 })
 export class SidebarComponent implements OnInit, AfterViewInit {
 
-  constructor(
-    public permissionService: PermissionService
-  ) {
+  constructor(public permissionService: PermissionService) {
   }
 
   ngOnInit() {

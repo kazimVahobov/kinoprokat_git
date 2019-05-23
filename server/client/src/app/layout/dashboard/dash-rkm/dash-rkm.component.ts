@@ -49,7 +49,7 @@ export class DashRkmComponent implements OnInit {
   constructor(private pagerService: PagerService,
               private distributorService: DistributorService,
               private moviesService: MovieService,
-              private statisticService: StatisticService,
+              public statisticService: StatisticService,
               private theaterService: TheaterService,
               private permissionService: PermissionService,
               private thReportService: TheaterReportService,

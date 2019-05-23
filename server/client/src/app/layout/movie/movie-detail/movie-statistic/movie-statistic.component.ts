@@ -28,7 +28,7 @@ export class MovieStatisticComponent implements OnInit {
   constructor(private distributorService: DistributorService,
               private theaterService: TheaterService,
               private distributorReportService: DistributorReportService,
-              private statisticService: StatisticService) {
+              public statisticService: StatisticService) {
   }
 
   ngOnInit() {

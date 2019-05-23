@@ -27,7 +27,7 @@ export class StatisticTheaterComponent implements OnInit {
   constructor(private yearListService: YearListService,
               private theaterService: TheaterService,
               private pagerService: PagerService,
-              private statisticService: StatisticService) {
+              public statisticService: StatisticService) {
   }
 
   ngOnInit() {

@@ -41,7 +41,7 @@ export class DashTheaterComponent implements OnInit {
   constructor(private pagerService: PagerService,
               private theaterService: TheaterService,
               private thReportService: TheaterReportService,
-              private statisticService: StatisticService,
+              public statisticService: StatisticService,
               private router: Router) {
   }
 

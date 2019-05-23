@@ -41,7 +41,7 @@ export class StatisticRkmComponent implements OnInit {
   months: any[] = [];
 
   constructor(private yearListService: YearListService,
-              private statisticService: StatisticService,
+              public statisticService: StatisticService,
               private distributorService: DistributorService,
               private moviesService: MovieService,
               private pagerService: PagerService,

@@ -38,7 +38,7 @@ export class StatisticDistComponent implements OnInit {
               private distributorService: DistributorService,
               private thReportService: TheaterReportService,
               private pagerService: PagerService,
-              private statisticService: StatisticService) {
+              public statisticService: StatisticService) {
   }
 
   ngOnInit() {
