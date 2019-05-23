@@ -52,11 +52,11 @@ app.use('/api/region', regionRoutes)
 app.use('/api/contract', contractRoutes)
 app.use('/api/theater-report', theaterReportsRoutes)
 app.use('/api/distributor-report', distributorReportsRoutes)
-
+var path = require('path');
     app.use(express.static('client/dist/client'))
   
     app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, 'client', 'dist', 'client', 'index.html'))})
+      res.sendFile(path.join(__dirname +  '/client/dist/client/index.html'))})
 
 app.get('/', (req, res) => {
     res.status(200).json({
@@ -66,4 +66,4 @@ app.get('/', (req, res) => {
 
 const port = process.env.PORT || keys.PORT;
 
-app.listen(port, () => console.log(`Server has been started on ${port}`))
+app.listen(8080, '185.196.214.54', () => console.log(`Server has been started on ${port}`))
