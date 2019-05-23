@@ -1,66 +1,59 @@
 <div class="box">
   <div class="box-body" style="padding: 0">
-    <div *ngIf="pagedItems.length != 0; else noreport">
+    <div *ngIf="pagedItems.length != 0; else noReport">
       <table class="table table-hover table-bordered">
         <thead>
         <tr>
           <th></th>
           <th>Филиал</th>
           <th>Дата</th>
-          <th>Кол-во кинотеатров</th>
           <th>Кол-во фильмов</th>
           <th>Кол-во сеансов</th>
           <th>Кол-во билетов</th>
           <th>Общая сумма</th>
-          <th>Передвижной</th>
-          <th></th>
           <th></th>
           <th></th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let dist of pagedItems">
+        <tr *ngFor="let report of pagedItems">
           <td>
-            <span *ngIf="dist.sent && dist.confirm"
+            <span *ngIf="report.sent && report.confirm"
                   class="fa fa-check fa-lg"
                   popover="Подтверждено"
                   triggers="mouseenter:mouseleave"></span>
-            <span *ngIf="dist.sent && !dist.confirm"
+            <span *ngIf="report.sent && !report.confirm"
                   class="fa fa-clock-o fa-lg"
                   popover="В ожидании"
                   triggers="mouseenter:mouseleave"></span>
           </td>
-          <td>{{dist.distId|manual: distributors}}</td>
-          <td>{{dist.date|date: 'dd.MM.yyyy'}}</td>
-          <td>{{dist.theaterCount}}</td>
-          <td>{{dist.moviesCount}}</td>
-          <td>{{dist.sessionCount}}</td>
-          <td>{{dist.ticketCount}}</td>
-          <td>{{dist.summ}}</td>
-          <td>
-            <span *ngIf="dist.mobTheater; else noCount">Имеется</span>
-            <ng-template #noCount><span>Не имеется</span></ng-template>
-          </td>
+          <td>{{report.distId|manual: distributors}}</td>
+          <td>{{report.date|date: 'dd.MM.yyyy'}}</td>
+          <td>{{report.movies.length}}</td>
+          <td>{{report.sessionCount}}</td>
+          <td>{{report.ticketCount}}</td>
+          <td>{{report.sum}}</td>
           <td style="width: 5%">
             <span popover="Подробнее"
-                  (click)="detailRouter(dist._id)"
+                  (click)="detailRouter(report._id)"
                   triggers="mouseenter:mouseleave"
                   class="fa fa-eye">
             </span>
-          <td style="width: 7%" *ngIf="!dist.confirm">
+          </td>
+          <td style="width: 7%" *ngIf="!report.confirm">
             <span *ngIf="isConfirm"
-                  (click)="confirmReport(dist._id)"
+                  (click)="actionReport(report._id, true)"
                   popover="Подтвердить"
                   triggers="mouseenter:mouseleave"
                   class="fa fa-check-square-o">
             </span>
           </td>
-          <td style="width: 7%" *ngIf="dist.confirm" colspan="2">
+          <td style="width: 7%" *ngIf="report.confirm" colspan="2">
             <span>Подтверждено</span>
           </td>
-          <td style="width: 7%" *ngIf="!dist.confirm">
+          <td style="width: 7%" *ngIf="!report.confirm">
             <span popover="Отменить"
-                  (click)="cancelReport(dist._id)"
+                  (click)="actionReport(report._id, true)"
                   *ngIf="isConfirm"
                   triggers="mouseenter:mouseleave"
                   class="fa fa-ban">
@@ -100,7 +93,7 @@
     </ul>
   </div>
 </div>
-<ng-template #noreport>
+<ng-template #noReport>
   <span class="text-center"
         style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
     Ни одного отчёта на указанную дату не отправлено. Попробуйте указать другую дату;)

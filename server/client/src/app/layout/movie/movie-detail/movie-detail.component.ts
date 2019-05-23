@@ -10,12 +10,15 @@ import { ModalDirective } from 'ngx-bootstrap';
   styleUrls: ['./movie-detail.component.scss']
 })
 export class MovieDetailComponent implements OnInit {
+
   @ViewChild('grpuView') grpuView: ModalDirective;
   id: string;
   model: MovieModel;
   pdfSrc: string;
+  statisticOpened: boolean = false;
+
   constructor(private service: MovieService,
-    private route: ActivatedRoute) {
+              private route: ActivatedRoute) {
   }
   ngOnInit() {
     this.model = new MovieModel();

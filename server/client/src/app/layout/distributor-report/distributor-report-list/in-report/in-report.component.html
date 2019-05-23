@@ -1,12 +1,12 @@
 <div class="box">
   <div class="box-body" style="padding: 0" *ngIf="pagedItems" >
-    <div *ngIf="pagedItems.length != 0; else noreport">
-      <table class="table table-bordered table-condensed">
+    <div *ngIf="pagedItems.length != 0; else noReport">
+      <table class="table table-bordered table-condensed table-hover">
         <thead>
         <tr>
           <th></th>
-          <th>Кинотеатр</th>
           <th>Дата</th>
+          <th>Кинотеатр</th>
           <th>Кол-во фильмов</th>
           <th>Кол-во сеансов</th>
           <th>Кол-во билетов</th>
@@ -29,8 +29,8 @@
                   popover="В ожидании"
                   triggers="mouseenter:mouseleave"></span>
           </td>
-          <td>{{report.theaterId| manual: theaters}}</td>
           <td>{{report.date|date: 'dd.MM.yyyy'}}</td>
+          <td>{{report.theaterId| manual: theaters}}</td>
           <td>{{report.movies.length}}</td>
           <td>{{report.sessionCount}}</td>
           <td>{{report.ticketCount}}</td>
@@ -98,7 +98,7 @@
       </li>
     </ul>
   </div>
-  <ng-template #noreport>
+  <ng-template #noReport>
     <span class="text-center"
           style="font-size: 14px; font-weight: 400; display: block; color: #dd4b39; margin-top: 10px">
       Ни одного отчёта не указаную дату не получено. Попробуйте указать другую дату;)

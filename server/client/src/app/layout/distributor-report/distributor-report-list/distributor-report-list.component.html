@@ -18,7 +18,7 @@
             <span popover="Сбросить"
                   triggers="mouseenter:mouseleave"
                   *ngIf="currentDate !== null"
-                  (click)="clearDatapicker()"
+                  (click)="clearDataPicker()"
                   class="fa fa-remove">
             </span>
           </span>
@@ -28,14 +28,14 @@
                  class="form-control"
                  [bsConfig]="bsConfig"
                  #dp="bsDatepicker"
-                 [(ngModel)]="currentDateforDist"
+                 [(ngModel)]="currentDateForDist"
                  placeholder="Укажите месяц"
                  bsDatepicker>
           <span class="input-group-addon">
             <span popover="Сбросить"
                   triggers="mouseenter:mouseleave"
-                  *ngIf="currentDateforDist !== null"
-                  (click)="clearDatapicker()"
+                  *ngIf="currentDateForDist !== null"
+                  (click)="clearDataPicker()"
                   class="fa fa-remove">
             </span>
           </span>
@@ -74,10 +74,10 @@
       <h1>Подождите, идёт загрузка</h1>
     </div>
     <div class="col-md-12">
-      <app-in-report [(currentDate)]="currentDate"
+      <app-in-report [currentDate]="currentDate"
                      *ngIf="currentMode === 0 && state">
       </app-in-report>
-      <app-out-report [(currentDateforDist)]="currentDateforDist"
+      <app-out-report [currentDateForDist]="currentDateForDist"
                       *ngIf="currentMode === 1 && state">
       </app-out-report>
     </div>

@@ -14,5 +14,19 @@ export class ContractModel {
   parentId?: string;
   imageSrc?: string;
   movieUser?: string;
-  minPriceTicket: number;
+  // theater prices
+  dayChildPriceTh?: number;
+  dayAdultPriceTh?: number;
+  eveningChildPriceTh?: number;
+  eveningAdultPriceTh?: number;
+  // org group prices
+  dayChildPriceGr?: number;
+  dayAdultPriceGr?: number;
+  eveningChildPriceGr?: number;
+  eveningAdultPriceGr?: number;
+  // mobile theaters prices
+  dayChildPriceMobile?: number;
+  dayAdultPriceMobile?: number;
+  eveningChildPriceMobile?: number;
+  eveningAdultPriceMobile?: number;
 }

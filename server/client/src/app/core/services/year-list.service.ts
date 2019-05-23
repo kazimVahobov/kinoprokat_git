@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
-import { DistributorService } from './distributor.service';
-
+import {Injectable} from '@angular/core';
+import {DistributorService} from './distributor.service';
+import {Observable} from "rxjs";
+import {map} from "rxjs/operators";
 
 
 @Injectable({
@@ -8,41 +9,31 @@ import { DistributorService } from './distributor.service';
 })
 export class YearListService {
 
-  currentYear: number;
-  startYear: number;
-  yearList: Year[];
-
   constructor(private distributorService: DistributorService) {
   }
 
-  getYearList()  {
-    this.currentYear = 0;
-    this.startYear = 0;
-     this.yearList = [];
+  getYearList(): Observable<any[]> {
 
-    this.distributorService.getAll().subscribe(distributors => {
+    return this.distributorService.getAll().pipe(map(distributors => {
+      let currentYear = 0;
+      let startYear = 0;
+      let yearList = [];
 
-      this.startYear = new Date(distributors.find(d => !d.parentId).createdDate).getFullYear()
-      this.currentYear = new Date().getFullYear();
+      startYear = new Date(distributors.find(d => !d.parentId).createdDate).getFullYear();
+      currentYear = new Date().getFullYear();
 
-      this.yearList.push({
-        value: this.startYear - 1,
-        name: (this.startYear - 1).toString()
-      })
+      yearList.push({
+        value: startYear - 1
+      });
 
-      for (let i = this.startYear; i <= this.currentYear; i++) {
-        this.yearList.push({
-          value: i,
-          name: i.toString()
-        })
+      for (let i = startYear; i <= currentYear; i++) {
+        yearList.push({
+          value: i
+        });
       }
-      window.localStorage.setItem('yearList', JSON.stringify(this.yearList));
-    })
+
+      return yearList;
+    }));
   }
 
-}
-
-class Year {
-  value: number;
-  name: string;
 }

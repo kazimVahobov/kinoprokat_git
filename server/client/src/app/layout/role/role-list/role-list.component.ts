@@ -60,7 +60,7 @@ export class RoleListComponent implements OnInit {
 
   openModal(role: RoleModel) {
     this.userService.getAll().subscribe(users => {
-      this.users = users.filter(u => u.roleId === role._id)
+      this.users = users.filter(u => u.roleId === role._id);
       this.roleForDelete = role;
       if (this.users.length) {
         this.canNotDeleteModal.show();

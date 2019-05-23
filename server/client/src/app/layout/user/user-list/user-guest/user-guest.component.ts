@@ -20,7 +20,7 @@ import {ModalDirective} from "ngx-bootstrap";
 export class UserGuestComponent implements OnInit {
 
   pager: any = {};
-  pagedItems: any[];
+  pagedItems: any[] = [];
   passError = false;
   form = new FormGroup({
     password: new FormControl(null, Validators.required),

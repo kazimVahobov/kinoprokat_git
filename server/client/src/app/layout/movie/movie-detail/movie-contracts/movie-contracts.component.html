@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-12" style="padding: 0;" id="contracts-print">
+    <table class="table table-hover table-bordered table-dark-bordered" *ngIf="contracts.length != 0 else noContracts">
+      <thead>
+      <tr>
+        <th rowspan="2" class="text-center">Дистрибьютор</th>
+        <th rowspan="2" class="text-center">Кинотеатр</th>
+        <th colspan="2" class="text-center">Дневные сеансы</th>
+        <th colspan="2" class="text-center">Вечерние сеансы</th>
+        <th rowspan="2" class="detail-column"></th>
+      </tr>
+      <tr>
+        <th class="text-center">Детские билеты</th>
+        <th class="text-center">Взрослые билеты</th>
+        <th class="text-center">Детские билеты</th>
+        <th class="text-center">Взрослые билеты</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contract of contracts">
+        <td>{{contract.firstSide| manual: distributors}}</td>
+        <td>{{contract.secondSide| manual: theaters}}</td>
+        <td class="text-center">{{contract.dayChildPriceTh}}</td>
+        <td class="text-center">{{contract.dayAdultPriceTh}}</td>
+        <td class="text-center">{{contract.eveningChildPriceTh}}</td>
+        <td class="text-center">{{contract.eveningAdultPriceTh}}</td>
+        <td style="width: 5%" class="text-center detail-column">
+          <span popover="Подробнее" triggers="mouseenter:mouseleave" class="fa fa-eye"
+                [routerLink]="['cont-detail', contract._id]"></span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div *ngIf="contracts.length != 0" class="col-md-1 col-md-offset-11" style="margin-bottom: 10px">
+    <button (click)="print();" class="btn btn-primary">
+      Печать
+    </button>
+  </div>
+</div>
+
+<ng-template #noContracts>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одного договора не добавлено;) Для того, чтобы добавить новый договор перейдите во вкладку
+      <span style="font-weight: bold">Договоры</span></span>
+  </div>
+</ng-template>

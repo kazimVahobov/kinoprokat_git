@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 import {
-  ContractService,
   ContractModel,
-  MovieService,
-  MovieModel,
+  ContractService,
   DistributorModel,
-  DistributorService
+  DistributorService,
+  MovieModel,
+  MovieService
 } from 'src/app/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { DatePipe } from '@angular/common';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-contract-f-form',
@@ -31,7 +30,6 @@ export class ContractFFormComponent implements OnInit {
   distributors: DistributorModel[] = [];
   currentDistributor: DistributorModel = new DistributorModel();
 
-  pipe = new DatePipe('en-US');
   currentDate = new Date();
 
   currentUser = JSON.parse(localStorage.getItem('user'));
@@ -40,10 +38,10 @@ export class ContractFFormComponent implements OnInit {
   secondPercent: number;
 
   constructor(private service: ContractService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private movieService: MovieService,
-    private distributorService: DistributorService) {
+              private router: Router,
+              private route: ActivatedRoute,
+              private movieService: MovieService,
+              private distributorService: DistributorService) {
   }
 
   ngOnInit() {
@@ -80,8 +78,22 @@ export class ContractFFormComponent implements OnInit {
           this.form.controls['toDate'].setValue(this.model.toDate);
           this.form.controls['condition'].setValue(this.model.condition);
           this.form.controls['tax'].setValue(this.model.tax);
-          this.contractMode = this.model.condPercent
-          if(this.contractMode) {
+          // prices
+          this.form.controls["dayChildPriceTh"].setValue(this.model.dayChildPriceTh);
+          this.form.controls["dayAdultPriceTh"].setValue(this.model.dayAdultPriceTh);
+          this.form.controls["eveningChildPriceTh"].setValue(this.model.eveningChildPriceTh);
+          this.form.controls["eveningAdultPriceTh"].setValue(this.model.eveningAdultPriceTh);
+          this.form.controls["dayChildPriceGr"].setValue(this.model.dayChildPriceGr);
+          this.form.controls["dayAdultPriceGr"].setValue(this.model.dayAdultPriceGr);
+          this.form.controls["eveningChildPriceGr"].setValue(this.model.eveningChildPriceGr);
+          this.form.controls["eveningAdultPriceGr"].setValue(this.model.eveningAdultPriceGr);
+          this.form.controls["dayChildPriceMobile"].setValue(this.model.dayChildPriceMobile);
+          this.form.controls["dayAdultPriceMobile"].setValue(this.model.dayAdultPriceMobile);
+          this.form.controls["eveningChildPriceMobile"].setValue(this.model.eveningChildPriceMobile);
+          this.form.controls["eveningAdultPriceMobile"].setValue(this.model.eveningAdultPriceMobile);
+
+          this.contractMode = this.model.condPercent;
+          if (this.contractMode) {
             this.secondPercent = 100 - this.model.condition
           }
         });
@@ -89,10 +101,6 @@ export class ContractFFormComponent implements OnInit {
         this.contractMode = true;
       }
     });
-  }
-
-  modelChanged(event: Event) {
-    this.secondPercent = 100 - parseInt((<HTMLInputElement>event.target).value);
   }
 
   createForm() {
@@ -106,6 +114,19 @@ export class ContractFFormComponent implements OnInit {
       fromDate: new FormControl(null, Validators.required),
       toDate: new FormControl(null, Validators.required),
       tax: new FormControl(null),
+      // prices
+      dayChildPriceTh: new FormControl(null, Validators.required),
+      dayAdultPriceTh: new FormControl(null, Validators.required),
+      eveningChildPriceTh: new FormControl(null, Validators.required),
+      eveningAdultPriceTh: new FormControl(null, Validators.required),
+      dayChildPriceGr: new FormControl(null, Validators.required),
+      dayAdultPriceGr: new FormControl(null, Validators.required),
+      eveningChildPriceGr: new FormControl(null, Validators.required),
+      eveningAdultPriceGr: new FormControl(null, Validators.required),
+      dayChildPriceMobile: new FormControl(null, Validators.required),
+      dayAdultPriceMobile: new FormControl(null, Validators.required),
+      eveningChildPriceMobile: new FormControl(null, Validators.required),
+      eveningAdultPriceMobile: new FormControl(null, Validators.required)
     });
     this.form.controls['secondSide'].disable();
   }
@@ -124,17 +145,33 @@ export class ContractFFormComponent implements OnInit {
     this.model._id = this.id;
     this.model.typeOfCont = 0;
     this.model.parentId = null;
-    this.model.condPercent = this.contractMode
+    this.model.condPercent = this.contractMode;
+    // prices
+    this.model.dayChildPriceTh = this.form.controls["dayChildPriceTh"].value;
+    this.model.dayAdultPriceTh = this.form.controls["dayAdultPriceTh"].value;
+    this.model.eveningChildPriceTh = this.form.controls["eveningChildPriceTh"].value;
+    this.model.eveningAdultPriceTh = this.form.controls["eveningAdultPriceTh"].value;
+    this.model.dayChildPriceGr = this.form.controls["dayChildPriceGr"].value;
+    this.model.dayAdultPriceGr = this.form.controls["dayAdultPriceGr"].value;
+    this.model.eveningChildPriceGr = this.form.controls["eveningChildPriceGr"].value;
+    this.model.eveningAdultPriceGr = this.form.controls["eveningAdultPriceGr"].value;
+    this.model.dayChildPriceMobile = this.form.controls["dayChildPriceMobile"].value;
+    this.model.dayAdultPriceMobile = this.form.controls["dayAdultPriceMobile"].value;
+    this.model.eveningChildPriceMobile = this.form.controls["eveningChildPriceMobile"].value;
+    this.model.eveningAdultPriceMobile = this.form.controls["eveningAdultPriceMobile"].value;
 
     this.service.save(this.model).subscribe(() => {
-      alert('Все данные успешно сохранены!');
-      this.router.navigate(['/cont-f']);
-    },
+        alert('Все данные успешно сохранены!');
+        this.router.navigate(['/cont-f']);
+      },
       error => {
         alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
       });
   }
 
+  modelChanged(event: Event) {
+    this.secondPercent = 100 - parseInt((<HTMLInputElement>event.target).value);
+  }
 
   backToList() {
     if (confirm('Внимание! Все несохранённые данные будут утеряны! Вы действительно хотите вернуться к списку без сохранения?')) {

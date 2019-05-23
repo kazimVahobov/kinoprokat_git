@@ -1,6 +1,6 @@
 <div class="box">
   <div class="box-body" style="padding: 0">
-    <table class="table table-hover table-bordered">
+    <table class="table table-hover table-bordered" *ngIf="pagedItems.length > 1 else noUsers">
       <thead>
       <tr>
         <th sortable-column="FullName">
@@ -36,37 +36,36 @@
       </tr>
       </tbody>
     </table>
-    <div class="box-footer">
-      <!-- pager -->
-      <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-        <li [ngClass]="{disabled:pager.currentPage === 1}">
-          <a (click)="setPage(1)">
-            <i class="fa fa-angle-double-left"></i>
-          </a>
-        </li>
-        <li [ngClass]="{disabled:pager.currentPage === 1}">
-          <a (click)="setPage(pager.currentPage - 1)">
-            <i class="fa fa-angle-left"></i>
-          </a>
-        </li>
-        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-          <a (click)="setPage(page)">{{page}}</a>
-        </li>
-        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-          <a (click)="setPage(pager.currentPage + 1)">
-            <i class="fa fa-angle-right"></i>
-          </a>
-        </li>
-        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-          <a (click)="setPage(pager.totalPages)">
-            <i class="fa fa-angle-double-right"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
+  </div>
+  <div class="box-footer" *ngIf="pagedItems.length > 1">
+    <!-- pager -->
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">
+          <i class="fa fa-angle-double-left"></i>
+        </a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">
+          <i class="fa fa-angle-left"></i>
+        </a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">
+          <i class="fa fa-angle-double-right"></i>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
-
 
 <div bsModal #resetPassModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-child-name">
   <div class="modal-dialog modal-sm">
@@ -110,3 +109,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #noUsers>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одного пользователя не добавлено;) Для того, чтобы добавить нового пользователя нажмите кнопку
+      <span style="font-weight: bold">Новый пользователь</span> в правом верхнем углу</span>
+  </div>
+</ng-template>

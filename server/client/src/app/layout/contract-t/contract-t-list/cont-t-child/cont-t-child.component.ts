@@ -24,7 +24,7 @@ export class ContTChildComponent implements OnInit {
   // pager object
   pager: any = {};
   // paged items
-  pagedItems: any[];
+  pagedItems: any[] = [];
   movies: MovieModel[] = [];
   distributors: DistributorModel[] = [];
   theaters: TheaterModel[] = [];

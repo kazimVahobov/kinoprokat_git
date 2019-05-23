@@ -1,16 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 
-import { SharedModule } from '../../shared';
-import { rkmReportRoutingModule } from './rkm-report-routing.module';
-import { RkmReportComponent } from './rkm-report.component';
-import { RkmReportListComponent } from './rkm-report-list/rkm-report-list.component';
-import { InRepeortComponent } from './rkm-report-list/in-repeort/in-repeort.component';
-import { OutRepeortComponent } from './rkm-report-list/out-repeort/out-repeort.component';
-
-
-
+import {SharedModule} from '../../shared';
+import {rkmReportRoutingModule} from './rkm-report-routing.module';
+import {RkmReportComponent} from './rkm-report.component';
+import {RkmReportListComponent} from './rkm-report-list/rkm-report-list.component';
+import {TheaterInReportComponent} from './rkm-report-list/theater-in-report/theater-in-report.component';
+import {DistInReportComponent} from './rkm-report-list/dist-in-report/dist-in-report.component';
 
 
 @NgModule({
@@ -22,8 +19,8 @@ import { OutRepeortComponent } from './rkm-report-list/out-repeort/out-repeort.c
   declarations: [
     RkmReportComponent,
     RkmReportListComponent,
-    InRepeortComponent,
-    OutRepeortComponent
+    TheaterInReportComponent,
+    DistInReportComponent
   ]
 })
 export class RkmReportModule {

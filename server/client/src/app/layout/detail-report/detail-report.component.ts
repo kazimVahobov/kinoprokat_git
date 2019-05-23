@@ -1,16 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {
-  TheaterReportModel,
+  DistributorModel,
+  DistributorReportModel,
   DistributorReportService,
-  TheaterReportService,
+  DistributorService,
   MovieModel,
   MovieService,
-  TheaterService,
-  HoleModel,
-  DistributorReportModel
+  TheaterModel,
+  TheaterReportModel,
+  TheaterReportService,
+  TheaterService
 } from 'src/app/core';
 import {ActivatedRoute} from '@angular/router';
-import { Location } from '@angular/common';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-detail-report',
@@ -19,63 +21,100 @@ import { Location } from '@angular/common';
 })
 export class DetailReportComponent implements OnInit {
 
-
   id: string;
+  type: string;
   mainLabel = 'Подробная информация';
-  report: ReportModel;
-  nameOfHoles: HoleModel[] = [];
-  movies: MovieModel[] = [];
-  movieMode = true;
+  overallDistReport: ReportOverall;
+  currentDistReport: DistributorReportModel;
+  distributors: DistributorModel[];
+  movies: MovieModel[];
 
-  isDistReport = false;
+  theaters: TheaterModel[];
+  currentTheaterReport: TheaterReportModel;
+  overallTheaterReport: ReportOverall;
+  holes: Hole[];
 
-  distReport: DistributorReportModel;
-  theaters: TheaterForMobileTheater[];
-  theaterReports: TheaterReportModel[];
-  theaterId = "";
 
   constructor(private route: ActivatedRoute,
               private theaterService: TheaterService,
               private movieService: MovieService,
               private theaterReportService: TheaterReportService,
-              private ditributorReportService: DistributorReportService,
-              private location: Location
-              ) {
+              private distributorReportService: DistributorReportService,
+              private distributorService: DistributorService,
+              private location: Location) {
   }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.id = params['id'];
-      if (this.id) {
-        this.ditributorReportService.getById(this.id).subscribe(distReports => {
-          this.theaterReportService.getAll().subscribe(theaterReports => {
-            this.theaterService.getAll().subscribe(theaters => {
-              this.theaters = [];
-              this.theaterReports = [];
-              if (distReports) {
-
-                this.theaterReports = theaterReports.filter(thReport => distReports.theaterReports.some(i => i.theaterReportsId === thReport._id));
-                this.theaters = theaters.filter(theater => this.theaterReports.some(i => i.theaterId === theater._id));
-                this.theaters.push({
-                  _id: '0',
-                  name: 'Передвижной кинотеатр'
-                });
-                this.theaterId = this.theaters[0]._id;
-
-                this.distReport = new DistributorReportModel();
-                this.distReport = distReports;
-
-                this.getTheaterReportsForDistributor();
-                this.isDistReport = true;
-              } else {
-                this.theaters = theaters;
-                this.getTheaterReport(this.id);
-                this.isDistReport = false;
-              }
-            })
-          })
-        })
+      this.type = params['type'];
+      if (this.type == 'dist') {
+        this.loadDistReport(this.id);
+      } else if (this.type == 'theater') {
+        this.loadTheaterReport(this.id);
       }
+    });
+  }
+
+  loadDistReport(id: string) {
+    this.distributors = [];
+    this.movies = [];
+    this.currentDistReport = new DistributorReportModel();
+    this.currentDistReport.mobileTheaters = [];
+    this.overallDistReport = new ReportOverall();
+    this.movieService.getAll().subscribe(movies => {
+      this.movies = movies;
+      this.distributorService.getAll().subscribe(distributors => {
+        this.distributors.push(...distributors);
+        this.distributorReportService.getById(id).subscribe(report => {
+          this.currentDistReport = report;
+          report.mobileTheaters.forEach(session => {
+            this.overallDistReport.childTicketCount += session.childTicketCount;
+            this.overallDistReport.adultTicketCount += session.adultTicketCount;
+            this.overallDistReport.childTicketSum += session.childTicketCount * session.childTicketPrice;
+            this.overallDistReport.adultTicketSum += session.adultTicketCount * session.adultTicketPrice;
+            this.overallDistReport.overallTicketCount += session.childTicketCount + session.adultTicketCount;
+            this.overallDistReport.overallTicketSum += (session.childTicketCount * session.childTicketPrice) + (session.adultTicketCount * session.adultTicketPrice);
+          });
+        });
+      });
+    });
+  }
+
+  loadTheaterReport(id: string) {
+    this.holes = [];
+    this.theaters = [];
+    this.movies = [];
+    this.currentTheaterReport = new TheaterReportModel();
+    this.currentTheaterReport.withCont = [];
+    this.currentTheaterReport.withoutCont = [];
+    this.overallTheaterReport = new ReportOverall();
+    this.theaterService.getAll().subscribe(theaters => {
+      this.theaters = theaters;
+      this.theaters.forEach(i => {
+        i.holes.forEach(j => {
+          this.holes.push({
+            _id: j._id,
+            name: j.name
+          });
+        });
+      });
+      console.log(this.holes);
+      this.movieService.getAll().subscribe(movies => {
+        this.movies = movies;
+
+        this.theaterReportService.getById(id).subscribe(report => {
+          this.currentTheaterReport = report;
+          report.withCont.forEach(session => {
+            this.overallTheaterReport.childTicketCount += session.childTicketCount;
+            this.overallTheaterReport.adultTicketCount += session.adultTicketCount;
+            this.overallTheaterReport.childTicketSum += session.childTicketCount * session.childTicketPrice;
+            this.overallTheaterReport.adultTicketSum += session.adultTicketCount * session.adultTicketPrice;
+            this.overallTheaterReport.overallTicketCount += session.childTicketCount + session.adultTicketCount;
+            this.overallTheaterReport.overallTicketSum += (session.childTicketCount * session.childTicketPrice) + (session.adultTicketCount * session.adultTicketPrice);
+          });
+        });
+      });
     });
   }
 
@@ -83,131 +122,18 @@ export class DetailReportComponent implements OnInit {
     this.location.back();
   }
 
-
-  getTheaterReportsForDistributor() {
-    if (this.theaterId !== '0') {
-      this.getTheaterReport(this.theaterReports.find(r => r.theaterId === this.theaterId)._id);
-    }
-  }
-
-  getTheaterReport(id: string) {
-    this.theaterReportService.getById(id).subscribe(report => {
-
-      this.nameOfHoles = this.theaters.find(i => i._id === report.theaterId).holes;
-      this.theaterId = this.theaters.find(i => i._id === report.theaterId)._id;
-
-      this.movieService.getAll().subscribe(movies => this.movies = movies);
-      this.report = new ReportModel();
-      this.report.withoutCont = [];
-      this.report.holes = [];
-      this.report.date = report.date;
-      this.report.theaterId = report.theaterId;
-      this.report.withoutCont = report.withoutCont;
-      report.withCont.forEach(item => {
-        if (!this.report.holes.some(i => i.holeId === item.holeId)) {
-          this.report.holes.push({holeId: item.holeId});
-          this.report.holes.find(i => i.holeId === item.holeId).sessions = [];
-        }
-        if (!this.report.movies.some(i => i.movieId === item.movieId)) {
-          this.report.movies.push({movieId: item.movieId});
-          this.report.movies.find(i => i.movieId === item.movieId).sessions = [];
-        }
-        this.report.holes.find(i => i.holeId === item.holeId).sessions.push({
-          movieId: item.movieId,
-          time: item.sessionTime,
-          price: item.price,
-          ticketCount: item.ticketCount
-        });
-        this.report.movies.find(i => i.movieId === item.movieId).sessions.push({
-          holeId: item.holeId,
-          time: item.sessionTime,
-          price: item.price,
-          ticketCount: item.ticketCount
-        });
-      });
-    });
-  }
-
-  overAll(object: any[], mode: number): number {
-    let result: number = 0;
-    switch (mode) {
-      case 0: {
-        object.forEach(i => result += i.ticketCount);
-        break;
-      }
-      case 1: {
-        object.forEach(i => result += i.ticketCount * i.price);
-        break;
-      }
-      case 2: {
-        object.forEach(i => {
-          result += i.sessions.length;
-        });
-        break;
-      }
-      case 3: {
-        object.forEach(i => {
-          result += i.sessionCount;
-        });
-        break;
-      }
-      case 4: {
-        object.forEach(i => {
-          i.sessions.forEach(j => {
-            result += j.ticketCount;
-          });
-        });
-        break;
-      }
-      case 5: {
-        object.forEach(i => {
-          i.sessions.forEach(j => {
-            result += j.ticketCount * j.price;
-          });
-        });
-        break;
-      }
-    }
-    return result;
-  }
 }
 
-class ReportModel {
-  date: Date;
-  theaterId: string;
-  holes: HoleReportModel[] = [];
-  movies: MovieReportModel[] = [];
-  withoutCont: WithoutCont[] = [];
+class ReportOverall {
+  childTicketCount: number = 0;
+  adultTicketCount: number = 0;
+  childTicketSum: number = 0;
+  adultTicketSum: number = 0;
+  overallTicketCount: number = 0;
+  overallTicketSum: number = 0;
 }
 
-class HoleReportModel {
-  holeId: string;
-  sessions?: SessionModel[] = [];
-}
-
-class MovieReportModel {
-  movieId: string;
-  sessions?: SessionModel[] = [];
-}
-
-class SessionModel {
-  movieId?: string;
-  holeId?: string;
-  time: string;
-  price: number;
-  ticketCount: number;
-}
-
-class WithoutCont {
-  movie: string;
-  distributor: string;
-  country: string;
-  sessionCount: number;
-}
-
-class TheaterForMobileTheater {
+class Hole {
   _id: string;
   name: string;
-  holes?: HoleModel[];
 }
-

@@ -12,14 +12,14 @@
           <input type="text"
                  class="form-control"
                  #dp="bsDatepicker"
-                 [(ngModel)]="currentDateforDist"
+                 [(ngModel)]="currentDateForDist"
                  placeholder="Укажите дату"
                  bsDatepicker>
           <span class="input-group-addon">
             <span popover="Сбросить"
                   triggers="mouseenter:mouseleave"
-                  *ngIf="currentDateforDist !== null"
-                  (click)="clearDatapicker()"
+                  *ngIf="currentDateForDist !== null"
+                  (click)="clearDataPicker()"
                   class="fa fa-remove">
             </span>
           </span>
@@ -35,7 +35,7 @@
             <span popover="Сбросить"
                   triggers="mouseenter:mouseleave"
                   *ngIf="currentDate !== null"
-                  (click)="clearDatapicker()"
+                  (click)="clearDataPicker()"
                   class="fa fa-remove">
             </span>
           </span>
@@ -54,7 +54,7 @@
         <button class="btn my-btn"
                 popover="Обновить"
                 triggers="mouseenter:mouseleave">
-          <span class="fa fa-refresh fa-lg"  (click)="refresh()"></span>
+          <span class="fa fa-refresh fa-lg" (click)="refresh()"></span>
         </button>
       </div>
     </div>
@@ -67,11 +67,11 @@
     </div>
     <div class="col-md-12">
       <!--theater report-->
-      <app-in-detail-repeort [(currentDate)]="currentDate"
-                             *ngIf="currentMode === 1 && state"></app-in-detail-repeort>
+      <app-theater-in-report [currentDate]="currentDate"
+                             *ngIf="currentMode === 1 && state"></app-theater-in-report>
       <!--distributor report-->
-      <app-out-detail-repeort [(currentDateforDist)]="currentDateforDist"
-                              *ngIf="currentMode === 0 && state"></app-out-detail-repeort>
+      <app-dist-in-report [currentDateForDist]="currentDateForDist"
+                          *ngIf="currentMode === 0 && state"></app-dist-in-report>
     </div>
   </div>
 </section>

@@ -7,7 +7,6 @@ module.exports.createDistributorReports = async function(req, res) {
         const distributorReports = await new DistributorReports({
             distId: req.body.distId,
             date: req.body.date,
-            theaterReports: req.body.theaterReports,
             mobileTheaters: req.body.mobileTheaters,
             sent: req.body.sent,
             confirm: req.body.confirm
@@ -21,6 +20,17 @@ module.exports.createDistributorReports = async function(req, res) {
 module.exports.getAllDistributorReports = async function(req, res) {
     try {
         const distributorReports = await DistributorReports.find({})
+        res.status(200).json(distributorReports)
+    } catch (e) {
+        errorHandler(res, e)
+    }
+}
+
+module.exports.filterDistReports = async function(req, res) {
+    try {
+        var _sent = !!req.body.sent;
+        var _confirm = !!req.body.confirm;
+        const distributorReports = await DistributorReports.find({ sent: _sent, confirm: _confirm });
         res.status(200).json(distributorReports)
     } catch (e) {
         errorHandler(res, e)
@@ -47,7 +57,8 @@ module.exports.getDistributorReportsByDistId = async function(req, res) {
 
 module.exports.updateDistributorReportsById = async function(req, res) {
     try {
-        const distributorReports = await DistributorReports.findOneAndUpdate({ _id: req.params.id }, {$set: req.body}, { new: true })
+        const distributorReports = await DistributorReports.findOneAndUpdate(
+            { _id: req.params.id }, {$set: req.body}, { new: true })
         res.status(200).json(distributorReports)
     } catch (e) {
         errorHandler(res, e)

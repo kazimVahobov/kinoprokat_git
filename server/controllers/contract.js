@@ -17,8 +17,19 @@ module.exports.createContract = async function (req, res) {
             fromDate: req.body.fromDate,
             toDate: req.body.toDate,
             parentId: req.body.parentId,
-            minPriceTicket: req.body.minPriceTicket
-        }).save()
+            dayChildPriceTh: req.body.dayChildPriceTh,
+            dayAdultPriceTh: req.body.dayAdultPriceTh,
+            eveningChildPriceTh: req.body.eveningChildPriceTh,
+            eveningAdultPriceTh: req.body.eveningAdultPriceTh,
+            dayChildPriceGr: req.body.dayChildPriceGr,
+            dayAdultPriceGr: req.body.dayAdultPriceGr,
+            eveningChildPriceGr: req.body.eveningChildPriceGr,
+            eveningAdultPriceGr: req.body.eveningAdultPriceGr,
+            dayChildPriceMobile: req.body.dayChildPriceMobile,
+            dayAdultPriceMobile: req.body.dayAdultPriceMobile,
+            eveningChildPriceMobile: req.body.eveningChildPriceMobile,
+            eveningAdultPriceMobile: req.body.eveningAdultPriceMobile
+        }).save();
         res.status(200).json(contract)
     } catch (e) {
         errorHandler(res, e)

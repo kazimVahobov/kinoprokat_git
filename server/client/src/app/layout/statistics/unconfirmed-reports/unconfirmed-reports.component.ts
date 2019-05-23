@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   TheaterReportService,
   DistributorService,
@@ -6,10 +6,13 @@ import {
   TheaterReportModel,
   DistributorModel,
   TheaterModel,
-  PagerService
+  PagerService, DistributorReportService
 } from 'src/app/core';
-import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+import {Router} from '@angular/router';
+import {Location} from '@angular/common';
+import {combineLatest} from "rxjs";
+import {map} from "rxjs/operators";
+
 @Component({
   selector: 'app-unconfirmed-reports',
   templateUrl: './unconfirmed-reports.component.html',
@@ -22,124 +25,146 @@ export class UnconfirmedReportsComponent implements OnInit {
   // paged items
   pagedItems: any[];
 
-  unconfirmedReports: TheaterReportModel[];
   distributors: DistributorModel[];
   theaters: TheaterModel[];
 
-  reports: Report[];
-  tempReport: Report;
-  theaterReport: TheaterReportModel;
-
-  constructor(private service: TheaterReportService,
-    private distService: DistributorService,
-    private theaterService: TheaterService,
-    private router: Router,
-    private pagerService: PagerService,
-    private location: Location) { }
+  constructor(private thReportService: TheaterReportService,
+              private distReportService: DistributorReportService,
+              private distService: DistributorService,
+              private theaterService: TheaterService,
+              private router: Router,
+              private pagerService: PagerService,
+              private location: Location) {
+  }
 
   ngOnInit() {
-    this.unconfirmedReports = [];
     this.distributors = [];
     this.theaters = [];
-    this.getUnconfirmedReports();
+    this.getReports();
   }
 
   backPage() {
     this.location.back();
   }
 
-  getUnconfirmedReports() {
-    this.theaterReport = new TheaterReportModel();
-    this.reports = [];
-    this.service.getAll().subscribe(theaterReports => {
-      this.distService.getAll().subscribe(distributors => {
-        this.theaterService.getAll().subscribe(theaters => {
-          this.unconfirmedReports = theaterReports.filter(r => r.sent === true && r.confirm === false);
+  getReports() {
+    combineLatest(
+      this.thReportService.getByFilter(true, false),
+      this.distReportService.getByFilter(true, false),
+      this.theaterService.getAll(),
+      this.distService.getAll()
+    ).pipe(
+      map(([_thReports, _distReports, _theaters, _distributors]) => {
+        this.theaters = _theaters;
+        this.distributors = _distributors;
+        let result: any[] = [];
 
-          this.distributors = distributors;
-          this.theaters = theaters;
-
-          for (let i = 0; i < this.unconfirmedReports.length; i++) {
-            this.tempReport = new Report();
-            this.tempReport.movies = [];
-            this.tempReport.theaterId = this.unconfirmedReports[i].theaterId
-            this.tempReport.distId = this.theaters.find(th => th._id === this.unconfirmedReports[i].theaterId).distId
-            this.tempReport.ticketCount = 0;
-            this.tempReport.summ = 0;
-            this.tempReport._id = this.unconfirmedReports[i]._id;
-            this.tempReport.date = this.unconfirmedReports[i].date;
-            this.tempReport.sent = this.unconfirmedReports[i].sent;
-            this.tempReport.confirm = this.unconfirmedReports[i].confirm;
-            this.tempReport.sessionCount = this.unconfirmedReports[i].withCont.length;
-            this.tempReport.withoutCont = !this.unconfirmedReports[i].withoutCont
-
-            for (let j = 0; j < this.unconfirmedReports[i].withCont.length; j++) {
-              if (!this.tempReport.movies.some(item => item === this.unconfirmedReports[i].withCont[j].movieId)) {
-                this.tempReport.movies.push(this.unconfirmedReports[i].withCont[j].movieId);
-              }
-              this.tempReport.ticketCount += this.unconfirmedReports[i].withCont[j].ticketCount;
-              this.tempReport.summ += this.unconfirmedReports[i].withCont[j].ticketCount * this.unconfirmedReports[i].withCont[j].price;
-            }
-            this.reports.push(this.tempReport);
+        result.push(...this.getReportsForView(_thReports, true));
+        result.push(...this.getReportsForView(_distReports, false));
+        result.sort((a, b) => {
+          const aDate = new Date(a.date);
+          const bDate = new Date(b.date);
+          let result = 0;
+          if (aDate > bDate) {
+            result = -1;
           }
-          this.reports = this.reports.reverse();
-
-
-          this.setPage(1);
-        })
+          if (aDate < bDate) {
+            result = 1;
+          }
+          return result;
+        });
+        return result;
       })
-    })
+    ).subscribe(data => this.setPage(1, data));
   }
 
-  confirmReport(id: any) {
-    this.theaterReport._id = id;
-    this.theaterReport.sent = true;
-    this.theaterReport.confirm = true;
-    this.service.update(this.theaterReport).subscribe(report => {
-      this.getUnconfirmedReports();
-    },
-      error => {
-        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+  getReportsForView(array: any[], isTheater: boolean): any[] {
+    let idType = isTheater ? 'theaterId' : 'distId';
+    let subItem = isTheater ? 'withCont' : 'mobileTheaters';
+    return array.map(item => {
+      let _ticketCount: number = 0;
+      let _sum: number = 0;
+      item[subItem].forEach(session => {
+        _ticketCount += session.childTicketCount + session.adultTicketCount;
+        _sum += (session.childTicketCount * session.childTicketPrice) + (session.adultTicketCount * session.adultTicketPrice);
       });
+      return {
+        _id: item._id,
+        date: item.date,
+        isTheater: isTheater,
+        [idType]: item[idType],
+        sessionCount: item[subItem].length,
+        ticketCount: _ticketCount,
+        sum: _sum,
+        sent: item.sent,
+        confirm: item.confirm
+      }
+    });
+
   }
 
-  cancelReport(id: any) {
-    this.theaterReport._id = id;
-    this.theaterReport.sent = false;
-    this.theaterReport.confirm = false;
-    this.service.update(this.theaterReport).subscribe(report => {
-      this.getUnconfirmedReports();
-    },
-      error => {
-        alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
-      });
+  confirmReport(id: any, isTheater: boolean) {
+    if (confirm(`Вы уверены, что хотите подтвердить отчёт?`)) {
+      let reportToConfirm: any = {};
+      reportToConfirm._id = id;
+      reportToConfirm.sent = true;
+      reportToConfirm.confirm = true;
+      if (isTheater) {
+        this.thReportService.update(reportToConfirm).subscribe(report => {
+            this.getReports();
+          },
+          error => {
+            alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+          });
+      } else {
+        this.distReportService.update(reportToConfirm).subscribe(report => {
+            this.getReports();
+          },
+          error => {
+            alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+          });
+      }
+
+    }
   }
 
-  setPage(page: number) {
-    // get pager object from service
-    this.pager = this.pagerService.getPager(this.reports.length, page);
-    // get current page of items
-    this.pagedItems = [];
-    this.pagedItems = this.reports.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  cancelReport(id: any, isTheater: boolean) {
+    if (confirm(`Вы уверены, что хотите отменить отчёт?`)) {
+      let reportToCancel: any = {};
+      reportToCancel._id = id;
+      reportToCancel.sent = false;
+      reportToCancel.confirm = false;
+      if (isTheater) {
+        this.thReportService.update(reportToCancel).subscribe(report => {
+            this.getReports();
+          },
+          error => {
+            alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+          });
+      } else {
+        this.distReportService.update(reportToCancel).subscribe(report => {
+            this.getReports();
+          },
+          error => {
+            alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
+          });
+      }
+
+    }
   }
 
-  detailRouter(id: string) {
+  detailRouter(id: string, isTheater: boolean) {
+    let type = isTheater ? 'theater' : 'dist';
     this.router.navigate(['/detail-report'], {
-      queryParams: { id: id }
+      queryParams: {id: id, type: type}
     });
   }
 
-}
-class Report {
-  _id: string;
-  date: Date;
-  theaterId: string;
-  distId: string;
-  movies: string[];
-  sessionCount: number;
-  ticketCount: number;
-  summ: number;
-  sent: boolean;
-  confirm: boolean;
-  withoutCont: boolean;
+  setPage(page: number, data: any[]) {
+    // get pager object from service
+    this.pager = this.pagerService.getPager(data.length, page);
+    // get current page of items
+    this.pagedItems = [];
+    this.pagedItems = data.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
 }

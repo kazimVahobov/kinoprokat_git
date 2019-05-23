@@ -24,7 +24,7 @@ export class ContractSListComponent implements OnInit {
   // pager object
   pager: any = {};
   // paged items
-  pagedItems: any[];
+  pagedItems: any[] = [];
   movies: MovieModel[] = [];
   currentDistributor: DistributorModel = new DistributorModel();
   distributors: DistributorModel[] = [];
@@ -117,9 +117,9 @@ export class ContractSListComponent implements OnInit {
       this.service.getAll().subscribe(contracts => {
 
             this.model = new reportModel();
-            this.model.contracts = [];
+            this.model.allContracts = [];
 
-            this.model.contracts = contracts.filter(c => c.parentId === this.contractForDelete ._id);
+            this.model.allContracts = contracts.filter(c => c.parentId === this.contractForDelete ._id);
             this.model.contractId = this.contractForDelete ._id
 
             this.service.deleteAllData(this.model).subscribe(res => this.getAllContracts());
@@ -156,6 +156,6 @@ export class ContractSListComponent implements OnInit {
   }
 }
 class reportModel {
-  contracts: ContractModel[];
+  allContracts: ContractModel[];
   contractId: string;
 }

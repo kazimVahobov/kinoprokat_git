@@ -16,8 +16,13 @@ class ReportWithCont {
   contractId: string;
   holeId: string;
   sessionTime: string;
-  price: number;
-  ticketCount: number;
+  price?: number;
+  ticketCount?: number;
+  daySession: boolean;
+  childTicketCount: number;
+  adultTicketCount: number;
+  childTicketPrice: number;
+  adultTicketPrice: number;
 }
 
 class ReportWithoutCont {

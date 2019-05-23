@@ -27,6 +27,15 @@ module.exports.createDistributor = async function(req, res) {
     }
 }
 
+module.exports.getDistsByRegionId = async function(req, res) {
+    try {
+        const dists = await Distributor.find({regionId: req.params.id});
+        res.status(200).json(dists)
+    } catch (e) {
+        errorHandler(res, e)
+    }
+}
+
 module.exports.getAllDistributor = async function(req, res) {
     try {
         const distributor = await Distributor.find({})

@@ -12,7 +12,7 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-body" style="padding: 0">
-          <table class="table table-bordered table-hover">
+          <table class="table table-bordered table-hover" *ngIf="pagedItems.length != 0 else noContracts">
             <thead>
             <tr>
               <th></th>
@@ -20,9 +20,9 @@
               <th>Фильм</th>
               <th>1-ая сторона</th>
               <th>2-ая сторона</th>
-              <th>Условия</th>
               <th style="width: 130px">Дата заключения</th>
               <th style="width: 170px">Период проката</th>
+              <th></th>
               <th *ngIf="isEdit"></th>
               <th *ngIf="isEdit"></th>
             </tr>
@@ -47,12 +47,12 @@
               <td>{{contract.movieId|manual:movies}}</td>
               <td>{{contract.firstSide|manual:distributors}}</td>
               <td>{{contract.secondSide|manual:distributors}}</td>
-              <td>
-                <span *ngIf="contract.condPercent">{{contract.condition + '/' + 100 - contract.condition}}</span>
-                <span *ngIf="!contract.condPercent">{{contract.condition + ' сум'}}</span>
-              </td>
               <td>{{contract.contDate|date: 'dd.MM.yyyy'}}</td>
               <td>{{contract.fromDate|date: 'dd.MM.yyyy'}} - {{contract.toDate|date: 'dd.MM.yyyy'}}</td>
+              <td style="width: 5%" class="text-center">
+                <span popover="Подробнее" triggers="mouseenter:mouseleave" class="fa fa-eye"
+                      [routerLink]="['detail', contract._id]"></span>
+              </td>
               <td *ngIf="isEdit" style="width: 5%" class="text-center" [routerLink]="['edit', contract._id]">
                 <span popover="Редактировать" triggers="mouseenter:mouseleave" class="fa fa-edit"></span>
               </td>
@@ -64,7 +64,7 @@
             </tbody>
           </table>
         </div>
-        <div class="box-footer text-right">
+        <div class="box-footer text-right" *ngIf="pagedItems.length != 0">
           <!-- pager -->
           <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
             <li [ngClass]="{disabled:pager.currentPage === 1}">
@@ -186,3 +186,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #noContracts>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одного договогора не добавлено;) Для того, чтобы добавить новый договогор нажмите кнопку
+      <span style="font-weight: bold">Новый договогор</span> в правом верхнем углу</span>
+  </div>
+</ng-template>

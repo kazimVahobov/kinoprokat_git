@@ -1,7 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ContractService, MovieService, MovieModel, PagerService, PermissionService, DistributorReportService, TheaterReportService } from 'src/app/core';
-import { ModalDirective } from "ngx-bootstrap";
-import { ContractModel, TheaterReportModel, DistributorReportModel } from "../../../core/models";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {
+  ContractService,
+  MovieService,
+  MovieModel,
+  PagerService,
+  PermissionService,
+  DistributorReportService,
+  TheaterReportService
+} from 'src/app/core';
+import {ModalDirective} from "ngx-bootstrap";
+import {ContractModel, TheaterReportModel, DistributorReportModel} from "../../../core/models";
 
 @Component({
   selector: 'app-cinema-list',
@@ -13,7 +21,7 @@ export class MovieListComponent implements OnInit {
   // pager object
   pager: any = {};
   // paged items
-  pagedItems: any[];
+  pagedItems: any[] = [];
   movies: MovieModel[];
   currentDate = new Date();
   @ViewChild('canDeleteModal') canDeleteModal: ModalDirective;
@@ -29,14 +37,14 @@ export class MovieListComponent implements OnInit {
 
   isEdit = false;
   isDelete = false;
-  isCreate = false
+  isCreate = false;
 
   constructor(private service: MovieService,
-    private contractService: ContractService,
-    private pagerService: PagerService,
-    private permissionService: PermissionService,
-    private distributorReportService: DistributorReportService,
-    private theaterReportService: TheaterReportService) {
+              private contractService: ContractService,
+              private pagerService: PagerService,
+              private permissionService: PermissionService,
+              private distributorReportService: DistributorReportService,
+              private theaterReportService: TheaterReportService) {
   }
 
   ngOnInit() {
@@ -64,7 +72,7 @@ export class MovieListComponent implements OnInit {
       this.contractService.getAll().subscribe(contracts => {
         this.contracts = [];
         this.contracts = contracts.filter(i => i.typeOfCont === 0);
-        if (this.contracts) {
+        if (this.contracts.length != 0) {
           this.contracts.forEach(contract => {
             this.movies.forEach(movie => {
               if (contract.movieId === movie._id) {
@@ -111,13 +119,13 @@ export class MovieListComponent implements OnInit {
             this.theaterReports = [];
             this.distributorReports = [];
             this.model = new reportModel();
-            this.model.contracts = [];
+            this.model.allContracts = [];
             this.model.deleteDistReport = [];
             this.model.updateDistReport = [];
             this.model.deleteTheaterReports = [];
             this.model.updateTheaterReports = [];
 
-            this.model.contracts = contracts.filter(c => c.movieId === this.movieForDelete._id)
+            this.model.allContracts = contracts.filter(c => c.movieId === this.movieForDelete._id)
             this.distributorReports = distReports;
             this.theaterReports = theaterReports.filter(th => th.withCont.some(w => w.movieId === this.movieForDelete._id));
 
@@ -139,22 +147,22 @@ export class MovieListComponent implements OnInit {
               }
 
               //DISTRIBUTOR REPORTS  
-              if (!this.theaterReports[i].withCont.length) {
-                for (let j = 0; j < this.distributorReports.length; j++) {
-                  for (let m = 0; m < this.distributorReports[j].theaterReports.length; m++) {
-                    if (this.distributorReports[j].theaterReports[m].theaterReportsId === this.theaterReports[i]._id) {
-                      this.distributorReports[j].theaterReports.splice(m, 1)
-                      m--;
-                    }
-                  }
-                  if (this.distributorReports[j].mobileTheaters.length || this.distributorReports[j].theaterReports.length) {
-                    this.model.updateDistReport.push(this.distributorReports[j])
-                  }
-                  if (!this.distributorReports[j].mobileTheaters.length && !this.distributorReports[j].theaterReports.length) {
-                    this.model.deleteDistReport.push(this.distributorReports[j])
-                  }
-                }
-              }
+              // if (!this.theaterReports[i].withCont.length) {
+              //   for (let j = 0; j < this.distributorReports.length; j++) {
+              //     for (let m = 0; m < this.distributorReports[j].theaterReports.length; m++) {
+              //       if (this.distributorReports[j].theaterReports[m].theaterReportsId === this.theaterReports[i]._id) {
+              //         this.distributorReports[j].theaterReports.splice(m, 1)
+              //         m--;
+              //       }
+              //     }
+              //     if (this.distributorReports[j].mobileTheaters.length || this.distributorReports[j].theaterReports.length) {
+              //       this.model.updateDistReport.push(this.distributorReports[j])
+              //     }
+              //     if (!this.distributorReports[j].mobileTheaters.length && !this.distributorReports[j].theaterReports.length) {
+              //       this.model.deleteDistReport.push(this.distributorReports[j])
+              //     }
+              //   }
+              // }
 
             }
 
@@ -168,21 +176,21 @@ export class MovieListComponent implements OnInit {
                   this.distributorReports[a].mobileTheaters.splice(j, 1);
                 }
               }
-              if (this.distributorReports[a].mobileTheaters.length || this.distributorReports[a].theaterReports.length) {
-                this.model.updateDistReport.push(this.distributorReports[a])
-              }
-              if (!this.distributorReports[a].mobileTheaters.length && !this.distributorReports[a].theaterReports.length) {
-                this.model.deleteDistReport.push(this.distributorReports[a])
-              }
+              // if (this.distributorReports[a].mobileTheaters.length || this.distributorReports[a].theaterReports.length) {
+              //   this.model.updateDistReport.push(this.distributorReports[a])
+              // }
+              // if (!this.distributorReports[a].mobileTheaters.length && !this.distributorReports[a].theaterReports.length) {
+              //   this.model.deleteDistReport.push(this.distributorReports[a])
+              // }
             }
             this.model.movieId = this.movieForDelete._id
 
             this.service.deleteAllData(this.model).subscribe(res => {
-              this.errorOnDelete = false;
-              this.closeModal();
-              alert(`Фильм ${this.movieForDelete.name} был успешно удалён`);
-              this.getAllCinema();
-            },
+                this.errorOnDelete = false;
+                this.closeModal();
+                alert(`Фильм ${this.movieForDelete.name} был успешно удалён`);
+                this.getAllCinema();
+              },
               error => {
                 this.errorOnDelete = false;
                 this.closeModal();
@@ -221,5 +229,5 @@ class reportModel {
   updateDistReport: DistributorReportModel[];
   deleteTheaterReports: TheaterReportModel[];
   updateTheaterReports: TheaterReportModel[];
-  contracts: ContractModel[];
+  allContracts: ContractModel[];
 }

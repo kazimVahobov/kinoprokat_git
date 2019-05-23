@@ -20,7 +20,7 @@ export class RegionListComponent implements OnInit {
 
   @ViewChild('editModal') editModal: ModalDirective;
   @ViewChild('canNotDeleteModal') canNotDeleteModal: ModalDirective;
-  regionList: RegionModel[];
+  regionList: RegionModel[] = [];
   mainLabel = 'Создание нового региона';
   secondLabel = 'Введите название нового региона';
   model: RegionModel;

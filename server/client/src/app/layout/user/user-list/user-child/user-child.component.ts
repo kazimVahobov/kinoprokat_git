@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {
   DistributorModel,
   DistributorService,
@@ -11,8 +11,8 @@ import {
   UserService,
   PermissionService
 } from 'src/app/core';
-import { ModalDirective } from "ngx-bootstrap";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import {ModalDirective} from "ngx-bootstrap";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-user-child',
@@ -22,7 +22,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 export class UserChildComponent implements OnInit {
 
   pager: any = {};
-  pagedItems: any[];
+  pagedItems: any[] = [];
   passError = false;
   form = new FormGroup({
     password: new FormControl(null, Validators.required),
@@ -43,11 +43,11 @@ export class UserChildComponent implements OnInit {
   isEditPass = false;
 
   constructor(private service: UserService,
-    private roleService: RoleService,
-    private pagerService: PagerService,
-    private theaterService: TheaterService,
-    private distributorService: DistributorService,
-    private permissionService: PermissionService
+              private roleService: RoleService,
+              private pagerService: PagerService,
+              private theaterService: TheaterService,
+              private distributorService: DistributorService,
+              private permissionService: PermissionService
   ) {
   }
 
@@ -107,32 +107,37 @@ export class UserChildComponent implements OnInit {
     this.service.getAll().subscribe(users => {
       this.distributorService.getAll().subscribe(distributors => {
         this.theaterService.getAll().subscribe(theaters => {
-          this.currentDistributor = distributors.find(i => i._id === this.currentUser.distId);
-          if (this.currentDistributor) {
-            this.theaters = theaters.filter(i => i.distId === this.currentDistributor._id);
-            if (this.currentDistributor.parentId) {
-              this.userList = users.filter(i => i.distId === this.currentDistributor._id);
-            } else {
-              this.distributors = distributors.filter(i => i.parentId === this.currentDistributor._id);
-              this.distributors.forEach(distributor => {
+
+          if (this.currentUser.userName === 'SuperAdmin') {
+            this.userList = users;
+          } else {
+            this.currentDistributor = distributors.find(i => i._id === this.currentUser.distId);
+            if (this.currentDistributor) {
+              this.theaters = theaters.filter(i => i.distId === this.currentDistributor._id);
+              if (this.currentDistributor.parentId) {
+                this.userList = users.filter(i => i.distId === this.currentDistributor._id);
+              } else {
+                this.distributors = distributors.filter(i => i.parentId === this.currentDistributor._id);
+                this.distributors.forEach(distributor => {
+                  for (let i = 0; i < users.length; i++) {
+                    if (users[i].distId === distributor._id) {
+                      this.userList.push(users[i]);
+                    }
+                  }
+                });
+              }
+              this.theaters.forEach(theater => {
                 for (let i = 0; i < users.length; i++) {
-                  if (users[i].distId === distributor._id) {
+                  if (users[i].theaterId === theater._id) {
                     this.userList.push(users[i]);
                   }
                 }
               });
+            } else {
+              this.currentTheater = theaters.find(i => i._id === this.currentUser.theaterId);
+              this.theaters = theaters.filter(i => i._id === this.currentTheater._id);
+              this.userList = users.filter(i => i.theaterId === this.currentTheater._id);
             }
-            this.theaters.forEach(theater => {
-              for (let i = 0; i < users.length; i++) {
-                if (users[i].theaterId === theater._id) {
-                  this.userList.push(users[i]);
-                }
-              }
-            });
-          } else {
-            this.currentTheater = theaters.find(i => i._id === this.currentUser.theaterId);
-            this.theaters = theaters.filter(i => i._id === this.currentTheater._id);
-            this.userList = users.filter(i => i.theaterId === this.currentTheater._id);
           }
           this.userList.reverse();
           this.roleService.getAll().subscribe(data => this.roles = data);

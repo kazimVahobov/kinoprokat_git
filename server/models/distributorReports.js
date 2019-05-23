@@ -6,13 +6,6 @@ const distributorReports = new Schema({
     date: { type: String, required: true },
     sent: { type: Boolean },
     confirm: { type: Boolean },
-    theaterReports: [
-        {
-            theaterReportsId: {
-                type: String
-            }
-        }
-    ],
     mobileTheaters: [
         {
             movieId: {
@@ -24,13 +17,19 @@ const distributorReports = new Schema({
             time: {
                 type: String
             },
-            sessionCount: {
+            daySession: {
+                type: Boolean
+            },
+            childTicketCount: {
                 type: Number
             },
-            price: {
+            adultTicketCount: {
                 type: Number
             },
-            ticketCount: {
+            childTicketPrice: {
+                type: Number
+            },
+            adultTicketPrice: {
                 type: Number
             }
         }

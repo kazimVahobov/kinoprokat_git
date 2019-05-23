@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const theaterReports = new Schema({
     theaterId: { type: String, required: true },
-    date: { type: String, required: true },
+    date: { type: Date, required: true },
     sent: { type: Boolean },
     confirm: { type: Boolean },
     withCont: [
@@ -20,10 +20,19 @@ const theaterReports = new Schema({
             sessionTime: {
                 type: String
             },
-            price: {
+            daySession: {
+                type: Boolean
+            },
+            childTicketCount: {
                 type: Number
             },
-            ticketCount: {
+            adultTicketCount: {
+                type: Number
+            },
+            childTicketPrice: {
+                type: Number
+            },
+            adultTicketPrice: {
                 type: Number
             }
         }
@@ -44,6 +53,6 @@ const theaterReports = new Schema({
             }
         }
     ]
-})
+});
 
 module.exports = mongoose.model('theaterReports', theaterReports)

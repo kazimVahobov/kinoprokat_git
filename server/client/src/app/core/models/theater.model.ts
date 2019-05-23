@@ -15,7 +15,7 @@ export class TheaterModel extends BaseModel {
   ticketLic: boolean;
   holes: HoleModel[];
   workTime: DayModel[];
-  canDelete?: boolean;
+  canDelete?: boolean = true;
   regionId: string;
   dcpCode:string;
 }

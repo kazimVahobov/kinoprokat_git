@@ -6,6 +6,7 @@ import {ContractSListComponent} from './contract-s-list/contract-s-list.componen
 import {ContractSFormComponent} from './contract-s-form/contract-s-form.component';
 import {ContractSComponent} from './contract-s.component';
 import {SharedModule} from '../../shared';
+import { ContSDetailComponent } from './cont-s-detail/cont-s-detail.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import {SharedModule} from '../../shared';
     ContractSRoutingModule,
     SharedModule
   ],
-  declarations: [ContractSComponent, ContractSListComponent, ContractSFormComponent]
+  declarations: [ContractSComponent, ContractSListComponent, ContractSFormComponent, ContSDetailComponent]
 })
 export class ContractSModule {
 }

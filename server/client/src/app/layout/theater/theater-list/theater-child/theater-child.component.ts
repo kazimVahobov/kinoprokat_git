@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {
   ContractService,
   ContractModel,
@@ -15,7 +15,7 @@ import {
   RegionService,
   RegionModel
 } from 'src/app/core';
-import { ModalDirective } from "ngx-bootstrap";
+import {ModalDirective} from "ngx-bootstrap";
 
 @Component({
   selector: 'app-theater-child',
@@ -27,7 +27,7 @@ export class TheaterChildComponent implements OnInit {
   users: UserModel[] = [];
   theaterList: TheaterModel[] = [];
   pager: any = {};
-  pagedItems: any[];
+  pagedItems: any[] = [];
   currentUser = JSON.parse(localStorage.getItem('user'));
 
   model: reportModel;
@@ -45,27 +45,27 @@ export class TheaterChildComponent implements OnInit {
   isDelete = false;
   isEdit = false;
 
-regions: RegionModel[];
+  regions: RegionModel[];
 
   constructor(private service: TheaterService,
-    private userService: UserService,
-    private contractService: ContractService,
-    private pagerService: PagerService,
-    private permissionService: PermissionService,
-    private theaterReportService: TheaterReportService,
-    private distReportService: DistributorReportService,
-    private regionService: RegionService
+              private userService: UserService,
+              private contractService: ContractService,
+              private pagerService: PagerService,
+              private permissionService: PermissionService,
+              private theaterReportService: TheaterReportService,
+              private distReportService: DistributorReportService,
+              private regionService: RegionService
   ) {
   }
 
 
   ngOnInit() {
     this.getAllTheater();
-    
+
     this.regions = [];
     this.regionService.getAll().subscribe(regions => {
       this.regions = regions;
-    })
+    });
 
     if (this.permissionService.theaters) {
       for (let i = 0; i < this.permissionService.theaters.length; i++) {
@@ -88,21 +88,25 @@ regions: RegionModel[];
           this.users = users;
           this.users.forEach(i => i.lastName += ` ${i.firstName ? i.firstName : ''} ${i.middleName ? i.middleName.substring(0, 1) : ''}. (${i.phone ? i.phone : ''})`);
           this.theaterList = theaters.filter(i => i.distId === this.currentUser.distId).reverse();
-          this.contracts.forEach(cont => {
-            this.theaterList.forEach(theater => {
-              if (cont.secondSide === theater._id) {
-                if (this.currentDate < new Date(cont.toDate)) {
-                  theater.canDelete = false;
-                } else if (this.currentDate > new Date(cont.toDate)) {
-                  if (theater.canDelete !== false) {
-                    theater.canDelete = true;
+          if (this.contracts.length != 0) {
+            this.contracts.forEach(cont => {
+              this.theaterList.forEach(theater => {
+                if (cont.secondSide === theater._id) {
+                  if (this.currentDate < new Date(cont.toDate)) {
+                    theater.canDelete = false;
+                  } else if (this.currentDate > new Date(cont.toDate)) {
+                    if (theater.canDelete !== false) {
+                      theater.canDelete = true;
+                    }
                   }
+                } else if (!this.contracts.some(i => i.secondSide === theater._id)) {
+                  theater.canDelete = true;
                 }
-              } else if (!this.contracts.some(i => i.secondSide === theater._id)) {
-                theater.canDelete = true;
-              }
+              });
             });
-          });
+          } else {
+            this.theaterList.forEach(th => th.canDelete = true);
+          }
           this.setPage(1);
         });
       });
@@ -130,41 +134,41 @@ regions: RegionModel[];
 
             this.theaterReports = [];
             this.distributorReports = [];
-            this.model =  new reportModel();
-            this.model.contracts = [];
+            this.model = new reportModel();
+            this.model.allContracts = [];
             this.model.deleteDistReport = [];
             this.model.updateDistReport = [];
             this.model.deleteTheaterReports = [];
 
-            this.model.contracts = contracts.filter(c => c.secondSide === this.theaterForDelete._id);
+            this.model.allContracts = contracts.filter(c => c.secondSide === this.theaterForDelete._id);
             this.distributorReports = distReports;
             this.theaterReports = theaterReports.filter(th => th.theaterId === this.theaterForDelete._id)
 
-            for(let i = 0; i<this.theaterReports.length; i++) {
+            for (let i = 0; i < this.theaterReports.length; i++) {
               for (let j = 0; j < this.distributorReports.length; j++) {
-                for (let m = 0; m < this.distributorReports[j].theaterReports.length; m++) {
-                  if (this.distributorReports[j].theaterReports[m].theaterReportsId === this.theaterReports[i]._id) {
-                    this.distributorReports[j].theaterReports.splice(m, 1)
-                    m--;
-                  }
-                }
-                if (this.distributorReports[j].mobileTheaters.length || this.distributorReports[j].theaterReports.length) {
-                  this.model.updateDistReport.push(this.distributorReports[j])
-                }
-                if (!this.distributorReports[j].mobileTheaters.length && !this.distributorReports[j].theaterReports.length) {
-                  this.model.deleteDistReport.push(this.distributorReports[j])
-                }
+                // for (let m = 0; m < this.distributorReports[j].theaterReports.length; m++) {
+                //   if (this.distributorReports[j].theaterReports[m].theaterReportsId === this.theaterReports[i]._id) {
+                //     this.distributorReports[j].theaterReports.splice(m, 1)
+                //     m--;
+                //   }
+                // }
+                // if (this.distributorReports[j].mobileTheaters.length || this.distributorReports[j].theaterReports.length) {
+                //   this.model.updateDistReport.push(this.distributorReports[j])
+                // }
+                // if (!this.distributorReports[j].mobileTheaters.length && !this.distributorReports[j].theaterReports.length) {
+                //   this.model.deleteDistReport.push(this.distributorReports[j])
+                // }
               }
             }
             this.model.theaterId = this.theaterForDelete._id;
             this.model.deleteTheaterReports = this.theaterReports;
 
             this.service.deleteAllData(this.model).subscribe(res => {
-              this.errorOnDelete = false;
-              this.closeModal();
-              alert(`Кинотеатр ${this.theaterForDelete.name} был успешно удалён`);
-              this.getAllTheater();
-            },
+                this.errorOnDelete = false;
+                this.closeModal();
+                alert(`Кинотеатр ${this.theaterForDelete.name} был успешно удалён`);
+                this.getAllTheater();
+              },
               error => {
                 this.errorOnDelete = false;
                 this.closeModal();
@@ -205,5 +209,5 @@ class reportModel {
   deleteDistReport: DistributorReportModel[];
   updateDistReport: DistributorReportModel[];
   deleteTheaterReports: TheaterReportModel[];
-  contracts: ContractModel[];
+  allContracts: ContractModel[];
 }

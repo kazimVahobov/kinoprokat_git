@@ -7,3 +7,21 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+.panel {
+  border-color: transparent;
+  border-radius: 3px;
+  .panel-heading {
+    background-color: #ffffff;
+  }
+  .panel-body {
+    border-color: #ffffff;
+  }
+}
+
+.panel-info {
+  border-top: 3px solid #00c0ef !important;
+}
+.panel-success {
+  border-top: 3px solid #00a65a !important;
+}

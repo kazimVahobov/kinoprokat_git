@@ -6,6 +6,7 @@ import {ContractFFormComponent} from './contract-f-form/contract-f-form.componen
 import {ContractFListComponent} from './contract-f-list/contract-f-list.component';
 import {ContractFComponent} from './contract-f.component';
 import {SharedModule} from '../../shared';
+import { ContFDetailComponent } from './cont-f-detail/cont-f-detail.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import {SharedModule} from '../../shared';
     ContractFRoutingModule,
     SharedModule
   ],
-  declarations: [ContractFComponent, ContractFFormComponent, ContractFListComponent]
+  declarations: [ContractFComponent, ContractFFormComponent, ContractFListComponent, ContFDetailComponent]
 })
 export class ContractFModule {
 }

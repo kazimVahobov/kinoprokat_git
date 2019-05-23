@@ -2,7 +2,7 @@
   <h1 style="display: inline;">
     Дистрибьюторы
   </h1>
-  <button *ngIf="isCreate"  [routerLink]="['new']" class="btn btn-success pull-right">
+  <button *ngIf="isCreate" [routerLink]="['new']" class="btn btn-success pull-right">
     <span class="fa fa-plus" style="margin-right: 5px"></span>
     Новый дистрибьютор
   </button>
@@ -12,7 +12,7 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-body" style="padding: 0">
-          <table class="table table-bordered table-hover">
+          <table class="table table-bordered table-hover" *ngIf="pagedItems.length != 0 else noDistributors">
             <thead>
             <tr>
               <th>Название</th>
@@ -37,18 +37,21 @@
               <td style="width: 5%" class="text-center" [routerLink]="['detail', dist._id]">
                 <span popover="Подробнее" triggers="mouseenter:mouseleave" class="fa fa-eye"></span>
               </td>
-              <td style="width: 5%" class="text-center" [routerLink]="['edit', dist._id]">
-                <span *ngIf="isEdit"  popover="Редактировать" triggers="mouseenter:mouseleave" class="fa fa-edit"></span>
+              <td style="width: 5%"
+                  class="text-center"
+                  *ngIf="isEdit">
+                <span popover="Редактировать" triggers="mouseenter:mouseleave" class="fa fa-edit"
+                      [routerLink]="['edit', dist._id]"></span>
               </td>
-              <td style="width: 5%" class="text-center">
-                <span *ngIf="isDelete"  popover="Удалить" triggers="mouseenter:mouseleave" class="fa fa-trash"
+              <td style="width: 5%" class="text-center" *ngIf="isDelete">
+                <span popover="Удалить" triggers="mouseenter:mouseleave" class="fa fa-trash"
                       (click)='openModal(dist)'></span>
               </td>
             </tr>
             </tbody>
           </table>
         </div>
-        <div class="box-footer">
+        <div class="box-footer" *ngIf="pagedItems.length != 0">
           <!-- pager -->
           <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
             <li [ngClass]="{disabled:pager.currentPage === 1}">
@@ -184,3 +187,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #noDistributors>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одного дистрибьютора не добавлено;) Для того, чтобы добавить нового дистрибьютора нажмите кнопку
+      <span style="font-weight: bold">Новый дистртибьютор</span> в правом верхнем углу</span>
+  </div>
+</ng-template>

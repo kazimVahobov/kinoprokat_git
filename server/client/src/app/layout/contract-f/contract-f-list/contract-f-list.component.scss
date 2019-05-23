@@ -1,9 +1,16 @@
 .fa-edit,
 .fa-trash,
+.fa-eye,
 .fa-plus {
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 5px 4px 4px 5px;
+}
+
+.fa-eye:hover {
+  border: 1px solid rgb(110, 168, 255);
+  color: rgb(110, 168, 255);;
+  cursor: pointer;
 }
 
 .fa-edit:hover {

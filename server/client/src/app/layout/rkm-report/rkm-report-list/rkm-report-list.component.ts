@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 
 @Component({
   selector: 'app-rkm-report-list',
@@ -7,8 +7,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class RkmReportListComponent implements OnInit, OnDestroy {
 
-
-  roleType: number;
   modes = [
     {
       value: 0,
@@ -25,7 +23,7 @@ export class RkmReportListComponent implements OnInit, OnDestroy {
 
   currentDate: Date;
 
-  currentDateforDist: Date;
+  currentDateForDist: Date;
 
   constructor() {
   }
@@ -47,20 +45,20 @@ export class RkmReportListComponent implements OnInit, OnDestroy {
           this.currentDate = new Date(this.filterReport.currentDate);
         }
         if (this.currentMode === 0) {
-          this.currentDateforDist = new Date(this.filterReport.currentDate);
+          this.currentDateForDist = new Date(this.filterReport.currentDate);
         }
       }
       localStorage.removeItem('filterReport');
     } else {
       this.currentDate = null
-      this.currentDateforDist = null
+      this.currentDateForDist = null
     }
   }
 
 
-  clearDatapicker() {
+  clearDataPicker() {
     if (this.currentMode === 0) {
-      this.currentDateforDist = null;
+      this.currentDateForDist = null;
     } else if (this.currentMode === 1) {
       this.currentDate = null;
     }
