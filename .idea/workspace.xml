@@ -6,24 +6,8 @@
     <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" line="189" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="dash-dist and dash-theater components completed">
+    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/core/services/distributor-report.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/core/services/distributor-report.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/core/services/statistic.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/core/services/statistic.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/core/services/theater-report.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/core/services/theater-report.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-guest/dash-guest.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-guest/dash-guest.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,34 +20,9 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="220" column="52" lean-forward="true" selection-start-line="220" selection-start-column="52" selection-end-line="220" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="193" column="19" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/distributor-report.model.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="18" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="18" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/server/app.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -129,10 +88,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -210,27 +167,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="distributor-report" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="distributor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="distributor-report-form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
@@ -333,7 +269,9 @@
       <workItem from="1557909730860" duration="69705000" />
       <workItem from="1558161101847" duration="24578000" />
       <workItem from="1558328390201" duration="29578000" />
-      <workItem from="1558416135411" duration="24841000" />
+      <workItem from="1558416135411" duration="24978000" />
+      <workItem from="1558500969264" duration="4739000" />
+      <workItem from="1558593199185" duration="931000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -454,11 +392,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558417018929</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="all parts except the guest dashboard are absolutely ready. Guest dashboard will be completed after release">
+      <created>1558449458275</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1558449458275</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363259000" />
+    <option name="totallyTimeSpent" value="369066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -477,7 +422,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5714286" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.361167" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -505,42 +450,10 @@
     <MESSAGE value="added sorting by date to unconfirmed reports" />
     <MESSAGE value="refactoring os statistic service" />
     <MESSAGE value="dash-dist and dash-theater components completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="dash-dist and dash-theater components completed" />
+    <MESSAGE value="all parts except the guest dashboard are absolutely ready. Guest dashboard will be completed after release" />
+    <option name="LAST_COMMIT_MESSAGE" value="all parts except the guest dashboard are absolutely ready. Guest dashboard will be completed after release" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/routes/theaterReports.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="109" selection-start-line="15" selection-start-column="109" selection-end-line="15" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="17" />
-          <folding>
-            <element signature="e#288#769#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="50" column="3" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
-          <folding>
-            <element signature="e#288#769#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/shared/pipes/manual.pipe.spec.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/shared/pipes/sum.pipe.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/shared/index.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -943,16 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/layout-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="32" column="84" selection-start-line="32" selection-start-column="84" selection-end-line="32" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
@@ -1104,6 +1007,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5060">
+          <caret line="220" column="52" selection-start-line="220" selection-start-column="52" selection-end-line="220" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3910">
+          <caret line="184" column="38" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/layout.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/layout-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="32" column="84" selection-start-line="32" selection-start-column="84" selection-end-line="32" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/distributor-report.model.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1111,22 +1065,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="220" column="52" lean-forward="true" selection-start-line="220" selection-start-column="52" selection-end-line="220" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="193" column="19" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/server/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
