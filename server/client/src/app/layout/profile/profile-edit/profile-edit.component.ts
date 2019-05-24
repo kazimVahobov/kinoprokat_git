@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserService, UserModel} from 'src/app/core';
+import {UserService} from 'src/app/core';
 
 @Component({
   selector: 'app-edit-profile',
@@ -9,7 +9,6 @@ import {UserService, UserModel} from 'src/app/core';
 })
 export class ProfileEditComponent implements OnInit {
 
-  model: UserModel;
   userForm: FormGroup;
   currentUser = JSON.parse(localStorage.getItem('user'));
 
@@ -17,30 +16,45 @@ export class ProfileEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.model = new UserModel();
+    this.createForm();
     this.userService.getById(this.currentUser._id).subscribe(user => {
-      this.model = user;
-      this.createForm();
+      this.fillForm(user);
     });
   }
 
   createForm() {
     this.userForm = new FormGroup({
-      firstName: new FormControl(this.model.firstName, Validators.required),
-      lastName: new FormControl(this.model.lastName, Validators.required),
-      middleName: new FormControl(this.model.middleName, Validators.required),
-      phone: new FormControl(this.model.phone),
-      email: new FormControl(this.model.email)
+      firstName: new FormControl(null, Validators.required),
+      lastName: new FormControl(null, Validators.required),
+      middleName: new FormControl(null),
+      phone: new FormControl(null),
+      email: new FormControl(null)
     });
   }
 
+  fillForm(model: any) {
+    this.userForm.controls['firstName'].setValue(model.firstName);
+    this.userForm.controls['lastName'].setValue(model.lastName);
+    this.userForm.controls['middleName'].setValue(model.middleName);
+    this.userForm.controls['phone'].setValue(model.phone);
+    this.userForm.controls['email'].setValue(model.email);
+  }
+
   onSubmit() {
-    this.model.lastName = this.userForm.controls['lastName'].value.toString();
-    this.model.firstName = this.userForm.controls['firstName'].value.toString();
-    this.model.middleName = this.userForm.controls['middleName'].value.toString();
-    this.model.phone = this.userForm.controls['phone'].value.toString();
-    this.model.email = this.userForm.controls['email'].value.toString();
-    this.userService.update(this.model).subscribe(res => {
+    let model: any = {};
+    model._id = this.currentUser._id;
+    model.lastName = this.userForm.controls['lastName'].value.toString();
+    model.firstName = this.userForm.controls['firstName'].value.toString();
+    if (this.userForm.controls['middleName'].value) {
+      model.middleName = this.userForm.controls['middleName'].value.toString();
+    }
+    if (this.userForm.controls['phone'].value) {
+      model.phone = this.userForm.controls['phone'].value.toString();
+    }
+    if (this.userForm.controls['email'].value) {
+      model.email = this.userForm.controls['email'].value.toString();
+    }
+    this.userService.update(model).subscribe(res => {
       alert('Все изменения успешно сохранены');
       this.userService.editUser();
     });

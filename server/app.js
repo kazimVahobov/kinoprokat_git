@@ -66,4 +66,4 @@ app.get('/', (req, res) => {
 
 const port = process.env.PORT || keys.PORT;
 
-app.listen(8080, '185.196.214.54', () => console.log(`Server has been started on ${port}`))
+app.listen(port, () => console.log(`Server has been started on ${port}`))

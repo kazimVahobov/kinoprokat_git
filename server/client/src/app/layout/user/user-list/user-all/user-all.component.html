@@ -33,7 +33,7 @@
       </tbody>
     </table>
   </div>
-  <div class="box-footer" *ngIf="pagedItems.length > 1">
+  <div class="box-footer" *ngIf="pagedItems.length != 0">
     <!-- pager -->
     <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
       <li [ngClass]="{disabled:pager.currentPage === 1}">

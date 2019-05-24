@@ -34,9 +34,9 @@
         <div class="box-body">
           <ul style="margin-bottom: 10px;" class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#profile">Личные данные</a></li>
-            <li><a data-toggle="tab" href="#changeProfile">Редактировать данные</a></li>
-            <li><a data-toggle="tab" href="#avatar">Сменить аватар</a></li>
-            <li><a data-toggle="tab" href="#password">Изменить пароль</a></li>
+            <li><a data-toggle="tab" href="#changeProfile" (click)="isEdit = true">Редактировать данные</a></li>
+            <li><a data-toggle="tab" href="#avatar" (click)="isAvatar = true">Сменить аватар</a></li>
+            <li><a data-toggle="tab" href="#password" (click)="isPwd = true">Изменить пароль</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="profile">
@@ -59,13 +59,13 @@
               </ul>
             </div>
             <div class="tab-pane" id="changeProfile">
-              <app-edit-profile></app-edit-profile>
+              <app-edit-profile *ngIf="isEdit"></app-edit-profile>
             </div>
             <div class="tab-pane" id="avatar">
-              <app-edit-avatar></app-edit-avatar>
+              <app-edit-avatar *ngIf="isAvatar"></app-edit-avatar>
             </div>
             <div class="tab-pane" id="password">
-              <app-edit-password></app-edit-password>
+              <app-edit-password *ngIf="isPwd"></app-edit-password>
             </div>
           </div>
         </div>

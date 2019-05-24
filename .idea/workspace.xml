@@ -6,9 +6,14 @@
     <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" line="189" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
+    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="successfully build blin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-all/user-all.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-all/user-all.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,41 +24,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/server/app.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="316">
-                    <caret line="58" column="74" lean-forward="true" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/app.component.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            <state relative-caret-position="335">
+              <caret line="37" column="101" lean-forward="true" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="101" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-avatar-edit/profile-avatar-edit.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s.component.ts">
+        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="13" selection-end-column="1" />
+            <state relative-caret-position="253">
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,18 +71,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.scss" />
-        <option value="$PROJECT_DIR$/server/client/src/app/core/services/year-list.service.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/core/services/index.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/styles.scss" />
         <option value="$PROJECT_DIR$/server/routes/theater.js" />
         <option value="$PROJECT_DIR$/server/controllers/theater.js" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.ts" />
         <option value="$PROJECT_DIR$/server/models/theaterReports.js" />
         <option value="$PROJECT_DIR$/server/controllers/theaterReports.js" />
         <option value="$PROJECT_DIR$/server/routes/theaterReports.js" />
@@ -86,9 +82,6 @@
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.scss" />
         <option value="$PROJECT_DIR$/server/client/src/app/shared/shared.module.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/shared/pipes/month.pipe.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.html" />
@@ -107,29 +100,42 @@
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/core/services/theater-report.service.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/core/services/distributor-report.service.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-guest/dash-guest.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts" />
-        <option value="$PROJECT_DIR$/server/app.js" />
         <option value="$PROJECT_DIR$/server/client/src/environments/environment.prod.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/components/sidebar/sidebar.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts" />
+        <option value="$PROJECT_DIR$/server/app.js" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-all/user-all.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-password-edit/profile-password-edit.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.ts" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.html" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/profile/profile-avatar-edit/profile-avatar-edit.component.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,24 +186,80 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="contract-s" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="profile-avatar-edit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="profile-settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="theater" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="theater" type="462c0819:PsiDirectoryNode" />
+              <item name="theater-form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../finderuz/apps/web/FinderUz.Web/ClientApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="D:\Angular\kinoprokat_git\server\client\node_modules\tslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="D:\Angular\kinoprokat_git\server\client\node_modules\typescript\lib" />
   </component>
   <component name="RunDashboard">
@@ -251,7 +313,9 @@
       <workItem from="1558328390201" duration="29578000" />
       <workItem from="1558416135411" duration="24978000" />
       <workItem from="1558500969264" duration="4739000" />
-      <workItem from="1558593199185" duration="3282000" />
+      <workItem from="1558593199185" duration="7509000" />
+      <workItem from="1558645238390" duration="846000" />
+      <workItem from="1558676361061" duration="5858000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -400,11 +464,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558599720310</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Merge branch 'master' of https://github.com/kazimVahobov/kinoprokat_git&#10;&#10;# Conflicts:&#10;#&#9;server/client/src/app/app.component.ts">
+      <created>1558599746792</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1558599746792</updated>
+    </task>
+    <task id="LOCAL-00023" summary="successfully build blin">
+      <created>1558600746644</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1558600746644</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371417000" />
+    <option name="totallyTimeSpent" value="382348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -412,7 +490,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.24973656" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.20495258" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.20442571" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897383" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -420,10 +498,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32997987" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32997987" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.36016098" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3672032" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -455,262 +533,153 @@
     <MESSAGE value="preparing before deploy to server" />
     <MESSAGE value="created constructor and implement ngOnInit on app.component" />
     <MESSAGE value="Merge branch 'master' of https://github.com/kazimVahobov/kinoprokat_git&#10;&#10;# Conflicts:&#10;#&#9;server/client/src/app/app.component.ts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/kazimVahobov/kinoprokat_git&#10;&#10;# Conflicts:&#10;#&#9;server/client/src/app/app.component.ts" />
+    <MESSAGE value="successfully build blin" />
+    <option name="LAST_COMMIT_MESSAGE" value="successfully build blin" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.html">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+        <state relative-caret-position="483">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
           <folding>
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/pager.service.ts">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="71" column="60" lean-forward="true" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
+        <state relative-caret-position="680">
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
-            <element signature="e#2254#2891#0" />
-            <element signature="e#2301#2879#0" />
-            <element signature="e#2396#2732#0" />
-            <element signature="e#2897#2999#0" />
-            <element signature="n#!!block;n#deleteMovie#0;n#MovieListComponent#0" />
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#!!block;n#detailRouter#0;n#DashRkmComponent#0" />
+            <element signature="n#!!block;n#setPage#0;n#DashRkmComponent#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-list/movie-list.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="47" column="116" selection-start-line="47" selection-start-column="94" selection-end-line="47" selection-end-column="116" />
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
-            <element signature="n#!!block;n#ngOnInit#0;n#StatisticTheaterComponent#0" />
-            <element signature="n#!!block;n#changeMovie#0;n#StatisticTheaterComponent#0" />
-            <element signature="n#!!block;n#changeYear#0;n#StatisticTheaterComponent#0" />
-            <element signature="n#!!block;n#print#0;n#StatisticTheaterComponent#0" />
-            <element signature="n#!!block;n#resetFilters#0;n#StatisticTheaterComponent#0" />
+            <element signature="n#!!block;n#changeMovie#0;n#DashTheaterComponent#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-888">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="74" column="130" selection-start-line="74" selection-start-column="109" selection-end-line="74" selection-end-column="130" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="n#!!block;n#changeTheater#0;n#StatisticDistComponent#0" />
-            <element signature="n#!!block;n#changeMovie#0;n#StatisticDistComponent#0" />
-            <element signature="n#!!block;n#changeYear#0;n#StatisticDistComponent#0" />
-            <element signature="n#!!block;n#print#0;n#StatisticDistComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-list.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="193" column="68" selection-start-line="193" selection-start-column="68" selection-end-line="193" selection-end-column="68" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="183" column="73" lean-forward="true" selection-start-line="183" selection-start-column="73" selection-end-line="183" selection-end-column="73" />
-          <folding>
-            <element signature="n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.html">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="62" column="60" selection-start-line="62" selection-start-column="60" selection-end-line="62" selection-end-column="60" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
-            <element signature="n#!!block;n#backPage#0;n#UnconfirmedReportsComponent#0" />
-            <element signature="e#1851#2154#0" />
-            <element signature="n#!!block;n#confirmReport#0;n#UnconfirmedReportsComponent#0" />
-            <element signature="n#!!block;n#cancelReport#0;n#UnconfirmedReportsComponent#0" />
-            <element signature="n#!!block;n#detailRouter#0;n#UnconfirmedReportsComponent#0" />
-            <element signature="n#!!block;n#setPage#0;n#UnconfirmedReportsComponent#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/theater-report.model.ts">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3808">
+          <caret line="184" column="38" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/in-report/in-report.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/out-report/out-report.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276">
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-list/distributor-report-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-cont-detail/movie-cont-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="148" column="22" lean-forward="true" selection-start-line="148" selection-start-column="22" selection-end-line="196" selection-end-column="24" />
+        <state>
           <folding>
-            <element signature="n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#section#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.html">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-contracts/movie-contracts.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="33" column="57" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="55" />
+        <state>
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.scss">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-235">
-          <caret line="12" selection-start-line="12" selection-end-line="30" />
+        <state relative-caret-position="690">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
           <folding>
-            <element signature="e#16#55#0" />
-            <element signature="e#66#98#0" />
-            <element signature="e#112#134#0" />
+            <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.scss">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-detail.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="74" column="1" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
+        <state>
           <folding>
-            <element signature="e#16#55#0" />
-            <element signature="e#66#98#0" />
-            <element signature="e#112#134#0" />
-            <element signature="e#146#565#0" />
-            <element signature="e#579#1406#0" />
-            <element signature="e#802#1215#0" />
-            <element signature="e#1284#1404#0" />
+            <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.html">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="73" selection-end-column="16" />
+        <state relative-caret-position="1436">
+          <caret line="82" column="70" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
           <folding>
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/theater.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="true" />
+            <element signature="n#!!block;n#detailRouter#0;n#DistInReportComponent#0" />
+            <element signature="n#!!block;n#actionReport#0;n#DistInReportComponent#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
+        <state relative-caret-position="1419">
           <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
@@ -722,71 +691,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="791">
-          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" selection-start-line="1" selection-end-line="30" selection-end-column="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.ts">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="82" column="70" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
+        <state relative-caret-position="644">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
-            <element signature="n#!!block;n#detailRouter#0;n#DistInReportComponent#0" />
-            <element signature="n#!!block;n#actionReport#0;n#DistInReportComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="55" column="58" lean-forward="true" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
-          <folding>
-            <element signature="n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/statistic.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="397" column="2" selection-start-line="397" selection-start-column="2" selection-end-line="397" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#458#1061#0" />
-            <element signature="e#1080#1354#0" />
-            <element signature="n#!!block;n#filterByMovieId#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#getMoviesByTheaterId#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#filterByOneDistId#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#getMoviesWithNameByThReports#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#getMoviesWithNameByDistId#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#getTheatersWithName#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#getOverallDataOfMovie#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#getMovieDividedByDist#0;n#StatisticService#0" />
-            <element signature="e#21661#21683#0" />
-            <element signature="e#23660#23690#0" />
-            <element signature="e#23982#24012#0" />
-            <element signature="n#!!block;n#selectingOfReports#0;n#StatisticService#0" />
-            <element signature="n#!!block;n#generateKeyByDate#0;n#StatisticService#0" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="62" column="83" lean-forward="true" selection-start-line="62" selection-start-column="83" selection-end-line="63" selection-end-column="87" />
+        <state relative-caret-position="138">
+          <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
             <element signature="n#!!block;n#changeDist#0;n#StatisticRkmComponent#0" />
@@ -800,276 +724,255 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/theater-report.service.ts">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="52" column="140" lean-forward="true" selection-start-line="52" selection-start-column="108" selection-end-line="52" selection-end-column="140" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#getByFilter#0;n#TheaterReportService#0" />
-            <element signature="n#!!block;n#getByTheaterId#0;n#TheaterReportService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/distributor-report.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="50" column="142" selection-start-line="50" selection-start-column="142" selection-end-line="50" selection-end-column="142" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#getByFilter#0;n#DistributorReportService#0" />
-            <element signature="n#!!block;n#getByDistId#0;n#DistributorReportService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="56" column="14" lean-forward="true" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="n#!!block;n#detailRouter#0;n#DashRkmComponent#0" />
-            <element signature="n#!!block;n#setPage#0;n#DashRkmComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#h3#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ng-select#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#input#0;n#label#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#ngx-charts-bar-vertical#0;n#div#2;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#ngx-charts-bar-vertical#0;n#div#3;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#3;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#3;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#3;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#ng-template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#ng-template#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#ng-template#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="n#!!block;n#changeMovie#0;n#DashTheaterComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="68" column="18" lean-forward="true" selection-start-line="68" selection-start-column="18" selection-end-line="69" selection-end-column="132" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#ng-select#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/components/sidebar/sidebar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="51" column="79" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="70" column="69" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
-          <folding>
-            <element signature="n#section#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ng-select#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ng-select#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#5;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#h3#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1321">
-          <caret line="47" column="60" lean-forward="true" selection-start-line="47" selection-start-column="60" selection-end-line="48" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="e#996#1032#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-guest/dash-guest.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-guest/dash-guest.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18019">
+        <state relative-caret-position="667">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5060">
-          <caret line="220" column="52" selection-start-line="220" selection-start-column="52" selection-end-line="220" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/distributor-report/distributor-report-form/distributor-report-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3910">
-          <caret line="184" column="38" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/layout.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/layout-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="32" column="84" selection-start-line="32" selection-start-column="84" selection-end-line="32" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/package.json">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-list.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/models/distributor-report.model.ts">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="18" />
+        <state>
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/environments/environment.ts">
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-list/theater-report-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="-207">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/environments/environment.prod.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        <state relative-caret-position="138">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/tsconfig.spec.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/tslint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2245" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/tslint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="58" column="74" lean-forward="true" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/contract-s/contract-s.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="13" selection-end-column="1" />
+        <state relative-caret-position="772">
+          <caret line="68" column="73" lean-forward="true" selection-start-line="68" selection-start-column="73" selection-end-line="68" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state relative-caret-position="92">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/layout.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="63" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/layout-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/user/user-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-all/user-all.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-all/user-all.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1275">
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="55" column="2" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/core/services/base/entity.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile-institution/edit-theater/edit-theater.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater/theater-form/theater-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-password-edit/profile-password-edit.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-368">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1265">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-password-edit/profile-password-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-414">
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="37" column="101" lean-forward="true" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="101" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-avatar-edit/profile-avatar-edit.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

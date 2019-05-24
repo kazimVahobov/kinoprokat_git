@@ -8,6 +8,10 @@ import {UserService} from 'src/app/core';
 })
 export class ProfileSettingsComponent implements OnInit {
 
+  isEdit: boolean = false;
+  isPwd: boolean = false;
+  isAvatar: boolean = false;
+
 
   constructor(public userService: UserService) {}
   ngOnInit() {
