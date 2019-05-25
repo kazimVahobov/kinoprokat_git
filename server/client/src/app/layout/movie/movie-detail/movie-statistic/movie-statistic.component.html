@@ -60,7 +60,7 @@
       </p>
     </div>
     <div class="col-md-12" style="padding: 0;" >
-      <table class="table table-hover table-bordered table-dark-bordered">
+      <table class="table table-hover table-bordered table-dark-bordered" *ngIf="listOfReports.length != 0 else noReports" >
         <thead>
         <tr>
           <th rowspan="3" class="text-center">Дата</th>
@@ -130,3 +130,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #noReports>
+  <div style="width: 100%; height: 150px; padding-top: 70px;" class="text-center">
+    <span>Пока ни одного отчёта по указанному фильму не обнаружено;)</span>
+  </div>
+</ng-template>

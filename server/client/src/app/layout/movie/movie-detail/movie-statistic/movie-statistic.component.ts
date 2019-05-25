@@ -45,6 +45,7 @@ export class MovieStatisticComponent implements OnInit {
   changeDist() {
     if (this.selectedDistId != null) {
       this.theaterService.getAll().subscribe(theaters => {
+        this.selectedTheaterId = null;
         this.theaters = theaters.filter(item => item.distId === this.selectedDistId);
       });
       this.loadMainFilter(this.selectedDistId);

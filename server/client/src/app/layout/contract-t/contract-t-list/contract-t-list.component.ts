@@ -46,11 +46,11 @@ export class ContractTListComponent implements OnInit {
     });
 
     if (this.permissionService.contractDist) {
-      for (let i = 0; i < this.permissionService.contractDist.length; i++) {
-        if (this.permissionService.contractDist[i].value === 0) {
-          this.isCreate = true;
-        }
-      }
+      // for (let i = 0; i < this.permissionService.contractDist.length; i++) {
+      //   if (this.permissionService.contractDist[i].value === 0) {
+      //     this.isCreate = true;
+      //   }
+      // }
       if (this.permissionService.contractTheater) {
         for (let i = 0; i < this.permissionService.contractTheater.length; i++) {
           if (this.permissionService.contractTheater[i].value === 0) {

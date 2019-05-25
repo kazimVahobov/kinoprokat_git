@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 import {
   TheaterModel,
   TheaterService,
@@ -84,11 +84,11 @@ export class TheaterFormComponent implements OnInit {
   regions: RegionModel[];
 
   constructor(private service: TheaterService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private userService: UserService,
-    private distributorService: DistributorService,
-    private regionService: RegionService) {
+              private router: Router,
+              private route: ActivatedRoute,
+              private userService: UserService,
+              private distributorService: DistributorService,
+              private regionService: RegionService) {
   }
 
   ngOnInit() {
@@ -96,42 +96,42 @@ export class TheaterFormComponent implements OnInit {
     this.regions = [];
     this.regionService.getAll().subscribe(regions => {
       this.regions = regions
-    })
+    });
 
     this.userService.getAll().subscribe(users => {
       this.model.distId = this.currentUser.distId;
       this.route.params.subscribe(params => {
         this.id = params['id'];
-      if (this.id) {
-        this.directors = users.filter(u => u.theaterId == this.id);
-        for (let i = 0; i < this.directors.length; i++) {
-          this.directors[i].lastName += ' ' + (this.directors[i].firstName ? this.directors[i].firstName + ' ' : '') + (this.directors[i].middleName ? this.directors[i].middleName.substring(0, 1) + '.' : '');
+        if (this.id) {
+          this.directors = users.filter(u => u.theaterId == this.id);
+          for (let i = 0; i < this.directors.length; i++) {
+            this.directors[i].lastName += ' ' + (this.directors[i].firstName ? this.directors[i].firstName + ' ' : '') + (this.directors[i].middleName ? this.directors[i].middleName.substring(0, 1) + '.' : '');
+          }
+          this.service.getById(this.id).subscribe(theater => {
+            this.mainLabel = 'Редактирование данных';
+            this.model = theater;
+            for (let i = 0; i < this.days.length; i++) {
+              this.days[i].checked = theater.workTime[i].weekDay;
+              this.days[i].start = theater.workTime[i].start;
+              this.days[i].end = theater.workTime[i].end;
+            }
+            const start = this.days.find(i => i.checked).start;
+            const end = this.days.find(i => i.checked).end;
+            if (this.days.some(i => i.start !== start && i.end !== end)) {
+              this.dayDetailPanel = true;
+              this.dayDetailMode = true;
+              this.applyDayDetailMode = true;
+            } else {
+              this.commonTimeStart = start;
+              this.commonTimeEnd = end;
+            }
+            this.holes = [];
+            theater.holes.forEach(item => this.holes.push(item));
+          });
+        } else {
         }
-        this.service.getById(this.id).subscribe(theater => {
-          this.mainLabel = 'Редактирование данных';
-          this.model = theater;
-          for (let i = 0; i < this.days.length; i++) {
-            this.days[i].checked = theater.workTime[i].weekDay;
-            this.days[i].start = theater.workTime[i].start;
-            this.days[i].end = theater.workTime[i].end;
-          }
-          const start = this.days.find(i => i.checked).start;
-          const end = this.days.find(i => i.checked).end;
-          if (this.days.some(i => i.start !== start && i.end !== end)) {
-            this.dayDetailPanel = true;
-            this.dayDetailMode = true;
-            this.applyDayDetailMode = true;
-          } else {
-            this.commonTimeStart = start;
-            this.commonTimeEnd = end;
-          }
-          this.holes = [];
-          theater.holes.forEach(item => this.holes.push(item));
-        });
-      } else {
-      }
+      });
     });
-  });
     this.distributorService.getAll().subscribe(data => this.distributors = data);
   }
 
@@ -156,7 +156,7 @@ export class TheaterFormComponent implements OnInit {
   }
 
   addHole() {
-    this.holes.push({ name: null, placeCount: null });
+    this.holes.push({name: null, placeCount: null});
     this.validation();
   }
 
@@ -186,7 +186,7 @@ export class TheaterFormComponent implements OnInit {
     } else {
       this.model.workTime = [];
       for (let i = 0; i < this.days.length; i++) {
-        this.model.workTime.push({ start: this.days[i].start, end: this.days[i].end, weekDay: this.days[i].checked });
+        this.model.workTime.push({start: this.days[i].start, end: this.days[i].end, weekDay: this.days[i].checked});
       }
     }
     this.model.holes = [];
@@ -194,9 +194,9 @@ export class TheaterFormComponent implements OnInit {
       this.model.holes.push(this.holes[i]);
     }
     this.service.save(this.model).subscribe(() => {
-      alert('Все данные успешно сохранены!');
-      this.router.navigate(['/theater']);
-    },
+        alert('Все данные успешно сохранены!');
+        this.router.navigate(['/theater']);
+      },
       error => {
         alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
       });

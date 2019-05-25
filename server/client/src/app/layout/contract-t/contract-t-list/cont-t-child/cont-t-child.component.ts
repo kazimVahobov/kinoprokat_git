@@ -104,12 +104,13 @@ model: reportModel;
   }
 
   openModal(contract: ContractModel) {
-    if (new Date(contract.toDate) < new Date()) {
       this.contractForDelete = contract;
       this.canDeleteModal.show();
-    } else {
-      this.canNotDeleteModal.show();
-    }
+    // if (new Date(contract.toDate) < new Date()) {
+
+    // } else {
+    //   this.canNotDeleteModal.show();
+    // }
   }
 
   closeModal() {
@@ -123,7 +124,7 @@ model: reportModel;
       this.model = new reportModel();
       this.model.contractId = this.contractForDelete._id;
       this.service.deleteAllData(this.model).subscribe(res => {
-        this.getAllContracts()
+        this.getAllContracts();
         this.closeModal();
       });
     } else {

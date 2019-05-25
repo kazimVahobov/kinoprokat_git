@@ -10,7 +10,7 @@ export class RkmReportListComponent implements OnInit, OnDestroy {
   modes = [
     {
       value: 0,
-      name: 'Отчёты дистрибуторов'
+      name: 'Отчёты дистрибьюторов'
     },
     {
       value: 1,
