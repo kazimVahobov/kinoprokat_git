@@ -1,18 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {
-  DistributorReportModel,
-  TheaterReportModel,
-  DistributorReportService,
-  TheaterReportService,
-  PagerService,
-  TheaterService,
-  TheaterModel,
-  MovieService,
-  MovieModel,
   ContractService,
-  ContractModel
+  DistributorReportModel,
+  DistributorReportService,
+  MovieService,
+  PagerService,
+  TheaterReportService,
+  TheaterService
 } from 'src/app/core';
-import {Router, ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-distributor-report-form',
@@ -115,6 +111,7 @@ export class DistributorReportFormComponent implements OnInit {
         movieId: null,
         place: null,
         time: null,
+        contId: null,
         daySession: true,
         childTicketCount: null,
         adultTicketCount: null,
@@ -138,6 +135,7 @@ export class DistributorReportFormComponent implements OnInit {
       movieId: null,
       place: null,
       time: null,
+      contId: null,
       daySession: true,
       childTicketCount: null,
       adultTicketCount: null,
@@ -168,6 +166,7 @@ export class DistributorReportFormComponent implements OnInit {
       this.model.mobileTheaters[i].childTicketPrice = movie.eveningChildPriceTh;
       this.model.mobileTheaters[i].adultTicketPrice = movie.eveningAdultPriceTh;
     }
+    this.model.mobileTheaters[i].contId = movie.contId;
   }
 
   backToList() {

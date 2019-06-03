@@ -17,6 +17,9 @@ const distributorReports = new Schema({
             time: {
                 type: String
             },
+            contId: {
+                type: String
+            },
             daySession: {
                 type: Boolean
             },

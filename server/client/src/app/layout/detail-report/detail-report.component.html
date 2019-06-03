@@ -71,15 +71,19 @@
             </div>
             <div class="my-box col-md-12" *ngFor="let item of currentDistReport.mobileTheaters">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <label>Фильм:</label>
                   <p class="main-label">{{item.movieId| manual: movies}}</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                  <label>Основа(договор):</label>
+                  <p class="main-label">{{item.contId| manual: contracts: 'contNum'}}</p>
+                </div>
+                <div class="col-md-3">
                   <label>Место:</label>
                   <p class="main-label">{{item.place}}</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <label>Время:</label>
                   <p class="main-label">{{item.time}}
                     <span *ngIf="item.daySession">(Дневной сеанс)</span>
@@ -185,13 +189,17 @@
                   <p class="main-label">{{item.movieId| manual: movies}}</p>
                 </div>
                 <div class="col-md-3">
+                  <label>Основа(договор):</label>
+                  <p class="main-label">{{item.contId| manual: contracts: 'contNum'}}</p>
+                </div>
+                <div class="col-md-2">
                   <label>{{i + 1}} - сеанс</label>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                   <label>Зал:</label>
                   <p class="main-label">{{item.holeId| manual: holes}}</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                   <label>Время:</label>
                   <p class="main-label">{{item.sessionTime}}
                     <span *ngIf="item.daySession">(Дневной сеанс)</span>

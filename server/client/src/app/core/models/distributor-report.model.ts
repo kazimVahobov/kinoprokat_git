@@ -12,6 +12,7 @@ class ReportMobileTheater {
   movieId: string;
   place: string;
   time: Date;
+  contId: string;
   daySession: boolean;
   childTicketCount: number;
   adultTicketCount: number;
