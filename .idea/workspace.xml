@@ -8,13 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/cont-t-child/cont-t-child.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/contract-t-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/contract-t/contract-t-list/contract-t-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/movie/movie-detail/movie-statistic/movie-statistic.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/rkm-report-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-form/theater-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/theater/theater-form/theater-form.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,17 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/detail-report/detail-report.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -109,7 +92,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,12 +199,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/Node JS/Example on TS/ToDoApp" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.stylelint" value="project" />
@@ -289,7 +272,8 @@
       <workItem from="1558593199185" duration="7509000" />
       <workItem from="1558645238390" duration="846000" />
       <workItem from="1558676361061" duration="9099000" />
-      <workItem from="1558782306115" duration="6950000" />
+      <workItem from="1558782306115" duration="7016000" />
+      <workItem from="1558803103716" duration="132000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -459,19 +443,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558686180754</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="some small bugs fixed">
+      <created>1558801720044</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1558801720045</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="392539000" />
+    <option name="totallyTimeSpent" value="392737000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.24973656" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.20442571" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.20386904" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897383" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -482,7 +472,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32997987" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.36619717" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3872" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -516,7 +506,8 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/kazimVahobov/kinoprokat_git&#10;&#10;# Conflicts:&#10;#&#9;server/client/src/app/app.component.ts" />
     <MESSAGE value="successfully build blin" />
     <MESSAGE value="bugs on profile edit component fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugs on profile edit component fixed" />
+    <MESSAGE value="some small bugs fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="some small bugs fixed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts">
