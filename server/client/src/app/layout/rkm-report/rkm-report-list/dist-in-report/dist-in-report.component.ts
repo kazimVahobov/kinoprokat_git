@@ -94,7 +94,7 @@ export class DistInReportComponent implements OnInit {
       reportToConfirm.sent = state;
       reportToConfirm.confirm = state;
       this.service.update(reportToConfirm).subscribe(report => {
-          // this.loadData();
+          this.loadData();
         },
         error => {
           alert('Произошла неизвестная ошибка, пожалуйста попробуйте снова');
