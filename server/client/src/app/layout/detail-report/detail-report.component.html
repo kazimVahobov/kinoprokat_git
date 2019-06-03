@@ -192,14 +192,10 @@
                   <label>Основа(договор):</label>
                   <p class="main-label">{{item.contractId| manual: contracts: 'contNum'}}</p>
                 </div>
-                <div class="col-md-2">
-                  <label>{{i + 1}} - сеанс</label>
+                <div class="col-md-3">
+                  <label>{{i + 1}} - сеанс (Зал: {{item.holeId| manual: holes}})</label>
                 </div>
-                <div class="col-md-2">
-                  <label>Зал:</label>
-                  <p class="main-label">{{item.holeId| manual: holes}}</p>
-                </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                   <label>Время:</label>
                   <p class="main-label">{{item.sessionTime}}
                     <span *ngIf="item.daySession">(Дневной сеанс)</span>
