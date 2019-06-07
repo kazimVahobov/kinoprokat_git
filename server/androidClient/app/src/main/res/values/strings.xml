@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Kinoprokat</string>
+
+    <!-- Login Page-->
+    <string name="enter_login">Введите логин</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="sing_in">Войти</string>
+    <string name="login_not_found">Пользователь не найден</string>
+    <string name="invalid_password">Неверный пароль</string>
+    <string name="error_of_network">Проблема с подключением</string>
+    <string name="have_not_permission">У вас нет доступа</string>
 </resources>
