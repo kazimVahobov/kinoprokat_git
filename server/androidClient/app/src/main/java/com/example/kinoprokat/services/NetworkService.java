@@ -1,14 +1,24 @@
 package com.example.kinoprokat.services;
 
+import com.example.kinoprokat.interfaces.Apies;
+
+import java.io.IOException;
+
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetworkService {
 
     private static NetworkService mInstance;
 
-    private String BASE_URL = "http://192.168.1.108:8080/api/";
+    private String BASE_URL = "http://192.168.0.10:8080/api/";
     private Retrofit mRetrofit;
     private String token;
+    private String token_key = "token";
     private String jobId;
 
     public static NetworkService getInstance() {
@@ -30,11 +40,36 @@ public class NetworkService {
         this.token = token;
     }
 
-    public String getBaseUrl() {
-        return BASE_URL;
+    public String getToken_key() {
+        return token_key;
     }
 
-    public void setBaseUrl(String baseUrl) {
-        BASE_URL = baseUrl;
+    public Apies getApies() {
+        OkHttpClient client;
+
+        if (token != null) {
+            OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+            httpClient.addInterceptor(new Interceptor() {
+                @Override
+                public Response intercept(Chain chain) throws IOException {
+                    Request originalRequest = chain.request();
+                    Request.Builder requestBuilder = originalRequest.newBuilder().header("Authorization", token);
+                    Request finalRequest = requestBuilder.build();
+                    return chain.proceed(finalRequest);
+                }
+            });
+            client = httpClient.build();
+            mRetrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        } else {
+            mRetrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return mRetrofit.create(Apies.class);
     }
 }
