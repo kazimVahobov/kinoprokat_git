@@ -1,5 +1,6 @@
 package com.example.kinoprokat.common_activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import com.example.kinoprokat.models.Login;
 import com.example.kinoprokat.models.Role;
 import com.example.kinoprokat.models.Token;
 import com.example.kinoprokat.models.User;
+import com.example.kinoprokat.modules.theater.activities.TheaterMainPage;
 import com.example.kinoprokat.services.NetworkService;
 import com.example.kinoprokat.services.RoleService;
 
@@ -123,6 +125,8 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
                 break;
             }
             case 2: {
+                Intent intent = new Intent(this, TheaterMainPage.class);
+                startActivity(intent);
                 break;
             }
             case 3: {
