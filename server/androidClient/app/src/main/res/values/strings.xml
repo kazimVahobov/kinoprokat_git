@@ -13,5 +13,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--theater module main page-->
     <string name="today_report">Отчёт на сегодня</string>
+    <string name="not_prepared">Не подготовлен</string>
+    <string name="prepared_no_send">Подготовлен - Не отправлен</string>
+    <string name="send_no_confirm">Отправлен - Не подтверждён</string>
+    <string name="send_confirm">Подтверждён</string>
 </resources>

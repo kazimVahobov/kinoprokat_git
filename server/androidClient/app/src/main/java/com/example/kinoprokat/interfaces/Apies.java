@@ -31,6 +31,6 @@ public interface Apies {
     public Call<Role> getRoleById(@Path("id") String id);
 
     // theater report APIs //////////////////////////
-    @GET("by-theater/{id}")
-    public Call<TheaterReport> getThReportsByThId(@Path("id") String id);
+    @GET("theater-report/by-theater/{id}")
+    public Call<List<TheaterReport>> getThReportsByThId(@Path("id") String id);
 }
