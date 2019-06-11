@@ -15,10 +15,11 @@ public class NetworkService {
 
     private static NetworkService mInstance;
 
-    private String BASE_URL = "http://192.168.0.10:8080/api/";
+    private String BASE_URL = "http://192.168.0.8:8080/api/";
     private Retrofit mRetrofit;
     private String token;
     private String token_key = "token";
+    private String job_id_key = "job";
     private String jobId;
 
     public static NetworkService getInstance() {
@@ -42,6 +43,10 @@ public class NetworkService {
 
     public String getToken_key() {
         return token_key;
+    }
+
+    public String getJob_id_key() {
+        return job_id_key;
     }
 
     public Apies getApies() {

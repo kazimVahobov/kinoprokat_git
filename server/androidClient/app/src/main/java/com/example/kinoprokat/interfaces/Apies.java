@@ -2,6 +2,7 @@ package com.example.kinoprokat.interfaces;
 
 import com.example.kinoprokat.models.Login;
 import com.example.kinoprokat.models.Role;
+import com.example.kinoprokat.models.TheaterReport;
 import com.example.kinoprokat.models.Token;
 import com.example.kinoprokat.models.User;
 
@@ -28,4 +29,8 @@ public interface Apies {
 
     @GET("role/{id}")
     public Call<Role> getRoleById(@Path("id") String id);
+
+    // theater report APIs //////////////////////////
+    @GET("by-theater/{id}")
+    public Call<TheaterReport> getThReportsByThId(@Path("id") String id);
 }

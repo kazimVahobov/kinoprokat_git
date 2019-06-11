@@ -1,6 +1,5 @@
 package com.example.kinoprokat.modules.theater.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -38,6 +37,25 @@ public class TheaterMainPageFr extends Fragment {
         findViews();
     }
 
+    private void findViews() {
+        fab_add = (FloatingActionButton) mainView.findViewById(R.id.add);
+        fab_option = (FloatingActionButton) mainView.findViewById(R.id.option);
+        fab_option.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                animateFabs();
+            }
+        });
+        fab_edit = (FloatingActionButton) mainView.findViewById(R.id.edit);
+        fab_send = (FloatingActionButton) mainView.findViewById(R.id.send);
+        fab_detail = (FloatingActionButton) mainView.findViewById(R.id.detail);
+
+        anim_fab_open = AnimationUtils.loadAnimation(getContext(), R.anim.fab_open);
+        anim_fab_close = AnimationUtils.loadAnimation(getContext(), R.anim.fab_close);
+        anim_rotate_forward = AnimationUtils.loadAnimation(getContext(), R.anim.rotate_forward);
+        anim_rotate_backward= AnimationUtils.loadAnimation(getContext(), R.anim.rotate_backward);
+    }
+
     private void animateFabs() {
         if (isOpen) {
             fab_option.startAnimation(anim_rotate_backward);
@@ -58,24 +76,5 @@ public class TheaterMainPageFr extends Fragment {
             fab_detail.setClickable(true);
             isOpen = true;
         }
-    }
-
-    private void findViews() {
-        fab_add = (FloatingActionButton) mainView.findViewById(R.id.add);
-        fab_option = (FloatingActionButton) mainView.findViewById(R.id.option);
-        fab_option.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                animateFabs();
-            }
-        });
-        fab_edit = (FloatingActionButton) mainView.findViewById(R.id.edit);
-        fab_send = (FloatingActionButton) mainView.findViewById(R.id.send);
-        fab_detail = (FloatingActionButton) mainView.findViewById(R.id.detail);
-
-        anim_fab_open = AnimationUtils.loadAnimation(getContext(), R.anim.fab_open);
-        anim_fab_close = AnimationUtils.loadAnimation(getContext(), R.anim.fab_close);
-        anim_rotate_forward = AnimationUtils.loadAnimation(getContext(), R.anim.rotate_forward);
-        anim_rotate_backward= AnimationUtils.loadAnimation(getContext(), R.anim.rotate_backward);
     }
 }

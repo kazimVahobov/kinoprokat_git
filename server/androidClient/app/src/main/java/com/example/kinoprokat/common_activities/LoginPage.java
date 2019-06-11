@@ -60,10 +60,12 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         sharedPreferences = getPreferences(MODE_PRIVATE);
         String shared_token = sharedPreferences.getString(networkService.getToken_key(), null);
         String shared_role_id = sharedPreferences.getString(roleService.getRole_key(), null);
+        String shared_job_id = sharedPreferences.getString(networkService.getJob_id_key(), null);
 
-        if (shared_token != null && shared_role_id != null) {
+        if (shared_token != null && shared_role_id != null && shared_job_id != null) {
             progress_bar.setVisibility(View.VISIBLE);
             networkService.setToken(shared_token);
+            networkService.setJobId(shared_job_id);
             getRoleById(shared_role_id);
         } else {
             login_layout.setVisibility(View.VISIBLE);
@@ -80,6 +82,10 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
                     SharedPreferences.Editor ed = sharedPreferences.edit();
                     ed.putString(roleService.getRole_key(), response.body().getRoleId());
                     ed.apply();
+                    String job_id = response.body().getDistId() != null ? response.body().getDistId() : response.body().getTheaterId();
+                    ed.putString(networkService.getJob_id_key(), job_id);
+                    ed.apply();
+                    networkService.setJobId(job_id);
                 } else if (response.code() == 404) {
                     viewError(getResources().getString(R.string.login_not_found));
                 }
