@@ -1,5 +1,6 @@
 package com.example.kinoprokat.modules.theater.activities;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -45,6 +46,7 @@ public class TheaterMainPage extends AppCompatActivity implements ThMainPageComm
 
     @Override
     public void onAllThReportPressed() {
-        Toast.makeText(this, "all pressed", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, TheaterReportList.class);
+        startActivity(intent);
     }
 }

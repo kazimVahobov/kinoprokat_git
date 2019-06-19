@@ -1,5 +1,8 @@
 package com.example.kinoprokat.services;
 
+import android.content.Context;
+
+import com.example.kinoprokat.R;
 import com.example.kinoprokat.models.ReportWithCont;
 import com.example.kinoprokat.models.TheaterReport;
 
@@ -27,13 +30,13 @@ public class TheaterReportService {
         for (TheaterReport report : reports) {
             reportCalendar.setTime(report.getDate());
             if (currentCalendar.get(Calendar.YEAR) == reportCalendar.get(Calendar.YEAR) && currentCalendar.get(Calendar.DAY_OF_YEAR) == reportCalendar.get(Calendar.DAY_OF_YEAR)) {
-                result = defineReportStatus(report);
+                result = getReportStatus(report);
             }
         }
         return result;
     }
 
-    public int defineReportStatus(TheaterReport report) {
+    public int getReportStatus(TheaterReport report) {
         int result = 1;
         if (report.isSent() && !report.isConfirm()) {
             result = 2;
@@ -43,7 +46,17 @@ public class TheaterReportService {
         return result;
     }
 
-    public int getMoviesCountFromReports(List<TheaterReport> reports) {
+    public String getReportStatus(Context context, TheaterReport report) {
+        String result = context.getString(R.string.prepared_no_send);
+        if (report.isSent() && !report.isConfirm()) {
+            result = context.getString(R.string.send_no_confirm);
+        } else if (report.isSent() && report.isConfirm()) {
+            result = context.getString(R.string.send_confirm);
+        }
+        return result;
+    }
+
+    public int getMoviesCount(List<TheaterReport> reports) {
         List<TheaterReport> filteredReports = new ArrayList<>();
         for (TheaterReport report : reports) {
             if (report.isSent() && report.isConfirm()) filteredReports.add(report);
@@ -60,7 +73,17 @@ public class TheaterReportService {
         } else return 0;
     }
 
-    public int getSessionsCountFromReports(List<TheaterReport> reports) {
+    public int getMoviesCount(TheaterReport report) {
+        List<String> moviesId = new ArrayList<>();
+        if (report.getWithCont().size() == 0) return 0;
+        for (ReportWithCont session : report.getWithCont()) {
+            if (!moviesId.contains(session.getMovieId()))
+                moviesId.add(session.getMovieId());
+        }
+        return moviesId.size();
+    }
+
+    public int getSessionsCount(List<TheaterReport> reports) {
         List<TheaterReport> filteredReports = new ArrayList<>();
         for (TheaterReport report : reports) {
             if (report.isSent() && report.isConfirm()) filteredReports.add(report);
@@ -74,7 +97,7 @@ public class TheaterReportService {
         } else return 0;
     }
 
-    public int getTicketsCountFromReports(List<TheaterReport> reports) {
+    public int getTicketsCount(List<TheaterReport> reports) {
         List<TheaterReport> filteredReports = new ArrayList<>();
         for (TheaterReport report : reports) {
             if (report.isSent() && report.isConfirm()) filteredReports.add(report);
@@ -88,5 +111,21 @@ public class TheaterReportService {
             }
             return tickets;
         } else return 0;
+    }
+
+    public int getTicketsCount(TheaterReport report) {
+        int tickets = 0;
+        for (ReportWithCont session : report.getWithCont()) {
+            tickets += session.getAdultTicketCount() + session.getChildTicketCount();
+        }
+        return tickets;
+    }
+
+    public int getSum(TheaterReport report) {
+        int sum = 0;
+        for (ReportWithCont session: report.getWithCont()) {
+            sum += (session.getChildTicketCount() * session.getChildTicketPrice()) + (session.getAdultTicketCount() * session.getAdultTicketPrice());
+        }
+        return sum;
     }
 }

@@ -1,7 +1,6 @@
 package com.example.kinoprokat.modules.theater.fragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -66,11 +65,11 @@ public class ThMainPageCommonStatistic extends Fragment {
             @Override
             public void onResponse(Call<List<TheaterReport>> call, Response<List<TheaterReport>> response) {
                 if (response.isSuccessful()) {
-                    String str_movies = Integer.toString(thReportService.getMoviesCountFromReports(response.body())) + " " + getString(R.string.movies_short);
+                    String str_movies = Integer.toString(thReportService.getMoviesCount(response.body())) + " " + getString(R.string.movies_short_dot);
                     movies_count.setText(str_movies);
-                    String str_sessions = Integer.toString(thReportService.getSessionsCountFromReports(response.body())) + " " + getString(R.string.sessions_short);
+                    String str_sessions = Integer.toString(thReportService.getSessionsCount(response.body())) + " " + getString(R.string.sessions_short_dot);
                     sessions_count.setText(str_sessions);
-                    String str_tickets = Integer.toString(thReportService.getTicketsCountFromReports(response.body())) + " " + getString(R.string.tickets_short);
+                    String str_tickets = Integer.toString(thReportService.getTicketsCount(response.body())) + " " + getString(R.string.tickets_short_dot);
                     tickets_count.setText(str_tickets);
                     load_layout.setVisibility(View.GONE);
                     data_layout.setVisibility(View.VISIBLE);

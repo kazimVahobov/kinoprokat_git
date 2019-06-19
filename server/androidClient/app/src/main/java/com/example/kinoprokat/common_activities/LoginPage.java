@@ -43,6 +43,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     private Timer timer;
     private AnimTimer anim_task;
     private Animation anim_exit_to_left, anim_enter_from_right;
+    private String permissionKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +106,9 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
             public void onResponse(Call<Role> call, Response<Role> response) {
                 if (response.isSuccessful()) {
                     roleService.setCurrentRole(response.body());
+
                     redirectToOtherPage(response.body().getTypeOfRole());
+
                     progress_bar.setVisibility(View.INVISIBLE);
                 } else if (response.code() == 404 || response.code() == 401) {
                     // view error - try authorize again
@@ -131,8 +134,14 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
                 break;
             }
             case 2: {
-                Intent intent = new Intent(this, TheaterMainPage.class);
-                startActivity(intent);
+                permissionKey = roleService.th_report_key;
+                if (roleService.checkPermission(1, permissionKey)) {
+                    Intent intent = new Intent(this, TheaterMainPage.class);
+                    startActivity(intent);
+                } else {
+                    viewError(getString(R.string.you_have_not_access));
+                    login_layout.setVisibility(View.VISIBLE);
+                }
                 break;
             }
             case 3: {

@@ -1,5 +1,6 @@
 package com.example.kinoprokat.models;
 
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -64,4 +65,11 @@ public class TheaterReport {
     public void setConfirm(boolean confirm) {
         this.confirm = confirm;
     }
+
+    public static final Comparator<TheaterReport> compareByDate = new Comparator<TheaterReport>() {
+        @Override
+        public int compare(TheaterReport report, TheaterReport report1) {
+            return report1.getDate().compareTo(report.getDate());
+        }
+    };
 }

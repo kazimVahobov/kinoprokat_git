@@ -9,6 +9,8 @@ public class RoleService {
     private static RoleService mInstance;
     private Role currentRole;
 
+    public final String th_report_key = "report-theater";
+
     public static RoleService getInstance() {
         if (mInstance == null) {
             mInstance = new RoleService();
@@ -22,17 +24,6 @@ public class RoleService {
 
     public void setCurrentRole(Role currentRole) {
         this.currentRole = currentRole;
-    }
-
-    public String get_th_rep(String type) {
-        String result = "";
-        switch (type) {
-            case "th-rep": {
-                result = "report-theater";
-                break;
-            }
-        }
-        return result;
     }
 
     public boolean checkPermission(int value, String groupName) {
