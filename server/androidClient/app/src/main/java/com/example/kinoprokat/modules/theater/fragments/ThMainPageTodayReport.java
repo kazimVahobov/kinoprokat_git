@@ -3,7 +3,6 @@ package com.example.kinoprokat.modules.theater.fragments;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TheaterMainPageFr extends Fragment implements View.OnClickListener {
+public class ThMainPageTodayReport extends Fragment implements View.OnClickListener {
 
     private FloatingActionButton fab_add, fab_option, fab_edit, fab_send, fab_detail;
     private Animation anim_fab_open, anim_fab_close, anim_rotate_forward, anim_rotate_backward;
@@ -50,7 +49,7 @@ public class TheaterMainPageFr extends Fragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        mainView = inflater.inflate(R.layout.th_fr_main_page, container, false);
+        mainView = inflater.inflate(R.layout.th_fr_main_page_today_report, container, false);
         return mainView;
     }
 

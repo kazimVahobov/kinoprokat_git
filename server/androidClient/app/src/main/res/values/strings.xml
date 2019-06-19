@@ -19,4 +19,12 @@
     <string name="prepared_no_send">Подготовлен - Не отправлен</string>
     <string name="send_no_confirm">Отправлен - Не подтверждён</string>
     <string name="send_confirm">Подтверждён</string>
+    <string name="statistic">Статистика</string>
+    <string name="was_on_rent">Было в прокате</string>
+    <string name="showed_session">Поставлено</string>
+    <string name="sales">Продано</string>
+    <string name="show_all_reports">Показать все отчёты</string>
+    <string name="movies_short">филь.</string>
+    <string name="sessions_short">сеанс.</string>
+    <string name="tickets_short">бил.</string>
 </resources>
