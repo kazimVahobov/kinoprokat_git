@@ -1,6 +1,6 @@
 package com.example.kinoprokat.services;
 
-import com.example.kinoprokat.interfaces.Apies;
+import com.example.kinoprokat.interfaces.APIes;
 
 import java.io.IOException;
 
@@ -49,7 +49,7 @@ public class NetworkService {
         return job_id_key;
     }
 
-    public Apies getApies() {
+    public APIes getApies() {
         OkHttpClient client;
 
         if (token != null) {
@@ -75,6 +75,6 @@ public class NetworkService {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
-        return mRetrofit.create(Apies.class);
+        return mRetrofit.create(APIes.class);
     }
 }

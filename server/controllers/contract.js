@@ -80,3 +80,12 @@ module.exports.removeContractById = async function (req, res) {
         errorHandler(res, e)
     }
 }
+
+module.exports.getContractsByTypeAndSecondSide = async function(req, res) {
+    try {
+        const contracts = await Contract.find({typeOfCont: req.body.type, secondSide: req.body.secondSide});
+        res.status(200).json(contracts);
+    } catch {
+        errorHandler(res, e)
+    }
+}

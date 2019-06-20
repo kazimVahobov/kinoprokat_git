@@ -15,4 +15,6 @@ routes.put('/:id', passport.authenticate('jwt', { session: false }), controller.
 
 routes.post('/delete', passport.authenticate('jwt', { session: false }), controller.removeContractById)
 
+routes.put('/getByFilter', passport.authenticate('jwt', { session: false }), controller.getContractsByTypeAndSecondSide)
+
 module.exports = routes

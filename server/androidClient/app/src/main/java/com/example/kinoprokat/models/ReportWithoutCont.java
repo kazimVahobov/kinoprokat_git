@@ -1,6 +1,8 @@
 package com.example.kinoprokat.models;
 
-public class ReportWithoutCont {
+import java.io.Serializable;
+
+public class ReportWithoutCont implements Serializable {
 
     private String _id;
     private String movie;

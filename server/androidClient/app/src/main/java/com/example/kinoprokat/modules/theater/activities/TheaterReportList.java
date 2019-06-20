@@ -1,6 +1,7 @@
 package com.example.kinoprokat.modules.theater.activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kinoprokat.R;
+import com.example.kinoprokat.common_activities.ThReportDetail;
 import com.example.kinoprokat.models.TheaterReport;
 import com.example.kinoprokat.modules.theater.adapters.ThReportListAdapter;
 import com.example.kinoprokat.services.NetworkService;
@@ -153,7 +155,9 @@ public class TheaterReportList extends AppCompatActivity implements ThReportList
     }
 
     @Override
-    public void detailClick(TheaterReport report) {
-        Toast.makeText(this, report.getDate().toString() + "detail", Toast.LENGTH_LONG).show();
+    public void detailClick(String id) {
+        Intent intent = new Intent(this, ThReportDetail.class);
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 }

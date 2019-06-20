@@ -1,6 +1,8 @@
 package com.example.kinoprokat.models;
 
-public class ReportWithCont {
+import java.io.Serializable;
+
+public class ReportWithCont implements Serializable {
 
     private String _id;
     private String movieId;

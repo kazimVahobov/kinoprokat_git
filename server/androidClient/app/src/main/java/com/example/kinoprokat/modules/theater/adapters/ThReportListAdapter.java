@@ -116,7 +116,7 @@ public class ThReportListAdapter extends RecyclerView.Adapter<ThReportListAdapte
         holder.detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listListener.detailClick(report);
+                listListener.detailClick(report.get_id());
             }
         });
     }
@@ -151,6 +151,6 @@ public class ThReportListAdapter extends RecyclerView.Adapter<ThReportListAdapte
         void sendClick(TheaterReport report);
         void editClick(String id);
         void deleteClick(TheaterReport report);
-        void detailClick(TheaterReport report);
+        void detailClick(String id);
     }
 }

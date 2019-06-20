@@ -1,10 +1,11 @@
 package com.example.kinoprokat.models;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
-public class TheaterReport {
+public class TheaterReport implements Serializable {
 
     private String _id;
     private String theaterId;
