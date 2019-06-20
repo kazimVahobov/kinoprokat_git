@@ -11,7 +11,6 @@ export class ContractModel {
   fromDate: Date;
   toDate: Date;
   typeOfCont: number;
-  parentId?: string;
   imageSrc?: string;
   movieUser?: string;
   // theater prices
