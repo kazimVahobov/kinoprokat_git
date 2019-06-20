@@ -11,10 +11,11 @@ routes.get('/', passport.authenticate('jwt', { session: false }), controller.get
 
 routes.get('/:id', passport.authenticate('jwt', { session: false }), controller.getContractById)
 
+routes.put('/getByFilter', passport.authenticate('jwt', { session: false }), controller.getContractsByTypeAndSecondSide)
+
 routes.put('/:id', passport.authenticate('jwt', { session: false }), controller.updateContractById)
 
 routes.post('/delete', passport.authenticate('jwt', { session: false }), controller.removeContractById)
 
-routes.put('/getByFilter', passport.authenticate('jwt', { session: false }), controller.getContractsByTypeAndSecondSide)
 
 module.exports = routes
