@@ -4,6 +4,7 @@ export class ContractModel {
   firstSide: string;
   secondSide: string;
   condition: number;
+  parentId: string;
   tax?: number;
   condPercent: boolean;
   contNum: string;
