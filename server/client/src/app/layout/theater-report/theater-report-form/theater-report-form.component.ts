@@ -185,8 +185,8 @@ export class TheaterReportFormComponent implements OnInit {
       contractId: '',
       time: '',
       daySession: true,
-      childTicketCount: null,
-      adultTicketCount: null,
+      childTicketCount: 0,
+      adultTicketCount: 0,
       childTicketPrice: null,
       adultTicketPrice: null
     });
@@ -201,7 +201,7 @@ export class TheaterReportFormComponent implements OnInit {
       if (this.model.withoutCont.find(item => !item.movie || !item.country || !item.distributor || !item.sessionCount)) {
         result = true;
       }
-      if (this.model.holes.find(item => item.sessions.some(i => !i.time || !i.movieId || !i.childTicketCount || !i.childTicketPrice || !i.adultTicketCount || !i.adultTicketPrice))) {
+      if (this.model.holes.find(item => item.sessions.some(i => !i.time || !i.movieId || !i.childTicketPrice || !i.adultTicketPrice))) {
         result = true;
       }
       if (this.validationByPrice(this.model)) {
