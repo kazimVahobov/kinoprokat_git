@@ -6,9 +6,7 @@
     <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" line="189" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -23,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="212" column="5" lean-forward="true" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
+            <state relative-caret-position="345">
+              <caret line="195" column="35" lean-forward="true" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -265,7 +263,7 @@
       <workItem from="1558782306115" duration="7016000" />
       <workItem from="1558803103716" duration="132000" />
       <workItem from="1559571884348" duration="6236000" />
-      <workItem from="1561446689643" duration="479000" />
+      <workItem from="1561446689643" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -474,11 +472,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399452000" />
+    <option name="totallyTimeSpent" value="399597000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.24973656" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -964,8 +961,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="212" column="5" lean-forward="true" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
+        <state relative-caret-position="345">
+          <caret line="195" column="35" lean-forward="true" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
