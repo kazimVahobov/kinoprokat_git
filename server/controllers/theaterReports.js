@@ -74,3 +74,18 @@ module.exports.removeTheaterReportsById = async function(req, res) {
         errorHandler(res, e)
     }
 }
+module.exports.getTheaterReportsByDate = async function(req, res) {
+    try {
+        var start = new Date(req.body.date);
+        var end = new Date(start.getTime() + (23 * 60 * 60 * 1000));
+
+        const report = await TheaterReports.findOne({ date: {$gte: start, $lte: end}, theaterId: req.body.theaterId});
+        if (report == null) {
+            res.status(404).json({ message: 'Отчет не был найден' })
+        } else {
+            res.status(200).json(report)
+        }
+    } catch (e) {
+        errorHandler(res, e)
+    }
+}

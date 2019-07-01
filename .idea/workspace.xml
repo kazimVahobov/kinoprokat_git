@@ -3,10 +3,16 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.html" line="98" />
     <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" line="237" />
-    <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" line="189" />
+    <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" line="227" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="" />
+    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/client/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/theaterReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/theaterReports.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/theaterReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/theaterReports.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,13 +25,35 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts">
+        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="195" column="35" lean-forward="true" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
+            <state relative-caret-position="600">
+              <caret line="225" lean-forward="true" selection-start-line="225" selection-end-line="225" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
+                <element signature="n#!!block;n#changeYear#0;n#StatisticRkmComponent#0" />
+                <element signature="n#!!block;n#resetFilters#0;n#StatisticRkmComponent#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-966">
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3496">
+              <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -38,8 +66,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/unconfirmed-reports/unconfirmed-reports.component.ts" />
@@ -56,14 +82,12 @@
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-guest/dash-guest.component.html" />
-        <option value="$PROJECT_DIR$/server/client/src/environments/environment.prod.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-rkm/dash-rkm.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/components/sidebar/sidebar.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-dist/dash-dist.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/dashboard/dash-theater/dash-theater.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-dist/statistic-dist.component.ts" />
-        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-theater/statistic-theater.component.ts" />
         <option value="$PROJECT_DIR$/server/app.js" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/user/user-list/user-all/user-all.component.html" />
@@ -89,14 +113,18 @@
         <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.html" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/dist-in-report/dist-in-report.component.ts" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" />
+        <option value="$PROJECT_DIR$/server/routes/theaterReports.js" />
+        <option value="$PROJECT_DIR$/server/client/src/environments/environment.prod.ts" />
+        <option value="$PROJECT_DIR$/server/controllers/theaterReports.js" />
+        <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="63" />
-    <option name="y" value="130" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -144,15 +172,6 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -163,7 +182,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="theater-report" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
@@ -173,8 +192,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
-              <item name="theater-report" type="462c0819:PsiDirectoryNode" />
-              <item name="theater-report-form" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report-list" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
@@ -182,7 +201,62 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report" type="462c0819:PsiDirectoryNode" />
+              <item name="rkm-report-list" type="462c0819:PsiDirectoryNode" />
+              <item name="theater-in-report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="statistics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="statistics" type="462c0819:PsiDirectoryNode" />
+              <item name="statistic-list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="statistics" type="462c0819:PsiDirectoryNode" />
+              <item name="statistic-list" type="462c0819:PsiDirectoryNode" />
+              <item name="statistic-rkm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kinoprokat_git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kinoprokat_git" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -203,7 +277,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="D:\Angular\kinoprokat_git\server\client\node_modules\typescript\lib" />
   </component>
   <component name="RunDashboard">
@@ -264,6 +338,8 @@
       <workItem from="1558803103716" duration="132000" />
       <workItem from="1559571884348" duration="6236000" />
       <workItem from="1561446689643" duration="624000" />
+      <workItem from="1561717262578" duration="6789000" />
+      <workItem from="1561958668348" duration="4810000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -472,14 +548,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399597000" />
+    <option name="totallyTimeSpent" value="411196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.24973656" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19546892" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.14278187" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897383" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -490,7 +567,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32997987" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.2752" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.2678762" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -529,74 +606,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="fix bug on confirm of dist reports by rkm" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater/theater-form/theater-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-password-edit/profile-password-edit.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-368">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-edit/profile-edit.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1265">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-password-edit/profile-password-edit.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-414">
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-avatar-edit/profile-avatar-edit.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="37" column="101" lean-forward="true" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="101" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -839,13 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -962,9 +964,82 @@
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="195" column="35" lean-forward="true" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
+          <caret line="195" column="35" selection-start-line="195" selection-start-column="35" selection-end-line="195" selection-end-column="35" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/contract.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-663" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/theaterReports.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1338">
+          <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/environments/environment.prod.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config/winston.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/theaterReports.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3496">
+          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/rkm-report/rkm-report-list/theater-in-report/theater-in-report.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-966">
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="225" lean-forward="true" selection-start-line="225" selection-end-line="225" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#!!block;n#changeYear#0;n#StatisticRkmComponent#0" />
+            <element signature="n#!!block;n#resetFilters#0;n#StatisticRkmComponent#0" />
           </folding>
         </state>
       </provider>
