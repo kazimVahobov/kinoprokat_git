@@ -6,12 +6,8 @@
     <bookmark url="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" line="227" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" afterDir="false" />
+    <list default="true" id="8f63ac1e-3663-41d2-9e78-b35114663e08" name="Default Changelist" comment="fix bug on confirm of dist reports by rkm">
       <change beforePath="$PROJECT_DIR$/server/client/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/client/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/theaterReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/theaterReports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/theaterReports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/theaterReports.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,6 +21,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/controllers/theaterReports.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="692">
+              <caret line="81" column="118" selection-start-line="81" selection-start-column="118" selection-end-line="81" selection-end-column="118" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="600">
@@ -115,8 +120,8 @@
         <option value="$PROJECT_DIR$/server/client/src/app/layout/theater-report/theater-report-form/theater-report-form.component.ts" />
         <option value="$PROJECT_DIR$/server/routes/theaterReports.js" />
         <option value="$PROJECT_DIR$/server/client/src/environments/environment.prod.ts" />
-        <option value="$PROJECT_DIR$/server/controllers/theaterReports.js" />
         <option value="$PROJECT_DIR$/server/client/src/app/layout/statistics/statistic-list/statistic-rkm/statistic-rkm.component.ts" />
+        <option value="$PROJECT_DIR$/server/controllers/theaterReports.js" />
       </list>
     </option>
   </component>
@@ -339,7 +344,7 @@
       <workItem from="1559571884348" duration="6236000" />
       <workItem from="1561446689643" duration="624000" />
       <workItem from="1561717262578" duration="6789000" />
-      <workItem from="1561958668348" duration="4810000" />
+      <workItem from="1561958668348" duration="5517000" />
     </task>
     <task id="LOCAL-00001" summary="fixed minor bugs related to the removal of distributors, theaters, movies. Also added messages about the absence of records">
       <created>1556288834896</created>
@@ -544,11 +549,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559597362009</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix bug with pagination on rkm statistic page">
+      <created>1561965512194</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1561965512194</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="411196000" />
+    <option name="totallyTimeSpent" value="411903000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -578,7 +590,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="distributor report module full completed" />
     <MESSAGE value="all parts of reports full completed" />
     <MESSAGE value="list of unconfirmed reports on statistic module full completed" />
     <MESSAGE value="created statistic service and one method (filter by movieId and regionId?), added new API's to theater, theater-report, distributor, distributor-reports service on client and backend part. New API's: filterTheaterReport(sent, confirm), filterDistReport(sent, confirm), getTheatersByRegionId(regionId), getDistsByRegionId(regionId)" />
@@ -603,7 +614,8 @@
     <MESSAGE value="some small bugs fixed" />
     <MESSAGE value="changes on view of  detail report component" />
     <MESSAGE value="fix bug on confirm of dist reports by rkm" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug on confirm of dist reports by rkm" />
+    <MESSAGE value="fix bug with pagination on rkm statistic page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug with pagination on rkm statistic page" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/client/src/app/layout/profile/profile-settings/profile-settings.component.ts">
@@ -976,13 +988,6 @@
         <state relative-caret-position="-663" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/theaterReports.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1338">
-          <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/client/src/environments/environment.prod.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -1041,6 +1046,13 @@
             <element signature="n#!!block;n#changeYear#0;n#StatisticRkmComponent#0" />
             <element signature="n#!!block;n#resetFilters#0;n#StatisticRkmComponent#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/theaterReports.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="81" column="118" selection-start-line="81" selection-start-column="118" selection-end-line="81" selection-end-column="118" />
         </state>
       </provider>
     </entry>

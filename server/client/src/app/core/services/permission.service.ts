@@ -407,7 +407,7 @@ export class PermissionService {
       {
         label: 'Подтверждение',
         description: 'Разрешить подтверждение или обратную отсылку отчётов, поступивших в дистрибьютору от кинотеатра',
-        value: 4,
+        value: 6,
         checked: false,
         groupName: 'report-dist'
       }
