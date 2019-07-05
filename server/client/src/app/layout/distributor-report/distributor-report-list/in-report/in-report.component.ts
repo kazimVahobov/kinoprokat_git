@@ -50,7 +50,7 @@ export class InReportComponent implements OnInit {
 
     if (this.permissionService.reportDist) {
       for (let i = 0; i < this.permissionService.reportDist.length; i++) {
-        if (this.permissionService.reportDist[i].value === 4) {
+        if (this.permissionService.reportDist[i].value === 6) {
           this.isConfirm = true;
         }
       }
